@@ -10,7 +10,8 @@
 //   sitemap.xml                  入口・使い方・各題材
 //   sw.js の PRECACHE の間        オフライン用に最初に取っておくファイル
 // 題材のほかに、手で書いたページ（EXTRA_PAGES。百人一首の読み上げ /hyakunin/、早押しボタン /hayaoshi/）も入口の一覧・sitemap・sw.js に入れる。
-// 題材が別のデータファイルを使うときは page.deps に並べる（例: 決まり字クイズの hyakunin-data.js）。題材のページ・入口・sw.js が読み込む
+// 題材が別のデータファイルを使うときは page.deps に並べる（例: 決まり字クイズの hyakunin-data.js、元素の「おお」の一言の ooh.js・ooh-genso.js、国旗クイズの topics/shuto.js）。題材のページ・入口・sw.js が読み込む
+// 旗の絵（flags/4x3/*.svg）は sw.js の最初に取っておくファイルに入れない（問題に出たときに読む。読んだものはネットワーク優先のキャッシュに入る）
 // 題材の page に big（大きな字）・noAds（広告なしの定型文。D118）・cards（回想法カードの印刷）・guide（題材だけの使い方ページ。sitemap と sw.js にも入る）を書ける（例: 昭和クイズ）
 // 題材を足すとき: topics/<題材>.js を書いて、これを実行するだけ（README「題材を足す」）
 // 依存パッケージなし（Node 20 以上）
@@ -92,7 +93,8 @@ export function build() {
   ].sort((a, b) => a.order - b.order);
   const cards = entries.map((e) => e.html).join('\n');
   hub = hub.replace(/(<!-- TOPICS-BEGIN -->\n)[\s\S]*?(\s*<!-- TOPICS-END -->)/, `$1    <ul class="topics">\n${cards}\n    </ul>$2`);
-  const deps = [...new Set(topics.flatMap((t) => t.page.deps || []))];
+  // 題材のファイル（topics/*.js）を deps に書いたもの（国旗クイズの topics/shuto.js）は、入口では題材として order の順に読むので deps から外す
+  const deps = [...new Set(topics.flatMap((t) => t.page.deps || []))].filter((d) => !d.startsWith('topics/'));
   const scripts = [...deps.map((d) => `  <script src="./${d}"></script>`), ...topics.map((t) => `  <script src="./topics/${t.id}.js"></script>`)].join('\n');
   hub = hub.replace(/(<!-- TOPIC-SCRIPTS-BEGIN -->\n)[\s\S]*?([ \t]*<!-- TOPIC-SCRIPTS-END -->)/, `$1${scripts}\n$2`);
   out['index.html'] = hub;
@@ -111,7 +113,7 @@ export function build() {
 
   let sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   const pre = ['./', './index.html', './guide.html', './style.css', './constants.js', './calc.js', './quiz.js', './hub.js',
-    ...[...new Set(topics.flatMap((t) => t.page.deps || []))].map((d) => `./${d}`),
+    ...[...new Set(topics.flatMap((t) => t.page.deps || []))].filter((d) => !d.startsWith('topics/')).map((d) => `./${d}`),
     ...topics.flatMap((t) => [`./${t.id}/`, `./topics/${t.id}.js`, ...(t.page.guide ? [`./${t.page.guide}`] : [])]),
     ...EXTRA_PAGES.flatMap((x) => [`./${x.path}`, ...x.files.filter((f) => !topics.some((t) => (t.page.deps || []).includes(f))).map((f) => `./${f}`)]),
     './manifest.webmanifest', './favicon.svg', './apple-touch-icon.png'];

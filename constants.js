@@ -73,6 +73,32 @@
       ],
       checked: '2026-09-25',   // この日に各ページと表を開き、75 問の年・値段・題名を 1 件ずつ突き合わせた（値段は表から機械で取り出した）
     },
+    kokki: {
+      value: '196 か国の国名・地域と国旗の絵',
+      label: '国旗クイズ',
+      source: '国名・地域は世界の首都クイズと同じ外務省「国・地域」の表記（191 か国）に、同じ一覧にあるイスラエル・シンガポール・バチカン・モナコと日本を足したもの。旗の絵は lipis/flag-icons 7.5.0（MIT License）の 4:3 の SVG',
+      url: 'https://github.com/lipis/flag-icons',
+      urls: [
+        'https://github.com/lipis/flag-icons',
+        'https://www.npmjs.com/package/flag-icons',
+        'https://www.mofa.go.jp/mofaj/area/index.html',
+      ],
+      checked: '2026-09-25',   // この日に flag-icons 7.5.0 を取得し、196 か国の ISO の 2 文字を country.json の英語名と 1 つずつ突き合わせた
+    },
+    ooh_genso: {
+      value: '元素 118 の「おお」の一言（名前の由来・記号の由来・発見・周期と族・気体と液体）',
+      label: '「おお」の一言（元素）',
+      source: 'IUPAC 原子量および同位体存在度委員会（CIAAW）の元素のページ、ロスアラモス国立研究所（米国エネルギー省）の周期表、IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」、IUPAC 周期表、PubChem の周期表',
+      url: 'https://www.ciaaw.org/',
+      urls: [
+        'https://www.ciaaw.org/',
+        'https://periodic.lanl.gov/',
+        'https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/',
+        'https://iupac.org/what-we-do/periodic-table-of-elements/',
+        'https://pubchem.ncbi.nlm.nih.gov/periodic-table/',
+      ],
+      checked: '2026-09-25',   // この日に 118 元素の出典の段落を読み、年が出典の本文にあることを機械でも確かめた（ooh-genso.js の先頭）
+    },
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = CONSTANTS;

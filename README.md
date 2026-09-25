@@ -2,8 +2,8 @@
 
 公開 URL: **https://yorozu-craft.com/quiz-hiroba/**
 
-元素記号・歴史年号・百人一首の決まり字・世界の首都を 4 択と入力（一問一答）で覚える無料クイズ。高齢者向けの昭和クイズ（3 択・広告なし・回想法カード）と、1 台を 2〜4 人で使う早押しボタン（`/hayaoshi/`）もある。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。百人一首の読み上げ（`/hyakunin/`）も同じリポジトリに置く。
-yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）と `docs/30_百人一首と世界の首都.md`（K87、K120 の題材）、`docs/38_クイズ大会と昭和クイズ.md`（K96 早押しボタン・K108 昭和クイズ）。
+元素記号・歴史年号・百人一首の決まり字・世界の首都・国旗を 4 択と入力（一問一答）で覚える無料クイズ。元素記号クイズは答えのあとに出典つきの「おお」の一言（K122）が出る。高齢者向けの昭和クイズ（3 択・広告なし・回想法カード）と、1 台を 2〜4 人で使う早押しボタン（`/hayaoshi/`）もある。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。百人一首の読み上げ（`/hyakunin/`）も同じリポジトリに置く。
+yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）と `docs/30_百人一首と世界の首都.md`（K87、K120 の題材）、`docs/38_クイズ大会と昭和クイズ.md`（K96 早押しボタン・K108 昭和クイズ）、`docs/43_おおの一言と国旗.md`（K122「おお」の一言・K88 国旗クイズ）。
 
 ## 題材
 
@@ -14,6 +14,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | `/quiz-hiroba/kimariji/` | 百人一首 決まり字クイズ | 100 | 歌は `hyakunin-data.js`（全日本かるた協会・ウィキソース。先頭の説明）。決まり字は計算 |
 | `/quiz-hiroba/showa/` | 昭和クイズ（3 択・大きな字・回想法カード。**広告なし D118**。使い方も `showa/guide.html` で広告なし） | 75 | 出来事: 国立公文書館「公文書にみる日本のあゆみ」ほか／値段: 総務省統計局 小売物価統計調査（東京都区部、昭和25年〜平成22年の表）／歌: 日本作曲家協会 日本レコード大賞 歴代大賞一覧。歌詞は載せない。`topics/showa.js` の先頭 |
 | `/quiz-hiroba/shuto/` | 世界の首都クイズ | 191 | 外務省「国・地域」と各国の基礎データ（インターネットアーカイブの保存で確認）。`topics/shuto.js` の先頭に出題しない国と理由 |
+| `/quiz-hiroba/kokki/` | 国旗クイズ（旗→国・国→旗、4 択だけ。レベル 小学生・ふつう・難しい・激ムズ） | 196 | 国名・地域は `topics/shuto.js` をそのまま使い、4 か国と日本を足す。旗は `flags/4x3/`（lipis/flag-icons 7.5.0、MIT） |
 
 ## 百人一首 読み上げ（`/quiz-hiroba/hyakunin/`。題材ではなく手で書いたページ）
 
@@ -41,7 +42,14 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 - 記録: 問題ごとの正解・不正解と「最後にまちがえたもの＝にがて」、条件ごとの自己ベスト（正解数、同じなら時間）。キー `quiz-hiroba_records`・`quiz-hiroba_settings`。書き出し・読み込みは入口のページ
 - 共有リンク `#s=`（base64url の JSON: 題材・向き・答え方・絞り込み・問題数・種・送った人の正解数）。同じ問題・同じ選択肢の並びになる。受け取った側の設定は上書きしない
 - 広告: 入口・題材のページは AdSense の meta だけ（遊ぶ画面。todofuken-quiz と同じ）、使い方ページ（`guide.html`）だけ広告あり（企画書 27 の D122）
-- オフライン対応（`sw.js`、キャッシュ名 `quiz-hiroba-v1`）
+- オフライン対応（`sw.js`、キャッシュ名 `quiz-hiroba-v3`）
+
+## 「おお」の一言（K122。いまは元素だけ）
+
+- 答えの直後に、その問題の短い事実を 1 つ（ランダム）出し、「もう1つ」で次へ。一言ごとに出典のリンク
+- エンジンは `ooh.js`（純粋関数、`tests/ooh.test.js`）、データは `ooh-<題材>.js`（題材の `page.deps` に並べる）。データの無い題材では何も出さない
+- **うそにならない規則**（`ooh.js` の先頭）: 型の事実は構造化データから機械で文にする（元素: 周期と族・気体と液体・発見の年と人）／自由文は 1 問 1 つまで／1 事実 1 出典、出典の無い事実は出さない／変わるもの（人口・生産・最大・最古・現在など）は書かない／1 文 40 字以内。テストがデータ全体で確かめる
+- 首都・年号の一言はまだ無い（企画書 43 の開いた問い）
 
 ## 題材を足す
 
@@ -63,6 +71,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | 年 1 回（4 月の原子量表の改訂のころ） | 新しい元素の名前が決まっていないか（IUPAC・日本化学会） | `topics/genso.js`、`constants.js` の checked |
 | 事実は変わらない（昭和クイズ） | まちがいの報告があったときだけ | `topics/showa.js`、`constants.js` の showa |
 | 年 1 回 | 外務省の「国・地域」と基礎データで、国の増減・首都の変更・遷都がないか（インドネシアの首都移転など） | `topics/shuto.js`、`constants.js` の shuto |
+| 年 1 回 | flag-icons の新しい版で、使っている 196 枚の旗が変わっていないか（変わっていれば SVG を入れ替え、`flags/VERSION` を直す） | `flags/`、`constants.js` の kokki |
 | 題材を足したとき | 上の「題材を足す」 | — |
 
 年号・元素名は時が経っても変わらない。直したら `guide.html` の「更新履歴」に 1 行足す。
@@ -72,9 +81,11 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | ファイル | 役割 |
 |---------|------|
 | `index.html` / `hub.js` | 入口（題材の一覧・記録の数・記録の書き出しと読み込み） |
-| `genso/`・`nengo/`・`kimariji/`・`shuto/` の `index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
+| `genso/`・`nengo/`・`kimariji/`・`shuto/`・`kokki/`・`showa/` の `index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
 | `hyakunin/index.html` / `yomiage.js` / `yomiage-ui.js` / `hyakunin/guide.html` | 百人一首 読み上げ（手で書いたページ。`tools/build-pages.mjs` の `EXTRA_PAGES` で入口・sitemap・sw.js に入る） |
 | `hyakunin-data.js` | 小倉百人一首 100 首と序歌（読み上げと決まり字クイズが使う） |
+| `ooh.js` / `ooh-genso.js` | 「おお」の一言のエンジンと元素のデータ |
+| `flags/4x3/*.svg` / `flags/LICENSE` / `flags/VERSION` | 国旗の絵（lipis/flag-icons、MIT）。問題に出たとき・一覧で見えたときに読む（`sw.js` の最初に取っておくファイルには入れない） |
 | `tools/page-template.html` / `tools/build-pages.mjs` | 題材のページのひな形と、それを作るスクリプト |
 | `topics/*.js` | 題材のデータ |
 | `calc.js` | 出題エンジン（純粋関数）: 出題・4 択・答え合わせ・記録・共有リンク・バックアップ |
@@ -88,6 +99,20 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | `favicon.svg` / `apple-touch-icon.png` / `og-image.png` | アイコン / ホーム画面用 / SNS 共有用（1200×630） |
 | `tests/*.test.js` | テスト（`node --test tests/*.test.js`） |
 
-## ライセンス
+## データの出どころとライセンス
 
-MIT License（`LICENSE`）。元素名・年号は事実のデータで、出典は上のとおり。出来事の文は運営者が書いたもの。
+コードは MIT License（`LICENSE`）。題材のデータは次のとおり（出典の URL と確認日は `constants.js`、画面では各題材の「出典と確認日」と `guide.html` の「題材とデータの出典」）。
+
+| 題材・部品 | 出どころ | 扱い |
+|---|---|---|
+| 元素記号クイズ | IUPAC 周期表、日本化学会「原子量表（2026）」 | 記号・名前は事実。表は写さず、名前を 1 件ずつ突き合わせて自分で並べた |
+| 「おお」の一言（元素） | IUPAC CIAAW の元素のページ、ロスアラモス国立研究所（米国エネルギー省）の周期表、IUPAC の 2016 年の発表、PubChem の周期表 | 出典の文は写さず、事実だけを短い日本語で書いた（`ooh-genso.js` の先頭） |
+| 歴史年号クイズ | コトバンクの各項目、学習指導要領解説 | 年は事実。出来事の文は運営者が書いた。語呂合わせは載せない |
+| 百人一首（読み上げ・決まり字） | 全日本かるた協会の札のページと読手テキスト、ウィキソース | 歌は著作権の保護期間を過ぎたもの。読みは読手テキストのふりがなから作った |
+| 世界の首都クイズ | 外務省「国・地域」と基礎データ、英語版ウィキペディア（扱いが分かれる国の印だけ） | 国名・首都は事実。表記は外務省のまま |
+| 国旗クイズ | 国名は上の首都クイズと同じ外務省の表記。旗の絵は lipis/flag-icons 7.5.0 | 旗の SVG は **MIT License**（`flags/LICENSE`、版と取得日は `flags/VERSION`）。使う 196 枚だけを入れ、中身は変えていない。レベル・似た旗の組は運営者が決めた |
+| 昭和クイズ | 国立公文書館ほか、総務省統計局 小売物価統計調査、日本作曲家協会 | 年・値段・題名は事実。歌詞は載せない |
+| 早押しボタンの効果音 | Web Audio でその場で合成 | 音のファイルは持たない |
+| フォント・アイコン | 端末のフォント（Web フォントは読まない）。題材のアイコンは絵文字、`favicon.svg` は自作 | — |
+
+旗は国の変化で変わることがある（例: flag-icons 7.5.0 のシリアの旗は、緑・白・黒に赤い星 3 つの新しい旗）。年 1 回、flag-icons の更新を見る（下の保守）。

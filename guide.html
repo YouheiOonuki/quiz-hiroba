@@ -62,7 +62,7 @@
 
   <main class="app-main">
 
-    <p class="card" style="text-align:center"><a href="./">▶ クイズ広場へ（元素記号・歴史年号・百人一首・世界の首都）</a></p>
+    <p class="card" style="text-align:center"><a href="./">▶ クイズ広場へ（元素記号・歴史年号・百人一首・世界の首都・国旗）</a></p>
 
     <article class="card content" id="howto">
       <h2>使い方</h2>
@@ -73,6 +73,7 @@
         <li>「同じ問題でちょうせん」のリンクを友だちに送る</li>
       </ol>
       <p>「一覧で覚える」は、記号や年をかくして「？」を押すと見える表です。「問題と答えを印刷」は、問題の紙と答えの紙を 1 回で印刷します（<a href="../print-help.html">スマホで印刷する</a>）。</p>
+      <p>元素記号クイズでは、答えのあとに「おお」の一言（名前の由来・発見など）が出典つきで出ます。「もう1つ」で次の一言です。</p>
     </article>
 
     <article class="card content" id="typing">
@@ -90,7 +91,7 @@
 
     <article class="card content" id="basis">
       <h2>題材とデータの出典</h2>
-      <p>元素: IUPAC と日本化学会。年号: コトバンク。百人一首: 全日本かるた協会。首都: 外務省。最終確認日 <time datetime="2026-09-25">2026年9月25日</time>。</p>
+      <p>元素: IUPAC と日本化学会。年号: コトバンク。百人一首: 全日本かるた協会。首都: 外務省。国旗: 国名は外務省、旗の絵は flag-icons（MIT）。最終確認日 <time datetime="2026-09-25">2026年9月25日</time>。</p>
       <details class="rels">
         <summary>くわしい出典と作り方</summary>
         <ul>
@@ -101,6 +102,8 @@
           <li>年号の「時代」は、<a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387018_003.pdf" rel="noopener">中学校学習指導要領（平成29年告示）解説 社会編</a>の歴史的分野の中項目の名前（古代までの日本・中世の日本・近世の日本・近代の日本と世界・現代の日本と世界）を借りて運営者が分けました。「基本」の 44 件も運営者が選んだもので、入試の出題数を数えたものではありません</li>
           <li>百人一首の決まり字クイズ: 歌・作者は<a href="https://www.karuta.or.jp/2020/karuta2020/special/card/index.html@number=.html" rel="noopener">全日本かるた協会の札のページ</a>、ひらがなは<a href="https://ja.wikisource.org/wiki/%E5%B0%8F%E5%80%89%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96" rel="noopener">ウィキソース</a>。決まり字はほかの99首と区別できる最短の先頭を計算で出しました（くわしくは<a href="./hyakunin/guide.html#notes">百人一首 読み上げの使い方</a>）</li>
           <li>世界の首都: 国名・首都・地域は<a href="https://www.mofa.go.jp/mofaj/area/index.html" rel="noopener">外務省「国・地域」</a>と各国の基礎データの表記（インターネットアーカイブに保存されたページで確認）。首都の扱いが資料によって分かれる17か国は、<a href="https://en.wikipedia.org/wiki/List_of_national_capitals" rel="noopener">英語版ウィキペディアの一覧</a>で確かめて答えのあとに書きました。イスラエル（外務省の基礎データが「日本を含め国際社会の大多数には認められていない」と注記）、「その他の地域」、首都の欄が無い国は出題しません</li>
+          <li id="kokki">国旗: 国名と地域は世界の首都クイズと同じ外務省の表記の191か国に、同じ一覧にあるイスラエル・シンガポール・バチカン・モナコと日本を足した196か国。旗の絵は <a href="https://github.com/lipis/flag-icons" rel="noopener">lipis/flag-icons</a> 7.5.0（MIT License）の SVG で、ライセンスの文は<a href="./flags/LICENSE">flags/LICENSE</a>。レベルは運営者の決まりです: 小学生＝運営者が選んだ30か国、ふつう＝196か国（選択肢はばらばら）、難しい＝選択肢が同じ地域の国、激ムズ＝運営者が「似ている」と決めた旗の組（色と並びがほぼ同じもの）から</li>
+          <li id="ooh">「おお」の一言（元素）の出典: 名前の由来と発見は <a href="https://www.ciaaw.org/" rel="noopener">IUPAC 原子量および同位体存在度委員会（CIAAW）</a>の元素のページ、その段落が無い元素は<a href="https://periodic.lanl.gov/" rel="noopener">ロスアラモス国立研究所（米国エネルギー省）の周期表</a>、113・115・117・118番は <a href="https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/" rel="noopener">IUPAC の2016年の発表</a>。周期と族は <a href="https://iupac.org/what-we-do/periodic-table-of-elements/" rel="noopener">IUPAC の周期表</a>、気体・液体は <a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/" rel="noopener">PubChem の周期表</a>。一言ごとに出典のリンクが出ます。決まり: 1つの一言に1つの出典、出典の無いことは書かない、変わること（量・順位・記録）は書かない、1文40字まで。発見の年は出典の年で、ほかの資料と1年ずれる元素があります</li>
         </ul>
       </details>
     </article>
@@ -132,6 +135,7 @@
     <article class="card content" id="changelog">
       <h2>更新履歴</h2>
       <ul>
+        <li><time datetime="2026-09-25">2026年9月25日</time> 国旗クイズと、元素記号クイズの「おお」の一言を追加</li>
         <li><time datetime="2026-09-25">2026年9月25日</time> 百人一首 決まり字クイズ・世界の首都クイズ・百人一首 読み上げを追加</li>
         <li><time datetime="2026-09-25">2026年9月25日</time> 公開（元素記号クイズ・歴史年号クイズ）</li>
       </ul>

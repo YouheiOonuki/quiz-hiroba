@@ -437,3 +437,33 @@ kbd { font-family: inherit; border: 1px solid var(--border); border-bottom-width
   body.print-reader main { max-width: none; padding: 0; margin: 0; }
   body.print-reader .reader-sheet { border: none; box-shadow: none; padding: 0; margin: 0; }
 }
+
+/* 国旗クイズ（K88）: 旗の絵。問題に出たとき・一覧でその行が見えたときに読む */
+.q-img { text-align: center; margin: -0.4rem 0 0.9rem; }
+.q-img img { width: min(240px, 70vw); height: auto; aspect-ratio: 4 / 3; border: 1px solid var(--border); background: #fff; }
+.choice.flag-choice { padding: 0.4rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem; }
+.choice.flag-choice img { width: 100%; max-width: 150px; height: auto; aspect-ratio: 4 / 3; border: 1px solid var(--border); background: #fff; }
+.choice.flag-choice.ok::before, .choice.flag-choice.ng::before { content: none; }
+.choice .cap { font-size: 0.8rem; line-height: 1.3; }
+.choice.flag-choice.ok .cap::before { content: '○ '; }
+.choice.flag-choice.ng .cap::before { content: '× '; }
+.list-table img.flag { width: 48px; height: 36px; border: 1px solid var(--border); background: #fff; vertical-align: middle; }
+.sheet-list img.flag { display: inline-block; width: 18mm; height: 13.5mm; border: 1px solid #999; margin: 0.3mm 3mm 0.3mm 0; vertical-align: middle; }
+.sheet-list li.has-flag { display: flex; flex-wrap: wrap; align-items: center; }
+.sheet-list li.has-flag .q { flex-basis: 100%; font-size: 0.85rem; }
+.sheet-list li.has-flag, .sheet-list li:has(.cs-img) { padding: 0.15rem 0; }
+.sheet-list li.has-flag .cs { flex: 1; }
+.sheet-list .cs-img { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; font-size: 0.88rem; }
+.sheet-list .cs-img span { display: flex; align-items: center; gap: 1mm; }
+.sheet-list .cs-img img.flag { width: 18mm; height: 13.5mm; margin: 0; }
+.sheet-list .a img.flag { width: 10mm; height: 7.5mm; margin: 0 2mm 0 0; }
+
+/* 「おお」の一言（K122）: 答えのあとに、その題材の短い事実を 1 つ。出典つき */
+.ooh { margin: 0 0 0.8rem; padding: 0.5rem 0.7rem; background: var(--accent-soft); border-radius: 8px; }
+.ooh-text { font-weight: 600; }
+.ooh-mark { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--card); background: var(--accent); border-radius: 999px; padding: 0 0.55em; margin-right: 0.45em; vertical-align: 0.1em; }
+.ooh-src { margin-top: 0.2rem; word-break: break-all; }
+.ooh-src a { color: var(--muted); }
+.ooh-more { margin-top: 0.35rem; }
+.result-miss img.miss-flag { width: 32px; height: 24px; border: 1px solid var(--border); background: #fff; vertical-align: middle; margin-right: 0.4em; }
+@media screen and (max-width: 560px) { .sheet-list li.has-flag .cs { flex-basis: 100%; } }
