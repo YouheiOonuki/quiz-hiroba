@@ -2,8 +2,8 @@
 
 公開 URL: **https://yorozu-craft.com/quiz-hiroba/**
 
-元素記号・歴史年号・百人一首の決まり字・世界の首都を 4 択と入力（一問一答）で覚える無料クイズ。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。百人一首の読み上げ（`/hyakunin/`）も同じリポジトリに置く。
-yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）と `docs/30_百人一首と世界の首都.md`（K87、K120 の題材）。
+元素記号・歴史年号・百人一首の決まり字・世界の首都を 4 択と入力（一問一答）で覚える無料クイズ。高齢者向けの昭和クイズ（3 択・広告なし・回想法カード）と、1 台を 2〜4 人で使う早押しボタン（`/hayaoshi/`）もある。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。百人一首の読み上げ（`/hyakunin/`）も同じリポジトリに置く。
+yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）と `docs/30_百人一首と世界の首都.md`（K87、K120 の題材）、`docs/38_クイズ大会と昭和クイズ.md`（K96 早押しボタン・K108 昭和クイズ）。
 
 ## 題材
 
@@ -12,6 +12,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | `/quiz-hiroba/genso/` | 元素記号クイズ | 118 | IUPAC 周期表（2022-05-04 版）＋日本化学会「原子量表（2026）」 |
 | `/quiz-hiroba/nengo/` | 歴史年号クイズ（日本の歴史） | 101 | 出来事の文は自作。年は 1 件ずつコトバンクの項目と突き合わせ |
 | `/quiz-hiroba/kimariji/` | 百人一首 決まり字クイズ | 100 | 歌は `hyakunin-data.js`（全日本かるた協会・ウィキソース。先頭の説明）。決まり字は計算 |
+| `/quiz-hiroba/showa/` | 昭和クイズ（3 択・大きな字・回想法カード。**広告なし D118**。使い方も `showa/guide.html` で広告なし） | 75 | 出来事: 国立公文書館「公文書にみる日本のあゆみ」ほか／値段: 総務省統計局 小売物価統計調査（東京都区部、昭和25年〜平成22年の表）／歌: 日本作曲家協会 日本レコード大賞 歴代大賞一覧。歌詞は載せない。`topics/showa.js` の先頭 |
 | `/quiz-hiroba/shuto/` | 世界の首都クイズ | 191 | 外務省「国・地域」と各国の基礎データ（インターネットアーカイブの保存で確認）。`topics/shuto.js` の先頭に出題しない国と理由 |
 
 ## 百人一首 読み上げ（`/quiz-hiroba/hyakunin/`。題材ではなく手で書いたページ）
@@ -23,6 +24,13 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 - 画面を消さない: Screen Wake Lock API（使えない端末ではその旨を出す）
 - 保存: `quiz-hiroba_yomiage`（設定と読みかけの続き）。記録のバックアップ（D31）の対象外（設定と続きだけで、消えても困らないため）
 - 広告なし（AdSense の meta だけ）。広告は `hyakunin/guide.html` だけ（D122 と同じ）
+
+## 早押しボタン（`/quiz-hiroba/hayaoshi/`。手で書いたページ）
+
+- 判定と得点は `hayaoshi.js`（純粋関数、`tests/hayaoshi.test.js`）: 受付中に最初に押した 1 人だけ受け付けてロック、正解 +1、不正解はお手つき（その問題では押せない。-1 点は設定）、1 つもどす、受付をもどす
+- 画面・タッチ・効果音は `hayaoshi-ui.js`。押し始め（`pointerdown`）だけを見る。指ごとに別のイベントなので、同じ瞬間の 2 本の指は先に届いたほうが勝つ。キーボードは Q・P・Z・M（1〜4 ばん）、Enter 正解・X 不正解・N つぎ・D ドラムロール・U もどす
+- 効果音は Web Audio で合成（音のファイルは持たない）。問題はクイズ広場の題材から `calc.js` の種で並べ、「読み上げ役の画面」に同じ順で答えつき一覧（印刷可）
+- 保存: `quiz-hiroba_hayaoshi`（人数・名前・得点・問題の種）。バックアップ（D31）の対象外。広告: ボタンの画面は meta だけ、`hayaoshi/guide.html` だけ広告（D122）
 
 ## 機能（どの題材も同じエンジン）
 
@@ -37,7 +45,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 
 ## 題材を足す
 
-1. `topics/<題材>.js` を書く（`topics/genso.js` が見本。別のデータファイルを使うときは `page.deps` に並べる。例: `topics/kimariji.js` の `hyakunin-data.js`）。持つもの: `id`・`page`（title・h1・lead 40 字まで・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
+1. `topics/<題材>.js` を書く（3 択にするなら `choices: 3`、選択肢を同じ組からだけ出すなら向きに `group`、高齢者向けは `page.big`・`page.noAds`・`page.guide`・`page.cards`。見本は `topics/showa.js`。`topics/genso.js` が見本。別のデータファイルを使うときは `page.deps` に並べる。例: `topics/kimariji.js` の `hyakunin-data.js`）。持つもの: `id`・`page`（title・h1・lead 40 字まで・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
 2. `constants.js` に出典（source・url・checked）を足す
 3. `node tools/build-pages.mjs` を実行する（`<題材>/index.html`、入口の一覧、`print/` の一覧、`sitemap.xml`、`sw.js` の最初に取っておくファイルを作り直す）。`tests/data.test.js` がずれを見張る
 4. `tests/data.test.js` にデータの確かめ（件数・重なり・見本の値）を足す。`node --test tests/*.test.js`
@@ -53,6 +61,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | 時期 | 確認すること | 直す場所 |
 |------|------------|---------|
 | 年 1 回（4 月の原子量表の改訂のころ） | 新しい元素の名前が決まっていないか（IUPAC・日本化学会） | `topics/genso.js`、`constants.js` の checked |
+| 事実は変わらない（昭和クイズ） | まちがいの報告があったときだけ | `topics/showa.js`、`constants.js` の showa |
 | 年 1 回 | 外務省の「国・地域」と基礎データで、国の増減・首都の変更・遷都がないか（インドネシアの首都移転など） | `topics/shuto.js`、`constants.js` の shuto |
 | 題材を足したとき | 上の「題材を足す」 | — |
 

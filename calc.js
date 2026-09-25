@@ -95,13 +95,20 @@
   }
 
   /**
-   * 4 択の選択肢: 正解 1 つ＋まぎらわしいもの 3 つ
-   * まぎらわしさ: 題材の並び（原子番号・年）が近いものから 2 つ、残りは範囲の中からばらばらに 1 つ。
-   * 範囲が 4 未満なら全体から選ぶ。同じ文字の選択肢は出さない
+   * 4 択（題材が choices: 3 なら 3 択）の選択肢: 正解 1 つ＋まぎらわしいもの
+   * まぎらわしさ: 題材の並び（原子番号・年）が近いものから 2 つ、残りは範囲の中からばらばらに。
+   * 範囲が足りなければ全体から選ぶ。同じ文字の選択肢は出さない。
+   * 向きに group があれば、同じ group の問題からだけ選ぶ（昭和クイズ: はがきの値段の選択肢は、ほかの年のはがきの値段だけ）
    */
+  function choiceCount(topic) { return topic.choices === 3 ? 3 : 4; }
   function makeChoices(topic, kind, item, candidates, rand, n) {
     n = n || 4;
     var src = candidates.length >= n ? candidates : topic.items;
+    if (kind.group) {
+      var g = kind.group(item);
+      var same = function (list) { return list.filter(function (x) { return kind.group(x) === g; }); };
+      src = same(candidates).length >= n ? same(candidates) : same(topic.items);
+    }
     var right = kind.choice(item);
     var seen = {}; seen[right] = true;
     var others = src.filter(function (x) {
@@ -121,7 +128,7 @@
   /**
    * 1 回分の問題を作る
    * opt = { kind: 'sym', mode: 'choice' | 'typing', filters: {...}, count: 10（0 ならすべて）, seed, only: [id...]（にがてだけ） }
-   * 問題: { id, choices?: [文字列 4 つ] }
+   * 問題: { id, choices?: [文字列 4 つ（3 択の題材は 3 つ）] }
    * 同じ opt（seed を含む）なら同じ問題と選択肢になる（共有リンクの「同じ問題でちょうせん」）
    */
   function makeRound(topic, opt) {
@@ -137,7 +144,7 @@
     var mode = opt.mode === 'typing' && kind.typing !== false ? 'typing' : 'choice';
     return picked.map(function (it) {
       var q = { id: it.id };
-      if (mode === 'choice') q.choices = makeChoices(topic, kind, it, candidates, rand, 4);
+      if (mode === 'choice') q.choices = makeChoices(topic, kind, it, candidates, rand, choiceCount(topic));
       return q;
     });
   }
@@ -321,7 +328,7 @@
   var api = {
     rng: rng, shuffle: shuffle, newSeed: newSeed,
     toHira: toHira, normalizeText: normalizeText, normalizeYear: normalizeYear, checkTyped: checkTyped,
-    normalizeFilters: normalizeFilters, pool: pool, kindOf: kindOf, makeChoices: makeChoices, makeRound: makeRound, itemById: itemById,
+    normalizeFilters: normalizeFilters, pool: pool, kindOf: kindOf, choiceCount: choiceCount, makeChoices: makeChoices, makeRound: makeRound, itemById: itemById,
     bestKey: bestKey, recordAnswer: recordAnswer, recordBest: recordBest, weakIds: weakIds, normalizeRecords: normalizeRecords,
     toShareHash: toShareHash, fromShareHash: fromShareHash, challengeToLink: challengeToLink, formatMs: formatMs,
     backupFileName: backupFileName, buildBackup: buildBackup, parseBackup: parseBackup,

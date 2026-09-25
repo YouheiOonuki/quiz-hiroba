@@ -57,6 +57,22 @@
       ],
       checked: '2026-09-25',   // この日に 200 の国・地域の基礎データ（保存されたもの）を読み、首都の欄を取り出した
     },
+    showa: {
+      value: '昭和の出来事 15 件の年、物の値段 10 品目×3 年、日本レコード大賞 30 曲',
+      label: '昭和クイズ',
+      source: '国立公文書館「公文書にみる日本のあゆみ」・日本銀行「一万円券」・東京タワー「会社概要」・鉄道・運輸機構「青函トンネル」（出来事）、総務省統計局「小売物価統計調査（動向編）」主要品目の東京都区部小売価格 昭和25年〜平成22年（物の値段。東京23区の年平均）、日本作曲家協会「日本レコード大賞 歴代大賞一覧」（歌の題名・歌った人・年）',
+      url: 'https://www.stat.go.jp/data/kouri/doukou/3.html',
+      urls: [
+        'https://www.archives.go.jp/ayumi/table.html',
+        'https://www.boj.or.jp/note_tfjgs/note/valid/past_issue/pbn_10000.htm',
+        'https://www.tokyotower.co.jp/company/',
+        'https://www.jrtt.go.jp/construction/outline/seikan-tunnel.html',
+        'https://www.stat.go.jp/data/kouri/doukou/3.html',
+        'https://www.stat.go.jp/data/kouri/doukou/zuhyou/kubu_chouki.xls',
+        'https://www.jacompa.or.jp/record/',
+      ],
+      checked: '2026-09-25',   // この日に各ページと表を開き、75 問の年・値段・題名を 1 件ずつ突き合わせた（値段は表から機械で取り出した）
+    },
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = CONSTANTS;
