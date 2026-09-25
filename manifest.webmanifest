@@ -1,8 +1,8 @@
 {
-  "id": "/__REPO__/",
-  "name": "__TITLE__｜yorozu-craft",
-  "short_name": "__TITLE__",
-  "description": "__DESCRIPTION__",
+  "id": "/quiz-hiroba/",
+  "name": "クイズ広場｜yorozu-craft",
+  "short_name": "クイズ広場",
+  "description": "元素記号・歴史年号などを4択と入力で覚える無料クイズ。印刷もできる。",
   "lang": "ja",
   "start_url": "./",
   "scope": "./",

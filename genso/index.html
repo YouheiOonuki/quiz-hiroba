@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- このファイルは tools/build-pages.mjs が tools/page-template.html と topics/genso.js から作る。直接直さない -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素記号クイズ 118｜4択・入力・一覧・印刷｜クイズ広場</title>
+  <meta name="description" content="元素記号クイズ。1〜20番・36番まで・118すべてを、4択か入力（タイピング）の一問一答で。一覧で覚える・問題と答えを印刷もできる。登録不要・無料。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/genso/">
+
+  <meta property="og:title" content="元素記号クイズ 118｜4択・入力・一覧・印刷｜クイズ広場">
+  <meta property="og:description" content="元素記号クイズ。1〜20番・36番まで・118すべてを、4択か入力（タイピング）の一問一答で。一覧で覚える・問題と答えを印刷もできる。登録不要・無料。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/genso/">
+  <meta property="og:site_name" content="yorozu-craft">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#8b4513" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1814" media="(prefers-color-scheme: dark)">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "元素記号クイズ（118）",
+    "description": "元素記号クイズ。1〜20番・36番まで・118すべてを、4択か入力（タイピング）の一問一答で。一覧で覚える・問題と答えを印刷もできる。登録不要・無料。",
+    "url": "https://yorozu-craft.com/quiz-hiroba/genso/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "クイズ広場",
+      "url": "https://yorozu-craft.com/quiz-hiroba/"
+    }
+  }
+  </script>
+
+  <!-- Google AdSense: 遊ぶ画面なので meta（サイト所有確認）だけ。広告は使い方ページ（guide.html）に出す（todofuken-quiz の D18 と同じ。企画書 27 の D122） -->
+  <meta name="google-adsense-account" content="ca-pub-5375267956079717">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../style.css">
+  <!-- 選択肢と絞り込みは quiz.js で描くので、描き終わるまで本体を見えなくしてレイアウトのずれ（CLS）を防ぐ。3 秒たったら必ず見せる -->
+  <script>document.documentElement.classList.add('js-loading');setTimeout(function(){document.documentElement.classList.remove('js-loading');},3000);</script>
+</head>
+<body data-topic="genso">
+
+  <header class="app-header">
+    <p class="crumb"><a href="../">クイズ広場</a></p>
+    <h1>元素記号クイズ（118）</h1>
+    <p class="subtitle">元素記号と名前を4択か入力で。1〜20番から118番まで。</p>
+  </header>
+
+  <main class="app-main quiz" id="app">
+
+    <!-- メニュー -->
+    <section id="scr-menu" class="screen" aria-labelledby="h-menu">
+      <h2 id="h-menu" class="visually-hidden">出し方をえらぶ</h2>
+
+      <div id="challenge" class="card challenge" hidden>
+        <p><strong>ちょうせんが届きました</strong></p>
+        <p id="challenge-text" class="small"></p>
+        <p><button type="button" class="btn btn-big" id="challenge-start">同じ問題でちょうせん</button></p>
+      </div>
+
+      <fieldset class="card req menu">
+        <legend>出し方</legend>
+        <div class="opt-row"><span class="opt-label">答え方</span><div class="seg" id="opt-mode"></div></div>
+        <p class="small" id="mode-note" hidden>この向きは4択だけです。</p>
+        <div class="opt-row"><span class="opt-label">向き</span><div class="seg" id="opt-kind"></div></div>
+        <div id="opt-filters"></div>
+        <div class="opt-row"><span class="opt-label">問題数</span><div class="seg" id="opt-count"></div></div>
+        <label class="weak-row"><input type="checkbox" id="opt-weak"> にがてだけ出す<span id="weak-count"></span></label>
+      </fieldset>
+
+      <p class="start-row"><button type="button" class="btn btn-big" id="start">スタート</button></p>
+      <p id="best-line" class="small best-line" aria-live="polite"></p>
+      <div class="btn-row sub-row">
+        <button type="button" class="btn btn-sub" id="open-list">一覧で覚える</button>
+        <button type="button" class="btn btn-sub" id="open-print">問題と答えを印刷</button>
+      </div>
+
+      <details class="card opt" id="rec-box">
+        <summary>記録: <span class="opt-state" id="rec-state"></span></summary>
+        <p class="small">にがて（最後にまちがえた問題。正解すると外れる）</p>
+        <ul id="weak-list" class="weak-list"></ul>
+        <p id="weak-empty" class="small">まだありません。</p>
+        <p class="small">記録はこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_records</code>）にだけ保存され、外部には送信されません。書き出し・読み込みは<a href="../#file-box">クイズ広場のトップ</a>から。</p>
+        <div class="btn-row"><button type="button" class="btn btn-sub" id="rec-reset">この題材の記録を消す</button></div>
+      </details>
+
+      <details class="card opt" id="src-box">
+        <summary>出典と確認日</summary>
+        <p class="small" id="src-text"></p>
+        <ul class="small src-links" id="src-links"></ul>
+        <p class="small">日本語名は日本化学会の原子量表の表記です。漢字の名前は、ひらがなのよみでも正解になります。</p>
+      </details>
+
+      <p class="small"><a href="../guide.html">使い方・入力の決まり・よくある質問</a></p>
+    </section>
+
+    <!-- 出題 -->
+    <section id="scr-play" class="screen" hidden aria-labelledby="question">
+      <div class="play-bar">
+        <span id="progress" class="progress"></span>
+        <span id="score" class="score"></span>
+        <button type="button" class="btn-ghost" id="quit">やめる</button>
+      </div>
+      <p id="question" class="question" aria-live="polite"></p>
+      <div id="choices" class="choices"></div>
+      <form id="type-form" class="type-form" autocomplete="off" hidden>
+        <label for="answer" class="visually-hidden">答え</label>
+        <input type="text" id="answer" class="answer" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+        <p id="answer-hint" class="small"></p>
+        <div class="btn-row">
+          <button type="submit" class="btn" id="answer-btn">答える</button>
+          <button type="button" class="btn btn-sub" id="skip-btn">わからない</button>
+        </div>
+      </form>
+      <div id="feedback" class="feedback" hidden aria-live="assertive">
+        <p id="fb-title" class="fb-title"></p>
+        <p id="fb-near" class="fb-near" hidden>おしい。大文字・小文字がちがいます。</p>
+        <p id="fb-body" class="fb-body"></p>
+        <p id="fb-link" class="small" hidden><a id="fb-link-a" href="#" target="_blank" rel="noopener"></a></p>
+        <button type="button" class="btn btn-big" id="next">つぎへ</button>
+      </div>
+    </section>
+
+    <!-- 結果 -->
+    <section id="scr-result" class="screen" hidden aria-labelledby="r-score">
+      <div class="card result">
+        <h2 id="r-score" class="result-title"></h2>
+        <p id="r-time" class="small"></p>
+        <p id="r-msg" class="small"></p>
+        <div id="r-miss" class="result-miss"></div>
+      </div>
+      <div class="btn-col">
+        <button type="button" class="btn btn-big" id="again">もう一度（べつの問題）</button>
+        <button type="button" class="btn btn-big btn-sub" id="r-weak">まちがえた問題だけ</button>
+        <button type="button" class="btn btn-big btn-sub" id="to-menu">メニューへ</button>
+      </div>
+      <div class="card" id="share-box">
+        <button type="button" class="btn" id="share">同じ問題でちょうせん（リンクをコピー）</button>
+        <p id="share-msg" class="small" aria-live="polite"></p>
+        <label for="share-url" class="visually-hidden">ちょうせんのリンク</label>
+        <input type="text" id="share-url" class="share-url" readonly>
+        <p class="small">リンクには出し方・問題の番号・あなたの正解数だけが入ります（名前や答えは入りません）。</p>
+      </div>
+    </section>
+
+    <!-- 一覧 -->
+    <section id="scr-list" class="screen" hidden aria-labelledby="list-title">
+      <div class="card">
+        <h2 id="list-title"></h2>
+        <div class="seg" id="list-toggles"></div>
+        <p class="small">かくした欄は「？」を押すと見えます。</p>
+        <div class="table-wrap"><table id="list-table" class="list-table"></table></div>
+      </div>
+      <div class="btn-col"><button type="button" class="btn btn-big btn-sub" id="list-back">メニューへ</button></div>
+    </section>
+
+    <!-- 印刷 -->
+    <section id="scr-print" class="screen" hidden aria-labelledby="print-h">
+      <div class="card no-print">
+        <h2 id="print-h">問題と答えを印刷</h2>
+        <p id="print-desc" class="small"></p>
+        <label class="weak-row"><input type="checkbox" id="print-choices"> 4択の選択肢をつける</label>
+        <div class="btn-row">
+          <button type="button" class="btn" id="print-go">印刷する・PDF に保存</button>
+          <button type="button" class="btn btn-sub" id="print-new">べつの問題にする</button>
+          <button type="button" class="btn btn-sub" id="print-back">メニューへ</button>
+        </div>
+        <p class="small">問題の紙と答えの紙が別のページに出ます。出し方はメニューの設定のまま。<a href="../../print-help.html">スマホで印刷する</a></p>
+      </div>
+      <div id="sheets" class="sheets"></div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="../../">yorozu-craft トップ</a></li>
+        <li><a href="../">クイズ広場</a></li>
+        <li><a href="./" aria-current="page">元素記号クイズ（118）</a></li>
+        <li><a href="../guide.html">使い方・よくある質問</a></li>
+        <li><a href="../../about.html">運営者情報</a></li>
+        <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 yorozu-craft. All rights reserved.</p>
+  </footer>
+
+  <script src="../constants.js"></script>
+  <script src="../calc.js"></script>
+  <script src="../topics/genso.js"></script>
+  <script src="../quiz.js"></script>
+  <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

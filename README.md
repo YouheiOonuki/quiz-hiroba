@@ -1,95 +1,69 @@
-# __TITLE__
+# クイズ広場
 
-公開 URL: **https://yorozu-craft.com/__REPO__/**
+公開 URL: **https://yorozu-craft.com/quiz-hiroba/**
 
-__DESCRIPTION__
-yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。
+元素記号・歴史年号などを 4 択と入力（一問一答）で覚える無料クイズ。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。
+yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）。
 
-<!-- TEMPLATE-BEGIN -->
-## テンプレートの使い方（`tools/init.mjs` を実行すると、この節は消えます）
+## 題材
 
-yorozu-craft の新しいツールの雛形です。サイト共通の決まり（youheioonuki.github.io の README「ツールを追加するとき」）のうち、ファイルで守れるものは最初から入れてあります。
+| URL | 題材 | 件数 | データの出典 |
+|-----|------|------|-------------|
+| `/quiz-hiroba/genso/` | 元素記号クイズ | 118 | IUPAC 周期表（2022-05-04 版）＋日本化学会「原子量表（2026）」 |
+| `/quiz-hiroba/nengo/` | 歴史年号クイズ（日本の歴史） | 101 | 出来事の文は自作。年は 1 件ずつコトバンクの項目と突き合わせ |
 
-1. GitHub で「Use this template」→ リポジトリ名は短いローマ字＋種類（例: `loan-sim`）。URL になる
-2. クローンして、初期化スクリプトを 1 回だけ実行する（Node 20 以上）
+## 機能（どの題材も同じエンジン）
 
-   ```sh
-   node tools/init.mjs loan-sim "住宅ローン 返済シミュレーター" "毎月の返済額と総返済額をすぐ計算。" --pwa
-   ```
+- 答え方: 4 択（選択肢は並びの近いものから 2 つ＋範囲からばらばらに 1 つ）／入力（一問一答）。4 択だけの向き（年 → 出来事）もある
+- 向き（題材ごと）・範囲や時代の絞り込み・問題数（10・20・すべて）・「にがてだけ出す」
+- 入力の答え合わせの決まり（`calc.js` の `checkTyped`。使い方ページにも同じ文）: 全角半角・空白・カタカナとひらがなの違いは無視／漢字は登録した表記とよみだけ／元素記号は大文字小文字を区別（大小だけ違えば「おしい」で不正解）／年は数字だけ
+- 一覧で覚える（欄をかくして「？」で見る）、問題と答えの 2 枚を印刷（選択肢つきも可。A4、クレジットは `print/` へ）
+- 記録: 問題ごとの正解・不正解と「最後にまちがえたもの＝にがて」、条件ごとの自己ベスト（正解数、同じなら時間）。キー `quiz-hiroba_records`・`quiz-hiroba_settings`。書き出し・読み込みは入口のページ
+- 共有リンク `#s=`（base64url の JSON: 題材・向き・答え方・絞り込み・問題数・種・送った人の正解数）。同じ問題・同じ選択肢の並びになる。受け取った側の設定は上書きしない
+- 広告: 入口・題材のページは AdSense の meta だけ（遊ぶ画面。todofuken-quiz と同じ）、使い方ページ（`guide.html`）だけ広告あり（企画書 27 の D122）
+- オフライン対応（`sw.js`、キャッシュ名 `quiz-hiroba-v1`）
 
-   - `__REPO__`・`__TITLE__`・`__DESCRIPTION__`・日付を置き換える
-   - `--pwa` を付けないと、オフライン対応の部分（`sw.js`・`manifest.webmanifest`・`PWA-BEGIN`〜`PWA-END`）を消す
-   - README のこの節と `tools/init.mjs` 自身を消す
-3. `node --test tests/*.test.js` が通ることを確かめてからコミット
-4. 残りは youheioonuki.github.io の README「ツールを追加するとき」の手順どおり（Pages の公開と Enforce HTTPS、トップの一覧・robots.txt・URL 表への追加など）
+## 題材を足す
 
-最初から入っているもの:
+1. `topics/<題材>.js` を書く（`topics/genso.js` が見本）。持つもの: `id`・`page`（title・h1・lead 40 字まで・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
+2. `constants.js` に出典（source・url・checked）を足す
+3. `node tools/build-pages.mjs` を実行する（`<題材>/index.html`、入口の一覧、`print/` の一覧、`sitemap.xml`、`sw.js` の最初に取っておくファイルを作り直す）。`tests/data.test.js` がずれを見張る
+4. `tests/data.test.js` にデータの確かめ（件数・重なり・見本の値）を足す。`node --test tests/*.test.js`
+5. 画面や読み込むファイルの構成を変えたら `sw.js` の `CACHE_NAME` を上げる
 
-| 決まり | 入っている場所 |
-|-------|---------------|
-| canonical・OGP・AdSense・Cloudflare ビーコン | `index.html`・`guide.html` の `<head>` と `</body>` 直前 |
-| 共通ページへの相対リンク（`../about.html`・`../privacy-policy.html`） | 各ページのフッター |
-| ツール配下の 404 | `404.html`（youheioonuki.github.io のものと同じ） |
-| 保存キーの接頭辞 `<リポジトリ名>_`・try/catch | `main.js` の `store` |
-| 共有 URL は `#s=` | `main.js` の `toShareHash` / `fromShareHash` |
-| 保存内容を JSON ファイルに書き出し・読み込み（`{tool, version, exportedAt, data}`。読み込み時は `tool` を確かめ、正規化してから確認のうえ上書き） | `calc.js` の `backupFileName` / `buildBackup` / `parseBackup`、`main.js` の書き出し・読み込み、`index.html` のボタン、`tests/backup.test.js` |
-| SW のキャッシュ名の接頭辞・自分のパスだけ扱う・`./sw.js` で登録 | `sw.js`・`main.js` |
-| manifest の `id` は `/<リポジトリ名>/` | `manifest.webmanifest` |
-| 使い方ページは `guide.html`（注意・データの扱い・根拠と確認日・更新履歴の節つき） | `guide.html` |
-| 要望・不具合の報告フォーム（全ツール共通の Google フォーム。リポジトリ名が入った状態で開く） | `guide.html` の「ご利用上の注意・データの扱い」 |
-| 時点のある値は値・出典・確認日をセットで 1 か所に | `constants.js`（テストで出典と確認日の書き忘れを検出） |
-| 計算は画面から切り離した純粋関数＋テスト | `calc.js`・`tests/`・`.github/workflows/test.yml` |
-| 端末のフォント・ダークモード | `style.css` |
-| 画面の骨組み「入力 → 結果」（必須の入力 1 つの `fieldset` → 結果 → くわしく入れる `details` → 保存・書き出し → 使い方へのリンク） | `index.html`（各節にコメント） |
-| 上端の固定バー・`summary` の状態表示・PC の 2 カラム・印刷で広告と固定バーを消す | `screen.js`・`style.css` の「画面の骨組み」・`main.js` の `bar` |
-| MIT ライセンス | `LICENSE` |
+## データの作り方と確かめ方（2026-09-25）
 
-画面の部品の使い方（yorozu-plans の `docs/SCREEN.md`。youheioonuki.github.io の README「ツールを追加するとき」25）:
-
-- **必須の入力と結果**: `index.html` の `fieldset.card.req`（見出しは `legend`）の直後に `section.result-card`。大きな数字は `.result-big`、内訳は `details.rels`。入力と結果の間に段落や見出しを置かない
-- **くわしく入れる**: 1 グループ 1 つの `<details class="card opt" id="opt-…">`。`summary` の中に `<span class="opt-state">` を置き、計算のたびに `YorozuScreen.detailsSummary({ 'opt-…': '今の状態' })`。道具で任意の項目が無ければ `.opts` ごと消す
-- **固定バー**: `YorozuScreen.fixedBar({ bar, watch, jump, text })` の戻り値の `set('数字 1 つ')` を計算のたびに呼ぶ（空文字なら出さない）。結果が画面内にあれば出ない。印刷物では `watch` を印刷ボタンの行にし、バーの中身を `<button>`、`onClick` で印刷を呼ぶ
-- **PC の 2 カラム**（制度の計算機だけ）: `<main class="app-main layout-2col">` と、固定バーに `fixbar-narrow` を足す
-- **印刷**: `style.css` の `@media print` で固定バー・`.no-print`・広告（`ins.adsbygoogle` など）を消し、折りたたみの中は出す。印刷物のツールは用紙の CSS をこの下に足す
-- 公開前に yorozu-plans の `tools/ui/measure_fold.cjs`（位置）と `tools/writing/measure.py`（字数）で「要修正」が無いことを確かめる
-
-差し替えが必要なもの: `favicon.svg`・`apple-touch-icon.png`（180×180）・`og-image.png`（1200×630）は仮の絵なので、ツールに合わせて作り直す。
-<!-- TEMPLATE-END -->
-
-## 機能
-
-- （できることを箇条書きで）
-- 入力内容はこの端末のブラウザにだけ保存し、外部には送信しない
-
-## 計算の仕様・根拠
-
-（計算式、使っている値と出典。値は `constants.js` にまとめ、画面の「根拠と確認日」にも出す）
+- 元素: IUPAC の PDF（2018-12-01 版はテキストを取り出せた。2022-05-04 版は文字が図形なので画像で目視）から原子番号・記号・英語名 118 件、日本化学会「原子量表（2026）」の PDF から日本語名 118 件を取り出し、記号と英語名が 2 つの表で一致することを確かめた。漢字を含む 20 件のよみはコトバンクで確かめた
+- 年号: 出来事ごとに見出し語を決め、コトバンクのそのページに「その年」が書かれていることを 1 件ずつ確かめた（見出し語は `topics/nengo.js` の各行の最後）。説が分かれる年（鉄砲の伝来）と『日本書紀』による年（十七条の憲法）は文に書いた。語呂合わせは載せない
 
 ## 保守
 
 | 時期 | 確認すること | 直す場所 |
 |------|------------|---------|
-| （例: 毎年4月ごろ） | （例: 料率の改定） | `constants.js`、`guide.html` の最終確認日 |
+| 年 1 回（4 月の原子量表の改訂のころ） | 新しい元素の名前が決まっていないか（IUPAC・日本化学会） | `topics/genso.js`、`constants.js` の checked |
+| 題材を足したとき | 上の「題材を足す」 | — |
 
-値や計算を直したら、`guide.html` の「更新履歴」に日付と内容を 1 行足す。
+年号・元素名は時が経っても変わらない。直したら `guide.html` の「更新履歴」に 1 行足す。
 
 ## ファイル
 
 | ファイル | 役割 |
 |---------|------|
-| `index.html` | ツール本体 |
-| `guide.html` | 使い方・根拠と確認日・よくある質問・ご利用上の注意・更新履歴 |
-| `calc.js` | 計算ロジック（画面から切り離した純粋関数） |
-| `constants.js` | 時点のある値（値・出典・確認日） |
-| `main.js` | 画面の制御・保存・共有リンク |
-| `screen.js` | 画面の部品（上端の固定バー、`details` の `summary` の状態表示） |
-| `style.css` | 見た目（和紙風の配色、ダークモード対応） |
-| `sw.js` / `manifest.webmanifest` | オフライン対応（使う場合のみ） |
-| `404.html` | ツール配下の存在しない URL で出るページ（サイト共通のもの） |
-| `favicon.svg` / `apple-touch-icon.png` / `og-image.png` | アイコン / ホーム画面用アイコン / SNS 共有用画像（1200×630） |
-| `sitemap.xml` | サイトマップ（robots.txt はドメイン直下で管理） |
-| `tests/*.test.js` | テスト（`node --test tests/*.test.js`。`.github/workflows/test.yml` で push・PR のたびに自動実行） |
+| `index.html` / `hub.js` | 入口（題材の一覧・記録の数・記録の書き出しと読み込み） |
+| `genso/index.html`・`nengo/index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
+| `tools/page-template.html` / `tools/build-pages.mjs` | 題材のページのひな形と、それを作るスクリプト |
+| `topics/*.js` | 題材のデータ |
+| `calc.js` | 出題エンジン（純粋関数）: 出題・4 択・答え合わせ・記録・共有リンク・バックアップ |
+| `quiz.js` | 題材のページの画面（メニュー・出題・結果・一覧・印刷） |
+| `constants.js` | データの出典と確認日 |
+| `guide.html` | 使い方・入力の決まり・出典・よくある質問・注意・更新履歴 |
+| `print/index.html` | 印刷物のクレジットの着地ページ（noindex、sitemap に載せない） |
+| `style.css` | 見た目（和紙風の配色、ダークモード、印刷） |
+| `sw.js` / `manifest.webmanifest` | オフライン対応 |
+| `404.html` | ツール配下の 404 |
+| `favicon.svg` / `apple-touch-icon.png` / `og-image.png` | アイコン / ホーム画面用 / SNS 共有用（1200×630） |
+| `tests/*.test.js` | テスト（`node --test tests/*.test.js`） |
 
 ## ライセンス
 
-MIT License（`LICENSE`）。
+MIT License（`LICENSE`）。元素名・年号は事実のデータで、出典は上のとおり。出来事の文は運営者が書いたもの。
