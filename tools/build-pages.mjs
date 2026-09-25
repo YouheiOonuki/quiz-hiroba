@@ -9,6 +9,8 @@
 //   print/index.html の TOPICS の間   印刷物のクレジットの着地ページの一覧
 //   sitemap.xml                  入口・使い方・各題材
 //   sw.js の PRECACHE の間        オフライン用に最初に取っておくファイル
+// 題材のほかに、手で書いたページ（EXTRA_PAGES。百人一首の読み上げ /hyakunin/）も入口の一覧・sitemap・sw.js に入れる。
+// 題材が別のデータファイルを使うときは page.deps に並べる（例: 決まり字クイズの hyakunin-data.js）。題材のページ・入口・sw.js が読み込む
 // 題材を足すとき: topics/<題材>.js を書いて、これを実行するだけ（README「題材を足す」）
 // 依存パッケージなし（Node 20 以上）
 import fs from 'node:fs';
@@ -20,6 +22,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
 const CHECK = process.argv.includes('--check');
 const BASE = 'https://yorozu-craft.com/quiz-hiroba/';
+
+// 手で書いたページ（題材ではないもの）。入口のカード・sitemap・sw.js の最初に取っておくファイルに入る
+export const EXTRA_PAGES = [
+  { path: 'hyakunin/', icon: '🎴', h1: '百人一首 読み上げ', hub: '100首を端末の声で。ランダム・番号順・序歌・間隔・残り枚数', order: 2.5,
+    files: ['hyakunin-data.js', 'yomiage.js', 'yomiage-ui.js', 'hyakunin/guide.html'] },
+];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -62,13 +70,19 @@ export function build() {
       .replaceAll('{{H1}}', esc(t.page.h1))
       .replaceAll('{{LEAD}}', esc(t.page.lead))
       .replaceAll('{{NOTE}}', esc(t.page.note || ''))
+      .replaceAll('{{DEPS}}', (t.page.deps || []).map((d) => `<script src="../${d}"></script>\n  `).join(''))
       .replaceAll('{{JSONLD}}', JSON.stringify(ld, null, 2).replace(/</g, '\\u003c').split('\n').join('\n  '));
   }
 
   let hub = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  const cards = topics.map((t) => `      <li class="card topic"><a href="./${t.id}/"><span class="topic-icon" aria-hidden="true">${esc(t.page.icon)}</span><span class="topic-name">${esc(t.page.h1)}</span><span class="topic-desc">${esc(t.page.hub)}</span><span class="topic-rec" data-topic="${t.id}"></span></a></li>`).join('\n');
+  const entries = [
+    ...topics.map((t) => ({ order: t.page.order, html: `      <li class="card topic"><a href="./${t.id}/"><span class="topic-icon" aria-hidden="true">${esc(t.page.icon)}</span><span class="topic-name">${esc(t.page.h1)}</span><span class="topic-desc">${esc(t.page.hub)}</span><span class="topic-rec" data-topic="${t.id}"></span></a></li>` })),
+    ...EXTRA_PAGES.map((x) => ({ order: x.order, html: `      <li class="card topic"><a href="./${x.path}"><span class="topic-icon" aria-hidden="true">${esc(x.icon)}</span><span class="topic-name">${esc(x.h1)}</span><span class="topic-desc">${esc(x.hub)}</span></a></li>` })),
+  ].sort((a, b) => a.order - b.order);
+  const cards = entries.map((e) => e.html).join('\n');
   hub = hub.replace(/(<!-- TOPICS-BEGIN -->\n)[\s\S]*?(\s*<!-- TOPICS-END -->)/, `$1    <ul class="topics">\n${cards}\n    </ul>$2`);
-  const scripts = topics.map((t) => `  <script src="./topics/${t.id}.js"></script>`).join('\n');
+  const deps = [...new Set(topics.flatMap((t) => t.page.deps || []))];
+  const scripts = [...deps.map((d) => `  <script src="./${d}"></script>`), ...topics.map((t) => `  <script src="./topics/${t.id}.js"></script>`)].join('\n');
   hub = hub.replace(/(<!-- TOPIC-SCRIPTS-BEGIN -->\n)[\s\S]*?([ \t]*<!-- TOPIC-SCRIPTS-END -->)/, `$1${scripts}\n$2`);
   out['index.html'] = hub;
 
@@ -79,14 +93,16 @@ export function build() {
   out['print/index.html'] = landing;
 
   const lm = lastmod();
-  const urls = [['', '1.0'], ...topics.map((t) => [t.id + '/', '0.9']), ['guide.html', '0.6']];
+  const urls = [['', '1.0'], ...topics.map((t) => [t.id + '/', '0.9']), ...EXTRA_PAGES.flatMap((x) => [[x.path, '0.9'], ...x.files.filter((f) => f.endsWith('.html')).map((f) => [f, '0.6'])]), ['guide.html', '0.6']];
   out['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map(([u, p]) => `  <url>\n    <loc>${BASE}${u}</loc>\n    <lastmod>${lm}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p}</priority>\n  </url>\n`).join('') +
     '</urlset>\n';
 
   let sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   const pre = ['./', './index.html', './guide.html', './style.css', './constants.js', './calc.js', './quiz.js', './hub.js',
+    ...[...new Set(topics.flatMap((t) => t.page.deps || []))].map((d) => `./${d}`),
     ...topics.flatMap((t) => [`./${t.id}/`, `./topics/${t.id}.js`]),
+    ...EXTRA_PAGES.flatMap((x) => [`./${x.path}`, ...x.files.filter((f) => !topics.some((t) => (t.page.deps || []).includes(f))).map((f) => `./${f}`)]),
     './manifest.webmanifest', './favicon.svg', './apple-touch-icon.png'];
   sw = sw.replace(/(\/\/ PRECACHE-BEGIN[^\n]*\n)[\s\S]*?([ \t]*\/\/ PRECACHE-END)/, `$1${pre.map((u) => `  '${u}',\n`).join('')}$2`);
   out['sw.js'] = sw;

@@ -317,3 +317,23 @@ details > summary:focus-visible { outline: 2px solid var(--accent); outline-offs
   body.print-mode .sheet { border: none; box-shadow: none; padding: 0; margin: 0; }
   body.print-mode .sheet + .sheet { break-before: page; page-break-before: always; }
 }
+
+/* 百人一首 読み上げ（/hyakunin/）。歌は大きく、声が無い端末では読み手がこれを見て読む */
+.voice-line { text-align: center; }
+.voice-line.warn { color: var(--text); background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; padding: 0.5rem 0.7rem; }
+.voice-select { width: 100%; min-height: 44px; font: inherit; padding: 0.3rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); }
+.rate-range { width: 100%; min-height: 44px; accent-color: var(--accent); }
+.yomi-card { text-align: center; cursor: default; min-height: 11rem; }
+.yomi-label { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+.yomi-kami, .yomi-shimo { font-size: 1.55rem; line-height: 1.6; font-weight: 700; opacity: 0.55; transition: opacity 0.2s; }
+.yomi-kami.now, .yomi-shimo.now { opacity: 1; color: var(--accent); }
+.yomi-shimo.dim { visibility: hidden; }
+.yomi-kana { margin-top: 0.5rem; }
+.yomi-hidden { font-size: 1.1rem; color: var(--muted); padding: 2rem 0; }
+.yomi-status { text-align: center; min-height: 1.5em; font-weight: 600; margin: 0.2rem 0 0.8rem; }
+.yomi-sub { justify-content: center; margin: 0; }
+.yomi-page .play-bar .score { font-size: 0.88rem; }
+.yomi-page .play-bar .btn-ghost { white-space: nowrap; }
+.done-list { padding-left: 2.2rem; font-size: 0.85rem; }
+.done-list li { padding: 0.15rem 0; }
+@media (min-width: 600px) { .yomi-kami, .yomi-shimo { font-size: 2rem; } }

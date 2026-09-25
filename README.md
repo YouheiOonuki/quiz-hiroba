@@ -2,8 +2,8 @@
 
 公開 URL: **https://yorozu-craft.com/quiz-hiroba/**
 
-元素記号・歴史年号などを 4 択と入力（一問一答）で覚える無料クイズ。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。
-yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）。
+元素記号・歴史年号・百人一首の決まり字・世界の首都を 4 択と入力（一問一答）で覚える無料クイズ。一覧で覚える・問題と答えを印刷・同じ問題でちょうせんのリンクつき。百人一首の読み上げ（`/hyakunin/`）も同じリポジトリに置く。
+yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github.io の README](https://github.com/YouheiOonuki/youheioonuki.github.io) を参照）。企画は yorozu-plans の `docs/27_クイズ広場.md`（ROADMAP K120・K89・K90）と `docs/30_百人一首と世界の首都.md`（K87、K120 の題材）。
 
 ## 題材
 
@@ -11,6 +11,18 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 |-----|------|------|-------------|
 | `/quiz-hiroba/genso/` | 元素記号クイズ | 118 | IUPAC 周期表（2022-05-04 版）＋日本化学会「原子量表（2026）」 |
 | `/quiz-hiroba/nengo/` | 歴史年号クイズ（日本の歴史） | 101 | 出来事の文は自作。年は 1 件ずつコトバンクの項目と突き合わせ |
+| `/quiz-hiroba/kimariji/` | 百人一首 決まり字クイズ | 100 | 歌は `hyakunin-data.js`（全日本かるた協会・ウィキソース。先頭の説明）。決まり字は計算 |
+| `/quiz-hiroba/shuto/` | 世界の首都クイズ | 191 | 外務省「国・地域」と各国の基礎データ（インターネットアーカイブの保存で確認）。`topics/shuto.js` の先頭に出題しない国と理由 |
+
+## 百人一首 読み上げ（`/quiz-hiroba/hyakunin/`。題材ではなく手で書いたページ）
+
+- 段取り（どの句を読み、どこで何秒止まるか）は `yomiage.js`（純粋関数、`tests/hyakunin.test.js`）。画面・声・画面を消さない設定は `yomiage-ui.js`
+- 読み方: ちらし取り（上の句 → 1 秒 → 下の句（2 回も可）→ 間隔）／競技かるた式（上の句 → 取る時間 → 下の句 → 4 秒 → 次の上の句。4 秒は読手テキストの余韻 3.0 秒＋間合い 1.0 秒）。序歌は下の句を 2 回
+- 声は Web Speech API の日本語の声（`lang` が ja）。端末の中の声（`localService`）を先に選ぶ。日本語の声が無いときは歌と読み方を大きく出し、「次の札へ」で進める
+- 読み上げる文は `hyakunin-data.js` の読み（読手テキストのふりがなから作った現代の音）。句の区切りは読点にして渡す。`onend` が来ない端末のために、目安の 2 倍＋3 秒で次へ進む見張りがある
+- 画面を消さない: Screen Wake Lock API（使えない端末ではその旨を出す）
+- 保存: `quiz-hiroba_yomiage`（設定と読みかけの続き）。記録のバックアップ（D31）の対象外（設定と続きだけで、消えても困らないため）
+- 広告なし（AdSense の meta だけ）。広告は `hyakunin/guide.html` だけ（D122 と同じ）
 
 ## 機能（どの題材も同じエンジン）
 
@@ -25,7 +37,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 
 ## 題材を足す
 
-1. `topics/<題材>.js` を書く（`topics/genso.js` が見本）。持つもの: `id`・`page`（title・h1・lead 40 字まで・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
+1. `topics/<題材>.js` を書く（`topics/genso.js` が見本。別のデータファイルを使うときは `page.deps` に並べる。例: `topics/kimariji.js` の `hyakunin-data.js`）。持つもの: `id`・`page`（title・h1・lead 40 字まで・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
 2. `constants.js` に出典（source・url・checked）を足す
 3. `node tools/build-pages.mjs` を実行する（`<題材>/index.html`、入口の一覧、`print/` の一覧、`sitemap.xml`、`sw.js` の最初に取っておくファイルを作り直す）。`tests/data.test.js` がずれを見張る
 4. `tests/data.test.js` にデータの確かめ（件数・重なり・見本の値）を足す。`node --test tests/*.test.js`
@@ -41,6 +53,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | 時期 | 確認すること | 直す場所 |
 |------|------------|---------|
 | 年 1 回（4 月の原子量表の改訂のころ） | 新しい元素の名前が決まっていないか（IUPAC・日本化学会） | `topics/genso.js`、`constants.js` の checked |
+| 年 1 回 | 外務省の「国・地域」と基礎データで、国の増減・首都の変更・遷都がないか（インドネシアの首都移転など） | `topics/shuto.js`、`constants.js` の shuto |
 | 題材を足したとき | 上の「題材を足す」 | — |
 
 年号・元素名は時が経っても変わらない。直したら `guide.html` の「更新履歴」に 1 行足す。
@@ -50,7 +63,9 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | ファイル | 役割 |
 |---------|------|
 | `index.html` / `hub.js` | 入口（題材の一覧・記録の数・記録の書き出しと読み込み） |
-| `genso/index.html`・`nengo/index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
+| `genso/`・`nengo/`・`kimariji/`・`shuto/` の `index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
+| `hyakunin/index.html` / `yomiage.js` / `yomiage-ui.js` / `hyakunin/guide.html` | 百人一首 読み上げ（手で書いたページ。`tools/build-pages.mjs` の `EXTRA_PAGES` で入口・sitemap・sw.js に入る） |
+| `hyakunin-data.js` | 小倉百人一首 100 首と序歌（読み上げと決まり字クイズが使う） |
 | `tools/page-template.html` / `tools/build-pages.mjs` | 題材のページのひな形と、それを作るスクリプト |
 | `topics/*.js` | 題材のデータ |
 | `calc.js` | 出題エンジン（純粋関数）: 出題・4 択・答え合わせ・記録・共有リンク・バックアップ |

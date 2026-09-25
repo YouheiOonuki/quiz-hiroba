@@ -7,6 +7,8 @@ const { execFileSync } = require('node:child_process');
 const CONSTANTS = require('../constants.js');
 const genso = require('../topics/genso.js');
 const nengo = require('../topics/nengo.js');
+const kimariji = require('../topics/kimariji.js');
+const shuto = require('../topics/shuto.js');
 const ROOT = path.join(__dirname, '..');
 
 test('元素: 1〜118 番がそろい、記号と名前が重ならない', () => {
@@ -70,7 +72,7 @@ test('年号: 語呂合わせを載せていない（「語呂」「覚え方」
 });
 
 test('題材: どの題材も必要な部品を持つ', () => {
-  for (const t of [genso, nengo]) {
+  for (const t of [genso, nengo, kimariji, shuto]) {
     for (const k of ['id', 'page', 'order', 'label', 'items', 'kinds', 'filters', 'columns', 'explain', 'link', 'sourceKey', 'unit']) assert.ok(t[k] != null, t.id + ' の ' + k);
     for (const k of ['title', 'h1', 'lead', 'description', 'hub', 'icon', 'order']) assert.ok(t.page[k] != null, t.id + ' の page.' + k);
     assert.ok(t.page.lead.length <= 40, t.id + ' の冒頭は 40 字まで（WRITING 1 章）');
@@ -96,4 +98,35 @@ test('sw.js: キャッシュ名は quiz-hiroba- で始まる', () => {
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   assert.match(sw, /const CACHE_PREFIX = 'quiz-hiroba-';/);
   assert.match(sw, /\$\{CACHE_PREFIX\}v1/);
+});
+
+test('首都: 191 か国、国名と首都は重ならず、外務省の表記（括弧・数字を含まない）', () => {
+  assert.equal(shuto.items.length, 191);
+  assert.equal(new Set(shuto.items.map((it) => it.country)).size, 191);
+  assert.equal(new Set(shuto.items.map((it) => it.capital)).size, 191, '首都→国の答えが 1 つに決まる');
+  for (const it of shuto.items) {
+    assert.ok(it.capital && !/[（()）0-9０-９]/.test(it.capital), it.country + ' の首都 ' + it.capital);
+    assert.match(it.snap, /^20(24|25|26)\d{4}$/, it.country + ' の保存日');
+    assert.ok(shuto.regions[it.region], it.country + ' の地域');
+  }
+});
+
+test('首都: 見本（外務省の基礎データの表記）と、出題しない国・地域', () => {
+  const cap = (id) => shuto.items.find((it) => it.id === id).capital;
+  assert.equal(cap('usa'), 'ワシントンD.C.');
+  assert.equal(cap('uk'), 'ロンドン');
+  assert.equal(cap('ukraine'), 'キーウ');
+  assert.equal(cap('kazakhstan'), 'アスタナ');
+  assert.equal(cap('myanmar'), 'ネーピードー');
+  assert.equal(cap('srilanka'), 'スリ・ジャヤワルダナプラ・コッテ');
+  assert.equal(cap('netherlands'), 'アムステルダム');
+  assert.equal(cap('bolivia'), 'ラパス');
+  assert.equal(cap('china'), '北京');
+  for (const id of ['israel', 'singapore', 'vatican', 'monaco', 'n_korea', 'taiwan', 'plo', 'hongkong', 'macao']) {
+    assert.ok(!shuto.items.some((it) => it.id === id), id + ' は出題しない');
+  }
+  const multi = shuto.items.filter((it) => it.multi).map((it) => it.id).sort();
+  assert.equal(multi.length, 17);
+  assert.ok(multi.includes('s_africa') && multi.includes('netherlands') && multi.includes('bolivia'));
+  assert.match(shuto.explain(shuto.items.find((it) => it.id === 'netherlands')), /ハーグ/);
 });

@@ -162,3 +162,16 @@ test('formatMs', () => {
   assert.equal(C.formatMs(4400), '4秒');
   assert.equal(C.formatMs(65000), '1分05秒');
 });
+
+test('入力: 首都は外務省の表記。末尾の「市」と中黒・ピリオドは無くても正解', () => {
+  const shuto = require('../topics/shuto.js');
+  const cap = C.kindOf(shuto, 'cap');
+  const it = (id) => C.itemById(shuto, id);
+  for (const v of ['ワシントンD.C.', 'ワシントンDC', 'わしんとんDC', 'ﾜｼﾝﾄﾝD.C.']) assert.equal(C.checkTyped(cap, it('usa'), v).ok, true, v);
+  assert.equal(C.checkTyped(cap, it('usa'), 'ワシントン').ok, false);
+  for (const v of ['ウェリントン市', 'ウェリントン', 'うぇりんとん']) assert.equal(C.checkTyped(cap, it('nz'), v).ok, true, v);
+  for (const v of ['スリ・ジャヤワルダナプラ・コッテ', 'スリジャヤワルダナプラコッテ']) assert.equal(C.checkTyped(cap, it('srilanka'), v).ok, true, v);
+  assert.equal(C.checkTyped(cap, it('srilanka'), 'コロンボ').ok, false);
+  for (const v of ['北京', 'ペキン', 'ぺきん']) assert.equal(C.checkTyped(cap, it('china'), v).ok, true, v);
+  assert.equal(C.checkTyped(cap, it('china'), 'ベイジン').ok, false);
+});
