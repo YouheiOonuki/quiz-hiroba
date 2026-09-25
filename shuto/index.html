@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- このファイルは tools/build-pages.mjs が tools/page-template.html と topics/{{ID}}.js から作る。直接直さない -->
+  <!-- このファイルは tools/build-pages.mjs が tools/page-template.html と topics/shuto.js から作る。直接直さない -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{TITLE}}｜クイズ広場</title>
-  <meta name="description" content="{{DESC}}">
+  <title>世界の首都クイズ 191か国｜4択・入力・地域別・印刷｜クイズ広場</title>
+  <meta name="description" content="世界の首都クイズ。外務省の国名と首都の表記で191か国。国→首都、首都→国を4択と入力（一問一答）で。アジア・欧州・アフリカなど地域別、一覧で覚える・問題と答えを印刷もできる。登録不要・無料。">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/{{ID}}/">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/shuto/">
 
-  <meta property="og:title" content="{{TITLE}}｜クイズ広場">
-  <meta property="og:description" content="{{DESC}}">
+  <meta property="og:title" content="世界の首都クイズ 191か国｜4択・入力・地域別・印刷｜クイズ広場">
+  <meta property="og:description" content="世界の首都クイズ。外務省の国名と首都の表記で191か国。国→首都、首都→国を4択と入力（一問一答）で。アジア・欧州・アフリカなど地域別、一覧で覚える・問題と答えを印刷もできる。登録不要・無料。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/{{ID}}/">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/shuto/">
   <meta property="og:site_name" content="yorozu-craft">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
@@ -23,7 +23,26 @@
   <meta name="theme-color" content="#1c1814" media="(prefers-color-scheme: dark)">
 
   <script type="application/ld+json">
-  {{JSONLD}}
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "世界の首都クイズ（191か国）",
+    "description": "世界の首都クイズ。外務省の国名と首都の表記で191か国。国→首都、首都→国を4択と入力（一問一答）で。アジア・欧州・アフリカなど地域別、一覧で覚える・問題と答えを印刷もできる。登録不要・無料。",
+    "url": "https://yorozu-craft.com/quiz-hiroba/shuto/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "クイズ広場",
+      "url": "https://yorozu-craft.com/quiz-hiroba/"
+    }
+  }
   </script>
 
   <!-- Google AdSense: 遊ぶ画面なので meta（サイト所有確認）だけ。広告は使い方ページ（guide.html）に出す（todofuken-quiz の D18 と同じ。企画書 27 の D122） -->
@@ -36,12 +55,12 @@
   <!-- 選択肢と絞り込みは quiz.js で描くので、描き終わるまで本体を見えなくしてレイアウトのずれ（CLS）を防ぐ。3 秒たったら必ず見せる -->
   <script>document.documentElement.classList.add('js-loading');setTimeout(function(){document.documentElement.classList.remove('js-loading');},3000);</script>
 </head>
-<body data-topic="{{ID}}">
+<body data-topic="shuto">
 
   <header class="app-header">
     <p class="crumb"><a href="../">クイズ広場</a></p>
-    <h1>{{H1}}</h1>
-    <p class="subtitle">{{LEAD}}</p>
+    <h1>世界の首都クイズ（191か国）</h1>
+    <p class="subtitle">国名から首都を4択か入力で。地域別にも出せます。</p>
   </header>
 
   <main class="app-main quiz" id="app">
@@ -86,7 +105,7 @@
         <summary>出典と確認日</summary>
         <p class="small" id="src-text"></p>
         <ul class="small src-links" id="src-links"></ul>
-        <p class="small">{{NOTE}}</p>
+        <p class="small">国名と首都は外務省の「国・地域」と各国の基礎データの表記です。首都の扱いが資料によって分かれる国は、答えのあとにそう出します。イスラエル・「その他の地域」（台湾・パレスチナ・香港・マカオ・北朝鮮）と、基礎データに首都の欄が無いシンガポール・バチカン・モナコは出題しません。</p>
       </details>
 
       <p class="small"><a href="../guide.html">使い方・入力の決まり・よくある質問</a></p>
@@ -175,7 +194,7 @@
       <ul>
         <li><a href="../../">yorozu-craft トップ</a></li>
         <li><a href="../">クイズ広場</a></li>
-        <li><a href="./" aria-current="page">{{H1}}</a></li>
+        <li><a href="./" aria-current="page">世界の首都クイズ（191か国）</a></li>
         <li><a href="../guide.html">使い方・よくある質問</a></li>
         <li><a href="../../about.html">運営者情報</a></li>
         <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
@@ -186,7 +205,7 @@
 
   <script src="../constants.js"></script>
   <script src="../calc.js"></script>
-  {{DEPS}}<script src="../topics/{{ID}}.js"></script>
+  <script src="../topics/shuto.js"></script>
   <script src="../quiz.js"></script>
   <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

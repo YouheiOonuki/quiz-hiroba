@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百人一首 読み上げ（無料・ランダム・順番・序歌）｜クイズ広場</title>
+  <meta name="description" content="百人一首の読み上げ。100首をランダムか番号順に、端末の声で読みます。序歌・下の句2回・間隔の秒数・競技かるた式を選べ、残り枚数と読み終わった札が見えます。登録不要・無料。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/hyakunin/">
+
+  <meta property="og:title" content="百人一首 読み上げ｜クイズ広場">
+  <meta property="og:description" content="百人一首の読み上げ。100首をランダムか番号順に、端末の声で読みます。序歌・下の句2回・間隔の秒数・競技かるた式を選べ、残り枚数と読み終わった札が見えます。登録不要・無料。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/hyakunin/">
+  <meta property="og:site_name" content="yorozu-craft">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#8b4513" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1814" media="(prefers-color-scheme: dark)">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "百人一首 読み上げ",
+    "description": "百人一首の読み上げ。100首をランダムか番号順に、端末の声で読みます。序歌・下の句2回・間隔の秒数・競技かるた式を選べ、残り枚数と読み終わった札が見えます。登録不要・無料。",
+    "url": "https://yorozu-craft.com/quiz-hiroba/hyakunin/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "inLanguage": "ja",
+    "isPartOf": { "@type": "WebSite", "name": "クイズ広場", "url": "https://yorozu-craft.com/quiz-hiroba/" }
+  }
+  </script>
+
+  <!-- Google AdSense: 読み上げの画面（遊ぶ画面）なので meta（サイト所有確認）だけ。広告は使い方ページに出す（企画書 27 の D122、企画書 30） -->
+  <meta name="google-adsense-account" content="ca-pub-5375267956079717">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js-loading');setTimeout(function(){document.documentElement.classList.remove('js-loading');},3000);</script>
+</head>
+<body class="yomi-page">
+
+  <header class="app-header">
+    <p class="crumb"><a href="../">クイズ広場</a></p>
+    <h1>百人一首 読み上げ</h1>
+    <p class="subtitle">100首を端末の声で。ランダムか番号順、間隔も選べます。</p>
+  </header>
+
+  <main class="app-main" id="app">
+
+    <!-- メニュー -->
+    <section id="scr-menu" class="screen" aria-labelledby="h-menu">
+      <h2 id="h-menu" class="visually-hidden">読み方をえらぶ</h2>
+
+      <div id="resume-box" class="card challenge" hidden>
+        <p><strong>前回の続きがあります</strong>（<span id="resume-text"></span>）</p>
+        <div class="btn-row">
+          <button type="button" class="btn" id="resume">続きから読む</button>
+          <button type="button" class="btn btn-sub" id="resume-drop">続きを消す</button>
+        </div>
+      </div>
+
+      <fieldset class="card req menu">
+        <legend>読み方</legend>
+        <div class="opt-row"><span class="opt-label">順番</span><div class="seg" id="opt-order"></div></div>
+        <div class="opt-row"><span class="opt-label">間隔（次の札まで）</span><div class="seg" id="opt-gap"></div></div>
+        <div class="opt-row"><span class="opt-label">読み方</span><div class="seg" id="opt-style"></div></div>
+      </fieldset>
+
+      <p class="start-row"><button type="button" class="btn btn-big" id="start">読み上げスタート</button></p>
+      <p id="voice-line" class="small voice-line" aria-live="polite"></p>
+
+      <details class="card opt" id="more-box">
+        <summary>くわしい設定: <span class="opt-state" id="more-state"></span></summary>
+        <label class="weak-row"><input type="checkbox" id="opt-joka"> 最初に序歌（難波津に）を読む</label>
+        <label class="weak-row"><input type="checkbox" id="opt-twice"> 下の句を2回読む（ちらし取り）</label>
+        <label class="weak-row"><input type="checkbox" id="opt-hide"> 読んでいる歌を画面に出さない（読み手も遊ぶとき）</label>
+        <div class="opt-row">
+          <label class="opt-label" for="opt-voice">声</label>
+          <select id="opt-voice" class="voice-select"></select>
+        </div>
+        <div class="opt-row">
+          <label class="opt-label" for="opt-rate">読む速さ <span id="rate-val"></span></label>
+          <input type="range" id="opt-rate" min="0.5" max="1.2" step="0.05" class="rate-range">
+        </div>
+        <p class="small"><button type="button" class="btn btn-sub" id="test-voice">声を試す</button></p>
+      </details>
+
+      <details class="card opt" id="src-box">
+        <summary>歌の出典と読みの決まり</summary>
+        <p class="small" id="src-text"></p>
+        <ul class="small src-links" id="src-links"></ul>
+      </details>
+
+      <p class="small">設定と続きはこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_yomiage</code>）にだけ保存され、外部には送信されません。</p>
+      <p class="small"><a href="./guide.html">使い方・声が出ないとき・よくある質問</a>　／　<a href="../kimariji/">決まり字クイズで覚える</a></p>
+    </section>
+
+    <!-- 読み上げ -->
+    <section id="scr-play" class="screen" hidden aria-labelledby="yomi-label">
+      <div class="play-bar">
+        <span id="count" class="score"></span>
+        <button type="button" class="btn-ghost" id="pause">一時停止</button>
+        <button type="button" class="btn-ghost" id="quit">やめる</button>
+      </div>
+
+      <div id="yomi-card" class="card yomi-card" aria-live="polite">
+        <p id="yomi-label" class="yomi-label"></p>
+        <div id="yomi-body">
+          <p class="yomi-kami" id="yomi-kami"></p>
+          <p class="yomi-shimo" id="yomi-shimo"></p>
+          <p class="yomi-kana small" id="yomi-kana"></p>
+        </div>
+        <p id="yomi-hidden" class="yomi-hidden" hidden>（歌はかくしています）</p>
+      </div>
+
+      <p id="yomi-status" class="yomi-status" aria-live="polite"></p>
+      <div class="btn-col">
+        <button type="button" class="btn btn-big" id="next">次の札へ</button>
+        <div class="btn-row yomi-sub">
+          <button type="button" class="btn btn-sub" id="again">この札をもう一度</button>
+        </div>
+      </div>
+      <p id="wake-line" class="small"></p>
+
+      <details class="card opt" id="done-box">
+        <summary>読み終わった札: <span class="opt-state" id="done-state"></span></summary>
+        <ol id="done-list" class="done-list"></ol>
+      </details>
+    </section>
+
+    <!-- 終わり -->
+    <section id="scr-end" class="screen" hidden aria-labelledby="end-title">
+      <div class="card result">
+        <h2 id="end-title" class="result-title"></h2>
+        <p class="small">読んだ順の一覧は下にあります。</p>
+      </div>
+      <div class="btn-col">
+        <button type="button" class="btn btn-big" id="end-again">もう一度（べつの順番）</button>
+        <button type="button" class="btn btn-big btn-sub" id="end-menu">設定へ</button>
+      </div>
+      <details class="card opt" open>
+        <summary>読んだ順</summary>
+        <ol id="end-list" class="done-list"></ol>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="../../">yorozu-craft トップ</a></li>
+        <li><a href="../">クイズ広場</a></li>
+        <li><a href="./" aria-current="page">百人一首 読み上げ</a></li>
+        <li><a href="./guide.html">使い方・よくある質問</a></li>
+        <li><a href="../../about.html">運営者情報</a></li>
+        <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 yorozu-craft. All rights reserved.</p>
+  </footer>
+
+  <script src="../constants.js"></script>
+  <script src="../hyakunin-data.js"></script>
+  <script src="../yomiage.js"></script>
+  <script src="../yomiage-ui.js"></script>
+  <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

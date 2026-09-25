@@ -32,6 +32,31 @@
       ],
       checked: '2026-09-25',   // この日に 101 件すべての年を、各項目のページの記述と突き合わせた
     },
+    hyakunin: {
+      value: '小倉百人一首 100 首の文・読み・決まり字',
+      label: '百人一首の歌と読み',
+      source: '全日本かるた協会「小倉百人一首フェスティバル 2020 in Tokyo」の札のページ（歌・作者・所載歌集）と『競技かるた読手テキスト（改訂版）HP 掲載用抜粋版』（読み方・序歌）、ウィキソース「小倉百人一首」（歴史的仮名遣いのひらがな）',
+      url: 'https://www.karuta.or.jp/2020/karuta2020/special/card/index.html@number=.html',
+      urls: [
+        'https://www.karuta.or.jp/2020/karuta2020/special/card/index.html@number=.html',
+        'https://www.karuta.or.jp/karuta/reading/',
+        'https://www.karuta.or.jp/karuta/first-time/',
+        'https://ja.wikisource.org/wiki/%E5%B0%8F%E5%80%89%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96',
+      ],
+      checked: '2026-09-25',   // この日に 100 首を 3 つの出典で突き合わせた（hyakunin-data.js の先頭の説明）
+    },
+    shuto: {
+      value: '191 か国の国名・首都・地域',
+      label: '世界の首都',
+      source: '外務省「国・地域」の国名の一覧と各国の「基礎データ」の首都の欄（インターネットアーカイブに保存された外務省のページで確認。保存日は国ごとに topics/shuto.js）。首都の扱いが分かれる国の印は英語版ウィキペディア「List of national capitals」',
+      url: 'https://www.mofa.go.jp/mofaj/area/index.html',
+      urls: [
+        'https://www.mofa.go.jp/mofaj/area/index.html',
+        'https://web.archive.org/web/20260916115143/https://www.mofa.go.jp/mofaj/area/index.html',
+        'https://en.wikipedia.org/wiki/List_of_national_capitals',
+      ],
+      checked: '2026-09-25',   // この日に 200 の国・地域の基礎データ（保存されたもの）を読み、首都の欄を取り出した
+    },
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = CONSTANTS;
