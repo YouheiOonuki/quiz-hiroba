@@ -1,5 +1,5 @@
 /* ===========================
-   __TITLE__ — yorozu-craft 共通の和紙風の配色
+   クイズ広場 — yorozu-craft 共通の和紙風の配色
    色はトークン（--bg / --card / --text / --muted / --accent / --border）だけを使う。
    ダークモードは端末の設定に自動で合わせる（prefers-color-scheme。手動切替は付けない）
    =========================== */
@@ -200,4 +200,120 @@ details > summary:focus-visible { outline: 2px solid var(--accent); outline-offs
   .layout-2col .result-card { position: static; max-height: none; overflow: visible; }
   /* 広告は印刷に出さない（gakushu-print と同じ） */
   ins.adsbygoogle, .google-auto-placed, iframe[id^="aswift"], iframe[id^="google_ads"] { display: none !important; }
+}
+
+/* ===========================
+   クイズ広場（入口・題材のページ）
+   =========================== */
+.js-loading #app { visibility: hidden; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.crumb { font-size: 0.85rem; margin-bottom: 0.2rem; }
+.crumb a { text-decoration: none; }
+
+/* 入口の一覧 */
+.topics { list-style: none; }
+.topic { padding: 0; }
+.topic a { display: grid; grid-template-columns: 3rem 1fr; gap: 0 0.6rem; padding: 1rem 1.1rem; color: var(--text); text-decoration: none; min-height: 44px; }
+.topic a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.topic-icon { grid-row: span 3; font-size: 2rem; line-height: 1.2; text-align: center; }
+.topic-name { font-weight: 700; color: var(--accent); font-size: 1.08rem; }
+.topic-desc { font-size: 0.86rem; color: var(--muted); }
+.topic-rec { font-size: 0.8rem; color: var(--muted); }
+.topic-rec:empty { display: none; }
+
+/* メニュー */
+.opt-row { margin-bottom: 0.7rem; }
+.opt-label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem; }
+.seg { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.seg-item {
+  display: inline-flex; align-items: center; gap: 0.3rem; min-height: 44px; padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--bg); font-size: 0.92rem; cursor: pointer;
+}
+.seg-item:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.seg-item:has(input:disabled) { opacity: 0.5; cursor: default; }
+.seg-item input { accent-color: var(--accent); }
+.weak-row { display: flex; align-items: center; gap: 0.4rem; min-height: 44px; font-size: 0.92rem; }
+.weak-row input { width: 1.1rem; height: 1.1rem; accent-color: var(--accent); }
+.start-row { text-align: center; margin: 0.4rem 0 0.2rem; }
+.best-line { text-align: center; min-height: 1.2em; }
+.sub-row { justify-content: center; margin-bottom: 1rem; }
+.btn-big { font-size: 1.1rem; padding: 0.75rem 2.2rem; min-height: 48px; }
+.btn-sub { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn-ghost { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); padding: 0.3rem 0.8rem; min-height: 40px; font-size: 0.88rem; cursor: pointer; }
+.challenge { border-color: var(--accent); }
+.weak-list { columns: 2; font-size: 0.85rem; padding-left: 1.2rem; margin: 0.3rem 0; }
+.src-links { padding-left: 1.2rem; word-break: break-all; }
+
+/* 出題 */
+.play-bar { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 0.92rem; color: var(--muted); }
+.play-bar .score { margin-right: auto; font-weight: 700; color: var(--accent); }
+.question { font-size: 1.35rem; font-weight: 700; line-height: 1.5; margin: 0.4rem 0 1rem; min-height: 2.1em; }
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.choice {
+  min-height: 56px; padding: 0.6rem; font: inherit; font-size: 1.1rem; font-weight: 600; color: var(--text);
+  background: var(--card); border: 2px solid var(--border); border-radius: 10px; cursor: pointer; line-height: 1.35;
+}
+.choice:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.choice.ok { border-color: #2e7d32; background: #e3f1e4; color: #1b4d1f; }
+.choice.ok::before { content: '○ '; }
+.choice.ng { border-color: #b3261e; background: #f9e1df; color: #6d1510; }
+.choice.ng::before { content: '× '; }
+.choice:disabled { cursor: default; }
+@media (prefers-color-scheme: dark) {
+  .choice.ok { background: #1f3a21; color: #cfe9d1; }
+  .choice.ng { background: #4a1f1c; color: #f5cdc9; }
+}
+.type-form .answer {
+  width: 100%; font-size: 1.4rem; padding: 0.6rem 0.8rem; border: 2px solid var(--border); border-radius: 10px;
+  background: var(--card); color: var(--text);
+}
+.type-form .answer:focus { outline: none; border-color: var(--accent); }
+.feedback { margin-top: 1rem; padding: 1rem; border-radius: 10px; background: var(--card); border: 1px solid var(--border); }
+.fb-title { font-size: 1.2rem; font-weight: 700; }
+.fb-title.ok { color: #2e7d32; }
+.fb-title.ng { color: #b3261e; }
+@media (prefers-color-scheme: dark) { .fb-title.ok { color: #8fd694; } .fb-title.ng { color: #f2a19a; } }
+.fb-near { font-weight: 600; }
+.fb-body { margin: 0.3rem 0 0.8rem; }
+.feedback .btn-big { width: 100%; }
+
+/* 結果 */
+.result-title { font-size: 1.4rem; color: var(--accent); border: none; margin-bottom: 0.2rem; }
+.result-miss { margin-top: 0.8rem; font-size: 0.9rem; }
+.result-miss ul { padding-left: 1.2rem; }
+.btn-col { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+.share-url { width: 100%; margin-top: 0.4rem; padding: 0.4rem; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); }
+
+/* 一覧 */
+.table-wrap { overflow-x: auto; }
+.list-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-top: 0.6rem; }
+.list-table th, .list-table td { border-bottom: 1px solid var(--border); padding: 0.35rem 0.4rem; text-align: left; vertical-align: top; }
+.list-table th { font-size: 0.82rem; color: var(--muted); }
+.reveal { min-width: 44px; min-height: 36px; border: 1px dashed var(--accent); border-radius: 6px; background: var(--accent-soft); color: var(--accent); font: inherit; cursor: pointer; }
+
+/* 印刷の見本（画面では縮小せずに白い紙として並べる。ダークモードでも白） */
+.sheets { margin-top: 0.5rem; }
+.sheet { background: #fff; color: #111; padding: 12mm 12mm 8mm; margin-bottom: 1rem; border: 1px solid var(--border); box-shadow: 0 2px 8px var(--shadow); }
+.sheet-head h2 { font-size: 1.1rem; color: #111; border-bottom: 2px solid #111; padding-bottom: 0.2rem; margin-bottom: 0.3rem; }
+.sheet-meta { font-size: 0.8rem; color: #444; }
+.sheet-name { display: flex; gap: 1rem; font-size: 0.9rem; margin: 0.4rem 0 0.6rem; }
+.sheet-name .nm { flex: 1; border-bottom: 1px solid #111; }
+.sheet-name .pt { width: 8em; border-bottom: 1px solid #111; text-align: right; }
+.sheet-list { padding-left: 2.2rem; font-size: 0.95rem; }
+.sheet-list li { padding: 0.3rem 0; border-bottom: 1px dotted #999; break-inside: avoid; }
+.sheet-list .q { display: block; }
+.sheet-list .cs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; font-size: 0.88rem; color: #333; }
+.sheet-list .blank { display: block; height: 1.5em; }
+.sheet-list .a { display: block; font-weight: 700; }
+.sheet-credit { font-size: 0.7rem; color: #666; margin-top: 0.5rem; text-align: right; }
+
+@page { size: A4 portrait; margin: 12mm; }
+@media print {
+  /* 印刷の画面のときは、問題と答えの紙だけを出す（Ctrl+P から印刷しても白紙にならない） */
+  body.print-mode { background: #fff; }
+  body.print-mode > :not(main), body.print-mode main > :not(#scr-print), body.print-mode #scr-print > :not(#sheets) { display: none !important; }
+  body.print-mode main { max-width: none; padding: 0; margin: 0; }
+  body.print-mode .sheet { border: none; box-shadow: none; padding: 0; margin: 0; }
+  body.print-mode .sheet + .sheet { break-before: page; page-break-before: always; }
 }

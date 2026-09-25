@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>使い方・よくある質問｜__TITLE__｜yorozu-craft</title>
-  <meta name="description" content="__TITLE__の使い方、計算の根拠、よくある質問、ご利用上の注意。">
+  <title>使い方・入力の決まり・よくある質問｜クイズ広場｜yorozu-craft</title>
+  <meta name="description" content="クイズ広場（元素記号クイズ・歴史年号クイズ）の使い方、入力で答えるときの決まり、データの出典、よくある質問、ご利用上の注意。">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yorozu-craft.com/__REPO__/guide.html">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/guide.html">
 
-  <meta property="og:title" content="使い方・よくある質問｜__TITLE__">
-  <meta property="og:description" content="__TITLE__の使い方、計算の根拠、よくある質問、ご利用上の注意。">
+  <meta property="og:title" content="使い方・よくある質問｜クイズ広場">
+  <meta property="og:description" content="クイズ広場（元素記号クイズ・歴史年号クイズ）の使い方、入力で答えるときの決まり、データの出典、よくある質問、ご利用上の注意。">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://yorozu-craft.com/__REPO__/guide.html">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/guide.html">
   <meta property="og:site_name" content="yorozu-craft">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://yorozu-craft.com/__REPO__/og-image.png">
+  <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,19 +27,24 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "無料で使えますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "はい。会員登録やインストールも不要で、ブラウザだけで使えます。" }
+        "name": "元素記号クイズは118個すべて出ますか？タイピングで答えられますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。範囲で「118 すべて」を選ぶと1〜118番から出ます。答え方を「入力（一問一答）」にすると、記号や名前をキーボードで打って答えます。" }
       },
       {
         "@type": "Question",
-        "name": "入力した内容はどこに保存されますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "お使いのブラウザの中にだけ保存され、外部のサーバーには送信されません。" }
+        "name": "歴史年号クイズに語呂合わせはありますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "載せていません。出来事の文は運営者が書き、年は1件ずつ出典のページと突き合わせています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "クイズを印刷できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "できます。メニューの「問題と答えを印刷」で、問題の紙と答えの紙が別のページに出ます。4択の選択肢もつけられます。" }
       }
     ]
   }
   </script>
 
-  <!-- Google AdSense（サイト所有確認 + 広告配信スクリプト） -->
+  <!-- Google AdSense（サイト所有確認 + 広告配信スクリプト）。クイズの画面には入れず、このページだけ（D122） -->
   <meta name="google-adsense-account" content="ca-pub-5375267956079717">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5375267956079717"
      crossorigin="anonymous"></script>
@@ -51,40 +56,62 @@
 <body>
 
   <header class="app-header">
-    <h1>__TITLE__ の使い方</h1>
-    <p class="subtitle">使い方・計算の根拠・よくある質問・ご利用上の注意</p>
+    <h1>クイズ広場 の使い方</h1>
+    <p class="subtitle">使い方・入力の決まり・出典・よくある質問・ご利用上の注意</p>
   </header>
 
   <main class="app-main">
 
-    <p class="card" style="text-align:center"><a href="./">▶ __TITLE__ を使う</a></p>
+    <p class="card" style="text-align:center"><a href="./">▶ クイズ広場へ（元素記号・歴史年号）</a></p>
 
     <article class="card content" id="howto">
       <h2>使い方</h2>
       <ol>
-        <li>（手順を書く）</li>
+        <li>題材を選び、答え方（4択・入力）と向きを選ぶ</li>
+        <li>範囲と問題数を選んで「スタート」</li>
+        <li>終わったら、まちがえた問題だけをもう一度</li>
+        <li>「同じ問題でちょうせん」のリンクを友だちに送る</li>
       </ol>
+      <p>「一覧で覚える」は、記号や年をかくして「？」を押すと見える表です。「問題と答えを印刷」は、問題の紙と答えの紙を 1 回で印刷します（<a href="../print-help.html">スマホで印刷する</a>）。</p>
     </article>
 
-    <!-- 制度・単価など時点のある値を使うツールだけ残す。値は constants.js、画面にも時点を出す -->
+    <article class="card content" id="typing">
+      <h2>入力（タイピング）で答えるときの決まり</h2>
+      <p>答え合わせは次の決まりで行います。</p>
+      <ul>
+        <li>全角・半角の違いと空白は無視します（「Ｎａ」は「Na」）</li>
+        <li>カタカナとひらがなの違いは無視します（「なとりうむ」「ようそ」も正解）</li>
+        <li>漢字の元素名は、原子量表の表記とそのよみだけが正解です（「水素」「すいそ」）</li>
+        <li>元素記号は大文字・小文字を区別します（Co と CO は別のもの）。大小だけが違うときは「おしい」と出ます</li>
+        <li>年は数字だけを見ます（「1192」「1192年」「１１９２」は同じ）</li>
+      </ul>
+      <p>入力したあと Enter（改行）で答え、もう一度 Enter でつぎの問題に進みます。</p>
+    </article>
+
     <article class="card content" id="basis">
-      <h2>根拠と確認日</h2>
-      <dl class="info-list">
-        <dt>根拠</dt>
-        <dd>（法令・公式ページの名前）</dd>
-        <dt>最終確認日</dt>
-        <dd><time datetime="__DATE__">__DATE_JA__</time></dd>
-      </dl>
-      <p class="small">制度や単価は変わることがあります。最終確認日から時間がたっている場合は、公式ページで最新の情報をご確認ください。</p>
+      <h2>題材とデータの出典</h2>
+      <p>元素: IUPAC の周期表と日本化学会「原子量表（2026）」。年号: コトバンクの各項目（1 件ずつ答えのあとにリンク）。最終確認日 <time datetime="2026-09-25">2026年9月25日</time>。</p>
+      <details class="rels">
+        <summary>くわしい出典と作り方</summary>
+        <ul>
+          <li>元素記号・英語名: <a href="https://iupac.org/what-we-do/periodic-table-of-elements/" rel="noopener">IUPAC Periodic Table of the Elements</a>（2022年5月4日版）。113 番 Nh・115 番 Mc・117 番 Ts・118 番 Og の名前は 2016年11月28日に決まりました</li>
+          <li>日本語名: <a href="https://www.chemistry.or.jp/know/doc/atom_2026.pdf" rel="noopener">日本化学会 原子量専門委員会「原子量表（2026）」</a>。113・115・117・118 番の日本語名（ニホニウム・モスコビウム・テネシン・オガネソン）は<a href="https://www.chemistry.or.jp/news/113nh.html" rel="noopener">日本化学会 命名法専門委員会の発表</a>（2016年11月30日）で確定</li>
+          <li>118 件の記号・英語名を IUPAC の表と原子量表の両方で突き合わせ、食い違いはありませんでした</li>
+          <li>年号: 出来事の文は運営者が書いたものです。教科書・問題集の文や語呂合わせは写していません。年は 1 件ずつ、コトバンク（日本大百科全書・改訂新版 世界大百科事典ほか）のその語のページに書かれた年と突き合わせました。説が分かれるもの（鉄砲の伝来など）は、どの記録による年かを文に書いています</li>
+          <li>年号の「時代」は、<a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387018_003.pdf" rel="noopener">中学校学習指導要領（平成29年告示）解説 社会編</a>の歴史的分野の中項目の名前（古代までの日本・中世の日本・近世の日本・近代の日本と世界・現代の日本と世界）を借りて運営者が分けました。「基本」の 44 件も運営者が選んだもので、入試の出題数を数えたものではありません</li>
+        </ul>
+      </details>
     </article>
 
     <article class="card content" id="faq">
       <h2>よくある質問</h2>
       <dl class="faq">
-        <dt>無料で使えますか？</dt>
-        <dd>はい。会員登録やインストールも不要で、ブラウザだけで使えます。</dd>
-        <dt>入力した内容はどこに保存されますか？</dt>
-        <dd>お使いのブラウザの中にだけ保存され、外部のサーバーには送信されません。</dd>
+        <dt>元素記号クイズは118個すべて出ますか？タイピングで答えられますか？</dt>
+        <dd>はい。範囲で「118 すべて」を選ぶと1〜118番から出ます。答え方を「入力（一問一答）」にすると、記号や名前をキーボードで打って答えます。</dd>
+        <dt>歴史年号クイズに語呂合わせはありますか？</dt>
+        <dd>載せていません。出来事の文は運営者が書き、年は1件ずつ出典のページと突き合わせています。</dd>
+        <dt>クイズを印刷できますか？</dt>
+        <dd>できます。メニューの「問題と答えを印刷」で、問題の紙と答えの紙が別のページに出ます。4択の選択肢もつけられます。</dd>
       </dl>
     </article>
 
@@ -92,19 +119,18 @@
     <article class="card content" id="notes">
       <h2>ご利用上の注意・データの扱い</h2>
       <ul>
-        <li><strong>保存されるデータ</strong>：（何をブラウザに保存するか。保存しないならそう書く）</li>
-        <li><strong>バックアップ</strong>：「ファイルに書き出す」で、（保存している内容）を JSON ファイルにできます。ファイルはこの端末の中で作り、どこにも送信しません。機種変更のときやブラウザのデータを消す前に書き出しておき、新しい端末ではファイルを移して「ファイルから読み込む」を押してください（今の内容はファイルの内容に置き換わります）。（ブラウザに保存しないツールではこの行を消す）</li>
-        <li><strong>共有リンク</strong>：（共有機能があれば、リンクに何が含まれるか。URL の「#」以降に入るのでサーバーには送信されない）</li>
-        <li><strong>結果の扱い</strong>：（計算結果は目安であること、最終的な確認先など）</li>
+        <li><strong>保存されるデータ</strong>：記録（問題ごとの正解・不正解の数、自己ベスト）と出し方の設定は、この端末のブラウザ（localStorage、キー <code>quiz-hiroba_records</code>・<code>quiz-hiroba_settings</code>）にだけ保存され、外部には送信されません。登録はありません。</li>
+        <li><strong>バックアップ</strong>：<a href="./#file-box">クイズ広場のトップ</a>の「ファイルに書き出す」で、記録と設定を JSON ファイルに書き出せます。ファイルはこの端末の中で作り、どこにも送信しません。新しい端末ではファイルを移して「ファイルから読み込む」を押してください（今の記録はファイルの内容に置き換わります）。</li>
+        <li><strong>共有リンク</strong>：「同じ問題でちょうせん」のリンクには、題材・出し方・問題の番号・送った人の正解数だけが入ります。URL の「#」以降に入るので、サーバーには送信されません。</li>
       </ul>
-      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8B90qh5lEIyr25iw1jOjdQjOyaPZ1_z2wMB4kH-EmEeJYWw/viewform?usp=pp_url&amp;entry.585564634=__REPO__" target="_blank" rel="noopener">ご要望・不具合の報告（Google フォーム）</a>：いただいた内容をもとに直します。お返事はしていません。</p>
+      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8B90qh5lEIyr25iw1jOjdQjOyaPZ1_z2wMB4kH-EmEeJYWw/viewform?usp=pp_url&amp;entry.585564634=quiz-hiroba" target="_blank" rel="noopener">ご要望・不具合の報告（Google フォーム）</a>：いただいた内容をもとに直します。お返事はしていません。</p>
       <p>サイト全体の運営者情報・免責事項は<a href="../about.html">こちら</a>、プライバシーポリシーは<a href="../privacy-policy.html">こちら</a>です（すべてのツールで共通）。</p>
     </article>
 
     <article class="card content" id="changelog">
       <h2>更新履歴</h2>
       <ul>
-        <li><time datetime="__DATE__">__DATE_JA__</time> 公開</li>
+        <li><time datetime="2026-09-25">2026年9月25日</time> 公開（元素記号クイズ・歴史年号クイズ）</li>
       </ul>
     </article>
 
@@ -114,7 +140,7 @@
     <nav class="footer-nav" aria-label="フッターナビゲーション">
       <ul>
         <li><a href="../">yorozu-craft トップ</a></li>
-        <li><a href="./">__TITLE__</a></li>
+        <li><a href="./">クイズ広場</a></li>
         <li><a href="./guide.html" aria-current="page">使い方・よくある質問</a></li>
         <li><a href="../about.html">運営者情報</a></li>
         <li><a href="../privacy-policy.html">プライバシーポリシー</a></li>

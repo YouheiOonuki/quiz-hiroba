@@ -1,30 +1,36 @@
 /**
- * __TITLE__ - sw.js（Service Worker。オフライン対応にするツールだけ使う）
+ * クイズ広場 - sw.js（Service Worker。入口・題材のページ・データをオフラインでも開けるように）
  * hoshizora-sanpo の sw.js と同じ方針:
  * - ネットワーク優先。オンラインなら常に最新を取得してキャッシュも更新し、オフライン（または応答が遅い）ときだけキャッシュを返す
  * - yorozu-craft.com の各ツールは同じオリジンでキャッシュ領域を共有するため、
- *   キャッシュ名には必ず "__REPO__-" を付け、ほかのツールのキャッシュには触れない
+ *   キャッシュ名には必ず "quiz-hiroba-" を付け、ほかのツールのキャッシュには触れない
  * - 自分のパス配下だけを扱う。広告・アクセス解析など別オリジンや、ほかのツールのファイルは横取りしない
  */
 
 'use strict';
 
-const CACHE_PREFIX = '__REPO__-';
+const CACHE_PREFIX = 'quiz-hiroba-';
 const CACHE_NAME   = `${CACHE_PREFIX}v1`; // キャッシュする中身の構成を変えたら上げる
 
-/** 初回インストール時に取得しておくファイル */
+/** 初回インストール時に取得しておくファイル（PRECACHE の間は tools/build-pages.mjs が topics/*.js から作る） */
 const PRECACHE_URLS = [
+  // PRECACHE-BEGIN
   './',
   './index.html',
   './guide.html',
   './style.css',
   './constants.js',
   './calc.js',
-  './screen.js',
-  './main.js',
+  './quiz.js',
+  './hub.js',
+  './genso/',
+  './topics/genso.js',
+  './nengo/',
+  './topics/nengo.js',
   './manifest.webmanifest',
   './favicon.svg',
   './apple-touch-icon.png',
+  // PRECACHE-END
 ];
 
 /** この時間ネットワークが応答しなければ、キャッシュがあればそちらを返す */
