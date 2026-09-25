@@ -112,7 +112,7 @@ export function build() {
     '</urlset>\n';
 
   let sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
-  const pre = ['./', './index.html', './guide.html', './style.css', './constants.js', './calc.js', './quiz.js', './hub.js',
+  const pre = ['./', './index.html', './guide.html', './style.css', './constants.js', './calc.js', './quiz.js', './hub.js', './reset-storage.js',
     ...[...new Set(topics.flatMap((t) => t.page.deps || []))].filter((d) => !d.startsWith('topics/')).map((d) => `./${d}`),
     ...topics.flatMap((t) => [`./${t.id}/`, `./topics/${t.id}.js`, ...(t.page.guide ? [`./${t.page.guide}`] : [])]),
     ...EXTRA_PAGES.flatMap((x) => [`./${x.path}`, ...x.files.filter((f) => !topics.some((t) => (t.page.deps || []).includes(f))).map((f) => `./${f}`)]),
