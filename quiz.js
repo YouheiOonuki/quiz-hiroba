@@ -9,6 +9,9 @@
   var Calc = window.Calc;
   var TOPIC = window.QuizTopics[document.body.getAttribute('data-topic')];
   var SRC = (window.Constants || {})[TOPIC.sourceKey] || null;
+  var CH = Calc.choiceCount(TOPIC) + '択';   // 4択（昭和クイズは 3択）
+  // 向きが 1 つで入力できない題材（昭和クイズ）は、「答え方」「向き」の行を出さない（選べるものが無いので）
+  var ONLY_CHOICE = TOPIC.kinds.length === 1 && TOPIC.kinds[0].typing === false;
 
   // --- ブラウザへの保存（README「ツールを追加するとき」12）。キーは必ず "quiz-hiroba_" で始める ---
   var KEY_PREFIX = 'quiz-hiroba_';
@@ -103,10 +106,13 @@
   function renderMenu() {
     var kind = Calc.kindOf(TOPIC, settings.kind);
     radioGroup($('opt-mode'), 'mode', [
-      { v: 'choice', label: '4択' },
+      { v: 'choice', label: CH },
       { v: 'typing', label: '入力（一問一答）', disabled: kind.typing === false },
     ], kind.typing === false ? 'choice' : settings.mode, function (v) { settings.mode = v; changed(); });
-    $('mode-note').hidden = kind.typing !== false;
+    $('mode-note').textContent = 'この向きは' + CH + 'だけです。';
+    $('mode-note').hidden = kind.typing !== false || ONLY_CHOICE;
+    $('opt-mode').parentNode.hidden = ONLY_CHOICE;
+    $('opt-kind').parentNode.hidden = ONLY_CHOICE;
     radioGroup($('opt-kind'), 'kind', TOPIC.kinds.map(function (k) { return { v: k.key, label: k.label }; }), settings.kind,
       function (v) { settings.kind = v; changed(); });
     var fbox = $('opt-filters');
@@ -145,7 +151,7 @@
   function describe(o) {
     var kind = Calc.kindOf(TOPIC, o.kind);
     var f = Calc.normalizeFilters(TOPIC, o.filters);
-    var parts = [kind.label, o.mode === 'typing' ? '入力' : '4択'];
+    var parts = ONLY_CHOICE ? [] : [kind.label, o.mode === 'typing' ? '入力' : CH];
     (TOPIC.filters || []).forEach(function (flt) {
       var opt = flt.options.filter(function (x) { return x.v === f[flt.key]; })[0];
       parts.push(opt.label);
@@ -280,6 +286,7 @@
     $('fb-title').className = 'fb-title ' + (ok ? 'ok' : 'ng');
     $('fb-near').hidden = near !== 'case';
     $('fb-body').textContent = TOPIC.explain(it);
+    if (TOPIC.talk) talkLine().textContent = '話のきっかけ: ' + TOPIC.talk(it);
     var link = TOPIC.link(it);
     $('fb-link').hidden = !link;
     if (link) { $('fb-link-a').href = link.href; $('fb-link-a').textContent = '出典: ' + link.label; }
@@ -287,6 +294,13 @@
     $('feedback').hidden = false;
     if (modeOf(round.opt) === 'typing') $('answer').focus();   // スマホのキーボードを閉じない。Enter でつぎへ
     else $('next').focus();
+  }
+
+  // 話のきっかけ（昭和クイズ。回想法カードと同じ問いかけ）を答えの説明の下に出す
+  function talkLine() {
+    var p = $('fb-talk');
+    if (!p) { p = el('p', 'fb-talk'); p.id = 'fb-talk'; $('fb-body').insertAdjacentElement('afterend', p); }
+    return p;
   }
 
   function next() {
@@ -422,23 +436,29 @@
   $('print-new').addEventListener('click', function () { printSeed = Calc.newSeed(); renderPrint(); });
   $('print-go').addEventListener('click', function () { window.print(); });
   $('print-choices').addEventListener('change', renderPrint);
+  $('print-choices-label').textContent = CH + 'の選択肢をつける';
+  if ($('print-cards')) $('print-cards').addEventListener('change', renderPrint);
   function renderPrint() {
     var kind = Calc.kindOf(TOPIC, settings.kind);
-    var withChoices = $('print-choices').checked;
+    var cards = !!($('print-cards') && $('print-cards').checked);
+    var withChoices = $('print-choices').checked || cards;
     var opt = { kind: settings.kind, mode: withChoices ? 'choice' : 'typing', filters: settings.filters, count: settings.count, seed: printSeed };
     if (kind.typing === false) opt.mode = 'choice';   // 4択だけの向き（年 → 出来事）は選択肢をつける
     $('print-choices').disabled = kind.typing === false;
     if (kind.typing === false) $('print-choices').checked = true;
     var qs = Calc.makeRound(TOPIC, opt);
-    $('print-desc').textContent = kind.label + '・' + describeFilters() + '・' + qs.length + '問（問題番号 ' + printSeed + '）';
+    var head = ONLY_CHOICE ? describeFilters() : kind.label + '・' + describeFilters();
+    $('print-desc').textContent = head + '・' + qs.length + '問（問題番号 ' + printSeed + '）' + (cards ? '。答えは逆さまに印刷されます（点線で後ろへ折り、裏返すと読めます）' : '');
     var box = $('sheets');
     box.textContent = '';
     var credit = 'yorozu-craft.com/quiz-hiroba/print/ で作成　問題番号 ' + printSeed;
+    var mark = ['ア', 'イ', 'ウ', 'エ'];
+    if (cards) { renderCards(box, kind, qs, mark, credit); return; }
     function sheet(title, fill) {
       var s = el('section', 'sheet');
       var h = el('div', 'sheet-head');
       h.appendChild(el('h2', null, TOPIC.page.h1 + '　' + title));
-      h.appendChild(el('p', 'sheet-meta', kind.label + '・' + describeFilters() + '・' + qs.length + '問'));
+      h.appendChild(el('p', 'sheet-meta', head + '・' + qs.length + '問'));
       var nm = el('p', 'sheet-name');
       nm.appendChild(el('span', 'nm', 'なまえ'));
       nm.appendChild(el('span', 'pt', 'てん　　　／ ' + qs.length));
@@ -450,7 +470,6 @@
       s.appendChild(el('p', 'sheet-credit', credit));
       box.appendChild(s);
     }
-    var mark = ['ア', 'イ', 'ウ', 'エ'];
     sheet('問題', function (li, q) {
       var it = Calc.itemById(TOPIC, q.id);
       li.appendChild(el('span', 'q', kind.prompt(it)));
@@ -469,6 +488,36 @@
       li.appendChild(el('span', 'q', kind.prompt(it)));
       li.appendChild(el('span', 'a', ans));
     });
+  }
+
+  // 回想法カード（昭和クイズ）: A4 に 6 枚（2 列×3 段）。上が問題と選択肢、点線の下が答え・説明・話のきっかけ。
+  // 答えは 180 度回して印刷する（点線で後ろへ折り、本のページのように裏返すと正しい向きで読める）
+  function renderCards(box, kind, qs, mark, credit) {
+    for (var i = 0; i < qs.length; i += 6) {
+      var s = el('section', 'sheet cards-sheet');
+      var grid = el('div', 'card-grid');
+      qs.slice(i, i + 6).forEach(function (q, j) {
+        var it = Calc.itemById(TOPIC, q.id);
+        var c = el('div', 'qcard');
+        var front = el('div', 'qc-front');
+        front.appendChild(el('p', 'qc-head', (i + j + 1) + '　' + (TOPIC.cats ? TOPIC.cats[it.cat] : '')));
+        front.appendChild(el('p', 'qc-q', kind.prompt(it)));
+        var ol = el('ul', 'qc-cs');
+        q.choices.forEach(function (ch, k) { ol.appendChild(el('li', null, mark[k] + '　' + ch)); });
+        front.appendChild(ol);
+        c.appendChild(front);
+        c.appendChild(el('p', 'qc-fold', '山折り'));
+        var back = el('div', 'qc-back');
+        back.appendChild(el('p', 'qc-a', '答え　' + mark[q.choices.indexOf(kind.choice(it))] + '　' + kind.answer(it)));
+        back.appendChild(el('p', 'qc-ex', TOPIC.explain(it)));
+        if (TOPIC.talk) back.appendChild(el('p', 'qc-talk', '話のきっかけ: ' + TOPIC.talk(it)));
+        c.appendChild(back);
+        grid.appendChild(c);
+      });
+      s.appendChild(grid);
+      s.appendChild(el('p', 'sheet-credit', credit + '（出典は画面の「出典と確認日」）'));
+      box.appendChild(s);
+    }
   }
 
   // 出典の折りたたみ

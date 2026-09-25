@@ -10,7 +10,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'quiz-hiroba-';
-const CACHE_NAME   = `${CACHE_PREFIX}v1`; // キャッシュする中身の構成を変えたら上げる
+const CACHE_NAME   = `${CACHE_PREFIX}v2`; // キャッシュする中身の構成を変えたら上げる
 
 /** 初回インストール時に取得しておくファイル（PRECACHE の間は tools/build-pages.mjs が topics/*.js から作る） */
 const PRECACHE_URLS = [
@@ -32,10 +32,17 @@ const PRECACHE_URLS = [
   './topics/kimariji.js',
   './shuto/',
   './topics/shuto.js',
+  './showa/',
+  './topics/showa.js',
+  './showa/guide.html',
   './hyakunin/',
   './yomiage.js',
   './yomiage-ui.js',
   './hyakunin/guide.html',
+  './hayaoshi/',
+  './hayaoshi.js',
+  './hayaoshi-ui.js',
+  './hayaoshi/guide.html',
   './manifest.webmanifest',
   './favicon.svg',
   './apple-touch-icon.png',

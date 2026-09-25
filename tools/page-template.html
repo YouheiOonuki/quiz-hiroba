@@ -26,7 +26,7 @@
   {{JSONLD}}
   </script>
 
-  <!-- Google AdSense: 遊ぶ画面なので meta（サイト所有確認）だけ。広告は使い方ページ（guide.html）に出す（todofuken-quiz の D18 と同じ。企画書 27 の D122） -->
+  {{ADNOTE}}
   <meta name="google-adsense-account" content="ca-pub-5375267956079717">
 
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -36,12 +36,12 @@
   <!-- 選択肢と絞り込みは quiz.js で描くので、描き終わるまで本体を見えなくしてレイアウトのずれ（CLS）を防ぐ。3 秒たったら必ず見せる -->
   <script>document.documentElement.classList.add('js-loading');setTimeout(function(){document.documentElement.classList.remove('js-loading');},3000);</script>
 </head>
-<body data-topic="{{ID}}">
+<body data-topic="{{ID}}"{{BODYCLASS}}>
 
   <header class="app-header">
     <p class="crumb"><a href="../">クイズ広場</a></p>
     <h1>{{H1}}</h1>
-    <p class="subtitle">{{LEAD}}</p>
+    <p class="subtitle">{{LEAD}}</p>{{NOADS}}
   </header>
 
   <main class="app-main quiz" id="app">
@@ -89,7 +89,7 @@
         <p class="small">{{NOTE}}</p>
       </details>
 
-      <p class="small"><a href="../guide.html">使い方・入力の決まり・よくある質問</a></p>
+      <p class="small"><a href="{{GUIDE}}">{{GUIDETEXT}}</a></p>
     </section>
 
     <!-- 出題 -->
@@ -157,7 +157,7 @@
       <div class="card no-print">
         <h2 id="print-h">問題と答えを印刷</h2>
         <p id="print-desc" class="small"></p>
-        <label class="weak-row"><input type="checkbox" id="print-choices"> 4択の選択肢をつける</label>
+        <label class="weak-row"><input type="checkbox" id="print-choices"> <span id="print-choices-label">4択の選択肢をつける</span></label>{{CARDS}}
         <div class="btn-row">
           <button type="button" class="btn" id="print-go">印刷する・PDF に保存</button>
           <button type="button" class="btn btn-sub" id="print-new">べつの問題にする</button>
@@ -176,7 +176,7 @@
         <li><a href="../../">yorozu-craft トップ</a></li>
         <li><a href="../">クイズ広場</a></li>
         <li><a href="./" aria-current="page">{{H1}}</a></li>
-        <li><a href="../guide.html">使い方・よくある質問</a></li>
+        <li><a href="{{GUIDE}}">使い方・よくある質問</a></li>
         <li><a href="../../about.html">運営者情報</a></li>
         <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
       </ul>

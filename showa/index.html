@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- このファイルは tools/build-pages.mjs が tools/page-template.html と topics/kimariji.js から作る。直接直さない -->
+  <!-- このファイルは tools/build-pages.mjs が tools/page-template.html と topics/showa.js から作る。直接直さない -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>百人一首 決まり字クイズ｜上の句→下の句・取り札・印刷｜クイズ広場</title>
-  <meta name="description" content="百人一首の決まり字クイズ。上の句→下の句、決まり字→下の句、取り札→決まり字を4択と入力で。一字決まり（むすめふさほせ）・二字・三字…で絞れて、一覧で覚える・印刷もできる。登録不要・無料。">
+  <title>昭和クイズ（高齢者向け・3択・印刷）｜出来事・物の値段・レコード大賞｜クイズ広場</title>
+  <meta name="description" content="高齢者向けの昭和クイズ（3択・75問）。昭和の出来事の年、はがき・銭湯・ラーメンなどの値段、日本レコード大賞の曲。大きな字、問題と答えの印刷、折って使う回想法カードつき。出典つき。広告なし・登録不要・無料。">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/kimariji/">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/showa/">
 
-  <meta property="og:title" content="百人一首 決まり字クイズ｜上の句→下の句・取り札・印刷｜クイズ広場">
-  <meta property="og:description" content="百人一首の決まり字クイズ。上の句→下の句、決まり字→下の句、取り札→決まり字を4択と入力で。一字決まり（むすめふさほせ）・二字・三字…で絞れて、一覧で覚える・印刷もできる。登録不要・無料。">
+  <meta property="og:title" content="昭和クイズ（高齢者向け・3択・印刷）｜出来事・物の値段・レコード大賞｜クイズ広場">
+  <meta property="og:description" content="高齢者向けの昭和クイズ（3択・75問）。昭和の出来事の年、はがき・銭湯・ラーメンなどの値段、日本レコード大賞の曲。大きな字、問題と答えの印刷、折って使う回想法カードつき。出典つき。広告なし・登録不要・無料。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/kimariji/">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/showa/">
   <meta property="og:site_name" content="yorozu-craft">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
@@ -26,9 +26,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "百人一首 決まり字クイズ",
-    "description": "百人一首の決まり字クイズ。上の句→下の句、決まり字→下の句、取り札→決まり字を4択と入力で。一字決まり（むすめふさほせ）・二字・三字…で絞れて、一覧で覚える・印刷もできる。登録不要・無料。",
-    "url": "https://yorozu-craft.com/quiz-hiroba/kimariji/",
+    "name": "昭和クイズ（回想法カード）",
+    "description": "高齢者向けの昭和クイズ（3択・75問）。昭和の出来事の年、はがき・銭湯・ラーメンなどの値段、日本レコード大賞の曲。大きな字、問題と答えの印刷、折って使う回想法カードつき。出典つき。広告なし・登録不要・無料。",
+    "url": "https://yorozu-craft.com/quiz-hiroba/showa/",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "All",
     "offers": {
@@ -45,7 +45,7 @@
   }
   </script>
 
-  <!-- Google AdSense: 遊ぶ画面なので meta（サイト所有確認）だけ。広告は使い方ページ（guide.html）に出す（todofuken-quiz の D18 と同じ。企画書 27 の D122） -->
+  <!-- Google AdSense: 高齢者向けのページなので広告なし。meta（サイト所有確認）だけ。使い方（showa/guide.html）も同じ（yorozu-plans D118） -->
   <meta name="google-adsense-account" content="ca-pub-5375267956079717">
 
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -55,12 +55,13 @@
   <!-- 選択肢と絞り込みは quiz.js で描くので、描き終わるまで本体を見えなくしてレイアウトのずれ（CLS）を防ぐ。3 秒たったら必ず見せる -->
   <script>document.documentElement.classList.add('js-loading');setTimeout(function(){document.documentElement.classList.remove('js-loading');},3000);</script>
 </head>
-<body data-topic="kimariji">
+<body data-topic="showa" class="big">
 
   <header class="app-header">
     <p class="crumb"><a href="../">クイズ広場</a></p>
-    <h1>百人一首 決まり字クイズ</h1>
-    <p class="subtitle">上の句から下の句、取り札から決まり字を4択で。</p>
+    <h1>昭和クイズ（回想法カード）</h1>
+    <p class="subtitle">昭和の出来事・物の値段・歌の題名を3択で。</p>
+    <p class="noads">このページは広告なし・登録なし・入力は端末の外に出ません。</p>
   </header>
 
   <main class="app-main quiz" id="app">
@@ -105,10 +106,10 @@
         <summary>出典と確認日</summary>
         <p class="small" id="src-text"></p>
         <ul class="small src-links" id="src-links"></ul>
-        <p class="small">決まり字は、上の句のひらがな（歴史的仮名遣い）で、ほかの99首と区別できる最短の先頭です（「を」と「お」は同じ音として比べます）。入力では「を」を「お」と打っても正解です。</p>
+        <p class="small">出来事は国立公文書館などの公的な資料、値段は総務省統計局の小売物価統計調査（東京23区の年平均）、歌は日本作曲家協会の日本レコード大賞の一覧から作りました。歌詞は載せていません。</p>
       </details>
 
-      <p class="small"><a href="../guide.html">使い方・入力の決まり・よくある質問</a></p>
+      <p class="small"><a href="../showa/guide.html">使い方・回想法カードの使い方・出典</a></p>
     </section>
 
     <!-- 出題 -->
@@ -177,6 +178,7 @@
         <h2 id="print-h">問題と答えを印刷</h2>
         <p id="print-desc" class="small"></p>
         <label class="weak-row"><input type="checkbox" id="print-choices"> <span id="print-choices-label">4択の選択肢をつける</span></label>
+        <label class="weak-row"><input type="checkbox" id="print-cards"> 回想法カードにする（1枚に6問。点線で折ると答えがかくれる）</label>
         <div class="btn-row">
           <button type="button" class="btn" id="print-go">印刷する・PDF に保存</button>
           <button type="button" class="btn btn-sub" id="print-new">べつの問題にする</button>
@@ -194,8 +196,8 @@
       <ul>
         <li><a href="../../">yorozu-craft トップ</a></li>
         <li><a href="../">クイズ広場</a></li>
-        <li><a href="./" aria-current="page">百人一首 決まり字クイズ</a></li>
-        <li><a href="../guide.html">使い方・よくある質問</a></li>
+        <li><a href="./" aria-current="page">昭和クイズ（回想法カード）</a></li>
+        <li><a href="../showa/guide.html">使い方・よくある質問</a></li>
         <li><a href="../../about.html">運営者情報</a></li>
         <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
       </ul>
@@ -205,8 +207,7 @@
 
   <script src="../constants.js"></script>
   <script src="../calc.js"></script>
-  <script src="../hyakunin-data.js"></script>
-  <script src="../topics/kimariji.js"></script>
+  <script src="../topics/showa.js"></script>
   <script src="../quiz.js"></script>
   <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

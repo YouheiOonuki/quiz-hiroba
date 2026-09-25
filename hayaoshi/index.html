@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>早押しボタン（1台で2〜4人・正解/不正解の音・得点）｜クイズ大会セット｜クイズ広場</title>
+  <meta name="description" content="スマホ・タブレット1台を2〜4人で囲む早押しボタン。最初に押した人だけが光り、ほかはロック。正解・不正解の音とドラムロール、得点、お手つき。クイズ広場の問題を読み上げ役に出せます。登録不要・無料・ブラウザだけ。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/hayaoshi/">
+
+  <meta property="og:title" content="早押しボタン（クイズ大会セット）｜クイズ広場">
+  <meta property="og:description" content="スマホ・タブレット1台を2〜4人で囲む早押しボタン。最初に押した人だけが光り、ほかはロック。正解・不正解の音とドラムロール、得点、お手つき。クイズ広場の問題を読み上げ役に出せます。登録不要・無料・ブラウザだけ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/hayaoshi/">
+  <meta property="og:site_name" content="yorozu-craft">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#8b4513" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1814" media="(prefers-color-scheme: dark)">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "早押しボタン（クイズ大会セット）",
+    "description": "スマホ・タブレット1台を2〜4人で囲む早押しボタン。最初に押した人だけが光り、ほかはロック。正解・不正解の音とドラムロール、得点、お手つき。クイズ広場の問題を読み上げ役に出せます。登録不要・無料・ブラウザだけ。",
+    "url": "https://yorozu-craft.com/quiz-hiroba/hayaoshi/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "inLanguage": "ja",
+    "isPartOf": { "@type": "WebSite", "name": "クイズ広場", "url": "https://yorozu-craft.com/quiz-hiroba/" }
+  }
+  </script>
+
+  <!-- Google AdSense: ボタンを押す画面（遊ぶ画面）なので meta（サイト所有確認）だけ。広告は使い方ページに出す（企画書 27 の D122、企画書 38） -->
+  <meta name="google-adsense-account" content="ca-pub-5375267956079717">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js-loading');setTimeout(function(){document.documentElement.classList.remove('js-loading');},3000);</script>
+</head>
+<body class="hayaoshi-page">
+
+  <header class="app-header">
+    <p class="crumb"><a href="../">クイズ広場</a></p>
+    <h1>早押しボタン</h1>
+    <p class="subtitle">1台のスマホを2〜4人で。最初に押した人だけが光ります。</p>
+  </header>
+
+  <main class="app-main" id="app">
+
+    <!-- 準備 -->
+    <section id="scr-menu" class="screen" aria-labelledby="h-menu">
+      <h2 id="h-menu" class="visually-hidden">準備</h2>
+
+      <div id="resume-box" class="card challenge" hidden>
+        <p><strong>前回の得点があります</strong>（<span id="resume-text"></span>）</p>
+        <div class="btn-row">
+          <button type="button" class="btn" id="resume">続ける</button>
+          <button type="button" class="btn btn-sub" id="resume-drop">得点を0にする</button>
+        </div>
+      </div>
+
+      <fieldset class="card req menu">
+        <legend>準備</legend>
+        <div class="opt-row"><span class="opt-label">人数</span><div class="seg" id="opt-n"></div></div>
+        <div class="opt-row">
+          <label class="opt-label" for="opt-topic">問題</label>
+          <select id="opt-topic" class="voice-select"></select>
+        </div>
+        <label class="weak-row"><input type="checkbox" id="opt-sound"> 効果音を鳴らす（押した音・正解・不正解・ドラムロール）</label>
+      </fieldset>
+
+      <p class="start-row"><button type="button" class="btn btn-big" id="start">スタート（ボタンを出す）</button></p>
+
+      <details class="card opt" id="names-box">
+        <summary>名前とお手つき: <span class="opt-state" id="names-state"></span></summary>
+        <div id="names" class="names"></div>
+        <label class="weak-row"><input type="checkbox" id="opt-penalty"> お手つき（不正解）は1点引く</label>
+      </details>
+
+      <details class="card opt" id="reader-box">
+        <summary>読み上げ役の画面（問題と答えの一覧・印刷）</summary>
+        <p class="small">「問題」でクイズを選ぶと、ボタンの画面に出る問題と同じ順番の一覧を、答えつきで出せます。読み上げ役が別のスマホで開くか、印刷して手に持ちます。</p>
+        <div class="btn-row"><button type="button" class="btn btn-sub" id="open-reader">一覧を出す</button></div>
+      </details>
+
+      <details class="card opt" id="keys-box">
+        <summary>パソコンのキーボードで使う</summary>
+        <ul class="small keys-list">
+          <li>早押し: 1ばん <kbd>Q</kbd>・2ばん <kbd>P</kbd>・3ばん <kbd>Z</kbd>・4ばん <kbd>M</kbd></li>
+          <li>正解 <kbd>Enter</kbd>・不正解 <kbd>X</kbd>・つぎの問題 <kbd>N</kbd>・ドラムロール <kbd>D</kbd>・1つもどす <kbd>U</kbd></li>
+        </ul>
+      </details>
+
+      <p class="small">人数・名前・得点はこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_hayaoshi</code>）にだけ保存され、外部には送信されません。</p>
+      <p class="small"><a href="./guide.html">使い方・判定の決まり・よくある質問</a></p>
+    </section>
+
+    <!-- 早押し（全画面） -->
+    <section id="scr-play" class="screen play-full" hidden aria-label="早押しボタン">
+      <div id="zones" class="zones"></div>
+      <div class="host" id="host">
+        <div class="host-q" id="host-q" aria-live="polite"></div>
+        <div class="host-btns">
+          <button type="button" class="hbtn hbtn-ok" id="h-ok" disabled>○ 正解</button>
+          <button type="button" class="hbtn hbtn-ng" id="h-ng" disabled>× 不正解</button>
+          <button type="button" class="hbtn" id="h-next">つぎの問題</button>
+          <button type="button" class="hbtn" id="h-drum">ドラムロール</button>
+          <button type="button" class="hbtn hbtn-sub" id="h-more" aria-expanded="false">…</button>
+        </div>
+        <div class="host-more" id="host-more" hidden>
+          <button type="button" class="hbtn hbtn-sub" id="h-undo">1つもどす</button>
+          <button type="button" class="hbtn hbtn-sub" id="h-release">受付をもどす</button>
+          <button type="button" class="hbtn hbtn-sub" id="h-end">終わる（順位）</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 順位 -->
+    <section id="scr-result" class="screen" hidden aria-labelledby="r-title">
+      <div class="card result">
+        <h2 id="r-title" class="result-title">順位</h2>
+        <ol id="r-list" class="rank-list"></ol>
+        <p id="r-q" class="small"></p>
+      </div>
+      <div class="btn-col">
+        <button type="button" class="btn btn-big" id="r-back">ボタンにもどる（続ける）</button>
+        <button type="button" class="btn btn-big btn-sub" id="r-reset">得点を0にしてはじめから</button>
+        <button type="button" class="btn btn-big btn-sub" id="r-menu">準備にもどる</button>
+      </div>
+    </section>
+
+    <!-- 読み上げ役の画面 -->
+    <section id="scr-reader" class="screen" hidden aria-labelledby="reader-title">
+      <div class="card no-print">
+        <h2 id="reader-title">読み上げ役の画面</h2>
+        <p id="reader-desc" class="small"></p>
+        <div class="btn-row">
+          <button type="button" class="btn" id="reader-print">印刷する・PDF に保存</button>
+          <button type="button" class="btn btn-sub" id="reader-back">準備にもどる</button>
+        </div>
+      </div>
+      <div class="sheet reader-sheet" id="reader-sheet">
+        <h2 id="reader-h"></h2>
+        <ol id="reader-list" class="reader-list"></ol>
+        <p class="sheet-credit">yorozu-craft.com/quiz-hiroba/print/ で作成</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="../../">yorozu-craft トップ</a></li>
+        <li><a href="../">クイズ広場</a></li>
+        <li><a href="./" aria-current="page">早押しボタン</a></li>
+        <li><a href="./guide.html">使い方・よくある質問</a></li>
+        <li><a href="../../about.html">運営者情報</a></li>
+        <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 yorozu-craft. All rights reserved.</p>
+  </footer>
+
+  <script src="../constants.js"></script>
+  <script src="../calc.js"></script>
+  <script src="../hyakunin-data.js"></script>
+  <script src="../topics/genso.js"></script>
+  <script src="../topics/nengo.js"></script>
+  <script src="../topics/kimariji.js"></script>
+  <script src="../topics/shuto.js"></script>
+  <script src="../topics/showa.js"></script>
+  <script src="../hayaoshi.js"></script>
+  <script src="../hayaoshi-ui.js"></script>
+  <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

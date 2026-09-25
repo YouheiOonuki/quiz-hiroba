@@ -72,7 +72,7 @@ test('年号: 語呂合わせを載せていない（「語呂」「覚え方」
 });
 
 test('題材: どの題材も必要な部品を持つ', () => {
-  for (const t of [genso, nengo, kimariji, shuto]) {
+  for (const t of [genso, nengo, kimariji, shuto, require('../topics/showa.js')]) {
     for (const k of ['id', 'page', 'order', 'label', 'items', 'kinds', 'filters', 'columns', 'explain', 'link', 'sourceKey', 'unit']) assert.ok(t[k] != null, t.id + ' の ' + k);
     for (const k of ['title', 'h1', 'lead', 'description', 'hub', 'icon', 'order']) assert.ok(t.page[k] != null, t.id + ' の page.' + k);
     assert.ok(t.page.lead.length <= 40, t.id + ' の冒頭は 40 字まで（WRITING 1 章）');
@@ -97,7 +97,7 @@ test('ページ: 題材のページ・入口・sitemap・sw.js が topics/*.js �
 test('sw.js: キャッシュ名は quiz-hiroba- で始まる', () => {
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   assert.match(sw, /const CACHE_PREFIX = 'quiz-hiroba-';/);
-  assert.match(sw, /\$\{CACHE_PREFIX\}v1/);
+  assert.match(sw, /\$\{CACHE_PREFIX\}v2/);
 });
 
 test('首都: 191 か国、国名と首都は重ならず、外務省の表記（括弧・数字を含まない）', () => {
@@ -129,4 +129,98 @@ test('首都: 見本（外務省の基礎データの表記）と、出題しな
   assert.equal(multi.length, 17);
   assert.ok(multi.includes('s_africa') && multi.includes('netherlands') && multi.includes('bolivia'));
   assert.match(shuto.explain(shuto.items.find((it) => it.id === 'netherlands')), /ハーグ/);
+});
+
+const showa = require('../topics/showa.js');
+const Calc = require('../calc.js');
+
+test('昭和クイズ: 75 問（出来事 15・物の値段 10 品目×3 年・レコード大賞 30）、年は昭和の中', () => {
+  assert.equal(showa.items.length, 75);
+  const n = (c) => showa.items.filter((it) => it.cat === c).length;
+  assert.deepEqual([n('dekigoto'), n('nedan'), n('record')], [15, 30, 30]);
+  for (const it of showa.items) {
+    assert.ok(it.year >= 1926 && it.year <= 1989, it.id);
+    assert.ok(it.href && it.src && it.talk, it.id + ' の出典と話のきっかけ');
+    assert.match(it.href, /^https:\/\//);
+  }
+  assert.equal(showa.wareki(1964), '昭和39年（1964年）');
+  assert.equal(showa.wareki(1926 + 63 - 1), '昭和63年（1988年）');
+});
+
+test('昭和クイズ: 値段は総務省統計局の表の値（見本）', () => {
+  const yen = (g, y) => showa.items.find((it) => it.id === 'p-' + g + '-' + y).yen;
+  assert.equal(yen('hagaki', 1960), 5);
+  assert.equal(yen('hagaki', 1970), 7);
+  assert.equal(yen('hagaki', 1980), 20);
+  assert.equal(yen('ramen', 1970), 96);
+  assert.equal(yen('sento', 1970), 38);
+  assert.equal(yen('eiga', 1980), 1357);
+  assert.equal(showa.items.find((it) => it.id === 'p-eiga-1980').a, '1,357円');
+  // 同じ品目の 3 つの年の値は重ならない（3 択の選択肢がそろう）
+  const groups = {};
+  for (const it of showa.items.filter((x) => x.cat === 'nedan')) (groups[it.group] = groups[it.group] || []).push(it.yen);
+  for (const [g, v] of Object.entries(groups)) { assert.equal(v.length, 3, g); assert.equal(new Set(v).size, 3, g); }
+});
+
+test('昭和クイズ: レコード大賞は第1回 1959〜第30回 1988 が 1 年 1 曲。歌詞の欄を持たない', () => {
+  const r = showa.items.filter((it) => it.cat === 'record');
+  assert.deepEqual(r.map((it) => it.year), Array.from({ length: 30 }, (_, i) => 1959 + i));
+  assert.equal(r.find((it) => it.year === 1972).title, '喝采');
+  assert.equal(r.find((it) => it.year === 1965).singer, '美空ひばり');
+  for (const it of showa.items) assert.ok(!('lyrics' in it) && !('kashi' in it));
+  const src = fs.readFileSync(path.join(ROOT, 'topics', 'showa.js'), 'utf8');
+  assert.match(src, /歌詞は載せない/);
+});
+
+test('昭和クイズ: 3 択。選択肢は同じ組（同じ品目・出来事どうし・歌どうし）からだけ出て、正解が 1 つだけ入る', () => {
+  assert.equal(Calc.choiceCount(showa), 3);
+  for (let seed = 1; seed <= 30; seed++) {
+    const qs = Calc.makeRound(showa, { kind: 'q', mode: 'choice', filters: {}, count: 0, seed });
+    assert.equal(qs.length, 75);
+    for (const q of qs) {
+      const it = Calc.itemById(showa, q.id);
+      assert.equal(q.choices.length, 3, it.id);
+      assert.equal(new Set(q.choices).size, 3, it.id);
+      assert.equal(q.choices.filter((c) => c === it.a).length, 1, it.id);
+      const pool = showa.items.filter((x) => x.group === it.group).map((x) => x.a);
+      for (const c of q.choices) assert.ok(pool.includes(c), it.id + ' の選択肢 ' + c);
+    }
+  }
+  // 年代で絞っても、値段の選択肢はその品目のほかの年から出る
+  const q = Calc.makeRound(showa, { kind: 'q', mode: 'choice', filters: { cat: 'nedan', era: 's20' }, count: 0, seed: 7 });
+  assert.equal(q.length, 7);
+  const h = q.find((x) => x.id === 'p-hagaki-1960');
+  assert.deepEqual(h.choices.slice().sort(), ['20円', '5円', '7円']);
+});
+
+test('昭和クイズ: 高齢者向け（D118）のページは広告のスクリプトを読まず、先頭に定型文', () => {
+  for (const f of ['showa/index.html', 'showa/guide.html']) {
+    const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    assert.ok(!/adsbygoogle\.js/.test(html), f + ' に AdSense のスクリプトが無い');
+    assert.equal((html.match(/name="google-adsense-account"/g) || []).length, 1, f + ' は meta だけ');
+    assert.match(html, /このページは広告なし・登録なし・入力は端末の外に出ません。/);
+  }
+  const page = fs.readFileSync(path.join(ROOT, 'showa/index.html'), 'utf8');
+  assert.match(page, /<body data-topic="showa" class="big">/);
+  assert.match(page, /href="\.\.\/showa\/guide\.html"/);
+  assert.match(page, /id="print-cards"/);
+});
+
+test('ほかの題材のページは今までどおり（広告なしの定型文も大きな字も付かない）', () => {
+  for (const id of ['genso', 'nengo', 'kimariji', 'shuto']) {
+    const html = fs.readFileSync(path.join(ROOT, id, 'index.html'), 'utf8');
+    assert.ok(!/class="noads"/.test(html), id);
+    assert.match(html, new RegExp('<body data-topic="' + id + '">'));
+    assert.match(html, /href="\.\.\/guide\.html"/);
+  }
+});
+
+test('早押しボタンのページ: AdSense は meta だけ、使い方ページには広告のスクリプト', () => {
+  const play = fs.readFileSync(path.join(ROOT, 'hayaoshi/index.html'), 'utf8');
+  assert.ok(!/adsbygoogle\.js/.test(play));
+  assert.match(play, /name="google-adsense-account"/);
+  const guide = fs.readFileSync(path.join(ROOT, 'hayaoshi/guide.html'), 'utf8');
+  assert.match(guide, /adsbygoogle\.js/);
+  const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  for (const f of ['./hayaoshi/', './hayaoshi.js', './hayaoshi-ui.js', './showa/', './topics/showa.js', './showa/guide.html']) assert.ok(sw.includes(`'${f}'`), f);
 });
