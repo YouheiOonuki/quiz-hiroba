@@ -119,6 +119,7 @@
         <button type="button" class="btn-ghost" id="quit">やめる</button>
       </div>
       <p id="question" class="question" aria-live="polite"></p>
+      <p id="q-img" class="q-img" hidden><img id="q-img-i" alt="問題の旗" width="240" height="180"></p>
       <div id="choices" class="choices"></div>
       <form id="type-form" class="type-form" autocomplete="off" hidden>
         <label for="answer" class="visually-hidden">答え</label>
@@ -133,6 +134,11 @@
         <p id="fb-title" class="fb-title"></p>
         <p id="fb-near" class="fb-near" hidden>おしい。大文字・小文字がちがいます。</p>
         <p id="fb-body" class="fb-body"></p>
+        <div id="ooh" class="ooh" hidden>
+          <p class="ooh-text"><span class="ooh-mark">おお</span><span id="ooh-text"></span></p>
+          <p class="small ooh-src"><a id="ooh-src" href="#" target="_blank" rel="noopener"></a></p>
+          <button type="button" class="btn-ghost ooh-more" id="ooh-more">もう1つ</button>
+        </div>
         <p id="fb-link" class="small" hidden><a id="fb-link-a" href="#" target="_blank" rel="noopener"></a></p>
         <button type="button" class="btn btn-big" id="next">つぎへ</button>
       </div>

@@ -101,8 +101,24 @@
    * 向きに group があれば、同じ group の問題からだけ選ぶ（昭和クイズ: はがきの値段の選択肢は、ほかの年のはがきの値段だけ）
    */
   function choiceCount(topic) { return topic.choices === 3 ? 3 : 4; }
-  function makeChoices(topic, kind, item, candidates, rand, n) {
+  /**
+   * 絞り込みの選んだ値が持つ、選択肢の作り方（国旗クイズのレベル）
+   *   group: 選択肢をこの組（地域・似た旗の組）から先に選ぶ。足りなければ範囲の中からばらばらに足す
+   *   near: false なら「並びの近いもの」を使わず、ばらばらに選ぶ
+   */
+  function choiceStyle(topic, filters) {
+    var f = normalizeFilters(topic, filters);
+    var st = {};
+    (topic.filters || []).forEach(function (flt) {
+      var opt = flt.options.filter(function (o) { return o.v === f[flt.key]; })[0];
+      if (opt && opt.group) st.group = opt.group;
+      if (opt && opt.near === false) st.near = false;
+    });
+    return st;
+  }
+  function makeChoices(topic, kind, item, candidates, rand, n, style) {
     n = n || 4;
+    style = style || {};
     var src = candidates.length >= n ? candidates : topic.items;
     if (kind.group) {
       var g = kind.group(item);
@@ -111,15 +127,33 @@
     }
     var right = kind.choice(item);
     var seen = {}; seen[right] = true;
-    var others = src.filter(function (x) {
-      var c = kind.choice(x);
-      if (x === item || seen[c]) return false;
-      seen[c] = true;
-      return true;
-    });
+    function distinct(list) {
+      return list.filter(function (x) {
+        var c = kind.choice(x);
+        if (x === item || seen[c]) return false;
+        seen[c] = true;
+        return true;
+      });
+    }
+    var pick;
+    if (style.group) {
+      // 同じ組（地域・似た旗）から先に。足りなければ範囲の中から、それでも足りなければ全体からばらばらに
+      var sg = style.group(item);
+      var mates = distinct(candidates.filter(function (x) { return style.group(x) === sg; }));
+      pick = shuffle(mates, rand).slice(0, n - 1);
+      if (pick.length < n - 1) pick = pick.concat(shuffle(distinct(candidates), rand).slice(0, n - 1 - pick.length));
+      if (pick.length < n - 1) pick = pick.concat(shuffle(distinct(topic.items), rand).slice(0, n - 1 - pick.length));
+      return shuffle([right].concat(pick.map(function (x) { return kind.choice(x); })), rand);
+    }
+    var others = distinct(src);
+    if (style.near === false) {
+      pick = shuffle(others, rand).slice(0, n - 1);
+      if (pick.length < n - 1) pick = pick.concat(shuffle(distinct(topic.items), rand).slice(0, n - 1 - pick.length));
+      return shuffle([right].concat(pick.map(function (x) { return kind.choice(x); })), rand);
+    }
     var ord = topic.order;
     var near = others.slice().sort(function (a, b) { return Math.abs(ord(a) - ord(item)) - Math.abs(ord(b) - ord(item)); }).slice(0, 6);
-    var pick = shuffle(near, rand).slice(0, Math.min(2, n - 1));
+    pick = shuffle(near, rand).slice(0, Math.min(2, n - 1));
     var rest = shuffle(others.filter(function (x) { return pick.indexOf(x) < 0; }), rand);
     pick = pick.concat(rest.slice(0, n - 1 - pick.length));
     return shuffle([right].concat(pick.map(function (x) { return kind.choice(x); })), rand);
@@ -142,9 +176,10 @@
     var count = opt.count > 0 ? Math.min(opt.count, base.length) : base.length;
     var picked = shuffle(base, rand).slice(0, count);
     var mode = opt.mode === 'typing' && kind.typing !== false ? 'typing' : 'choice';
+    var style = choiceStyle(topic, opt.filters);
     return picked.map(function (it) {
       var q = { id: it.id };
-      if (mode === 'choice') q.choices = makeChoices(topic, kind, it, candidates, rand, choiceCount(topic));
+      if (mode === 'choice') q.choices = makeChoices(topic, kind, it, candidates, rand, choiceCount(topic), style);
       return q;
     });
   }
@@ -328,7 +363,7 @@
   var api = {
     rng: rng, shuffle: shuffle, newSeed: newSeed,
     toHira: toHira, normalizeText: normalizeText, normalizeYear: normalizeYear, checkTyped: checkTyped,
-    normalizeFilters: normalizeFilters, pool: pool, kindOf: kindOf, choiceCount: choiceCount, makeChoices: makeChoices, makeRound: makeRound, itemById: itemById,
+    normalizeFilters: normalizeFilters, pool: pool, kindOf: kindOf, choiceCount: choiceCount, choiceStyle: choiceStyle, makeChoices: makeChoices, makeRound: makeRound, itemById: itemById,
     bestKey: bestKey, recordAnswer: recordAnswer, recordBest: recordBest, weakIds: weakIds, normalizeRecords: normalizeRecords,
     toShareHash: toShareHash, fromShareHash: fromShareHash, challengeToLink: challengeToLink, formatMs: formatMs,
     backupFileName: backupFileName, buildBackup: buildBackup, parseBackup: parseBackup,

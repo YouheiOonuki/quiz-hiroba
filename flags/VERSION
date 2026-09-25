@@ -1,0 +1,5 @@
+flag-icons 7.5.0
+https://github.com/lipis/flag-icons （npm: flag-icons@7.5.0、公開 2025-05-29）
+License: MIT（同じフォルダの LICENSE。Copyright (c) 2013 Panayiotis Lipiridis）
+取得: 2026-09-25、npm registry の flag-icons-7.5.0.tgz（sha256 c0b80bf0e08006a60f56621d6bc49f8c7131f4d1fef6737a165a673431f4b518）
+入れたもの: flags/4x3/ のうち、国旗クイズ（topics/kokki.js）で使う 196 か国の SVG だけ。中身は変えていない

@@ -9,9 +9,12 @@
   var Calc = window.Calc;
   var TOPIC = window.QuizTopics[document.body.getAttribute('data-topic')];
   var SRC = (window.Constants || {})[TOPIC.sourceKey] || null;
-  var CH = Calc.choiceCount(TOPIC) + '択';   // 4択（昭和クイズは 3択）
+  var CH = Calc.choiceCount(TOPIC) + '択';
+  var MARKS = ['ア', 'イ', 'ウ', 'エ'];   // 4択（昭和クイズは 3択）
   // 向きが 1 つで入力できない題材（昭和クイズ）は、「答え方」「向き」の行を出さない（選べるものが無いので）
   var ONLY_CHOICE = TOPIC.kinds.length === 1 && TOPIC.kinds[0].typing === false;
+  // どの向きも入力できない題材（国旗クイズ）は、「答え方」の行と「この向きは4択だけです」を出さない
+  var NO_TYPING = TOPIC.kinds.every(function (k) { return k.typing === false; });
 
   // --- ブラウザへの保存（README「ツールを追加するとき」12）。キーは必ず "quiz-hiroba_" で始める ---
   var KEY_PREFIX = 'quiz-hiroba_';
@@ -110,8 +113,8 @@
       { v: 'typing', label: '入力（一問一答）', disabled: kind.typing === false },
     ], kind.typing === false ? 'choice' : settings.mode, function (v) { settings.mode = v; changed(); });
     $('mode-note').textContent = 'この向きは' + CH + 'だけです。';
-    $('mode-note').hidden = kind.typing !== false || ONLY_CHOICE;
-    $('opt-mode').parentNode.hidden = ONLY_CHOICE;
+    $('mode-note').hidden = kind.typing !== false || NO_TYPING;
+    $('opt-mode').parentNode.hidden = NO_TYPING;
     $('opt-kind').parentNode.hidden = ONLY_CHOICE;
     radioGroup($('opt-kind'), 'kind', TOPIC.kinds.map(function (k) { return { v: k.key, label: k.label }; }), settings.kind,
       function (v) { settings.kind = v; changed(); });
@@ -213,6 +216,9 @@
     $('progress').textContent = (round.i + 1) + ' / ' + round.qs.length;
     $('score').textContent = '正解 ' + round.score;
     $('question').textContent = kind.prompt(it);
+    // 旗の絵（国旗クイズ）。問題に出たときに読む
+    $('q-img').hidden = !kind.img;
+    if (kind.img) $('q-img-i').src = kind.img(it);
     $('feedback').hidden = true;
     var choices = $('choices');
     choices.textContent = '';
@@ -229,9 +235,20 @@
       $('skip-btn').disabled = false;
       inp.focus();
     } else {
-      q.choices.forEach(function (c) {
-        var b = el('button', 'choice', c);
+      q.choices.forEach(function (c, i) {
+        var b;
+        if (kind.choiceImg) {
+          // 選択肢が旗の絵（国 → 旗）。国名は答えたあとに出す
+          b = el('button', 'choice flag-choice');
+          var img = document.createElement('img');
+          img.src = kind.choiceImg(c); img.alt = ''; img.width = 150; img.height = 113;
+          b.appendChild(img);
+          b.setAttribute('aria-label', MARKS[i]);
+        } else {
+          b = el('button', 'choice', c);
+        }
         b.type = 'button';
+        b.setAttribute('data-choice', c);
         b.addEventListener('click', function () { answer(c === kind.choice(it), c, b); });
         choices.appendChild(b);
       });
@@ -274,8 +291,10 @@
     $('score').textContent = '正解 ' + round.score;
     document.querySelectorAll('#choices .choice').forEach(function (b) {
       b.disabled = true;
-      if (b.textContent === kind.choice(it)) b.classList.add('ok');
+      var c = b.getAttribute('data-choice');
+      if (c === kind.choice(it)) b.classList.add('ok');
       else if (b === btn) b.classList.add('ng');
+      if (kind.choiceImg) { b.appendChild(el('span', 'cap', c)); b.removeAttribute('aria-label'); }
     });
     if (modeOf(round.opt) === 'typing') {
       $('answer').readOnly = true;
@@ -287,6 +306,7 @@
     $('fb-near').hidden = near !== 'case';
     $('fb-body').textContent = TOPIC.explain(it);
     if (TOPIC.talk) talkLine().textContent = '話のきっかけ: ' + TOPIC.talk(it);
+    showOoh(it);
     var link = TOPIC.link(it);
     $('fb-link').hidden = !link;
     if (link) { $('fb-link-a').href = link.href; $('fb-link-a').textContent = '出典: ' + link.label; }
@@ -302,6 +322,29 @@
     if (!p) { p = el('p', 'fb-talk'); p.id = 'fb-talk'; $('fb-body').insertAdjacentElement('afterend', p); }
     return p;
   }
+
+  // 「おお」の一言（K122）: 答えの直後に 1 つ（ランダム）。「もう1つ」で次へ。データが無い題材では出さない
+  var ooh = { list: [], i: 0 };
+  function showOoh(it) {
+    ooh.list = window.Ooh ? window.Ooh.factsFor(TOPIC.id, it) : [];
+    ooh.i = window.Ooh ? window.Ooh.startIndex(ooh.list.length) : 0;
+    renderOoh();
+  }
+  function renderOoh() {
+    var f = ooh.list[ooh.i];
+    $('ooh').hidden = !f;
+    if (!f) return;
+    $('ooh-text').textContent = f.text;
+    $('ooh-src').textContent = '出典: ' + f.src.label;
+    $('ooh-src').href = f.src.url;
+    $('ooh-more').hidden = ooh.list.length < 2;
+    $('ooh-more').textContent = 'もう1つ（' + (ooh.i + 1) + '/' + ooh.list.length + '）';
+  }
+  $('ooh-more').addEventListener('click', function () {
+    ooh.i = window.Ooh.nextIndex(ooh.i, ooh.list.length);
+    renderOoh();
+    if (round && modeOf(round.opt) === 'typing') $('answer').focus();   // 入力のときは Enter でつぎへ進めるように
+  });
 
   function next() {
     round.i += 1;
@@ -341,7 +384,9 @@
       var ul = el('ul');
       round.miss.forEach(function (m) {
         var it = Calc.itemById(TOPIC, m.id);
-        ul.appendChild(el('li', null, kind.prompt(it) + ' → ' + kind.answer(it)));
+        var li = el('li', null, kind.prompt(it) + ' → ' + kind.answer(it));
+        if (TOPIC.answerImg) { var im = document.createElement('img'); im.className = 'flag miss-flag'; im.alt = ''; im.width = 32; im.height = 24; im.src = TOPIC.answerImg(it); li.insertBefore(im, li.firstChild); }
+        ul.appendChild(li);
       });
       miss.appendChild(ul);
     } else {
@@ -407,7 +452,12 @@
       var row = el('tr');
       TOPIC.columns.forEach(function (c, i) {
         var td = el('td');
-        if (hidden[i]) {
+        if (c.img) {
+          var im = document.createElement('img');
+          im.className = 'flag'; im.loading = 'lazy'; im.alt = ''; im.width = 48; im.height = 36;
+          im.src = String(c.get(it));
+          td.appendChild(im);
+        } else if (hidden[i]) {
           var b = el('button', 'reveal', '？');
           b.type = 'button';
           b.setAttribute('aria-label', c.label + 'を見る');
@@ -452,7 +502,7 @@
     var box = $('sheets');
     box.textContent = '';
     var credit = 'yorozu-craft.com/quiz-hiroba/print/ で作成　問題番号 ' + printSeed;
-    var mark = ['ア', 'イ', 'ウ', 'エ'];
+    var mark = MARKS;
     if (cards) { renderCards(box, kind, qs, mark, credit); return; }
     function sheet(title, fill) {
       var s = el('section', 'sheet');
@@ -473,7 +523,12 @@
     sheet('問題', function (li, q) {
       var it = Calc.itemById(TOPIC, q.id);
       li.appendChild(el('span', 'q', kind.prompt(it)));
-      if (q.choices) {
+      if (kind.img) { li.className = 'has-flag'; li.appendChild(flagImg(kind.img(it))); }
+      if (q.choices && kind.choiceImg) {
+        var ci = el('span', 'cs-img');
+        q.choices.forEach(function (c, i) { var sp = el('span', null, mark[i]); sp.appendChild(flagImg(kind.choiceImg(c))); ci.appendChild(sp); });
+        li.appendChild(ci);
+      } else if (q.choices) {
         var cs = el('span', 'cs');
         q.choices.forEach(function (c, i) { cs.appendChild(el('span', null, mark[i] + ' ' + c)); });
         li.appendChild(cs);
@@ -486,8 +541,16 @@
       var ans = kind.answer(it);
       if (q.choices) ans = mark[q.choices.indexOf(kind.choice(it))] + '　' + ans;
       li.appendChild(el('span', 'q', kind.prompt(it)));
-      li.appendChild(el('span', 'a', ans));
+      var a = el('span', 'a');
+      if (TOPIC.answerImg) a.appendChild(flagImg(TOPIC.answerImg(it)));
+      a.appendChild(document.createTextNode(ans));
+      li.appendChild(a);
     });
+  }
+  function flagImg(src) {
+    var im = document.createElement('img');
+    im.className = 'flag'; im.alt = ''; im.src = src;
+    return im;
   }
 
   // 回想法カード（昭和クイズ）: A4 に 6 枚（2 列×3 段）。上が問題と選択肢、点線の下が答え・説明・話のきっかけ。

@@ -97,7 +97,7 @@ test('ページ: 題材のページ・入口・sitemap・sw.js が topics/*.js �
 test('sw.js: キャッシュ名は quiz-hiroba- で始まる', () => {
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   assert.match(sw, /const CACHE_PREFIX = 'quiz-hiroba-';/);
-  assert.match(sw, /\$\{CACHE_PREFIX\}v2/);
+  assert.match(sw, /\$\{CACHE_PREFIX\}v3/);
 });
 
 test('首都: 191 か国、国名と首都は重ならず、外務省の表記（括弧・数字を含まない）', () => {

@@ -59,13 +59,14 @@
       <li class="card topic"><a href="./nengo/"><span class="topic-icon" aria-hidden="true">📜</span><span class="topic-name">歴史年号クイズ（日本の歴史）</span><span class="topic-desc">中学の歴史の出来事 101 件。出来事→年、年→出来事</span><span class="topic-rec" data-topic="nengo"></span></a></li>
       <li class="card topic"><a href="./hyakunin/"><span class="topic-icon" aria-hidden="true">🎴</span><span class="topic-name">百人一首 読み上げ</span><span class="topic-desc">100首を端末の声で。ランダム・番号順・序歌・間隔・残り枚数</span></a></li>
       <li class="card topic"><a href="./kimariji/"><span class="topic-icon" aria-hidden="true">🌸</span><span class="topic-name">百人一首 決まり字クイズ</span><span class="topic-desc">上の句→下の句、取り札→決まり字。一字決まりから100首まで</span><span class="topic-rec" data-topic="kimariji"></span></a></li>
-      <li class="card topic"><a href="./shuto/"><span class="topic-icon" aria-hidden="true">🌏</span><span class="topic-name">世界の首都クイズ（191か国）</span><span class="topic-desc">外務省の表記で191か国。国→首都、首都→国。地域別にも</span><span class="topic-rec" data-topic="shuto"></span></a></li>
+      <li class="card topic"><a href="./shuto/"><span class="topic-icon" aria-hidden="true">🌏</span><span class="topic-name">世界の首都クイズ（191か国）</span><span class="topic-desc">外務省の表記。国→首都、首都→国。地域別にも</span><span class="topic-rec" data-topic="shuto"></span></a></li>
+      <li class="card topic"><a href="./kokki/"><span class="topic-icon" aria-hidden="true">🚩</span><span class="topic-name">国旗クイズ（196か国）</span><span class="topic-desc">旗→国、国→旗。小学生〜激ムズの4段階</span><span class="topic-rec" data-topic="kokki"></span></a></li>
       <li class="card topic"><a href="./showa/"><span class="topic-icon" aria-hidden="true">📻</span><span class="topic-name">昭和クイズ（回想法カード）</span><span class="topic-desc">昭和の出来事・物の値段・レコード大賞。3択・大きな字・回想法カード</span><span class="topic-rec" data-topic="showa"></span></a></li>
       <li class="card topic"><a href="./hayaoshi/"><span class="topic-icon" aria-hidden="true">🔔</span><span class="topic-name">早押しボタン（クイズ大会セット）</span><span class="topic-desc">1台を2〜4人で。正解・不正解の音、ドラムロール、得点。問題も出せる</span></a></li>
     </ul>
     <!-- TOPICS-END -->
 
-    <p class="small">どのクイズも選んで答える・入力・一覧・印刷ができ、終わると「同じ問題でちょうせん」のリンクを送れます。</p>
+    <p class="small">クイズは一覧で覚える・印刷ができ、終わると「同じ問題でちょうせん」のリンクを送れます。</p>
 
     <details class="card opt no-print" id="file-box">
       <summary>記録の保存・書き出し</summary>
@@ -97,11 +98,14 @@
 
   <script src="./calc.js"></script>
   <!-- TOPIC-SCRIPTS-BEGIN -->
+  <script src="./ooh.js"></script>
+  <script src="./ooh-genso.js"></script>
   <script src="./hyakunin-data.js"></script>
   <script src="./topics/genso.js"></script>
   <script src="./topics/nengo.js"></script>
   <script src="./topics/kimariji.js"></script>
   <script src="./topics/shuto.js"></script>
+  <script src="./topics/kokki.js"></script>
   <script src="./topics/showa.js"></script>
   <!-- TOPIC-SCRIPTS-END -->
   <script src="./hub.js"></script>
