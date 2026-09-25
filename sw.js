@@ -10,7 +10,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'quiz-hiroba-';
-const CACHE_NAME   = `${CACHE_PREFIX}v3`; // キャッシュする中身の構成を変えたら上げる
+const CACHE_NAME   = `${CACHE_PREFIX}v4`; // キャッシュする中身の構成を変えたら上げる
 
 /** 初回インストール時に取得しておくファイル（PRECACHE の間は tools/build-pages.mjs が topics/*.js から作る） */
 const PRECACHE_URLS = [
@@ -23,6 +23,7 @@ const PRECACHE_URLS = [
   './calc.js',
   './quiz.js',
   './hub.js',
+  './reset-storage.js',
   './ooh.js',
   './ooh-genso.js',
   './hyakunin-data.js',

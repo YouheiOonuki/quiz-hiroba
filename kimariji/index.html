@@ -98,7 +98,7 @@
         <ul id="weak-list" class="weak-list"></ul>
         <p id="weak-empty" class="small">まだありません。</p>
         <p class="small">記録はこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_records</code>）にだけ保存され、外部には送信されません。書き出し・読み込みは<a href="../#file-box">クイズ広場のトップ</a>から。</p>
-        <div class="btn-row"><button type="button" class="btn btn-sub" id="rec-reset">この題材の記録を消す</button></div>
+        <div class="btn-row"><button type="button" class="btn btn-sub" id="rec-reset">この題材の記録を消す</button> <button type="button" class="btn btn-sub" data-reset-storage="quiz-hiroba_records quiz-hiroba_settings" data-reset-confirm="クイズ広場のすべての題材の記録（にがて・自己ベスト）と出し方の設定を、この端末から消して初期状態に戻します。消した内容は元に戻せません。よろしいですか？">保存した内容をすべて消す（初期状態に戻す）</button></div>
       </details>
 
       <details class="card opt" id="src-box">
@@ -213,6 +213,7 @@
   <script src="../calc.js"></script>
   <script src="../hyakunin-data.js"></script>
   <script src="../topics/kimariji.js"></script>
+  <script src="../reset-storage.js"></script>
   <script src="../quiz.js"></script>
   <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
