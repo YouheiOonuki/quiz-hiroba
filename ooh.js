@@ -5,7 +5,7 @@
 // うそにならない規則（K122）:
 //   1. 事実は 2 層。型の事実は構造化したデータから機械で文にする。自由文は 1 題材（1 問）に 1 つまで、出典つきで人が書く
 //   2. 1 事実 1 出典（src）。出典の無い事実は出さない（factsFor が捨てる。テストでも 0 件を確かめる）
-//   3. 変わるもの（人口・生産量・最大最古の記録・現職）は書かない。BANNED の語を含む文はテストで落とす
+//   3. 変わるもの（人口・面積・順位・生産量・最大最古の記録・現職）は書かない。BANNED の語を含む文はテストで落とす
 //   4. 1 文 40 字以内（「。」で区切った 1 文ずつ）。断定は出典が断定しているものだけ
 // ブラウザでは window.Ooh、Node（テスト）では module.exports で使う
 // ===========================
@@ -14,7 +14,7 @@
 
   var MAX_SENTENCE = 40;
   // 変わるもの・記録の語。自由文にも型の事実にも入れない（WHITELIST に理由つきで足したものだけ例外）
-  var BANNED = ['人口', '生産', '最大', '最古', '現在', '最も', '世界一', '一番', 'いちばん', '現職', '今も', 'いまも'];
+  var BANNED = ['人口', '面積', '順位', '生産', '最大', '最古', '現在', '最も', '世界一', '一番', 'いちばん', '現職', '今も', 'いまも'];
   var WHITELIST = {};   // 例: { 'genso:26:0': '理由' }。いまは無い
 
   // --- 元素 ---
@@ -80,7 +80,35 @@
     return out;
   }
 
-  var BUILDERS = { genso: gensoFacts };
+  // --- 世界の首都（データは ooh-shuto.js。Wikidata の写しから tools/build-ooh-shuto.mjs が作る） ---
+  /** 型の事実 1 つを文にする（値は Wikidata の構造化データのまま。断定を避け、Wikidata の値であることは出典に書く） */
+  function shutoSentence(f, data) {
+    switch (f[0]) {
+      case 'n': return '名前は「' + f[1] + '」にちなむとされる。';
+      case 'i': return '創設は' + (f[1] < 0 ? '紀元前' + (-f[1]) : f[1]) + '年とされる。';
+      case 'w': return f[2].join('と') + (f[1] === 'r' ? 'のほとりにある。' : 'に面している。');
+      case 'f': return data && data.lang && data.lang[f[2]] ? f[1] + '年までの公式名は' + data.lang[f[2]] + 'で「' + f[3] + '」。' : null;
+      default: return null;
+    }
+  }
+  var SHUTO_KIND = { n: 'name', i: 'founded', w: 'water', f: 'former' };
+  function shutoFacts(data, it) {
+    var row = null;
+    for (var i = 0; i < data.rows.length; i++) if (data.rows[i][0] === it.id) { row = data.rows[i]; break; }
+    if (!row || !/^Q\d+$/.test(row[1])) return [];
+    var out = [];
+    row[3].forEach(function (f) {
+      var text = shutoSentence(f, data);
+      var prop = f[f.length - 1];
+      if (!text || !/^P\d+$/.test(prop)) return;
+      out.push({ kind: SHUTO_KIND[f[0]], text: text, src: {
+        label: 'Wikidata ' + row[1] + '（' + prop + '。' + data.retrieved + ' 取得。CC0）',
+        url: 'https://www.wikidata.org/wiki/' + row[1] + '#' + prop } });
+    });
+    return out;
+  }
+
+  var BUILDERS = { genso: gensoFacts, shuto: shutoFacts };
 
   /** 文を「。」で区切る（空は除く） */
   function sentences(text) {
@@ -116,7 +144,7 @@
   function nextIndex(i, n) { return n > 0 ? (i + 1) % n : 0; }
 
   var api = { MAX_SENTENCE: MAX_SENTENCE, BANNED: BANNED, WHITELIST: WHITELIST, period: period, group: group, foundSentence: foundSentence,
-    sentences: sentences, problem: problem, factsFor: factsFor, startIndex: startIndex, nextIndex: nextIndex, builders: BUILDERS };
+    shutoSentence: shutoSentence, sentences: sentences, problem: problem, factsFor: factsFor, startIndex: startIndex, nextIndex: nextIndex, builders: BUILDERS };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Ooh = api;
 })(this);
