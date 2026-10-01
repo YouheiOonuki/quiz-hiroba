@@ -115,7 +115,7 @@ test('見本: ジャカルタ・モンロビア・エレバン・ローマ', () 
   assert.ok(texts('italy').includes('テヴェレ川とアニエーネ川のほとりにある。'));
 });
 
-test('突き合わせられないもの（タラワ・グアテマラ市・マルキョク・マラボ）は一言を出さない', () => {
+test('突き合わせられないもの（タラワ・グアテマラ市・マルキョク・シウダ・デ・ラ・パス）は一言を出さない', () => {
   for (const id of ['kiribati', 'guatemala', 'palau', 'eq_guinea']) {
     assert.ok(data.unmatched.includes(id), id);
     assert.deepEqual(texts(id), []);
