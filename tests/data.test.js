@@ -122,13 +122,15 @@ test('首都: 見本（外務省の基礎データの表記）と、出題しな
   assert.equal(cap('netherlands'), 'アムステルダム');
   assert.equal(cap('bolivia'), 'ラパス');
   assert.equal(cap('china'), '北京');
+  assert.equal(cap('eq_guinea'), 'シウダ・デ・ラ・パス'); // 2026 年 1 月に移転が宣言された（外務省 令和8年3月6日更新）
   for (const id of ['israel', 'singapore', 'vatican', 'monaco', 'n_korea', 'taiwan', 'plo', 'hongkong', 'macao']) {
     assert.ok(!shuto.items.some((it) => it.id === id), id + ' は出題しない');
   }
   const multi = shuto.items.filter((it) => it.multi).map((it) => it.id).sort();
-  assert.equal(multi.length, 17);
+  assert.equal(multi.length, 18);
   assert.ok(multi.includes('s_africa') && multi.includes('netherlands') && multi.includes('bolivia'));
   assert.match(shuto.explain(shuto.items.find((it) => it.id === 'netherlands')), /ハーグ/);
+  assert.match(shuto.explain(shuto.items.find((it) => it.id === 'eq_guinea')), /マラボ/);
 });
 
 const showa = require('../topics/showa.js');
