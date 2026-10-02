@@ -226,3 +226,13 @@ test('早押しボタンのページ: AdSense は meta だけ、使い方ペー�
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   for (const f of ['./hayaoshi/', './hayaoshi.js', './hayaoshi-ui.js', './showa/', './topics/showa.js', './showa/guide.html']) assert.ok(sw.includes(`'${f}'`), f);
 });
+
+test('百人一首 読み上げの使い方: 介護向けの入口に載せる道具なので広告なし（D191）、先頭に定型文', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'hyakunin/guide.html'), 'utf8');
+  assert.ok(!/adsbygoogle\.js/.test(html), 'AdSense のスクリプトが無い');
+  assert.equal((html.match(/name="google-adsense-account"/g) || []).length, 1, 'meta だけ');
+  assert.match(html, /<p class="noads">このページは広告なし・登録なし・入力は端末の外に出ません。<\/p>/);
+  for (const f of ['hyakunin/index.html', 'kimariji/index.html']) {
+    assert.ok(!/adsbygoogle\.js/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')), f);
+  }
+});
