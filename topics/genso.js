@@ -147,6 +147,8 @@
       order: 1,
       deps: ['ooh.js', 'ooh-genso.js'],   // 答えのあとの「おお」の一言（K122）
       note: '日本語名は日本化学会の原子量表の表記です。漢字の名前は、ひらがなのよみでも正解になります。',
+      // 神話の名がついた元素（チタン・パラジウムなど 14）の由来の一覧と相互リンク（ROADMAP K119。ほしぞらさんぽ shinwa/namae.html）
+      related: { href: '../../hoshizora-sanpo/shinwa/namae.html', label: '神話の名がついた元素と惑星（ギリシャ神話・名前の由来）' },
     },
     unit: '元素',
     order: function (it) { return it.n; },

@@ -12,7 +12,7 @@
 // 題材のほかに、手で書いたページ（EXTRA_PAGES。百人一首の読み上げ /hyakunin/、早押しボタン /hayaoshi/）も入口の一覧・sitemap・sw.js に入れる。
 // 題材が別のデータファイルを使うときは page.deps に並べる（例: 決まり字クイズの hyakunin-data.js、元素の「おお」の一言の ooh.js・ooh-genso.js、国旗クイズの topics/shuto.js）。題材のページ・入口・sw.js が読み込む
 // 旗の絵（flags/4x3/*.svg）は sw.js の最初に取っておくファイルに入れない（問題に出たときに読む。読んだものはネットワーク優先のキャッシュに入る）
-// 題材の page に big（大きな字）・noAds（広告なしの定型文。D118）・cards（回想法カードの印刷）・guide（題材だけの使い方ページ。sitemap と sw.js にも入る）を書ける（例: 昭和クイズ）
+// 題材の page に related（使い方の下に出す関連ページのリンク 1 本。{ href, label }。例: 元素記号クイズ → ほしぞらさんぽのギリシャ神話「名前の由来」）・big（大きな字）・noAds（広告なしの定型文。D118）・cards（回想法カードの印刷）・guide（題材だけの使い方ページ。sitemap と sw.js にも入る）を書ける（例: 昭和クイズ）
 // 題材を足すとき: topics/<題材>.js を書いて、これを実行するだけ（README「題材を足す」）
 // 依存パッケージなし（Node 20 以上）
 import fs from 'node:fs';
@@ -82,6 +82,7 @@ export function build() {
       .replaceAll('{{GUIDE}}', t.page.guide ? '../' + t.page.guide : '../guide.html')
       .replaceAll('{{GUIDETEXT}}', t.page.guide ? '使い方・回想法カードの使い方・出典' : '使い方・入力の決まり・よくある質問')
       .replaceAll('{{CARDS}}', t.page.cards ? '\n        <label class="weak-row"><input type="checkbox" id="print-cards"> 回想法カードにする（1枚に6問。点線で折ると答えがかくれる）</label>' : '')
+      .replaceAll('{{RELATED}}', t.page.related ? `\n      <p class="small"><a href="${esc(t.page.related.href)}">${esc(t.page.related.label)}</a></p>` : '')
       .replaceAll('{{DEPS}}', (t.page.deps || []).map((d) => `<script src="../${d}"></script>\n  `).join(''))
       .replaceAll('{{JSONLD}}', JSON.stringify(ld, null, 2).replace(/</g, '\\u003c').split('\n').join('\n  '));
   }
