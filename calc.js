@@ -267,7 +267,7 @@
   }
 
   // --- 共有リンク（#s=）: 同じ問題でちょうせん ---
-  // 中身: { t: 題材, k: 向き, m: 答え方, f: 絞り込み, n: 問題数, s: 種, p?: 送った人の正解数 }
+  // 中身: { t: 題材, k: 向き, m: 答え方, f: 絞り込み, n: 問題数, s: 種, p?: 送った人の正解数, d?: 結果が出た日時（UNIX 秒。K124 の結果カード） }
   // base64url の JSON。「#」以降なのでサーバーには届かない
   function b64urlEncode(str) {
     var b64 = typeof Buffer !== 'undefined' ? Buffer.from(str, 'utf8').toString('base64')
@@ -304,12 +304,15 @@
     };
     var p = Math.floor(Number(o.p));
     if (o.p != null && p >= 0) out.score = p;
+    var d = Math.floor(Number(o.d));
+    if (o.d != null && d >= 1500000000 && d <= 4102444800) out.at = d * 1000;   // 2017〜2100 年だけ
     return out;
   }
 
-  function challengeToLink(topic, opt, score) {
+  function challengeToLink(topic, opt, score, atMs) {
     var o = { t: topic.id, k: opt.kind, m: opt.mode, f: normalizeFilters(topic, opt.filters), n: opt.count || 0, s: opt.seed };
     if (score != null) o.p = score;
+    if (atMs != null && isFinite(atMs)) o.d = Math.floor(atMs / 1000);
     return toShareHash(o);
   }
 
