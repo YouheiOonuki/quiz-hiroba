@@ -9,7 +9,7 @@
 //   print/index.html の TOPICS の間   印刷物のクレジットの着地ページの一覧
 //   sitemap.xml                  入口・使い方・各題材
 //   sw.js の PRECACHE の間        オフライン用に最初に取っておくファイル
-// 題材のほかに、手で書いたページ（EXTRA_PAGES。百人一首の読み上げ /hyakunin/、早押しボタン /hayaoshi/）も入口の一覧・sitemap・sw.js に入れる。
+// 題材のほかに、手で書いたページ（EXTRA_PAGES。百人一首の読み上げ /hyakunin/、早押しボタン /hayaoshi/、毎日 1 問 /mainichi/）も入口の一覧・sitemap・sw.js に入れる。
 // 題材が別のデータファイルを使うときは page.deps に並べる（例: 決まり字クイズの hyakunin-data.js、元素の「おお」の一言の ooh.js・ooh-genso.js、国旗クイズの topics/shuto.js）。題材のページ・入口・sw.js が読み込む
 // 旗の絵（flags/4x3/*.svg）は sw.js の最初に取っておくファイルに入れない（問題に出たときに読む。読んだものはネットワーク優先のキャッシュに入る）
 // 題材の page に related（使い方の下に出す関連ページのリンク 1 本。{ href, label }。例: 元素記号クイズ → ほしぞらさんぽのギリシャ神話「名前の由来」）・big（大きな字）・noAds（広告なしの定型文。D118）・cards（回想法カードの印刷）・guide（題材だけの使い方ページ。sitemap と sw.js にも入る）を書ける（例: 昭和クイズ）
@@ -31,6 +31,8 @@ export const EXTRA_PAGES = [
     files: ['hyakunin-data.js', 'yomiage.js', 'yomiage-ui.js', 'hyakunin/guide.html'] },
   { path: 'hayaoshi/', icon: '🔔', h1: '早押しボタン（クイズ大会セット）', hub: '1台を2〜4人で。正解・不正解の音、ドラムロール、得点。問題も出せる', order: 6,
     files: ['hayaoshi.js', 'hayaoshi-ui.js', 'hayaoshi/guide.html'] },
+  { path: 'mainichi/', icon: '📅', h1: '毎日 1 問', hub: '日付で決まる 1 日 1 問。元素・年号・首都・百人一首が日替わり', order: 0.5,
+    files: ['mainichi-calc.js', 'mainichi/mainichi.js', 'mainichi/guide.html'] },
 ];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

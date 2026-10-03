@@ -20,6 +20,9 @@ const PAGE_PREFIXES = {
   "hayaoshi/index.html": [
     "quiz-hiroba_hayaoshi"
   ],
+  "mainichi/index.html": [
+    "quiz-hiroba_mainichi"
+  ],
   "genso/index.html": [
     "quiz-hiroba_records",
     "quiz-hiroba_settings"
