@@ -559,3 +559,11 @@ kbd { font-family: inherit; border: 1px solid var(--border); border-bottom-width
 .ooh-more { margin-top: 0.35rem; }
 .result-miss img.miss-flag { width: 32px; height: 24px; border: 1px solid var(--border); background: #fff; vertical-align: middle; margin-right: 0.4em; }
 @media screen and (max-width: 560px) { .sheet-list li.has-flag .cs { flex-basis: 100%; } }
+
+/* 毎日 1 問（mainichi/。K37） */
+.mn-nav { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; margin-bottom: 0.4rem; }
+.mn-nav .btn-ghost { min-height: 44px; }
+.mn-nav .btn-ghost:disabled { opacity: 0.4; cursor: default; }
+.mn-date { font-weight: 700; text-align: center; font-size: 0.95rem; }
+.mn-topic { margin: 0.2rem 0 0; color: var(--muted); }
+.mn-stats { margin: 0.8rem 0 0; text-align: center; }

@@ -33,6 +33,14 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 - 効果音は Web Audio で合成（音のファイルは持たない）。問題はクイズ広場の題材から `calc.js` の種で並べ、「読み上げ役の画面」に同じ順で答えつき一覧（印刷可）
 - 保存: `quiz-hiroba_hayaoshi`（人数・名前・得点・問題の種）。バックアップ（D31）の対象外。広告: ボタンの画面は meta だけ、`hayaoshi/guide.html` だけ広告（D122）
 
+## 毎日 1 問（`/quiz-hiroba/mainichi/`。K37、yorozu-plans の企画書 69。手で書いたページ）
+
+- 日本時間の日付だけで問題が決まる（同じ日ならだれでも同じ問題・同じ選択肢）。出題は `mainichi-calc.js`（純粋関数、`tests/mainichi.test.js`）
+- 題材は 元素（記号 → 名前）→ 年号（出来事 → 年）→ 首都（国 → 首都）→ 百人一首（上の句 → 下の句）を 1 日ずつ回す。題材の中は決まった種で並べた順に 1 問ずつで、全部出るまで重ならない。選択肢は `calc.js` の `makeChoices`（題材のページの 4 択と同じ）に日の番号の種
+- 答えのあとに解説・出典のリンク・「おお」の一言（元素と首都）。「◀ 前」で 2026-10-01 からの問題も解ける（`#d=YYYY-MM-DD`。練習で、記録に入らない）
+- 保存: `quiz-hiroba_mainichi`（答えた日と正解・不正解、400 日まで）。続けた日数は きょうか きのうまで続いている日数。バックアップ（D31）の対象外（記録だけで、消えても困らないため）。消すボタンはこのキーだけ
+- 広告: 答える画面は meta だけ、`mainichi/guide.html` だけ広告（D122 と同じ）
+
 ## 機能（どの題材も同じエンジン）
 
 - 答え方: 4 択（選択肢は並びの近いものから 2 つ＋範囲からばらばらに 1 つ）／入力（一問一答）。4 択だけの向き（年 → 出来事）もある
@@ -42,7 +50,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 - 記録: 問題ごとの正解・不正解と「最後にまちがえたもの＝にがて」、条件ごとの自己ベスト（正解数、同じなら時間）。キー `quiz-hiroba_records`・`quiz-hiroba_settings`。書き出し・読み込みは入口のページ
 - 共有リンク `#s=`（base64url の JSON: 題材・向き・答え方・絞り込み・問題数・種・送った人の正解数）。同じ問題・同じ選択肢の並びになる。受け取った側の設定は上書きしない
 - 広告: 入口・題材のページは AdSense の meta だけ（遊ぶ画面。todofuken-quiz と同じ）、使い方ページ（`guide.html`）だけ広告あり（企画書 27 の D122）
-- オフライン対応（`sw.js`、キャッシュ名 `quiz-hiroba-v5`）
+- オフライン対応（`sw.js`、キャッシュ名 `quiz-hiroba-v7`）
 
 ## 「おお」の一言（K122。元素と世界の首都）
 
@@ -87,6 +95,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | `index.html` / `hub.js` | 入口（題材の一覧・記録の数・記録の書き出しと読み込み） |
 | `genso/`・`nengo/`・`kimariji/`・`shuto/`・`kokki/`・`showa/` の `index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
 | `hyakunin/index.html` / `yomiage.js` / `yomiage-ui.js` / `hyakunin/guide.html` | 百人一首 読み上げ（手で書いたページ。`tools/build-pages.mjs` の `EXTRA_PAGES` で入口・sitemap・sw.js に入る） |
+| `mainichi/index.html` / `mainichi/mainichi.js` / `mainichi-calc.js` / `mainichi/guide.html` | 毎日 1 問（手で書いたページ。`EXTRA_PAGES` で入口・sitemap・sw.js に入る） |
 | `hyakunin-data.js` | 小倉百人一首 100 首と序歌（読み上げと決まり字クイズが使う） |
 | `ooh.js` / `ooh-genso.js` / `ooh-shuto.js` | 「おお」の一言のエンジンと、元素・首都のデータ（首都は生成物） |
 | `data/wikidata-shuto.json` / `tools/fetch-wikidata-shuto.mjs` / `tools/build-ooh-shuto.mjs` | 首都の一言の元になる Wikidata の写し（CC0、取得日つき）と、取るスクリプト・一言を作るスクリプト |

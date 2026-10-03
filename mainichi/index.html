@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毎日 1 問クイズ（元素・年号・世界の首都・百人一首）｜日替わり・無料｜クイズ広場</title>
+  <meta name="description" content="1 日 1 問の日替わりクイズ。元素記号・歴史の年号・世界の首都・百人一首が日ごとに入れかわり、同じ日ならだれでも同じ問題。4 択で答えて、続けた日数を記録。登録なし・無料。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yorozu-craft.com/quiz-hiroba/mainichi/">
+
+  <meta property="og:title" content="毎日 1 問クイズ｜クイズ広場">
+  <meta property="og:description" content="元素記号・年号・世界の首都・百人一首から 1 日 1 問。同じ日ならだれでも同じ問題。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorozu-craft.com/quiz-hiroba/mainichi/">
+  <meta property="og:site_name" content="yorozu-craft">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#8b4513" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1814" media="(prefers-color-scheme: dark)">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "毎日 1 問クイズ",
+    "description": "元素記号・歴史の年号・世界の首都・百人一首から、日付で決まる 1 日 1 問の 4 択クイズ。",
+    "url": "https://yorozu-craft.com/quiz-hiroba/mainichi/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "inLanguage": "ja",
+    "isPartOf": { "@type": "WebSite", "name": "クイズ広場", "url": "https://yorozu-craft.com/quiz-hiroba/" }
+  }
+  </script>
+
+  <!-- Google AdSense: 答える画面（遊ぶ画面）なので meta（サイト所有確認）だけ。広告は使い方ページに出す（企画書 27 の D122） -->
+  <meta name="google-adsense-account" content="ca-pub-5375267956079717">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <p class="crumb"><a href="../">クイズ広場</a></p>
+    <h1>毎日 1 問</h1>
+    <p class="subtitle">日付で問題が決まる 1 日 1 問。入力は外部に送信しません。</p>
+  </header>
+
+  <main class="app-main" id="app">
+
+    <section class="card mn-card" aria-labelledby="question">
+      <div class="mn-nav">
+        <button type="button" class="btn-ghost" id="prev" aria-label="前の日の問題">◀ 前</button>
+        <span id="mn-date" class="mn-date" aria-live="polite"></span>
+        <button type="button" class="btn-ghost" id="next-day" aria-label="次の日の問題">次 ▶</button>
+      </div>
+      <p id="mn-topic" class="small mn-topic"></p>
+      <p id="question" class="question"></p>
+      <div id="choices" class="choices"></div>
+      <div id="feedback" class="feedback" hidden aria-live="assertive">
+        <p id="fb-title" class="fb-title"></p>
+        <p id="fb-body" class="fb-body"></p>
+        <div id="ooh" class="ooh" hidden>
+          <p class="ooh-text"><span class="ooh-mark">おお</span><span id="ooh-text"></span></p>
+          <p class="small ooh-src"><a id="ooh-src" href="#" target="_blank" rel="noopener"></a></p>
+          <button type="button" class="btn-ghost ooh-more" id="ooh-more">もう1つ</button>
+        </div>
+        <p id="fb-link" class="small" hidden><a id="fb-link-a" href="#" target="_blank" rel="noopener"></a></p>
+        <p class="small"><a id="more-topic" href="../">この題材をもっと解く →</a></p>
+      </div>
+      <p id="mn-stats" class="small mn-stats" aria-live="polite"></p>
+    </section>
+
+    <details class="card opt" id="save-box">
+      <summary>記録と保存</summary>
+      <p class="small">答えた日と正解・不正解はこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_mainichi</code>）にだけ保存され、外部には送信されません。消去はこの画面のボタンから。</p>
+      <p class="btn-row"><button type="button" class="btn btn-sub" data-reset-storage="quiz-hiroba_mainichi">保存した内容をすべて消す（初期状態に戻す）</button></p>
+    </details>
+
+    <p class="small center"><a href="./guide.html">毎日 1 問の使い方・出題のしくみ</a>・<a href="../">クイズ広場の題材の一覧</a></p>
+  </main>
+
+  <footer class="app-footer">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="../../">yorozu-craft トップ</a></li>
+        <li><a href="../">クイズ広場</a></li>
+        <li><a href="./guide.html">毎日 1 問の使い方</a></li>
+        <li><a href="../../about.html">運営者情報</a></li>
+        <li><a href="../../privacy-policy.html">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 yorozu-craft. All rights reserved.</p>
+  </footer>
+
+  <script src="../constants.js"></script>
+  <script src="../calc.js"></script>
+  <script src="../hyakunin-data.js"></script>
+  <script src="../ooh.js"></script>
+  <script src="../ooh-genso.js"></script>
+  <script src="../ooh-shuto.js"></script>
+  <script src="../topics/genso.js"></script>
+  <script src="../topics/nengo.js"></script>
+  <script src="../topics/shuto.js"></script>
+  <script src="../topics/kimariji.js"></script>
+  <script src="../reset-storage.js"></script>
+  <script src="../mainichi-calc.js"></script>
+  <script src="./mainichi.js"></script>
+  <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
