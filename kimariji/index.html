@@ -72,6 +72,7 @@
       <div id="challenge" class="card challenge" hidden>
         <p><strong>ちょうせんが届きました</strong></p>
         <p id="challenge-text" class="small"></p>
+        <div id="challenge-card"></div>
         <p><button type="button" class="btn btn-big" id="challenge-start">同じ問題でちょうせん</button></p>
       </div>
 
@@ -158,11 +159,8 @@
         <button type="button" class="btn btn-big btn-sub" id="to-menu">メニューへ</button>
       </div>
       <div class="card" id="share-box">
-        <button type="button" class="btn" id="share">同じ問題でちょうせん（リンクをコピー）</button>
-        <p id="share-msg" class="small" aria-live="polite"></p>
-        <label for="share-url" class="visually-hidden">ちょうせんのリンク</label>
-        <input type="text" id="share-url" class="share-url" readonly>
-        <p class="small">リンクには出し方・問題の番号・あなたの正解数だけが入ります（名前や答えは入りません）。</p>
+        <div id="share-host"></div>
+        <p class="small">リンクには出し方・問題の番号・あなたの正解数・日時だけが入ります（名前や答えは入りません）。開いた人は同じ問題・同じ選択肢で遊べます。</p>
       </div>
     </section>
 
@@ -214,6 +212,7 @@
   <script src="../hyakunin-data.js"></script>
   <script src="../topics/kimariji.js"></script>
   <script src="../reset-storage.js"></script>
+  <script src="../share-card.js"></script>
   <script src="../quiz.js"></script>
   <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

@@ -147,6 +147,13 @@
     box.hidden = !challenge;
     if (challenge) {
       $('challenge-text').textContent = describe(challenge) + (challenge.score != null ? '。送った人は ' + challenge.score + '問 正解' : '');
+      // 送った人の結果を 1 枚のカードで（正解数があるときだけ。K124）
+      var host = $('challenge-card');
+      if (challenge.score != null && !host.querySelector('.share-card')) {
+        var total = challenge.count || Calc.pool(TOPIC, challenge.filters).length;
+        window.ShareCard.mount(host, { shared: true, label: TOPIC.page.h1, result: total + '問中 ' + challenge.score + '問 正解',
+          sub: describe(challenge), when: challenge.at == null ? NaN : challenge.at });
+      }
     }
     renderRecords();
   }
@@ -396,8 +403,7 @@
     // にがてだけの回は種と条件で再現できないので、共有リンクを出さない
     var sharable = !(round.opt.only && round.opt.only.length);
     $('share-box').hidden = !sharable;
-    $('share-url').value = '';
-    $('share-msg').textContent = '';
+    if (sharable) shareCard(n, s, ms);
     show('scr-result');
   }
 
@@ -410,17 +416,17 @@
     start(o, false);
   });
   $('to-menu').addEventListener('click', function () { renderMenu(); show('scr-menu'); });
-  $('share').addEventListener('click', function () {
-    var url = location.origin + location.pathname + Calc.challengeToLink(TOPIC, round.opt, round.score);
-    $('share-url').value = url;
-    var done = function () { $('share-msg').textContent = 'リンクをコピーしました。開いた人は同じ問題・同じ選択肢で遊べます。'; };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(done, function () { $('share-msg').textContent = '下のリンクをコピーして送ってください。'; });
-    } else {
-      $('share-msg').textContent = '下のリンクをコピーして送ってください。';
-    }
-    $('share-url').select();
-  });
+  // --- 結果カード（yorozu-plans K124・企画書 60）: 結果・日時・URL。共有は Web Share API かリンクのコピーだけ ---
+  // URL は題材ごとの着地ページ（<題材>/s/。OG 画像だけが違い、開くとすぐこの画面へ移る）＋「#s=」以降
+  var SHARE_PAGE = 'https://yorozu-craft.com/quiz-hiroba/' + TOPIC.id + '/s/';
+  function shareCard(n, s, ms) {
+    var at = Date.now();
+    window.ShareCard.mount($('share-host'), {
+      label: TOPIC.page.h1, result: n + '問中 ' + s + '問 正解', sub: describe(round.opt) + '・' + Calc.formatMs(ms), when: at,
+      url: window.ShareCard.link(SHARE_PAGE, Calc.challengeToLink(TOPIC, round.opt, s, at)),
+      title: TOPIC.page.h1 + 'に挑戦', btnClass: 'btn',
+    });
+  }
 
   // --- 一覧で覚える ---
   var hidden = {};
