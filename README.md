@@ -90,6 +90,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 | `hyakunin-data.js` | 小倉百人一首 100 首と序歌（読み上げと決まり字クイズが使う） |
 | `ooh.js` / `ooh-genso.js` / `ooh-shuto.js` | 「おお」の一言のエンジンと、元素・首都のデータ（首都は生成物） |
 | `data/wikidata-shuto.json` / `tools/fetch-wikidata-shuto.mjs` / `tools/build-ooh-shuto.mjs` | 首都の一言の元になる Wikidata の写し（CC0、取得日つき）と、取るスクリプト・一言を作るスクリプト |
+| `data/genso.json` / `data/shuto.json` / `tools/build-data.mjs` | 「おお」の一言（元素・首都）の公開データ（**CC0**。`data/README.md`）。画面と同じ `ooh.js` の `factsFor` から機械で書き出す。元のデータを直したら `node tools/build-data.mjs`（`tests/opendata.test.js` がずれを見張る。yorozu-plans ROADMAP 7.17 の K133） |
 | `flags/4x3/*.svg` / `flags/LICENSE` / `flags/VERSION` | 国旗の絵（lipis/flag-icons、MIT）。問題に出たとき・一覧で見えたときに読む（`sw.js` の最初に取っておくファイルには入れない） |
 | `tools/page-template.html` / `tools/build-pages.mjs` | 題材のページのひな形と、それを作るスクリプト |
 | `topics/*.js` | 題材のデータ |

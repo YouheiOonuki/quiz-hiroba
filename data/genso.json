@@ -1,0 +1,4417 @@
+{
+  "title": "元素の「おお」の一言（118 元素の名前の由来・発見・周期表の位置）",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+  "publisher": "yorozu-craft（Youhei Oonuki）",
+  "homepage": "https://yorozu-craft.com/quiz-hiroba/genso/",
+  "data_url": "https://yorozu-craft.com/quiz-hiroba/data/genso.json",
+  "repository": "https://github.com/YouheiOonuki/quiz-hiroba",
+  "generated_from": "ooh-genso.js（事実と出典）・ooh.js（文にする規則）・topics/genso.js（記号と名前）を tools/build-data.mjs で書き出し",
+  "checked": "2026-09-25",
+  "generated": "2026-10-03",
+  "source": [
+    "https://iupac.org/what-we-do/periodic-table-of-elements/",
+    "https://iupac.org/wp-content/uploads/2022/05/IUPAC_Periodic_Table-04May22.pdf",
+    "https://www.chemistry.or.jp/know/doc/atom_2026.pdf",
+    "https://www.chemistry.or.jp/news/113nh.html",
+    "https://www.ciaaw.org/",
+    "https://pubchem.ncbi.nlm.nih.gov/periodic-table/",
+    "https://periodic.lanl.gov/",
+    "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+  ],
+  "note": "名前・記号は IUPAC の周期表と日本化学会「原子量表（2026）」。一言は各行の source の原文に書いてあることだけを短い日本語にしたもの（1 文 40 字以内、人口・順位など変わるものは書かない）。group はランタノイド・アクチノイドで null。",
+  "items": [
+    {
+      "n": 1,
+      "symbol": "H",
+      "ja": "水素",
+      "yomi": "すいそ",
+      "en": "hydrogen",
+      "period": 1,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「水」と「生む」から。燃えると水ができるため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「hydrogen」",
+            "url": "https://www.ciaaw.org/hydrogen.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1766年、イギリスの物理学者キャベンディッシュが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「hydrogen」",
+            "url": "https://www.ciaaw.org/hydrogen.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第1周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "symbol": "He",
+      "ja": "ヘリウム",
+      "en": "helium",
+      "period": 1,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の helios（太陽）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「helium」",
+            "url": "https://www.ciaaw.org/helium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1868年、フランスの天文学者ジャンサンが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「helium」",
+            "url": "https://www.ciaaw.org/helium.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第1周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "日食のときに、太陽の光を調べて見つかった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「helium」",
+            "url": "https://www.ciaaw.org/helium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "symbol": "Li",
+      "ja": "リチウム",
+      "en": "lithium",
+      "period": 2,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は lithos（石）という言葉から。鉱物の中にだけあると思われていたため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lithium」",
+            "url": "https://www.ciaaw.org/lithium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1818年、スウェーデンのアルフェドソンが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lithium」",
+            "url": "https://www.ciaaw.org/lithium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "symbol": "Be",
+      "ja": "ベリリウム",
+      "en": "beryllium",
+      "period": 2,
+      "group": 2,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は宝石の緑柱石（ベリル）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「beryllium」",
+            "url": "https://www.ciaaw.org/beryllium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1797年、フランスのボークランが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「beryllium」",
+            "url": "https://www.ciaaw.org/beryllium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・2族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1949年まで、グルシニウムという名前も使われていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「beryllium」",
+            "url": "https://www.ciaaw.org/beryllium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "symbol": "B",
+      "ja": "ホウ素",
+      "yomi": "ほうそ",
+      "en": "boron",
+      "period": 2,
+      "group": 13,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はアラビア語の buraq（白い）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「boron」",
+            "url": "https://www.ciaaw.org/boron.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1808年、フランスのゲーリュサックとテナールが初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「boron」",
+            "url": "https://www.ciaaw.org/boron.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・13族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "symbol": "C",
+      "ja": "炭素",
+      "yomi": "たんそ",
+      "en": "carbon",
+      "period": 2,
+      "group": 14,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の carbo（木炭）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「carbon」",
+            "url": "https://www.ciaaw.org/carbon.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「carbon」",
+            "url": "https://www.ciaaw.org/carbon.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・14族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1797年、ダイヤモンドが純粋な炭素だと確かめられた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「carbon」",
+            "url": "https://www.ciaaw.org/carbon.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "symbol": "N",
+      "ja": "窒素",
+      "yomi": "ちっそ",
+      "en": "nitrogen",
+      "period": 2,
+      "group": 15,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は nitron（天然のソーダ）と genes（生む）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「nitrogen」",
+            "url": "https://www.ciaaw.org/nitrogen.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1772年、スコットランドのラザフォードが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「nitrogen」",
+            "url": "https://www.ciaaw.org/nitrogen.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・15族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "symbol": "O",
+      "ja": "酸素",
+      "yomi": "さんそ",
+      "en": "oxygen",
+      "period": 2,
+      "group": 16,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「酸」と「生む」から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「oxygen」",
+            "url": "https://www.ciaaw.org/oxygen.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "発見者とされるのはイギリスのプリーストリー（1774年）。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「oxygen」",
+            "url": "https://www.ciaaw.org/oxygen.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・16族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "シェーレも1771年に見つけていたが、発表が遅れた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「oxygen」",
+            "url": "https://www.ciaaw.org/oxygen.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "symbol": "F",
+      "ja": "フッ素",
+      "yomi": "ふっそ",
+      "en": "fluorine",
+      "period": 2,
+      "group": 17,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の fluere（流れる）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「fluorine」",
+            "url": "https://www.ciaaw.org/fluorine.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1886年、フランスのモアッサンが初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「fluorine」",
+            "url": "https://www.ciaaw.org/fluorine.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・17族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "symbol": "Ne",
+      "ja": "ネオン",
+      "en": "neon",
+      "period": 2,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の neos（新しい）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「neon」",
+            "url": "https://www.ciaaw.org/neon.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1898年、ラムゼーとトラバースが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「neon」",
+            "url": "https://www.ciaaw.org/neon.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第2周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "液体にした空気の中から見つかった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「neon」",
+            "url": "https://www.ciaaw.org/neon.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "symbol": "Na",
+      "ja": "ナトリウム",
+      "en": "sodium",
+      "period": 3,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "英語名 sodium は soda（ソーダ）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「sodium」",
+            "url": "https://www.ciaaw.org/sodium.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Na はラテン語の natrium から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「sodium」",
+            "url": "https://www.ciaaw.org/sodium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1807年、イギリスのデービーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「sodium」",
+            "url": "https://www.ciaaw.org/sodium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "symbol": "Mg",
+      "ja": "マグネシウム",
+      "en": "magnesium",
+      "period": 3,
+      "group": 2,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャの地方の名前マグネシアから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「magnesium」",
+            "url": "https://www.ciaaw.org/magnesium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1755年、スコットランドのブラックが元素だと見分けた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「magnesium」",
+            "url": "https://www.ciaaw.org/magnesium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・2族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "symbol": "Al",
+      "ja": "アルミニウム",
+      "en": "aluminium",
+      "period": 3,
+      "group": 13,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の alumen から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「aluminium」",
+            "url": "https://www.ciaaw.org/aluminium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1827年、ドイツのウェーラーが純粋な金属を初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「aluminium」",
+            "url": "https://www.ciaaw.org/aluminium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・13族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "symbol": "Si",
+      "ja": "ケイ素",
+      "yomi": "けいそ",
+      "en": "silicon",
+      "period": 3,
+      "group": 14,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の silex（火打ち石）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「silicon」",
+            "url": "https://www.ciaaw.org/silicon.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1824年、スウェーデンのベルセリウスが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「silicon」",
+            "url": "https://www.ciaaw.org/silicon.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・14族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "symbol": "P",
+      "ja": "リン",
+      "en": "phosphorus",
+      "period": 3,
+      "group": 15,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「光を運ぶもの」から。暗い所で光るため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「phosphorus」",
+            "url": "https://www.ciaaw.org/phosphorus.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1669年、ドイツの商人ブラントが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「phosphorus」",
+            "url": "https://www.ciaaw.org/phosphorus.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・15族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "明け方に見える金星の古い呼び名も、同じ言葉だった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「phosphorus」",
+            "url": "https://www.ciaaw.org/phosphorus.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "symbol": "S",
+      "ja": "硫黄",
+      "yomi": "いおう",
+      "en": "sulfur",
+      "period": 3,
+      "group": 16,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の sulphurium から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「sulfur」",
+            "url": "https://www.ciaaw.org/sulfur.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「sulfur」",
+            "url": "https://www.ciaaw.org/sulfur.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・16族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1809年、元素であることが確かめられた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「sulfur」",
+            "url": "https://www.ciaaw.org/sulfur.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "symbol": "Cl",
+      "ja": "塩素",
+      "yomi": "えんそ",
+      "en": "chlorine",
+      "period": 3,
+      "group": 17,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の chloros（黄緑色）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「chlorine」",
+            "url": "https://www.ciaaw.org/chlorine.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1774年、スウェーデンのシェーレが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「chlorine」",
+            "url": "https://www.ciaaw.org/chlorine.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・17族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1810年、デービーが元素だと示した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「chlorine」",
+            "url": "https://www.ciaaw.org/chlorine.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "symbol": "Ar",
+      "ja": "アルゴン",
+      "en": "argon",
+      "period": 3,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の argos（なまけもの）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「argon」",
+            "url": "https://www.ciaaw.org/argon.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1894年、ラムゼーとレイリーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「argon」",
+            "url": "https://www.ciaaw.org/argon.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第3周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "ほかの元素と結びつかないので、この名前になった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「argon」",
+            "url": "https://www.ciaaw.org/argon.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 19,
+      "symbol": "K",
+      "ja": "カリウム",
+      "en": "potassium",
+      "period": 4,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "英語名 potassium は pot ashes（つぼの灰）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「potassium」",
+            "url": "https://www.ciaaw.org/potassium.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 K はラテン語の kalium から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「potassium」",
+            "url": "https://www.ciaaw.org/potassium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1807年、イギリスのデービーが初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「potassium」",
+            "url": "https://www.ciaaw.org/potassium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 20,
+      "symbol": "Ca",
+      "ja": "カルシウム",
+      "en": "calcium",
+      "period": 4,
+      "group": 2,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の calx（石灰）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「calcium」",
+            "url": "https://www.ciaaw.org/calcium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1808年、イギリスのデービーが初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「calcium」",
+            "url": "https://www.ciaaw.org/calcium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・2族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 21,
+      "symbol": "Sc",
+      "ja": "スカンジウム",
+      "en": "scandium",
+      "period": 4,
+      "group": 3,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の scandia（スカンジナビア）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「scandium」",
+            "url": "https://www.ciaaw.org/scandium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1879年、スウェーデンのニルソンが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「scandium」",
+            "url": "https://www.ciaaw.org/scandium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・3族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "メンデレーエフが予言した「エカホウ素」だった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「scandium」",
+            "url": "https://www.ciaaw.org/scandium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "symbol": "Ti",
+      "ja": "チタン",
+      "en": "titanium",
+      "period": 4,
+      "group": 4,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は神話の「大地の最初の子」タイタンから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「titanium」",
+            "url": "https://www.ciaaw.org/titanium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1791年、イギリスの牧師グレガーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「titanium」",
+            "url": "https://www.ciaaw.org/titanium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・4族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 23,
+      "symbol": "V",
+      "ja": "バナジウム",
+      "en": "vanadium",
+      "period": 4,
+      "group": 5,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は北欧の愛と美の女神バナジスから。化合物の色が美しいため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「vanadium」",
+            "url": "https://www.ciaaw.org/vanadium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1830年、スウェーデンのセフストレームが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「vanadium」",
+            "url": "https://www.ciaaw.org/vanadium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・5族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1801年にも見つかったが、見つけた人がクロムだと考え直した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「vanadium」",
+            "url": "https://www.ciaaw.org/vanadium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "symbol": "Cr",
+      "ja": "クロム",
+      "en": "chromium",
+      "period": 4,
+      "group": 6,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の chroma（色）から。化合物の色が多いため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「chromium」",
+            "url": "https://www.ciaaw.org/chromium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1797年、フランスのボークランが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「chromium」",
+            "url": "https://www.ciaaw.org/chromium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・6族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "symbol": "Mn",
+      "ja": "マンガン",
+      "en": "manganese",
+      "period": 4,
+      "group": 7,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の magnes（磁石）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「manganese」",
+            "url": "https://www.ciaaw.org/manganese.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1774年、スウェーデンのシェーレが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「manganese」",
+            "url": "https://www.ciaaw.org/manganese.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・7族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "symbol": "Fe",
+      "ja": "鉄",
+      "yomi": "てつ",
+      "en": "iron",
+      "period": 4,
+      "group": 8,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "英語名 iron の語源は分かっていない。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iron」",
+            "url": "https://www.ciaaw.org/iron.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Fe はラテン語の ferrum（かたさ）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iron」",
+            "url": "https://www.ciaaw.org/iron.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iron」",
+            "url": "https://www.ciaaw.org/iron.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・8族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "symbol": "Co",
+      "ja": "コバルト",
+      "en": "cobalt",
+      "period": 4,
+      "group": 9,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はドイツ語の Kobold（鉱山の小鬼）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cobalt」",
+            "url": "https://www.ciaaw.org/cobalt.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1735年、スウェーデンのブラントが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cobalt」",
+            "url": "https://www.ciaaw.org/cobalt.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・9族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "鉱夫を困らせる小鬼のしわざと思われていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cobalt」",
+            "url": "https://www.ciaaw.org/cobalt.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "symbol": "Ni",
+      "ja": "ニッケル",
+      "en": "nickel",
+      "period": 4,
+      "group": 10,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はドイツ語の Nickel（人をだます小鬼）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「nickel」",
+            "url": "https://www.ciaaw.org/nickel.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1751年、スウェーデンのクロンステットが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「nickel」",
+            "url": "https://www.ciaaw.org/nickel.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・10族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "銅に似て銅がとれない鉱石は「にせの銅」と呼ばれた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「nickel」",
+            "url": "https://www.ciaaw.org/nickel.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 29,
+      "symbol": "Cu",
+      "ja": "銅",
+      "yomi": "どう",
+      "en": "copper",
+      "period": 4,
+      "group": 11,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の cuprum から。キプロス島のこと。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「copper」",
+            "url": "https://www.ciaaw.org/copper.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Cu もラテン語の cuprum から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「copper」",
+            "url": "https://www.ciaaw.org/copper.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「copper」",
+            "url": "https://www.ciaaw.org/copper.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・11族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "ローマ人が最初に銅を手に入れた島が、キプロス島。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「copper」",
+            "url": "https://www.ciaaw.org/copper.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 30,
+      "symbol": "Zn",
+      "ja": "亜鉛",
+      "yomi": "あえん",
+      "en": "zinc",
+      "period": 4,
+      "group": 12,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はドイツ語の zink から。語源は分かっていない。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「zinc」",
+            "url": "https://www.ciaaw.org/zinc.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「zinc」",
+            "url": "https://www.ciaaw.org/zinc.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・12族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1374年には金属として知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「zinc」",
+            "url": "https://www.ciaaw.org/zinc.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "symbol": "Ga",
+      "ja": "ガリウム",
+      "en": "gallium",
+      "period": 4,
+      "group": 13,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の gallia（フランス）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「gallium」",
+            "url": "https://www.ciaaw.org/gallium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1875年、フランスのボアボードランが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「gallium」",
+            "url": "https://www.ciaaw.org/gallium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・13族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "symbol": "Ge",
+      "ja": "ゲルマニウム",
+      "en": "germanium",
+      "period": 4,
+      "group": 14,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の germania（ドイツ）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「germanium」",
+            "url": "https://www.ciaaw.org/germanium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1886年、ドイツのヴィンクラーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「germanium」",
+            "url": "https://www.ciaaw.org/germanium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・14族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 33,
+      "symbol": "As",
+      "ja": "ヒ素",
+      "yomi": "ひそ",
+      "en": "arsenic",
+      "period": 4,
+      "group": 15,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の arsenikos（男らしい）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「arsenic」",
+            "url": "https://www.ciaaw.org/arsenic.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「arsenic」",
+            "url": "https://www.ciaaw.org/arsenic.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・15族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1250年ごろ、アルベルトゥス・マグヌスが取り出したとされる。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「arsenic」",
+            "url": "https://www.ciaaw.org/arsenic.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 34,
+      "symbol": "Se",
+      "ja": "セレン",
+      "en": "selenium",
+      "period": 4,
+      "group": 16,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ神話の月の女神セレネから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「selenium」",
+            "url": "https://www.ciaaw.org/selenium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1817年、スウェーデンのベルセリウスが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「selenium」",
+            "url": "https://www.ciaaw.org/selenium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・16族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "大地の女神の名のテルルといっしょに見つかるので、月の名にした。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「selenium」",
+            "url": "https://www.ciaaw.org/selenium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 35,
+      "symbol": "Br",
+      "ja": "臭素",
+      "yomi": "しゅうそ",
+      "en": "bromine",
+      "period": 4,
+      "group": 17,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の bromos（悪臭）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「bromine」",
+            "url": "https://www.ciaaw.org/bromine.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "発見者とされるのはフランスのバラール（1826年）。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「bromine」",
+            "url": "https://www.ciaaw.org/bromine.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では液体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・17族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1825年にレーヴィヒが先に作ったが、発表はバラールが先だった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「bromine」",
+            "url": "https://www.ciaaw.org/bromine.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 36,
+      "symbol": "Kr",
+      "ja": "クリプトン",
+      "en": "krypton",
+      "period": 4,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の kryptos（かくれた）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「krypton」",
+            "url": "https://www.ciaaw.org/krypton.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1898年、ラムゼーとトラバースが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「krypton」",
+            "url": "https://www.ciaaw.org/krypton.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第4周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "symbol": "Rb",
+      "ja": "ルビジウム",
+      "en": "rubidium",
+      "period": 5,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の rubidus（深い赤）から。光の線に赤い線が2本あるため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rubidium」",
+            "url": "https://www.ciaaw.org/rubidium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1861年、ブンゼンとキルヒホッフが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rubidium」",
+            "url": "https://www.ciaaw.org/rubidium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 38,
+      "symbol": "Sr",
+      "ja": "ストロンチウム",
+      "en": "strontium",
+      "period": 5,
+      "group": 2,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスコットランドの町ストロンチアンから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「strontium」",
+            "url": "https://www.ciaaw.org/strontium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1792年、スコットランドのホープが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「strontium」",
+            "url": "https://www.ciaaw.org/strontium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・2族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "見つけた人は、炎が明るい赤色になるのを見た。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「strontium」",
+            "url": "https://www.ciaaw.org/strontium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 39,
+      "symbol": "Y",
+      "ja": "イットリウム",
+      "en": "yttrium",
+      "period": 5,
+      "group": 3,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスウェーデンの村イッテルビーから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「yttrium」",
+            "url": "https://www.ciaaw.org/yttrium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1794年、フィンランドのガドリンが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「yttrium」",
+            "url": "https://www.ciaaw.org/yttrium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・3族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 40,
+      "symbol": "Zr",
+      "ja": "ジルコニウム",
+      "en": "zirconium",
+      "period": 5,
+      "group": 4,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はアラビア語の zargun（金のような）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「zirconium」",
+            "url": "https://www.ciaaw.org/zirconium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1789年、ドイツのクラプロートが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「zirconium」",
+            "url": "https://www.ciaaw.org/zirconium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・4族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 41,
+      "symbol": "Nb",
+      "ja": "ニオブ",
+      "en": "niobium",
+      "period": 5,
+      "group": 5,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は神話のニオベ（タンタロスの娘）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「niobium」",
+            "url": "https://www.ciaaw.org/niobium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1801年、イギリスのハチェットが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「niobium」",
+            "url": "https://www.ciaaw.org/niobium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・5族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1949年まで、アメリカではコロンビウムと呼ばれていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「niobium」",
+            "url": "https://www.ciaaw.org/niobium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 42,
+      "symbol": "Mo",
+      "ja": "モリブデン",
+      "en": "molybdenum",
+      "period": 5,
+      "group": 6,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の molybdos（鉛）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「molybdenum」",
+            "url": "https://www.ciaaw.org/molybdenum.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1778年、スウェーデンのシェーレが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「molybdenum」",
+            "url": "https://www.ciaaw.org/molybdenum.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・6族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 43,
+      "symbol": "Tc",
+      "ja": "テクネチウム",
+      "en": "technetium",
+      "period": 5,
+      "group": 7,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の technetos（人工の）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「technetium」",
+            "url": "https://periodic.lanl.gov/43.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1937年、イタリアでペリエとセグレが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「technetium」",
+            "url": "https://periodic.lanl.gov/43.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・7族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "人工的に作られた初めての元素。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「technetium」",
+            "url": "https://periodic.lanl.gov/43.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 44,
+      "symbol": "Ru",
+      "ja": "ルテニウム",
+      "en": "ruthenium",
+      "period": 5,
+      "group": 8,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語のルテニア（ロシアの古い名）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「ruthenium」",
+            "url": "https://www.ciaaw.org/ruthenium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1844年、ロシアのクラウスが初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「ruthenium」",
+            "url": "https://www.ciaaw.org/ruthenium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・8族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 45,
+      "symbol": "Rh",
+      "ja": "ロジウム",
+      "en": "rhodium",
+      "period": 5,
+      "group": 9,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の rhodon（バラ）から。塩の水溶液がバラ色のため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rhodium」",
+            "url": "https://www.ciaaw.org/rhodium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1803年、イギリスのウォラストンが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rhodium」",
+            "url": "https://www.ciaaw.org/rhodium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・9族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 46,
+      "symbol": "Pd",
+      "ja": "パラジウム",
+      "en": "palladium",
+      "period": 5,
+      "group": 10,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は小惑星パラスから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「palladium」",
+            "url": "https://www.ciaaw.org/palladium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1803年、イギリスのウォラストンが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「palladium」",
+            "url": "https://www.ciaaw.org/palladium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・10族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "小惑星パラスが見つかった次の年に発見された。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「palladium」",
+            "url": "https://www.ciaaw.org/palladium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 47,
+      "symbol": "Ag",
+      "ja": "銀",
+      "yomi": "ぎん",
+      "en": "silver",
+      "period": 5,
+      "group": 11,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "英語名 silver の語源は分かっていない。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「silver」",
+            "url": "https://www.ciaaw.org/silver.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Ag はラテン語の argentum から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「silver」",
+            "url": "https://www.ciaaw.org/silver.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「silver」",
+            "url": "https://www.ciaaw.org/silver.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・11族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 48,
+      "symbol": "Cd",
+      "ja": "カドミウム",
+      "en": "cadmium",
+      "period": 5,
+      "group": 12,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の kadmeia（亜鉛の鉱石）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cadmium」",
+            "url": "https://www.ciaaw.org/cadmium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1817年、ドイツのシュトロマイヤーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cadmium」",
+            "url": "https://www.ciaaw.org/cadmium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・12族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 49,
+      "symbol": "In",
+      "ja": "インジウム",
+      "en": "indium",
+      "period": 5,
+      "group": 13,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は藍色（インディゴ）から。光の線が藍色のため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「indium」",
+            "url": "https://www.ciaaw.org/indium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1863年、ドイツのライヒとリヒターが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「indium」",
+            "url": "https://www.ciaaw.org/indium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・13族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 50,
+      "symbol": "Sn",
+      "ja": "スズ",
+      "en": "tin",
+      "period": 5,
+      "group": 14,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "英語名 tin の語源は分かっていない。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tin」",
+            "url": "https://www.ciaaw.org/tin.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Sn はラテン語の stannum から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tin」",
+            "url": "https://www.ciaaw.org/tin.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tin」",
+            "url": "https://www.ciaaw.org/tin.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・14族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 51,
+      "symbol": "Sb",
+      "ja": "アンチモン",
+      "en": "antimony",
+      "period": 5,
+      "group": 15,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「ひとりではない」から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「antimony」",
+            "url": "https://www.ciaaw.org/antimony.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Sb は stibium から。まゆを黒くするのに使われた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「antimony」",
+            "url": "https://www.ciaaw.org/antimony.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・15族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 52,
+      "symbol": "Te",
+      "ja": "テルル",
+      "en": "tellurium",
+      "period": 5,
+      "group": 16,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はローマ神話の大地の女神テルスから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tellurium」",
+            "url": "https://www.ciaaw.org/tellurium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1782年、ミュラー・フォン・ライヘンシュタインが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tellurium」",
+            "url": "https://www.ciaaw.org/tellurium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・16族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 53,
+      "symbol": "I",
+      "ja": "ヨウ素",
+      "yomi": "ようそ",
+      "en": "iodine",
+      "period": 5,
+      "group": 17,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の iodes（すみれ色）から。蒸気がすみれ色のため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iodine」",
+            "url": "https://www.ciaaw.org/iodine.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1811年、フランスのクールトアが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iodine」",
+            "url": "https://www.ciaaw.org/iodine.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・17族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "海藻の中から見つかった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iodine」",
+            "url": "https://www.ciaaw.org/iodine.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 54,
+      "symbol": "Xe",
+      "ja": "キセノン",
+      "en": "xenon",
+      "period": 5,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の xenos（見知らぬもの）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「xenon」",
+            "url": "https://www.ciaaw.org/xenon.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1898年、ラムゼーとトラバースが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「xenon」",
+            "url": "https://www.ciaaw.org/xenon.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第5周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 55,
+      "symbol": "Cs",
+      "ja": "セシウム",
+      "en": "caesium",
+      "period": 6,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の caesius（空色）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「caesium」",
+            "url": "https://www.ciaaw.org/caesium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1860年、ブンゼンとキルヒホッフが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「caesium」",
+            "url": "https://www.ciaaw.org/caesium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 56,
+      "symbol": "Ba",
+      "ja": "バリウム",
+      "en": "barium",
+      "period": 6,
+      "group": 2,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の barys（重い）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「barium」",
+            "url": "https://periodic.lanl.gov/56.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1808年、デービーが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「barium」",
+            "url": "https://periodic.lanl.gov/56.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・2族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 57,
+      "symbol": "La",
+      "ja": "ランタン",
+      "en": "lanthanum",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「かくれている」から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lanthanum」",
+            "url": "https://www.ciaaw.org/lanthanum.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1839年、スウェーデンのモサンデルが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lanthanum」",
+            "url": "https://www.ciaaw.org/lanthanum.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 58,
+      "symbol": "Ce",
+      "ja": "セリウム",
+      "en": "cerium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は小惑星ケレス（ローマの農業の女神）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cerium」",
+            "url": "https://www.ciaaw.org/cerium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "小惑星ケレスが見つかった2年後に発見された。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「cerium」",
+            "url": "https://www.ciaaw.org/cerium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 59,
+      "symbol": "Pr",
+      "ja": "プラセオジム",
+      "en": "praseodymium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「緑」と「ふたご」から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「praseodymium」",
+            "url": "https://www.ciaaw.org/praseodymium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1885年、オーストリアのアウアーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「praseodymium」",
+            "url": "https://www.ciaaw.org/praseodymium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 60,
+      "symbol": "Nd",
+      "ja": "ネオジム",
+      "en": "neodymium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「新しい」と「ふたご」から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「neodymium」",
+            "url": "https://www.ciaaw.org/neodymium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "「ジジム（ふたご）」と呼ばれたものが1885年に2つに分けられた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「neodymium」",
+            "url": "https://www.ciaaw.org/neodymium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 61,
+      "symbol": "Pm",
+      "ja": "プロメチウム",
+      "en": "promethium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は天から火を盗んだ神話のプロメテウスから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「promethium」",
+            "url": "https://periodic.lanl.gov/61.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 62,
+      "symbol": "Sm",
+      "ja": "サマリウム",
+      "en": "samarium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は鉱物サマルスキー石から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「samarium」",
+            "url": "https://www.ciaaw.org/samarium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "鉱物の名は、ロシアの鉱山の役人サマルスキーから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「samarium」",
+            "url": "https://www.ciaaw.org/samarium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 63,
+      "symbol": "Eu",
+      "ja": "ユウロピウム",
+      "en": "europium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はヨーロッパ大陸から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「europium」",
+            "url": "https://www.ciaaw.org/europium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1901年、フランスのドマルセが初めて取り出した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「europium」",
+            "url": "https://www.ciaaw.org/europium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 64,
+      "symbol": "Gd",
+      "ja": "ガドリニウム",
+      "en": "gadolinium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は鉱物ガドリン石から。化学者ガドリンの名。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「gadolinium」",
+            "url": "https://www.ciaaw.org/gadolinium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 65,
+      "symbol": "Tb",
+      "ja": "テルビウム",
+      "en": "terbium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスウェーデンの村イッテルビーから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「terbium」",
+            "url": "https://www.ciaaw.org/terbium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1843年、スウェーデンのモサンデルが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「terbium」",
+            "url": "https://www.ciaaw.org/terbium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 66,
+      "symbol": "Dy",
+      "ja": "ジスプロシウム",
+      "en": "dysprosium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の「近づきにくい」から。分けるのが難しかったため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「dysprosium」",
+            "url": "https://www.ciaaw.org/dysprosium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "発見者とされるのはフランスのボアボードラン（1886年）。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「dysprosium」",
+            "url": "https://www.ciaaw.org/dysprosium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 67,
+      "symbol": "Ho",
+      "ja": "ホルミウム",
+      "en": "holmium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の holmia（ストックホルム）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「holmium」",
+            "url": "https://www.ciaaw.org/holmium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 68,
+      "symbol": "Er",
+      "ja": "エルビウム",
+      "en": "erbium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスウェーデンの町イッテルビーから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「erbium」",
+            "url": "https://www.ciaaw.org/erbium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1843年、スウェーデンのモサンデルが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「erbium」",
+            "url": "https://www.ciaaw.org/erbium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 69,
+      "symbol": "Tm",
+      "ja": "ツリウム",
+      "en": "thulium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は北の果ての地の古い名、トゥーレから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「thulium」",
+            "url": "https://www.ciaaw.org/thulium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1879年、スウェーデンのクレーベが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「thulium」",
+            "url": "https://www.ciaaw.org/thulium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 70,
+      "symbol": "Yb",
+      "ja": "イッテルビウム",
+      "en": "ytterbium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスウェーデンの村イッテルビーから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「ytterbium」",
+            "url": "https://www.ciaaw.org/ytterbium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1878年、スイスのマリニャックが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「ytterbium」",
+            "url": "https://www.ciaaw.org/ytterbium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 71,
+      "symbol": "Lu",
+      "ja": "ルテチウム",
+      "en": "lutetium",
+      "period": 6,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はパリの古い名ルテティアから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lutetium」",
+            "url": "https://www.ciaaw.org/lutetium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "発見者とされるのはフランスのユルバン（1907年）。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lutetium」",
+            "url": "https://www.ciaaw.org/lutetium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期のランタノイド（57〜71番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "カシオペヤ座にちなむ、別の名前がつけられたこともある。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lutetium」",
+            "url": "https://www.ciaaw.org/lutetium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 72,
+      "symbol": "Hf",
+      "ja": "ハフニウム",
+      "en": "hafnium",
+      "period": 6,
+      "group": 4,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の hafnia（コペンハーゲン）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「hafnium」",
+            "url": "https://www.ciaaw.org/hafnium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1923年、コスターとヘベシーが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「hafnium」",
+            "url": "https://www.ciaaw.org/hafnium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・4族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "ボーアは、ジルコニウムの鉱石の中にあると予言していた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「hafnium」",
+            "url": "https://www.ciaaw.org/hafnium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 73,
+      "symbol": "Ta",
+      "ja": "タンタル",
+      "en": "tantalum",
+      "period": 6,
+      "group": 5,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は神話の王タンタロスから。酸を取りこまないため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tantalum」",
+            "url": "https://www.ciaaw.org/tantalum.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1802年、スウェーデンのエーケベリが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tantalum」",
+            "url": "https://www.ciaaw.org/tantalum.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・5族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 74,
+      "symbol": "W",
+      "ja": "タングステン",
+      "en": "tungsten",
+      "period": 6,
+      "group": 6,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスウェーデン語の tungsten（重い石）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tungsten」",
+            "url": "https://www.ciaaw.org/tungsten.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 W はドイツ語の wolfram から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tungsten」",
+            "url": "https://www.ciaaw.org/tungsten.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1781年、スウェーデンのシェーレが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tungsten」",
+            "url": "https://www.ciaaw.org/tungsten.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・6族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "スズを食べるオオカミのようだと言われた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「tungsten」",
+            "url": "https://www.ciaaw.org/tungsten.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 75,
+      "symbol": "Re",
+      "ja": "レニウム",
+      "en": "rhenium",
+      "period": 6,
+      "group": 7,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラテン語の rhenus（ライン川）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rhenium」",
+            "url": "https://www.ciaaw.org/rhenium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1925年、ドイツのノダックたちが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rhenium」",
+            "url": "https://www.ciaaw.org/rhenium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・7族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "X線を使って調べて見つかった。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「rhenium」",
+            "url": "https://www.ciaaw.org/rhenium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 76,
+      "symbol": "Os",
+      "ja": "オスミウム",
+      "en": "osmium",
+      "period": 6,
+      "group": 8,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の osme（におい）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「osmium」",
+            "url": "https://www.ciaaw.org/osmium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1803年、イギリスのテナントが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「osmium」",
+            "url": "https://www.ciaaw.org/osmium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・8族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 77,
+      "symbol": "Ir",
+      "ja": "イリジウム",
+      "en": "iridium",
+      "period": 6,
+      "group": 9,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は虹の女神イリスから。塩の溶液の色がさまざまなため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iridium」",
+            "url": "https://www.ciaaw.org/iridium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "発見者とされるのはイギリスのテナント（1803年）。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「iridium」",
+            "url": "https://www.ciaaw.org/iridium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・9族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 78,
+      "symbol": "Pt",
+      "ja": "白金",
+      "yomi": "はっきん",
+      "en": "platinum",
+      "period": 6,
+      "group": 10,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はスペイン語の platina（銀）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「platinum」",
+            "url": "https://www.ciaaw.org/platinum.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1735年、スペインのウリョアが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「platinum」",
+            "url": "https://www.ciaaw.org/platinum.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・10族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 79,
+      "symbol": "Au",
+      "ja": "金",
+      "yomi": "きん",
+      "en": "gold",
+      "period": 6,
+      "group": 11,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はサンスクリット語の jval（輝く）などから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「gold」",
+            "url": "https://www.ciaaw.org/gold.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Au はラテン語の aurum から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「gold」",
+            "url": "https://www.ciaaw.org/gold.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「gold」",
+            "url": "https://www.ciaaw.org/gold.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・11族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 80,
+      "symbol": "Hg",
+      "ja": "水銀",
+      "yomi": "すいぎん",
+      "en": "mercury",
+      "period": 6,
+      "group": 12,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はローマ神話の神メルクリウスから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「mercury」",
+            "url": "https://www.ciaaw.org/mercury.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Hg はギリシャ語の「液体の銀」から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「mercury」",
+            "url": "https://www.ciaaw.org/mercury.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「mercury」",
+            "url": "https://www.ciaaw.org/mercury.htm"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では液体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・12族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 81,
+      "symbol": "Tl",
+      "ja": "タリウム",
+      "en": "thallium",
+      "period": 6,
+      "group": 13,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の thallos（若い芽）から。緑の光の線のため。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「thallium」",
+            "url": "https://www.ciaaw.org/thallium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1861年、イギリスのクルックスが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「thallium」",
+            "url": "https://www.ciaaw.org/thallium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・13族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 82,
+      "symbol": "Pb",
+      "ja": "鉛",
+      "yomi": "なまり",
+      "en": "lead",
+      "period": 6,
+      "group": 14,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "英語名 lead の語源は分かっていない。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lead」",
+            "url": "https://www.ciaaw.org/lead.htm"
+          }
+        },
+        {
+          "kind": "symbol",
+          "text": "記号 Pb はラテン語の plumbum から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lead」",
+            "url": "https://www.ciaaw.org/lead.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "大昔から知られていた。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「lead」",
+            "url": "https://www.ciaaw.org/lead.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・14族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 83,
+      "symbol": "Bi",
+      "ja": "ビスマス",
+      "en": "bismuth",
+      "period": 6,
+      "group": 15,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はドイツ語の weisse masse（白いかたまり）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「bismuth」",
+            "url": "https://www.ciaaw.org/bismuth.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・15族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1753年、鉛とは別のものだと示された。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「bismuth」",
+            "url": "https://www.ciaaw.org/bismuth.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 84,
+      "symbol": "Po",
+      "ja": "ポロニウム",
+      "en": "polonium",
+      "period": 6,
+      "group": 16,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はポーランドから。キュリー夫人の生まれた国。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「polonium」",
+            "url": "https://periodic.lanl.gov/84.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1898年、キュリーが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「polonium」",
+            "url": "https://periodic.lanl.gov/84.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・16族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 85,
+      "symbol": "At",
+      "ja": "アスタチン",
+      "en": "astatine",
+      "period": 6,
+      "group": 17,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の astatos（不安定な）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「astatine」",
+            "url": "https://periodic.lanl.gov/85.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1940年、コーソンたちが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「astatine」",
+            "url": "https://periodic.lanl.gov/85.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・17族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 86,
+      "symbol": "Rn",
+      "ja": "ラドン",
+      "en": "radon",
+      "period": 6,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はラジウムから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radon」",
+            "url": "https://periodic.lanl.gov/86.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1900年、ドルンが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radon」",
+            "url": "https://periodic.lanl.gov/86.shtml"
+          }
+        },
+        {
+          "kind": "state",
+          "text": "ふつうの温度と圧力では気体。",
+          "source": {
+            "label": "PubChem（米国国立医学図書館）の周期表",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第6周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "はじめは「ラジウムのエマネーション」と呼ばれた。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radon」",
+            "url": "https://periodic.lanl.gov/86.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 87,
+      "symbol": "Fr",
+      "ja": "フランシウム",
+      "en": "francium",
+      "period": 7,
+      "group": 1,
+      "facts": [
+        {
+          "kind": "found",
+          "text": "1939年、パリのキュリー研究所のペレーが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「francium」",
+            "url": "https://periodic.lanl.gov/87.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・1族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 88,
+      "symbol": "Ra",
+      "ja": "ラジウム",
+      "en": "radium",
+      "period": 7,
+      "group": 2,
+      "facts": [
+        {
+          "kind": "found",
+          "text": "1898年、キュリー夫人が発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radium」",
+            "url": "https://periodic.lanl.gov/88.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・2族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 89,
+      "symbol": "Ac",
+      "ja": "アクチニウム",
+      "en": "actinium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の aktis（光線）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「actinium」",
+            "url": "https://periodic.lanl.gov/89.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1899年、ドビエルヌが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「actinium」",
+            "url": "https://periodic.lanl.gov/89.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 90,
+      "symbol": "Th",
+      "ja": "トリウム",
+      "en": "thorium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は北欧神話のかみなりの神トールから。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「thorium」",
+            "url": "https://www.ciaaw.org/thorium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1828年、スウェーデンのベルセリウスが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「thorium」",
+            "url": "https://www.ciaaw.org/thorium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 91,
+      "symbol": "Pa",
+      "ja": "プロトアクチニウム",
+      "en": "protactinium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はギリシャ語の protos（最初の）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「protactinium」",
+            "url": "https://www.ciaaw.org/protactinium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 92,
+      "symbol": "U",
+      "ja": "ウラン",
+      "en": "uranium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は天王星（ウラヌス）から。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「uranium」",
+            "url": "https://www.ciaaw.org/uranium.htm"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1789年、ドイツのクラプロートが発見した。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「uranium」",
+            "url": "https://www.ciaaw.org/uranium.htm"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "天王星が見つかった（1781年）あとに発見された。",
+          "source": {
+            "label": "IUPAC 原子量および同位体存在度委員会（CIAAW）「uranium」",
+            "url": "https://www.ciaaw.org/uranium.htm"
+          }
+        }
+      ]
+    },
+    {
+      "n": 93,
+      "symbol": "Np",
+      "ja": "ネプツニウム",
+      "en": "neptunium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は海王星（ネプチューン）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「neptunium」",
+            "url": "https://periodic.lanl.gov/93.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1940年、マクミランとアベルソンが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「neptunium」",
+            "url": "https://periodic.lanl.gov/93.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 94,
+      "symbol": "Pu",
+      "ja": "プルトニウム",
+      "en": "plutonium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は冥王星（プルート）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「plutonium」",
+            "url": "https://periodic.lanl.gov/94.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "天王星・海王星に続いて、冥王星の名前をつけた。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「plutonium」",
+            "url": "https://periodic.lanl.gov/94.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 95,
+      "symbol": "Am",
+      "ja": "アメリシウム",
+      "en": "americium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は北アメリカ大陸から。ユウロピウムにならった。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「americium」",
+            "url": "https://periodic.lanl.gov/95.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1944年、シーボーグたちが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「americium」",
+            "url": "https://periodic.lanl.gov/95.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "発見は、子ども向けラジオのクイズ番組で発表された。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「americium」",
+            "url": "https://periodic.lanl.gov/95.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 96,
+      "symbol": "Cm",
+      "ja": "キュリウム",
+      "en": "curium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はキュリー夫妻から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「curium」",
+            "url": "https://periodic.lanl.gov/96.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1944年、シーボーグたちが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「curium」",
+            "url": "https://periodic.lanl.gov/96.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 97,
+      "symbol": "Bk",
+      "ja": "バークリウム",
+      "en": "berkelium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は発見した町、カリフォルニア州バークレーから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「berkelium」",
+            "url": "https://periodic.lanl.gov/97.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1949年、トンプソンたちが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「berkelium」",
+            "url": "https://periodic.lanl.gov/97.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 98,
+      "symbol": "Cf",
+      "ja": "カリホルニウム",
+      "en": "californium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はカリフォルニア州とカリフォルニア大学から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「californium」",
+            "url": "https://periodic.lanl.gov/98.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1950年、トンプソンたちが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「californium」",
+            "url": "https://periodic.lanl.gov/98.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 99,
+      "symbol": "Es",
+      "ja": "アインスタイニウム",
+      "en": "einsteinium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はアインシュタインから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「einsteinium」",
+            "url": "https://periodic.lanl.gov/99.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1952年、ギオルソたちが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「einsteinium」",
+            "url": "https://periodic.lanl.gov/99.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1952年の熱核爆発の実験のちりの中から見つかった。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「einsteinium」",
+            "url": "https://periodic.lanl.gov/99.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 100,
+      "symbol": "Fm",
+      "ja": "フェルミウム",
+      "en": "fermium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は物理学者フェルミから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「fermium」",
+            "url": "https://periodic.lanl.gov/100.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1952年に発見された。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「fermium」",
+            "url": "https://periodic.lanl.gov/100.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 101,
+      "symbol": "Md",
+      "ja": "メンデレビウム",
+      "en": "mendelevium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はメンデレーエフから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「mendelevium」",
+            "url": "https://periodic.lanl.gov/101.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1955年、ギオルソたちが人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「mendelevium」",
+            "url": "https://periodic.lanl.gov/101.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "原子を1つずつ作って確かめられた。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「mendelevium」",
+            "url": "https://periodic.lanl.gov/101.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 102,
+      "symbol": "No",
+      "ja": "ノーベリウム",
+      "en": "nobelium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はダイナマイトを発明したノーベルから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「nobelium」",
+            "url": "https://periodic.lanl.gov/102.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1958年、ギオルソたちが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「nobelium」",
+            "url": "https://periodic.lanl.gov/102.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 103,
+      "symbol": "Lr",
+      "ja": "ローレンシウム",
+      "en": "lawrencium",
+      "period": 7,
+      "group": null,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はサイクロトロンを発明したローレンスから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「lawrencium」",
+            "url": "https://periodic.lanl.gov/103.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1961年、ギオルソたちが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「lawrencium」",
+            "url": "https://periodic.lanl.gov/103.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期のアクチノイド（89〜103番）の1つ。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 104,
+      "symbol": "Rf",
+      "ja": "ラザホージウム",
+      "en": "rutherfordium",
+      "period": 7,
+      "group": 4,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は物理学者ラザフォードから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「rutherfordium」",
+            "url": "https://periodic.lanl.gov/104.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・4族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 105,
+      "symbol": "Db",
+      "ja": "ドブニウム",
+      "en": "dubnium",
+      "period": 7,
+      "group": 5,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はロシアの研究所があるドブナから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「dubnium」",
+            "url": "https://periodic.lanl.gov/105.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・5族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 106,
+      "symbol": "Sg",
+      "ja": "シーボーギウム",
+      "en": "seaborgium",
+      "period": 7,
+      "group": 6,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はシーボーグから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「seaborgium」",
+            "url": "https://periodic.lanl.gov/106.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・6族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 107,
+      "symbol": "Bh",
+      "ja": "ボーリウム",
+      "en": "bohrium",
+      "period": 7,
+      "group": 7,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は物理学者ニールス・ボーアから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「bohrium」",
+            "url": "https://periodic.lanl.gov/107.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・7族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 108,
+      "symbol": "Hs",
+      "ja": "ハッシウム",
+      "en": "hassium",
+      "period": 7,
+      "group": 8,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はドイツの州ヘッセン（ラテン語で Hassias）から。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「hassium」",
+            "url": "https://periodic.lanl.gov/108.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1984年、ドイツの研究所のアルムブルスターたちが発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「hassium」",
+            "url": "https://periodic.lanl.gov/108.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・8族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 109,
+      "symbol": "Mt",
+      "ja": "マイトネリウム",
+      "en": "meitnerium",
+      "period": 7,
+      "group": 9,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は物理学者リーゼ・マイトナーから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「meitnerium」",
+            "url": "https://periodic.lanl.gov/109.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1982年、西ドイツの研究所が人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「meitnerium」",
+            "url": "https://periodic.lanl.gov/109.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・9族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 110,
+      "symbol": "Ds",
+      "ja": "ダームスタチウム",
+      "en": "darmstadtium",
+      "period": 7,
+      "group": 10,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はドイツの町ダルムシュタットから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「darmstadtium」",
+            "url": "https://periodic.lanl.gov/110.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・10族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "1994年11月9日、最初の1個の原子が見つかった。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「darmstadtium」",
+            "url": "https://periodic.lanl.gov/110.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 111,
+      "symbol": "Rg",
+      "ja": "レントゲニウム",
+      "en": "roentgenium",
+      "period": 7,
+      "group": 11,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は物理学者レントゲンから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「roentgenium」",
+            "url": "https://periodic.lanl.gov/111.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1994年、ドイツの研究所が発見した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「roentgenium」",
+            "url": "https://periodic.lanl.gov/111.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・11族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 112,
+      "symbol": "Cn",
+      "ja": "コペルニシウム",
+      "en": "copernicium",
+      "period": 7,
+      "group": 12,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は天文学者コペルニクスから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「copernicium」",
+            "url": "https://periodic.lanl.gov/112.shtml"
+          }
+        },
+        {
+          "kind": "found",
+          "text": "1996年、ドイツの研究所が人工的に作った。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「copernicium」",
+            "url": "https://periodic.lanl.gov/112.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・12族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 113,
+      "symbol": "Nh",
+      "ja": "ニホニウム",
+      "en": "nihonium",
+      "period": 7,
+      "group": 13,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は日本語の「にほん」から。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "named",
+          "text": "2016年11月28日、IUPAC がこの名前に正式に決めた。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・13族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "見つけた理化学研究所（日本）が名前を出した。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 114,
+      "symbol": "Fl",
+      "ja": "フレロビウム",
+      "en": "flerovium",
+      "period": 7,
+      "group": 14,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はロシアの物理学者フリョロフから。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「flerovium」",
+            "url": "https://periodic.lanl.gov/114.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・14族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 115,
+      "symbol": "Mc",
+      "ja": "モスコビウム",
+      "en": "moscovium",
+      "period": 7,
+      "group": 15,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はロシアのモスクワ州から。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "named",
+          "text": "2016年11月28日、IUPAC がこの名前に正式に決めた。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・15族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 116,
+      "symbol": "Lv",
+      "ja": "リバモリウム",
+      "en": "livermorium",
+      "period": 7,
+      "group": 16,
+      "facts": [
+        {
+          "kind": "found",
+          "text": "2000年、ロシアのドブナの研究者が最初に報告した。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「livermorium」",
+            "url": "https://periodic.lanl.gov/116.shtml"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・16族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        },
+        {
+          "kind": "free",
+          "text": "2012年5月31日、IUPAC がこの名前に決めた。",
+          "source": {
+            "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「livermorium」",
+            "url": "https://periodic.lanl.gov/116.shtml"
+          }
+        }
+      ]
+    },
+    {
+      "n": 117,
+      "symbol": "Ts",
+      "ja": "テネシン",
+      "en": "tennessine",
+      "period": 7,
+      "group": 17,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はアメリカのテネシー州から。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "named",
+          "text": "2016年11月28日、IUPAC がこの名前に正式に決めた。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・17族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    },
+    {
+      "n": 118,
+      "symbol": "Og",
+      "ja": "オガネソン",
+      "en": "oganesson",
+      "period": 7,
+      "group": 18,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前はロシアの物理学者オガネシアンから。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "named",
+          "text": "2016年11月28日、IUPAC がこの名前に正式に決めた。",
+          "source": {
+            "label": "IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）",
+            "url": "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
+          }
+        },
+        {
+          "kind": "table",
+          "text": "周期表では第7周期・18族。",
+          "source": {
+            "label": "IUPAC 周期表（Periodic Table of the Elements）",
+            "url": "https://iupac.org/what-we-do/periodic-table-of-elements/"
+          }
+        }
+      ]
+    }
+  ]
+}

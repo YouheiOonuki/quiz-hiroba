@@ -153,7 +153,8 @@
   var GAS = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86];
   var LIQUID = [35, 80];
 
-  var data = { topic: 'genso', rows: ROWS, named2016: NAMED_2016, gas: GAS, liquid: LIQUID };
+  var CHECKED = '2026-09-25';   // 上の出典を原文で 1 件ずつ読んだ日（data/genso.json の checked）
+  var data = { topic: 'genso', checked: CHECKED, rows: ROWS, named2016: NAMED_2016, gas: GAS, liquid: LIQUID };
   if (typeof module !== 'undefined' && module.exports) module.exports = data;
   else { root.OohData = root.OohData || {}; root.OohData.genso = data; }
 })(this);

@@ -1,0 +1,4189 @@
+{
+  "title": "世界の首都の「おお」の一言（名前の由来・創設の年・そばの水域・昔の公式名）",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+  "publisher": "yorozu-craft（Youhei Oonuki）",
+  "homepage": "https://yorozu-craft.com/quiz-hiroba/shuto/",
+  "data_url": "https://yorozu-craft.com/quiz-hiroba/data/shuto.json",
+  "repository": "https://github.com/YouheiOonuki/quiz-hiroba",
+  "generated_from": "data/wikidata-shuto.json（Wikidata の写し）→ ooh-shuto.js（tools/build-ooh-shuto.mjs）→ ooh.js の文の規則を tools/build-data.mjs で書き出し",
+  "checked": "2026-10-01",
+  "checked_detail": {
+    "wikidata_retrieved": "2026-10-01",
+    "country_and_capital_names": "2026-09-25"
+  },
+  "generated": "2026-10-03",
+  "source": [
+    "https://www.wikidata.org/",
+    "https://www.mofa.go.jp/mofaj/area/index.html"
+  ],
+  "note": "一言は Wikidata（CC0）の値から機械で作った文（各 fact の source が Q 番号と属性）。国名・首都の表記は外務省「国・地域」の基礎データのまま。Wikidata の首都と外務省の表記が突き合わせられない国（unmatched）は一言なし。人口・面積など変わるものは入れない。",
+  "unmatched": [
+    "kiribati",
+    "guatemala",
+    "eq_guinea",
+    "palau"
+  ],
+  "items": [
+    {
+      "id": "iceland",
+      "country": "アイスランド",
+      "capital": "レイキャビク",
+      "wikidata": "Q1764",
+      "wikidata_revision": 2548503272,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1786年とされる。",
+          "source": {
+            "label": "Wikidata Q1764（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1764#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q1764（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1764#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ireland",
+      "country": "アイルランド",
+      "capital": "ダブリン",
+      "wikidata": "Q1761",
+      "wikidata_revision": 2545556525,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は841年とされる。",
+          "source": {
+            "label": "Wikidata Q1761（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1761#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "リフィー川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1761（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1761#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アイリッシュ海に面している。",
+          "source": {
+            "label": "Wikidata Q1761（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1761#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "azerbaijan",
+      "country": "アゼルバイジャン共和国",
+      "capital": "バクー",
+      "wikidata": "Q9248",
+      "wikidata_revision": 2547042277,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "カスピ海に面している。",
+          "source": {
+            "label": "Wikidata Q9248（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9248#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "afghanistan",
+      "country": "アフガニスタン・イスラム共和国",
+      "capital": "カブール",
+      "wikidata": "Q5838",
+      "wikidata_revision": 2551490441,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「カーブル川」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q5838（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q5838#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カーブル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q5838（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q5838#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa",
+      "country": "アメリカ合衆国",
+      "capital": "ワシントンD.C.",
+      "wikidata": "Q61",
+      "wikidata_revision": 2548933272,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1790年とされる。",
+          "source": {
+            "label": "Wikidata Q61（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q61#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アナコスティア川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q61（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q61#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uae",
+      "country": "アラブ首長国連邦",
+      "capital": "アブダビ",
+      "wikidata": "Q1519",
+      "wikidata_revision": 2549222446,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ペルシア湾に面している。",
+          "source": {
+            "label": "Wikidata Q1519（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1519#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "algeria",
+      "country": "アルジェリア民主人民共和国",
+      "capital": "アルジェ",
+      "wikidata": "Q3561",
+      "wikidata_revision": 2544359737,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は944年とされる。",
+          "source": {
+            "label": "Wikidata Q3561（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3561#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "地中海に面している。",
+          "source": {
+            "label": "Wikidata Q3561（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3561#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "argentine",
+      "country": "アルゼンチン共和国",
+      "capital": "ブエノスアイレス",
+      "wikidata": "Q1486",
+      "wikidata_revision": 2546716664,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1580年とされる。",
+          "source": {
+            "label": "Wikidata Q1486（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1486#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ラプラタ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1486（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1486#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "albania",
+      "country": "アルバニア共和国",
+      "capital": "ティラナ",
+      "wikidata": "Q19689",
+      "wikidata_revision": 2541367949,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1614年とされる。",
+          "source": {
+            "label": "Wikidata Q19689（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q19689#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ラナ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q19689（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q19689#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "armenia",
+      "country": "アルメニア共和国",
+      "capital": "エレバン",
+      "wikidata": "Q1953",
+      "wikidata_revision": 2551878185,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「エレブニ要塞」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1953（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1953#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は紀元前782年とされる。",
+          "source": {
+            "label": "Wikidata Q1953（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1953#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "フラズダン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1953（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1953#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "angola",
+      "country": "アンゴラ共和国",
+      "capital": "ルアンダ",
+      "wikidata": "Q3897",
+      "wikidata_revision": 2537908109,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1575年とされる。",
+          "source": {
+            "label": "Wikidata Q3897（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3897#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3897（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3897#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "antigua",
+      "country": "アンティグア・バーブーダ",
+      "capital": "セントジョンズ",
+      "wikidata": "Q36262",
+      "wikidata_revision": 2541000554,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「パトモスのヨハネ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q36262（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36262#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1666年とされる。",
+          "source": {
+            "label": "Wikidata Q36262（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36262#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q36262（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36262#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "andorra",
+      "country": "アンドラ公国",
+      "capital": "アンドラ・ラ・ベリャ",
+      "wikidata": "Q1863",
+      "wikidata_revision": 2539080506,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "バリラ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1863（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1863#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "yemen",
+      "country": "イエメン共和国",
+      "capital": "サヌア",
+      "wikidata": "Q2471",
+      "wikidata_revision": 2551174195,
+      "facts": []
+    },
+    {
+      "id": "italy",
+      "country": "イタリア共和国",
+      "capital": "ローマ",
+      "wikidata": "Q220",
+      "wikidata_revision": 2550928828,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "テヴェレ川とアニエーネ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q220（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q220#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ティレニア海に面している。",
+          "source": {
+            "label": "Wikidata Q220（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q220#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iraq",
+      "country": "イラク共和国",
+      "capital": "バグダッド",
+      "wikidata": "Q1530",
+      "wikidata_revision": 2551571621,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は762年とされる。",
+          "source": {
+            "label": "Wikidata Q1530（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1530#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "チグリス川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1530（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1530#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iran",
+      "country": "イラン・イスラム共和国",
+      "capital": "テヘラン",
+      "wikidata": "Q3616",
+      "wikidata_revision": 2541938351,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1794年とされる。",
+          "source": {
+            "label": "Wikidata Q3616（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3616#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "india",
+      "country": "インド",
+      "capital": "ニューデリー",
+      "wikidata": "Q987",
+      "wikidata_revision": 2544390521,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1911年とされる。",
+          "source": {
+            "label": "Wikidata Q987（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q987#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ヤムナー川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q987（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q987#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "indonesia",
+      "country": "インドネシア共和国",
+      "capital": "ジャカルタ",
+      "wikidata": "Q3630",
+      "wikidata_revision": 2540534195,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1527年とされる。",
+          "source": {
+            "label": "Wikidata Q3630（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3630#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "リウン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3630（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3630#P206"
+          }
+        },
+        {
+          "kind": "former",
+          "text": "1949年までの公式名はオランダ語で「Batavia」。",
+          "source": {
+            "label": "Wikidata Q3630（P1448。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3630#P1448"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uganda",
+      "country": "ウガンダ共和国",
+      "capital": "カンパラ",
+      "wikidata": "Q3894",
+      "wikidata_revision": 2545894757,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ヴィクトリア湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3894（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3894#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ukraine",
+      "country": "ウクライナ",
+      "capital": "キーウ",
+      "wikidata": "Q1899",
+      "wikidata_revision": 2549057828,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「キーイ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1899（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1899#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は482年とされる。",
+          "source": {
+            "label": "Wikidata Q1899（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1899#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ドニエプル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1899（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1899#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uzbekistan",
+      "country": "ウズベキスタン共和国",
+      "capital": "タシケント",
+      "wikidata": "Q269",
+      "wikidata_revision": 2539075591,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "チルチク川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q269（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q269#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uruguay",
+      "country": "ウルグアイ東方共和国",
+      "capital": "モンテビデオ",
+      "wikidata": "Q1335",
+      "wikidata_revision": 2547785473,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ラプラタ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1335（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1335#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uk",
+      "country": "英国（グレートブリテン及び北アイルランド連合王国）",
+      "capital": "ロンドン",
+      "wikidata": "Q84",
+      "wikidata_revision": 2550754684,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ロンディニウム」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q84（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q84#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "テムズ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q84（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q84#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ecuador",
+      "country": "エクアドル共和国",
+      "capital": "キト",
+      "wikidata": "Q2900",
+      "wikidata_revision": 2537914637,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1534年とされる。",
+          "source": {
+            "label": "Wikidata Q2900（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2900#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "egypt",
+      "country": "エジプト・アラブ共和国",
+      "capital": "カイロ",
+      "wikidata": "Q85",
+      "wikidata_revision": 2546295286,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は969年とされる。",
+          "source": {
+            "label": "Wikidata Q85（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q85#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ナイル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q85（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q85#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "estonia",
+      "country": "エストニア共和国",
+      "capital": "タリン",
+      "wikidata": "Q1770",
+      "wikidata_revision": 2549082601,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "フィンランド湾に面している。",
+          "source": {
+            "label": "Wikidata Q1770（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1770#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eswatini",
+      "country": "エスワティニ王国",
+      "capital": "ムババーネ",
+      "wikidata": "Q3904",
+      "wikidata_revision": 2537908790,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1902年とされる。",
+          "source": {
+            "label": "Wikidata Q3904（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3904#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ethiopia",
+      "country": "エチオピア連邦民主共和国",
+      "capital": "アディスアベバ",
+      "wikidata": "Q3624",
+      "wikidata_revision": 2550726061,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1886年とされる。",
+          "source": {
+            "label": "Wikidata Q3624（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3624#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eritrea",
+      "country": "エリトリア国",
+      "capital": "アスマラ",
+      "wikidata": "Q3642",
+      "wikidata_revision": 2543919959,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1897年とされる。",
+          "source": {
+            "label": "Wikidata Q3642（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3642#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "elsalvador",
+      "country": "エルサルバドル共和国",
+      "capital": "サンサルバドル",
+      "wikidata": "Q3110",
+      "wikidata_revision": 2549038899,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「イエス・キリスト」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3110（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3110#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1525年とされる。",
+          "source": {
+            "label": "Wikidata Q3110（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3110#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "australia",
+      "country": "オーストラリア連邦",
+      "capital": "キャンベラ",
+      "wikidata": "Q3114",
+      "wikidata_revision": 2537901353,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1913年とされる。",
+          "source": {
+            "label": "Wikidata Q3114（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3114#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "バーリー・グリフィン湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3114（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3114#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "austria",
+      "country": "オーストリア共和国",
+      "capital": "ウィーン",
+      "wikidata": "Q1741",
+      "wikidata_revision": 2551010613,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ウィーン川」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1741（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1741#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ドナウ川とウィーン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1741（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1741#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "oman",
+      "country": "オマーン国",
+      "capital": "マスカット",
+      "wikidata": "Q3826",
+      "wikidata_revision": 2537921241,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "オマーン湾に面している。",
+          "source": {
+            "label": "Wikidata Q3826（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3826#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "netherlands",
+      "country": "オランダ王国",
+      "capital": "アムステルダム",
+      "wikidata": "Q727",
+      "wikidata_revision": 2551226142,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「アムステル川」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q727（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q727#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1300年とされる。",
+          "source": {
+            "label": "Wikidata Q727（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q727#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アムステル川とアイ湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q727（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q727#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ghana",
+      "country": "ガーナ共和国",
+      "capital": "アクラ",
+      "wikidata": "Q3761",
+      "wikidata_revision": 2539136684,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ギニア湾に面している。",
+          "source": {
+            "label": "Wikidata Q3761（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3761#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "capeverde",
+      "country": "カーボベルデ共和国",
+      "capital": "プライア",
+      "wikidata": "Q3751",
+      "wikidata_revision": 2545423066,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1858年とされる。",
+          "source": {
+            "label": "Wikidata Q3751（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3751#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3751（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3751#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "guyana",
+      "country": "ガイアナ協同共和国",
+      "capital": "ジョージタウン",
+      "wikidata": "Q10717",
+      "wikidata_revision": 2537915296,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ジョージ3世」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q10717（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q10717#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1781年とされる。",
+          "source": {
+            "label": "Wikidata Q10717（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q10717#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "デメララ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q10717（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q10717#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kazakhstan",
+      "country": "カザフスタン共和国",
+      "capital": "アスタナ",
+      "wikidata": "Q1520",
+      "wikidata_revision": 2543436023,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1830年とされる。",
+          "source": {
+            "label": "Wikidata Q1520（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1520#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "エシム川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1520（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1520#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "qatar",
+      "country": "カタール国",
+      "capital": "ドーハ",
+      "wikidata": "Q3861",
+      "wikidata_revision": 2537921617,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1850年とされる。",
+          "source": {
+            "label": "Wikidata Q3861（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3861#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ペルシア湾に面している。",
+          "source": {
+            "label": "Wikidata Q3861（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3861#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "canada",
+      "country": "カナダ",
+      "capital": "オタワ",
+      "wikidata": "Q1930",
+      "wikidata_revision": 2545669715,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「オタワ族」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1930（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1930#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1855年とされる。",
+          "source": {
+            "label": "Wikidata Q1930（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1930#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "オタワ川とリドー川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1930（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1930#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gabon",
+      "country": "ガボン共和国",
+      "capital": "リーブルビル",
+      "wikidata": "Q3825",
+      "wikidata_revision": 2537907801,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1849年とされる。",
+          "source": {
+            "label": "Wikidata Q3825（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3825#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ギニア湾に面している。",
+          "source": {
+            "label": "Wikidata Q3825（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3825#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cameroon",
+      "country": "カメルーン共和国",
+      "capital": "ヤウンデ",
+      "wikidata": "Q3808",
+      "wikidata_revision": 2533467133,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1888年とされる。",
+          "source": {
+            "label": "Wikidata Q3808（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3808#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gambia",
+      "country": "ガンビア共和国",
+      "capital": "バンジュール",
+      "wikidata": "Q3726",
+      "wikidata_revision": 2537905859,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1816年とされる。",
+          "source": {
+            "label": "Wikidata Q3726（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3726#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ガンビア川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3726（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3726#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3726（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3726#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cambodia",
+      "country": "カンボジア王国",
+      "capital": "プノンペン",
+      "wikidata": "Q1850",
+      "wikidata_revision": 2544351485,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1372年とされる。",
+          "source": {
+            "label": "Wikidata Q1850（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1850#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "メコン川とハウ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1850（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1850#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "macedonia",
+      "country": "北マケドニア共和国",
+      "capital": "スコピエ",
+      "wikidata": "Q384",
+      "wikidata_revision": 2543098067,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ヴァルダル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q384（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q384#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "guinea",
+      "country": "ギニア共和国",
+      "capital": "コナクリ",
+      "wikidata": "Q3733",
+      "wikidata_revision": 2537906983,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3733（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3733#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "guinea_b",
+      "country": "ギニアビサウ共和国",
+      "capital": "ビサウ",
+      "wikidata": "Q3739",
+      "wikidata_revision": 2551393959,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1687年とされる。",
+          "source": {
+            "label": "Wikidata Q3739（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3739#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ケバ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3739（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3739#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cyprus",
+      "country": "キプロス共和国",
+      "capital": "ニコシア",
+      "wikidata": "Q3856",
+      "wikidata_revision": 2550644219,
+      "facts": []
+    },
+    {
+      "id": "cuba",
+      "country": "キューバ共和国",
+      "capital": "ハバナ",
+      "wikidata": "Q1563",
+      "wikidata_revision": 2549592453,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1515年とされる。",
+          "source": {
+            "label": "Wikidata Q1563（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1563#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "メキシコ湾に面している。",
+          "source": {
+            "label": "Wikidata Q1563（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1563#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "greece",
+      "country": "ギリシャ共和国",
+      "capital": "アテネ",
+      "wikidata": "Q1524",
+      "wikidata_revision": 2539528887,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「アテーナー」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1524（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1524#P138"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kiribati",
+      "country": "キリバス共和国",
+      "capital": "タラワ",
+      "facts": []
+    },
+    {
+      "id": "kyrgyz",
+      "country": "キルギス共和国",
+      "capital": "ビシュケク",
+      "wikidata": "Q9361",
+      "wikidata_revision": 2550588435,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1825年とされる。",
+          "source": {
+            "label": "Wikidata Q9361（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9361#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アラ・アルチャ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q9361（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9361#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "guatemala",
+      "country": "グアテマラ共和国",
+      "capital": "グアテマラ市",
+      "facts": []
+    },
+    {
+      "id": "kuwait",
+      "country": "クウェート国",
+      "capital": "クウェート",
+      "wikidata": "Q35178",
+      "wikidata_revision": 2538469701,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1752年とされる。",
+          "source": {
+            "label": "Wikidata Q35178（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q35178#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ペルシア湾とクウェート湾に面している。",
+          "source": {
+            "label": "Wikidata Q35178（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q35178#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cook",
+      "country": "クック諸島",
+      "capital": "アバルア",
+      "wikidata": "Q170482",
+      "wikidata_revision": 2517997795,
+      "facts": []
+    },
+    {
+      "id": "grenada",
+      "country": "グレナダ",
+      "capital": "セントジョージズ",
+      "wikidata": "Q41547",
+      "wikidata_revision": 2541346990,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ゲオルギオス」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q41547（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41547#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1650年とされる。",
+          "source": {
+            "label": "Wikidata Q41547（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41547#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q41547（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41547#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "croatia",
+      "country": "クロアチア共和国",
+      "capital": "ザグレブ",
+      "wikidata": "Q1435",
+      "wikidata_revision": 2530758192,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1094年とされる。",
+          "source": {
+            "label": "Wikidata Q1435（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1435#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "サヴァ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1435（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1435#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kenya",
+      "country": "ケニア共和国",
+      "capital": "ナイロビ",
+      "wikidata": "Q3870",
+      "wikidata_revision": 2547934560,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1899年とされる。",
+          "source": {
+            "label": "Wikidata Q3870（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3870#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cote_d",
+      "country": "コートジボワール共和国",
+      "capital": "ヤムスクロ",
+      "wikidata": "Q3768",
+      "wikidata_revision": 2537912715,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ヤムソ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3768（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3768#P138"
+          }
+        }
+      ]
+    },
+    {
+      "id": "costarica",
+      "country": "コスタリカ共和国",
+      "capital": "サンホセ",
+      "wikidata": "Q3070",
+      "wikidata_revision": 2550549571,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ナザレのヨセフ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3070（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3070#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1737年とされる。",
+          "source": {
+            "label": "Wikidata Q3070（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3070#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kosovo",
+      "country": "コソボ共和国",
+      "capital": "プリシュティナ",
+      "wikidata": "Q25270",
+      "wikidata_revision": 2547693267,
+      "facts": []
+    },
+    {
+      "id": "comoros",
+      "country": "コモロ連合",
+      "capital": "モロニ",
+      "wikidata": "Q3901",
+      "wikidata_revision": 2545423185,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "インド洋に面している。",
+          "source": {
+            "label": "Wikidata Q3901（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3901#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "colombia",
+      "country": "コロンビア共和国",
+      "capital": "ボゴタ",
+      "wikidata": "Q2841",
+      "wikidata_revision": 2537914513,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1538年とされる。",
+          "source": {
+            "label": "Wikidata Q2841（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2841#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "congokyo",
+      "country": "コンゴ共和国",
+      "capital": "ブラザビル",
+      "wikidata": "Q3844",
+      "wikidata_revision": 2537906248,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ピエール・ブラザ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3844（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3844#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1880年とされる。",
+          "source": {
+            "label": "Wikidata Q3844（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3844#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "コンゴ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3844（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3844#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "congomin",
+      "country": "コンゴ民主共和国",
+      "capital": "キンシャサ",
+      "wikidata": "Q3838",
+      "wikidata_revision": 2537907664,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1881年とされる。",
+          "source": {
+            "label": "Wikidata Q3838（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3838#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "コンゴ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3838（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3838#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "saudi",
+      "country": "サウジアラビア王国",
+      "capital": "リヤド",
+      "wikidata": "Q3692",
+      "wikidata_revision": 2538032411,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1746年とされる。",
+          "source": {
+            "label": "Wikidata Q3692（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3692#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "samoa",
+      "country": "サモア独立国",
+      "capital": "アピア",
+      "wikidata": "Q36260",
+      "wikidata_revision": 2537920261,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1850年とされる。",
+          "source": {
+            "label": "Wikidata Q36260（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36260#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q36260（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36260#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stp",
+      "country": "サントメ・プリンシペ民主共和国",
+      "capital": "サントメ",
+      "wikidata": "Q3932",
+      "wikidata_revision": 2546834684,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「トマス」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3932（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3932#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1485年とされる。",
+          "source": {
+            "label": "Wikidata Q3932（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3932#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ギニア湾に面している。",
+          "source": {
+            "label": "Wikidata Q3932（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3932#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zambia",
+      "country": "ザンビア共和国",
+      "capital": "ルサカ",
+      "wikidata": "Q3881",
+      "wikidata_revision": 2537908247,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1905年とされる。",
+          "source": {
+            "label": "Wikidata Q3881（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3881#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sanmarino_r",
+      "country": "サンマリノ共和国",
+      "capital": "サンマリノ",
+      "wikidata": "Q1848",
+      "wikidata_revision": 2532330601,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「聖マリヌス」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1848（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1848#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は301年とされる。",
+          "source": {
+            "label": "Wikidata Q1848（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1848#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_leone",
+      "country": "シエラレオネ共和国",
+      "capital": "フリータウン",
+      "wikidata": "Q3780",
+      "wikidata_revision": 2537910746,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1792年とされる。",
+          "source": {
+            "label": "Wikidata Q3780（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3780#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3780（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3780#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "djibouti",
+      "country": "ジブチ共和国",
+      "capital": "ジブチ",
+      "wikidata": "Q3604",
+      "wikidata_revision": 2542994143,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1888年とされる。",
+          "source": {
+            "label": "Wikidata Q3604（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3604#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "タジュラ湾に面している。",
+          "source": {
+            "label": "Wikidata Q3604（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3604#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jamaica",
+      "country": "ジャマイカ",
+      "capital": "キングストン",
+      "wikidata": "Q34692",
+      "wikidata_revision": 2548101863,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1692年とされる。",
+          "source": {
+            "label": "Wikidata Q34692（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34692#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q34692（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34692#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "georgia",
+      "country": "ジョージア",
+      "capital": "トビリシ",
+      "wikidata": "Q994",
+      "wikidata_revision": 2551484177,
+      "facts": []
+    },
+    {
+      "id": "syria",
+      "country": "シリア・アラブ共和国",
+      "capital": "ダマスカス",
+      "wikidata": "Q3766",
+      "wikidata_revision": 2532472897,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "バラダ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3766（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3766#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zimbabwe",
+      "country": "ジンバブエ共和国",
+      "capital": "ハラレ",
+      "wikidata": "Q3921",
+      "wikidata_revision": 2537910918,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1890年とされる。",
+          "source": {
+            "label": "Wikidata Q3921（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3921#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "switzerland",
+      "country": "スイス連邦",
+      "capital": "ベルン",
+      "wikidata": "Q70",
+      "wikidata_revision": 2548713177,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1191年とされる。",
+          "source": {
+            "label": "Wikidata Q70（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q70#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アーレ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q70（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q70#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sweden",
+      "country": "スウェーデン王国",
+      "capital": "ストックホルム",
+      "wikidata": "Q1754",
+      "wikidata_revision": 2548180873,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1187年とされる。",
+          "source": {
+            "label": "Wikidata Q1754（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1754#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "メーラレン湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1754（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1754#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudan",
+      "country": "スーダン共和国",
+      "capital": "ハルツーム",
+      "wikidata": "Q1963",
+      "wikidata_revision": 2537912372,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ナイル川と白ナイル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1963（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1963#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "country": "スペイン王国",
+      "capital": "マドリード",
+      "wikidata": "Q2807",
+      "wikidata_revision": 2547875609,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "マンサナーレス川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q2807（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2807#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "suriname",
+      "country": "スリナム共和国",
+      "capital": "パラマリボ",
+      "wikidata": "Q3001",
+      "wikidata_revision": 2537915102,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1613年とされる。",
+          "source": {
+            "label": "Wikidata Q3001（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3001#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "スリナム川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3001（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3001#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3001（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3001#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "srilanka",
+      "country": "スリランカ民主社会主義共和国",
+      "capital": "スリ・ジャヤワルダナプラ・コッテ",
+      "wikidata": "Q41963",
+      "wikidata_revision": 2533043655,
+      "facts": []
+    },
+    {
+      "id": "slovak",
+      "country": "スロバキア共和国",
+      "capital": "ブラチスラバ",
+      "wikidata": "Q1780",
+      "wikidata_revision": 2549650347,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は907年とされる。",
+          "source": {
+            "label": "Wikidata Q1780（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1780#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ドナウ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1780（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1780#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "slovenia",
+      "country": "スロベニア共和国",
+      "capital": "リュブリャナ",
+      "wikidata": "Q437",
+      "wikidata_revision": 2537896956,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "サヴァ川とリュブリャニツァ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q437（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q437#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "seychelles",
+      "country": "セーシェル共和国",
+      "capital": "ビクトリア",
+      "wikidata": "Q3940",
+      "wikidata_revision": 2522975019,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ヴィクトリア」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3940（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3940#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "インド洋に面している。",
+          "source": {
+            "label": "Wikidata Q3940（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3940#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eq_guinea",
+      "country": "赤道ギニア共和国",
+      "capital": "シウダ・デ・ラ・パス",
+      "facts": []
+    },
+    {
+      "id": "senegal",
+      "country": "セネガル共和国",
+      "capital": "ダカール",
+      "wikidata": "Q3718",
+      "wikidata_revision": 2539520499,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3718（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3718#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "serbia",
+      "country": "セルビア共和国",
+      "capital": "ベオグラード",
+      "wikidata": "Q3711",
+      "wikidata_revision": 2550156224,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "サヴァ川とドナウ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3711（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3711#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scn",
+      "country": "セントクリストファー・ネービス",
+      "capital": "バセテール",
+      "wikidata": "Q41295",
+      "wikidata_revision": 2537917129,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1627年とされる。",
+          "source": {
+            "label": "Wikidata Q41295（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41295#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q41295（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41295#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "svg",
+      "country": "セントビンセント及びグレナディーン諸島",
+      "capital": "キングスタウン",
+      "wikidata": "Q41474",
+      "wikidata_revision": 2537917925,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1722年とされる。",
+          "source": {
+            "label": "Wikidata Q41474（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41474#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q41474（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41474#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_lucia",
+      "country": "セントルシア",
+      "capital": "カストリーズ",
+      "wikidata": "Q41699",
+      "wikidata_revision": 2537916705,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1650年とされる。",
+          "source": {
+            "label": "Wikidata Q41699（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41699#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q41699（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q41699#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "somali",
+      "country": "ソマリア連邦共和国",
+      "capital": "モガディシュ",
+      "wikidata": "Q2449",
+      "wikidata_revision": 2537908968,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "インド洋に面している。",
+          "source": {
+            "label": "Wikidata Q2449（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2449#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "solomon",
+      "country": "ソロモン諸島",
+      "capital": "ホニアラ",
+      "wikidata": "Q40921",
+      "wikidata_revision": 2537920759,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "マタニカウ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q40921（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q40921#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q40921（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q40921#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thailand",
+      "country": "タイ王国",
+      "capital": "バンコク",
+      "wikidata": "Q1861",
+      "wikidata_revision": 2551385971,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1782年とされる。",
+          "source": {
+            "label": "Wikidata Q1861（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1861#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "チャオプラヤー川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1861（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1861#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "country": "大韓民国",
+      "capital": "ソウル",
+      "wikidata": "Q8684",
+      "wikidata_revision": 2551076088,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1395年とされる。",
+          "source": {
+            "label": "Wikidata Q8684（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q8684#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "清渓川と中浪川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q8684（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q8684#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tajikistan",
+      "country": "タジキスタン共和国",
+      "capital": "ドゥシャンベ",
+      "wikidata": "Q9365",
+      "wikidata_revision": 2539487763,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "カフィルニガン川とバルゾブ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q9365（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9365#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tanzania",
+      "country": "タンザニア連合共和国",
+      "capital": "ドドマ",
+      "wikidata": "Q3866",
+      "wikidata_revision": 2537906790,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1906年とされる。",
+          "source": {
+            "label": "Wikidata Q3866（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3866#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "czech",
+      "country": "チェコ共和国",
+      "capital": "プラハ",
+      "wikidata": "Q1085",
+      "wikidata_revision": 2548502991,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ヴルタヴァ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1085（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1085#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chad",
+      "country": "チャド共和国",
+      "capital": "ウンジャメナ",
+      "wikidata": "Q3659",
+      "wikidata_revision": 2545423164,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1900年とされる。",
+          "source": {
+            "label": "Wikidata Q3659（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3659#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "シャリ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3659（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3659#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "car",
+      "country": "中央アフリカ共和国",
+      "capital": "バンギ",
+      "wikidata": "Q3832",
+      "wikidata_revision": 2550855326,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ウバンギ川」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3832（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3832#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1889年とされる。",
+          "source": {
+            "label": "Wikidata Q3832（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3832#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ウバンギ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3832（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3832#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "country": "中華人民共和国",
+      "capital": "北京",
+      "wikidata": "Q956",
+      "wikidata_revision": 2545215238,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "永定河と清河のほとりにある。",
+          "source": {
+            "label": "Wikidata Q956（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q956#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tunisia",
+      "country": "チュニジア共和国",
+      "capital": "チュニス",
+      "wikidata": "Q3572",
+      "wikidata_revision": 2550004341,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "チュニス湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3572（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3572#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "チュニス湾に面している。",
+          "source": {
+            "label": "Wikidata Q3572（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3572#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chile",
+      "country": "チリ共和国",
+      "capital": "サンティアゴ",
+      "wikidata": "Q2887",
+      "wikidata_revision": 2546122004,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ヤコブ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q2887（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2887#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1541年とされる。",
+          "source": {
+            "label": "Wikidata Q2887（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2887#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuvalu",
+      "country": "ツバル",
+      "capital": "フナフティ",
+      "wikidata": "Q34126",
+      "wikidata_revision": 2537919709,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q34126（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34126#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "denmark",
+      "country": "デンマーク王国",
+      "capital": "コペンハーゲン",
+      "wikidata": "Q1748",
+      "wikidata_revision": 2537894538,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1167年とされる。",
+          "source": {
+            "label": "Wikidata Q1748（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1748#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "germany",
+      "country": "ドイツ連邦共和国",
+      "capital": "ベルリン",
+      "wikidata": "Q64",
+      "wikidata_revision": 2551912473,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1244年とされる。",
+          "source": {
+            "label": "Wikidata Q64（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q64#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "シュプレー川とヴァーン湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q64（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q64#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "togo",
+      "country": "トーゴ共和国",
+      "capital": "ロメ",
+      "wikidata": "Q3792",
+      "wikidata_revision": 2537907913,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ギニア湾に面している。",
+          "source": {
+            "label": "Wikidata Q3792（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3792#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c_dominica",
+      "country": "ドミニカ国",
+      "capital": "ロゾー",
+      "wikidata": "Q36281",
+      "wikidata_revision": 2537915744,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q36281（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36281#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dominican_r",
+      "country": "ドミニカ共和国",
+      "capital": "サントドミンゴ",
+      "wikidata": "Q34820",
+      "wikidata_revision": 2550694907,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ドミニコ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q34820（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34820#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1496年とされる。",
+          "source": {
+            "label": "Wikidata Q34820（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34820#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "オサマ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q34820（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34820#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "trinidad",
+      "country": "トリニダード・トバゴ共和国",
+      "capital": "ポート・オブ・スペイン",
+      "wikidata": "Q39178",
+      "wikidata_revision": 2537918398,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "パリア湾に面している。",
+          "source": {
+            "label": "Wikidata Q39178（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q39178#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "turkmenistan",
+      "country": "トルクメニスタン",
+      "capital": "アシガバット",
+      "wikidata": "Q23438",
+      "wikidata_revision": 2545321628,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1881年とされる。",
+          "source": {
+            "label": "Wikidata Q23438（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23438#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "turkey",
+      "country": "トルコ共和国",
+      "capital": "アンカラ",
+      "wikidata": "Q3640",
+      "wikidata_revision": 2550350736,
+      "facts": []
+    },
+    {
+      "id": "tonga",
+      "country": "トンガ王国",
+      "capital": "ヌクアロファ",
+      "wikidata": "Q38834",
+      "wikidata_revision": 2551385383,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1795年とされる。",
+          "source": {
+            "label": "Wikidata Q38834（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q38834#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q38834（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q38834#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nigeria",
+      "country": "ナイジェリア連邦共和国",
+      "capital": "アブジャ",
+      "wikidata": "Q3787",
+      "wikidata_revision": 2537903581,
+      "facts": []
+    },
+    {
+      "id": "nauru",
+      "country": "ナウル共和国",
+      "capital": "ヤレン",
+      "wikidata": "Q31026",
+      "wikidata_revision": 2539354074,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q31026（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q31026#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "namibia",
+      "country": "ナミビア共和国",
+      "capital": "ウィントフック",
+      "wikidata": "Q3935",
+      "wikidata_revision": 2534054129,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1840年とされる。",
+          "source": {
+            "label": "Wikidata Q3935（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3935#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "niue",
+      "country": "ニウエ",
+      "capital": "アロフィ",
+      "wikidata": "Q30966",
+      "wikidata_revision": 2527255476,
+      "facts": []
+    },
+    {
+      "id": "nicaragua",
+      "country": "ニカラグア共和国",
+      "capital": "マナグア",
+      "wikidata": "Q3274",
+      "wikidata_revision": 2546103556,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1819年とされる。",
+          "source": {
+            "label": "Wikidata Q3274（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3274#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "マナグア湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3274（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3274#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "niger",
+      "country": "ニジェール共和国",
+      "capital": "ニアメ",
+      "wikidata": "Q3674",
+      "wikidata_revision": 2537909509,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ニジェール川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3674（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3674#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nz",
+      "country": "ニュージーランド",
+      "capital": "ウェリントン市",
+      "wikidata": "Q23661",
+      "wikidata_revision": 2539189866,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「アーサー・ウェルズリー」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q23661（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23661#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1839年とされる。",
+          "source": {
+            "label": "Wikidata Q23661（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23661#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nepal",
+      "country": "ネパール",
+      "capital": "カトマンズ",
+      "wikidata": "Q3037",
+      "wikidata_revision": 2537922782,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は723年とされる。",
+          "source": {
+            "label": "Wikidata Q3037（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3037#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "バグマティ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3037（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3037#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "norway",
+      "country": "ノルウェー王国",
+      "capital": "オスロ",
+      "wikidata": "Q585",
+      "wikidata_revision": 2550927559,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1048年とされる。",
+          "source": {
+            "label": "Wikidata Q585（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q585#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アルナ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q585（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q585#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bahrain",
+      "country": "バーレーン王国",
+      "capital": "マナーマ市",
+      "wikidata": "Q3882",
+      "wikidata_revision": 2551141845,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1345年とされる。",
+          "source": {
+            "label": "Wikidata Q3882（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3882#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ペルシア湾に面している。",
+          "source": {
+            "label": "Wikidata Q3882（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3882#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "haiti",
+      "country": "ハイチ共和国",
+      "capital": "ポルトープランス",
+      "wikidata": "Q34261",
+      "wikidata_revision": 2530483165,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1749年とされる。",
+          "source": {
+            "label": "Wikidata Q34261（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34261#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ゴナイーヴ湾に面している。",
+          "source": {
+            "label": "Wikidata Q34261（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q34261#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pakistan",
+      "country": "パキスタン・イスラム共和国",
+      "capital": "イスラマバード",
+      "wikidata": "Q1362",
+      "wikidata_revision": 2551712607,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1960年とされる。",
+          "source": {
+            "label": "Wikidata Q1362（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1362#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panama",
+      "country": "パナマ共和国",
+      "capital": "パナマシティー",
+      "wikidata": "Q3306",
+      "wikidata_revision": 2548102033,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1519年とされる。",
+          "source": {
+            "label": "Wikidata Q3306（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3306#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q3306（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3306#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vanuatu",
+      "country": "バヌアツ共和国",
+      "capital": "ポートビラ",
+      "wikidata": "Q37806",
+      "wikidata_revision": 2541881725,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q37806（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q37806#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bahama",
+      "country": "バハマ国",
+      "capital": "ナッソー",
+      "wikidata": "Q2467",
+      "wikidata_revision": 2550898188,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1695年とされる。",
+          "source": {
+            "label": "Wikidata Q2467（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2467#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q2467（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2467#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "png",
+      "country": "パプアニューギニア独立国",
+      "capital": "ポートモレスビー",
+      "wikidata": "Q36526",
+      "wikidata_revision": 2550390241,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ジョン・モーズビー」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q36526（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36526#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1873年とされる。",
+          "source": {
+            "label": "Wikidata Q36526（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36526#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "パプア湾に面している。",
+          "source": {
+            "label": "Wikidata Q36526（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36526#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "palau",
+      "country": "パラオ共和国",
+      "capital": "マルキョク",
+      "facts": []
+    },
+    {
+      "id": "paraguay",
+      "country": "パラグアイ共和国",
+      "capital": "アスンシオン",
+      "wikidata": "Q2933",
+      "wikidata_revision": 2537913341,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「聖母の被昇天」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q2933（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2933#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1537年とされる。",
+          "source": {
+            "label": "Wikidata Q2933（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2933#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "パラグアイ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q2933（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2933#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "barbados",
+      "country": "バルバドス",
+      "capital": "ブリッジタウン",
+      "wikidata": "Q36168",
+      "wikidata_revision": 2537916897,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「トバイアス・ブリッジ」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q36168（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36168#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1628年とされる。",
+          "source": {
+            "label": "Wikidata Q36168（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36168#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カリブ海に面している。",
+          "source": {
+            "label": "Wikidata Q36168（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q36168#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hungary",
+      "country": "ハンガリー",
+      "capital": "ブダペスト",
+      "wikidata": "Q1781",
+      "wikidata_revision": 2549910617,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1873年とされる。",
+          "source": {
+            "label": "Wikidata Q1781（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1781#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ドナウ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1781（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1781#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bangladesh",
+      "country": "バングラデシュ人民共和国",
+      "capital": "ダッカ",
+      "wikidata": "Q1354",
+      "wikidata_revision": 2548383475,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ブリゴンガ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1354（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1354#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "easttimor",
+      "country": "東ティモール民主共和国",
+      "capital": "ディリ",
+      "wikidata": "Q9310",
+      "wikidata_revision": 2535787357,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1520年とされる。",
+          "source": {
+            "label": "Wikidata Q9310（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9310#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "バンダ海に面している。",
+          "source": {
+            "label": "Wikidata Q9310（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9310#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fiji",
+      "country": "フィジー共和国",
+      "capital": "スバ",
+      "wikidata": "Q38807",
+      "wikidata_revision": 2546209058,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q38807（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q38807#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "philippines",
+      "country": "フィリピン共和国",
+      "capital": "マニラ",
+      "wikidata": "Q1461",
+      "wikidata_revision": 2546483584,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1571年とされる。",
+          "source": {
+            "label": "Wikidata Q1461（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1461#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "パシッグ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1461（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1461#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "マニラ湾に面している。",
+          "source": {
+            "label": "Wikidata Q1461（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1461#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "finland",
+      "country": "フィンランド共和国",
+      "capital": "ヘルシンキ",
+      "wikidata": "Q1757",
+      "wikidata_revision": 2551332465,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1550年とされる。",
+          "source": {
+            "label": "Wikidata Q1757（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1757#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ヴァンター川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1757（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1757#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "フィンランド湾に面している。",
+          "source": {
+            "label": "Wikidata Q1757（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1757#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bhutan",
+      "country": "ブータン王国",
+      "capital": "ティンプー",
+      "wikidata": "Q9270",
+      "wikidata_revision": 2532472312,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1955年とされる。",
+          "source": {
+            "label": "Wikidata Q9270（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9270#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "brazil",
+      "country": "ブラジル連邦共和国",
+      "capital": "ブラジリア",
+      "wikidata": "Q2844",
+      "wikidata_revision": 2550197955,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ブラジル」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q2844（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2844#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1960年とされる。",
+          "source": {
+            "label": "Wikidata Q2844（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2844#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "パラノア湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q2844（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2844#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "france",
+      "country": "フランス共和国",
+      "capital": "パリ",
+      "wikidata": "Q90",
+      "wikidata_revision": 2550796649,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「パリシイ族」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q90（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q90#P138"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulgaria",
+      "country": "ブルガリア共和国",
+      "capital": "ソフィア",
+      "wikidata": "Q472",
+      "wikidata_revision": 2551862204,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「聖ソフィア聖堂」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q472（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q472#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ヴラダヤ川とイスクル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q472（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q472#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "burkina",
+      "country": "ブルキナファソ",
+      "capital": "ワガドゥグ",
+      "wikidata": "Q3777",
+      "wikidata_revision": 2537911288,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1050年とされる。",
+          "source": {
+            "label": "Wikidata Q3777（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3777#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "brunei",
+      "country": "ブルネイ・ダルサラーム国",
+      "capital": "バンダル・スリ・ブガワン",
+      "wikidata": "Q9279",
+      "wikidata_revision": 2539478675,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ブルネイ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q9279（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9279#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "南シナ海に面している。",
+          "source": {
+            "label": "Wikidata Q9279（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9279#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "brundi",
+      "country": "ブルンジ共和国",
+      "capital": "ギテガ",
+      "wikidata": "Q167551",
+      "wikidata_revision": 2549954981,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1912年とされる。",
+          "source": {
+            "label": "Wikidata Q167551（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q167551#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vietnam",
+      "country": "ベトナム社会主義共和国",
+      "capital": "ハノイ",
+      "wikidata": "Q1858",
+      "wikidata_revision": 2549515957,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1010年とされる。",
+          "source": {
+            "label": "Wikidata Q1858（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1858#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "紅河のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1858（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1858#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "benin",
+      "country": "ベナン共和国",
+      "capital": "ポルトノボ",
+      "wikidata": "Q3799",
+      "wikidata_revision": 2539387469,
+      "facts": []
+    },
+    {
+      "id": "venezuela",
+      "country": "ベネズエラ・ボリバル共和国",
+      "capital": "カラカス",
+      "wikidata": "Q1533",
+      "wikidata_revision": 2545882056,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1567年とされる。",
+          "source": {
+            "label": "Wikidata Q1533（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1533#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "グアイレ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1533（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1533#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "belarus",
+      "country": "ベラルーシ共和国",
+      "capital": "ミンスク",
+      "wikidata": "Q2280",
+      "wikidata_revision": 2547473914,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "シヴィスワチ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q2280（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2280#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "belize",
+      "country": "ベリーズ",
+      "capital": "ベルモパン",
+      "wikidata": "Q3043",
+      "wikidata_revision": 2549631373,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1970年とされる。",
+          "source": {
+            "label": "Wikidata Q3043（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3043#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ベリーズ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3043（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3043#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "peru",
+      "country": "ペルー共和国",
+      "capital": "リマ",
+      "wikidata": "Q2868",
+      "wikidata_revision": 2538296446,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1535年とされる。",
+          "source": {
+            "label": "Wikidata Q2868（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q2868#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "belgium",
+      "country": "ベルギー王国",
+      "capital": "ブリュッセル",
+      "wikidata": "Q239",
+      "wikidata_revision": 2549997327,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ツェンネ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q239（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q239#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "poland",
+      "country": "ポーランド共和国",
+      "capital": "ワルシャワ",
+      "wikidata": "Q270",
+      "wikidata_revision": 2548859567,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ヴィスワ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q270（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q270#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bosnia_h",
+      "country": "ボスニア・ヘルツェゴビナ",
+      "capital": "サラエボ",
+      "wikidata": "Q11194",
+      "wikidata_revision": 2532329052,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1462年とされる。",
+          "source": {
+            "label": "Wikidata Q11194（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q11194#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ミリャツカ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q11194（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q11194#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "botswana",
+      "country": "ボツワナ共和国",
+      "capital": "ハボローネ",
+      "wikidata": "Q3919",
+      "wikidata_revision": 2537906474,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1965年とされる。",
+          "source": {
+            "label": "Wikidata Q3919（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3919#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bolivia",
+      "country": "ボリビア多民族国",
+      "capital": "ラパス",
+      "wikidata": "Q1491",
+      "wikidata_revision": 2546230888,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1548年とされる。",
+          "source": {
+            "label": "Wikidata Q1491（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1491#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "portugal",
+      "country": "ポルトガル共和国",
+      "capital": "リスボン市",
+      "wikidata": "Q597",
+      "wikidata_revision": 2543362150,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "タホ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q597（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q597#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "honduras",
+      "country": "ホンジュラス共和国",
+      "capital": "テグシガルパ",
+      "wikidata": "Q3238",
+      "wikidata_revision": 2537916241,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1578年とされる。",
+          "source": {
+            "label": "Wikidata Q3238（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3238#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "チョルテカ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3238（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3238#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "marshall",
+      "country": "マーシャル諸島共和国",
+      "capital": "マジュロ",
+      "wikidata": "Q12919",
+      "wikidata_revision": 2515828999,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "太平洋に面している。",
+          "source": {
+            "label": "Wikidata Q12919（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q12919#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "madagascar",
+      "country": "マダガスカル共和国",
+      "capital": "アンタナナリボ",
+      "wikidata": "Q3915",
+      "wikidata_revision": 2547620328,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1625年とされる。",
+          "source": {
+            "label": "Wikidata Q3915（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3915#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "イクパ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3915（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3915#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "malawi",
+      "country": "マラウイ共和国",
+      "capital": "リロングウェ",
+      "wikidata": "Q3876",
+      "wikidata_revision": 2547411625,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「リロングウェ川」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3876（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3876#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1902年とされる。",
+          "source": {
+            "label": "Wikidata Q3876（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3876#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "リロングウェ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3876（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3876#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mali",
+      "country": "マリ共和国",
+      "capital": "バマコ",
+      "wikidata": "Q3703",
+      "wikidata_revision": 2537905430,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "ニジェール川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3703（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3703#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "malta",
+      "country": "マルタ共和国",
+      "capital": "バレッタ",
+      "wikidata": "Q23800",
+      "wikidata_revision": 2537897845,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ジャン・ド・ヴァレット」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q23800（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23800#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1566年とされる。",
+          "source": {
+            "label": "Wikidata Q23800（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23800#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "地中海に面している。",
+          "source": {
+            "label": "Wikidata Q23800（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23800#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "malaysia",
+      "country": "マレーシア",
+      "capital": "クアラルンプール",
+      "wikidata": "Q1865",
+      "wikidata_revision": 2532330666,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1857年とされる。",
+          "source": {
+            "label": "Wikidata Q1865（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1865#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ゴンパック川とクラン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1865（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1865#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "micronesia",
+      "country": "ミクロネシア連邦",
+      "capital": "パリキール",
+      "wikidata": "Q42751",
+      "wikidata_revision": 2520566013,
+      "facts": []
+    },
+    {
+      "id": "s_africa",
+      "country": "南アフリカ共和国",
+      "capital": "プレトリア",
+      "wikidata": "Q3926",
+      "wikidata_revision": 2539387341,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「アンドリース･プレトリウス」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3926（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3926#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1855年とされる。",
+          "source": {
+            "label": "Wikidata Q3926（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3926#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_sudan",
+      "country": "南スーダン共和国",
+      "capital": "ジュバ",
+      "wikidata": "Q1947",
+      "wikidata_revision": 2532640108,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1922年とされる。",
+          "source": {
+            "label": "Wikidata Q1947（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1947#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ナイル川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1947（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1947#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "myanmar",
+      "country": "ミャンマー連邦共和国",
+      "capital": "ネーピードー",
+      "wikidata": "Q37400",
+      "wikidata_revision": 2550085690,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は2005年とされる。",
+          "source": {
+            "label": "Wikidata Q37400（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q37400#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mexico",
+      "country": "メキシコ合衆国",
+      "capital": "メキシコシティ",
+      "wikidata": "Q1489",
+      "wikidata_revision": 2539461078,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「テノチティトラン」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q1489（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1489#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "テスココ湖のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1489（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1489#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mauritius",
+      "country": "モーリシャス共和国",
+      "capital": "ポートルイス",
+      "wikidata": "Q3929",
+      "wikidata_revision": 2545423096,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ルイ15世」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3929（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3929#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1735年とされる。",
+          "source": {
+            "label": "Wikidata Q3929（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3929#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "インド洋に面している。",
+          "source": {
+            "label": "Wikidata Q3929（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3929#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mauritania",
+      "country": "モーリタニア・イスラム共和国",
+      "capital": "ヌアクショット",
+      "wikidata": "Q3688",
+      "wikidata_revision": 2545509326,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3688（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3688#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mozambique",
+      "country": "モザンビーク共和国",
+      "capital": "マプト",
+      "wikidata": "Q3889",
+      "wikidata_revision": 2530488275,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1781年とされる。",
+          "source": {
+            "label": "Wikidata Q3889（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3889#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "マプト湾に面している。",
+          "source": {
+            "label": "Wikidata Q3889（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3889#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "maldives",
+      "country": "モルディブ共和国",
+      "capital": "マレ",
+      "wikidata": "Q9347",
+      "wikidata_revision": 2532336731,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "インド洋に面している。",
+          "source": {
+            "label": "Wikidata Q9347（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9347#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "moldova",
+      "country": "モルドバ共和国",
+      "capital": "キシナウ",
+      "wikidata": "Q21197",
+      "wikidata_revision": 2547977570,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1436年とされる。",
+          "source": {
+            "label": "Wikidata Q21197（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q21197#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ビク川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q21197（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q21197#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "morocco",
+      "country": "モロッコ王国",
+      "capital": "ラバト",
+      "wikidata": "Q3551",
+      "wikidata_revision": 2549910749,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1146年とされる。",
+          "source": {
+            "label": "Wikidata Q3551（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3551#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ルグルグ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3551（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3551#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "大西洋に面している。",
+          "source": {
+            "label": "Wikidata Q3551（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3551#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mongolia",
+      "country": "モンゴル国",
+      "capital": "ウランバートル",
+      "wikidata": "Q23430",
+      "wikidata_revision": 2540066301,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1639年とされる。",
+          "source": {
+            "label": "Wikidata Q23430（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23430#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "トール川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q23430（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23430#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "montenegro",
+      "country": "モンテネグロ",
+      "capital": "ポドゴリツァ",
+      "wikidata": "Q23564",
+      "wikidata_revision": 2542034414,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "モラチャ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q23564（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q23564#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jordan",
+      "country": "ヨルダン",
+      "capital": "アンマン",
+      "wikidata": "Q3805",
+      "wikidata_revision": 2537900229,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「アモン人」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3805（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3805#P138"
+          }
+        }
+      ]
+    },
+    {
+      "id": "laos",
+      "country": "ラオス人民民主共和国",
+      "capital": "ビエンチャン",
+      "wikidata": "Q9326",
+      "wikidata_revision": 2549875972,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1560年とされる。",
+          "source": {
+            "label": "Wikidata Q9326（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9326#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "メコン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q9326（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q9326#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "latvia",
+      "country": "ラトビア共和国",
+      "capital": "リーガ",
+      "wikidata": "Q1773",
+      "wikidata_revision": 2548827430,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1201年とされる。",
+          "source": {
+            "label": "Wikidata Q1773（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1773#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ダウガヴァ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1773（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1773#P206"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "リガ湾に面している。",
+          "source": {
+            "label": "Wikidata Q1773（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1773#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lithuania",
+      "country": "リトアニア共和国",
+      "capital": "ビリニュス",
+      "wikidata": "Q216",
+      "wikidata_revision": 2537895008,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ヴィルネ川」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q216（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q216#P138"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ネリス川とヴィルネ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q216（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q216#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "libya",
+      "country": "リビア",
+      "capital": "トリポリ",
+      "wikidata": "Q3579",
+      "wikidata_revision": 2540572396,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "地中海に面している。",
+          "source": {
+            "label": "Wikidata Q3579（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3579#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liechtenstein",
+      "country": "リヒテンシュタイン公国",
+      "capital": "ファドゥーツ",
+      "wikidata": "Q1844",
+      "wikidata_revision": 2550894468,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1150年とされる。",
+          "source": {
+            "label": "Wikidata Q1844（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1844#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ライン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1844（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1844#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "liberia",
+      "country": "リベリア共和国",
+      "capital": "モンロビア",
+      "wikidata": "Q3748",
+      "wikidata_revision": 2537912119,
+      "facts": [
+        {
+          "kind": "name",
+          "text": "名前は「ジェームズ・モンロー」にちなむとされる。",
+          "source": {
+            "label": "Wikidata Q3748（P138。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3748#P138"
+          }
+        },
+        {
+          "kind": "founded",
+          "text": "創設は1822年とされる。",
+          "source": {
+            "label": "Wikidata Q3748（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3748#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "メスアルド川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3748（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3748#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "romania",
+      "country": "ルーマニア",
+      "capital": "ブカレスト",
+      "wikidata": "Q19660",
+      "wikidata_revision": 2551707865,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1459年とされる。",
+          "source": {
+            "label": "Wikidata Q19660（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q19660#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "ドゥンボヴィツァ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q19660（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q19660#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "luxembourg",
+      "country": "ルクセンブルク大公国",
+      "capital": "ルクセンブルク",
+      "wikidata": "Q1842",
+      "wikidata_revision": 2550555990,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は963年とされる。",
+          "source": {
+            "label": "Wikidata Q1842（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1842#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "アルゼット川とペトリュス川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q1842（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q1842#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rwanda",
+      "country": "ルワンダ共和国",
+      "capital": "キガリ",
+      "wikidata": "Q3859",
+      "wikidata_revision": 2537907356,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1907年とされる。",
+          "source": {
+            "label": "Wikidata Q3859（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3859#P571"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lesotho",
+      "country": "レソト王国",
+      "capital": "マセル",
+      "wikidata": "Q3909",
+      "wikidata_revision": 2547799527,
+      "facts": [
+        {
+          "kind": "founded",
+          "text": "創設は1869年とされる。",
+          "source": {
+            "label": "Wikidata Q3909（P571。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3909#P571"
+          }
+        },
+        {
+          "kind": "water",
+          "text": "カレドン川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q3909（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3909#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lebanon",
+      "country": "レバノン共和国",
+      "capital": "ベイルート",
+      "wikidata": "Q3820",
+      "wikidata_revision": 2537922157,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "地中海に面している。",
+          "source": {
+            "label": "Wikidata Q3820（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q3820#P206"
+          }
+        }
+      ]
+    },
+    {
+      "id": "russia",
+      "country": "ロシア連邦",
+      "capital": "モスクワ",
+      "wikidata": "Q649",
+      "wikidata_revision": 2551381497,
+      "facts": [
+        {
+          "kind": "water",
+          "text": "モスクワ川とヤーウザ川のほとりにある。",
+          "source": {
+            "label": "Wikidata Q649（P206。2026-10-01 取得。CC0）",
+            "url": "https://www.wikidata.org/wiki/Q649#P206"
+          }
+        }
+      ]
+    }
+  ]
+}
