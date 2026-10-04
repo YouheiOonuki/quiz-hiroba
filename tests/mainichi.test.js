@@ -94,7 +94,9 @@ test('ページの決まり: 答える画面は広告の script なし・消す�
   assert.ok(html.includes('name="google-adsense-account"'));
   assert.ok(html.includes('data-reset-storage="quiz-hiroba_mainichi"'));
   assert.match(read('mainichi/mainichi.js'), /var KEY = 'quiz-hiroba_mainichi';/);
-  assert.ok(read('mainichi/guide.html').includes('adsbygoogle.js'));
+  // 使い方ページは AdSense 審査中（2026-10-04）なので広告 script を外し meta だけ。通ったら自動広告に戻す
+  assert.ok(!read('mainichi/guide.html').includes('adsbygoogle.js'));
+  assert.equal((read('mainichi/guide.html').match(/name="google-adsense-account"/g) || []).length, 1);
   // 子どもが使う画面に外部リンクを置かない（REVIEW C7 R7）: 答える画面の静的な HTML に http の a が無い
   assert.ok(!/<a [^>]*href="https?:/.test(html));
 });
