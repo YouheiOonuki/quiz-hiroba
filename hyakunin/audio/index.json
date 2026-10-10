@@ -1,0 +1,816 @@
+{
+ "model": "@cf/myshell-ai/melotts",
+ "format": "mp3 32kbps 16kHz mono",
+ "source": "hyakunin-data.js の kamiYomi・shimoYomi",
+ "files": {
+  "000-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "000-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "001-kami": {
+   "bytes": 12816,
+   "seconds": 3.1
+  },
+  "001-shimo": {
+   "bytes": 12096,
+   "seconds": 2.9
+  },
+  "002-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "002-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "003-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "003-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "004-kami": {
+   "bytes": 13392,
+   "seconds": 3.3
+  },
+  "004-shimo": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "005-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "005-shimo": {
+   "bytes": 11376,
+   "seconds": 2.7
+  },
+  "006-kami": {
+   "bytes": 13248,
+   "seconds": 3.2
+  },
+  "006-shimo": {
+   "bytes": 11808,
+   "seconds": 2.9
+  },
+  "007-kami": {
+   "bytes": 14112,
+   "seconds": 3.4
+  },
+  "007-shimo": {
+   "bytes": 10944,
+   "seconds": 2.6
+  },
+  "008-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "008-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "009-kami": {
+   "bytes": 13248,
+   "seconds": 3.2
+  },
+  "009-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "010-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "010-shimo": {
+   "bytes": 12096,
+   "seconds": 2.9
+  },
+  "011-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "011-shimo": {
+   "bytes": 11376,
+   "seconds": 2.7
+  },
+  "012-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "012-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "013-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "013-shimo": {
+   "bytes": 10944,
+   "seconds": 2.6
+  },
+  "014-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "014-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "015-kami": {
+   "bytes": 14112,
+   "seconds": 3.4
+  },
+  "015-shimo": {
+   "bytes": 11376,
+   "seconds": 2.7
+  },
+  "016-kami": {
+   "bytes": 14256,
+   "seconds": 3.5
+  },
+  "016-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "017-kami": {
+   "bytes": 12960,
+   "seconds": 3.2
+  },
+  "017-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "018-kami": {
+   "bytes": 12240,
+   "seconds": 3
+  },
+  "018-shimo": {
+   "bytes": 10944,
+   "seconds": 2.7
+  },
+  "019-kami": {
+   "bytes": 13968,
+   "seconds": 3.4
+  },
+  "019-shimo": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "020-kami": {
+   "bytes": 13824,
+   "seconds": 3.4
+  },
+  "020-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "021-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "021-shimo": {
+   "bytes": 12240,
+   "seconds": 3
+  },
+  "022-kami": {
+   "bytes": 13392,
+   "seconds": 3.2
+  },
+  "022-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "023-kami": {
+   "bytes": 13392,
+   "seconds": 3.3
+  },
+  "023-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "024-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "024-shimo": {
+   "bytes": 11808,
+   "seconds": 2.9
+  },
+  "025-kami": {
+   "bytes": 13248,
+   "seconds": 3.2
+  },
+  "025-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "026-kami": {
+   "bytes": 13248,
+   "seconds": 3.2
+  },
+  "026-shimo": {
+   "bytes": 10656,
+   "seconds": 2.6
+  },
+  "027-kami": {
+   "bytes": 12528,
+   "seconds": 3
+  },
+  "027-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "028-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "028-shimo": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "029-kami": {
+   "bytes": 13248,
+   "seconds": 3.2
+  },
+  "029-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "030-kami": {
+   "bytes": 12240,
+   "seconds": 3
+  },
+  "030-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "031-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "031-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "032-kami": {
+   "bytes": 13824,
+   "seconds": 3.4
+  },
+  "032-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "033-kami": {
+   "bytes": 12528,
+   "seconds": 3.1
+  },
+  "033-shimo": {
+   "bytes": 11808,
+   "seconds": 2.8
+  },
+  "034-kami": {
+   "bytes": 12816,
+   "seconds": 3.1
+  },
+  "034-shimo": {
+   "bytes": 12240,
+   "seconds": 3
+  },
+  "035-kami": {
+   "bytes": 13824,
+   "seconds": 3.4
+  },
+  "035-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "036-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "036-shimo": {
+   "bytes": 10512,
+   "seconds": 2.5
+  },
+  "037-kami": {
+   "bytes": 13536,
+   "seconds": 3.3
+  },
+  "037-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "038-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "038-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "039-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "039-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "040-kami": {
+   "bytes": 12528,
+   "seconds": 3
+  },
+  "040-shimo": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "041-kami": {
+   "bytes": 13392,
+   "seconds": 3.3
+  },
+  "041-shimo": {
+   "bytes": 11808,
+   "seconds": 2.9
+  },
+  "042-kami": {
+   "bytes": 13392,
+   "seconds": 3.3
+  },
+  "042-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "043-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "043-shimo": {
+   "bytes": 10944,
+   "seconds": 2.6
+  },
+  "044-kami": {
+   "bytes": 12240,
+   "seconds": 3
+  },
+  "044-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "045-kami": {
+   "bytes": 13392,
+   "seconds": 3.3
+  },
+  "045-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "046-kami": {
+   "bytes": 12816,
+   "seconds": 3.1
+  },
+  "046-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "047-kami": {
+   "bytes": 12528,
+   "seconds": 3.1
+  },
+  "047-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "048-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "048-shimo": {
+   "bytes": 10656,
+   "seconds": 2.6
+  },
+  "049-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "049-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "050-kami": {
+   "bytes": 13392,
+   "seconds": 3.3
+  },
+  "050-shimo": {
+   "bytes": 11376,
+   "seconds": 2.7
+  },
+  "051-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "051-shimo": {
+   "bytes": 10944,
+   "seconds": 2.7
+  },
+  "052-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "052-shimo": {
+   "bytes": 10944,
+   "seconds": 2.7
+  },
+  "053-kami": {
+   "bytes": 12960,
+   "seconds": 3.2
+  },
+  "053-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "054-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "054-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "055-kami": {
+   "bytes": 15120,
+   "seconds": 3.7
+  },
+  "055-shimo": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "056-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "056-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "057-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "057-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "058-kami": {
+   "bytes": 12816,
+   "seconds": 3.1
+  },
+  "058-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "059-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "059-shimo": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "060-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "060-shimo": {
+   "bytes": 11376,
+   "seconds": 2.7
+  },
+  "061-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "061-shimo": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "062-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "062-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "063-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "063-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "064-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "064-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "065-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "065-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "066-kami": {
+   "bytes": 12528,
+   "seconds": 3.1
+  },
+  "066-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "067-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "067-shimo": {
+   "bytes": 10512,
+   "seconds": 2.5
+  },
+  "068-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "068-shimo": {
+   "bytes": 10944,
+   "seconds": 2.6
+  },
+  "069-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "069-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "070-kami": {
+   "bytes": 13824,
+   "seconds": 3.4
+  },
+  "070-shimo": {
+   "bytes": 10944,
+   "seconds": 2.7
+  },
+  "071-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "071-shimo": {
+   "bytes": 12096,
+   "seconds": 2.9
+  },
+  "072-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "072-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "073-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "073-shimo": {
+   "bytes": 11808,
+   "seconds": 2.8
+  },
+  "074-kami": {
+   "bytes": 13248,
+   "seconds": 3.2
+  },
+  "074-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "075-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "075-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "076-kami": {
+   "bytes": 14400,
+   "seconds": 3.5
+  },
+  "076-shimo": {
+   "bytes": 10656,
+   "seconds": 2.6
+  },
+  "077-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "077-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "078-kami": {
+   "bytes": 12528,
+   "seconds": 3.1
+  },
+  "078-shimo": {
+   "bytes": 10944,
+   "seconds": 2.7
+  },
+  "079-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "079-shimo": {
+   "bytes": 12096,
+   "seconds": 2.9
+  },
+  "080-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "080-shimo": {
+   "bytes": 11808,
+   "seconds": 2.9
+  },
+  "081-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "081-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "082-kami": {
+   "bytes": 12096,
+   "seconds": 2.9
+  },
+  "082-shimo": {
+   "bytes": 10944,
+   "seconds": 2.7
+  },
+  "083-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "083-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "084-kami": {
+   "bytes": 13680,
+   "seconds": 3.3
+  },
+  "084-shimo": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "085-kami": {
+   "bytes": 12384,
+   "seconds": 3
+  },
+  "085-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "086-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "086-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "087-kami": {
+   "bytes": 13968,
+   "seconds": 3.4
+  },
+  "087-shimo": {
+   "bytes": 11664,
+   "seconds": 2.8
+  },
+  "088-kami": {
+   "bytes": 12528,
+   "seconds": 3
+  },
+  "088-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "089-kami": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "089-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "090-kami": {
+   "bytes": 13104,
+   "seconds": 3.2
+  },
+  "090-shimo": {
+   "bytes": 10800,
+   "seconds": 2.6
+  },
+  "091-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "091-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "092-kami": {
+   "bytes": 13824,
+   "seconds": 3.4
+  },
+  "092-shimo": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "093-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "093-shimo": {
+   "bytes": 11088,
+   "seconds": 2.7
+  },
+  "094-kami": {
+   "bytes": 12672,
+   "seconds": 3.1
+  },
+  "094-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "095-kami": {
+   "bytes": 11952,
+   "seconds": 2.9
+  },
+  "095-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "096-kami": {
+   "bytes": 12528,
+   "seconds": 3
+  },
+  "096-shimo": {
+   "bytes": 11376,
+   "seconds": 2.8
+  },
+  "097-kami": {
+   "bytes": 12096,
+   "seconds": 2.9
+  },
+  "097-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  },
+  "098-kami": {
+   "bytes": 12816,
+   "seconds": 3.1
+  },
+  "098-shimo": {
+   "bytes": 11232,
+   "seconds": 2.7
+  },
+  "099-kami": {
+   "bytes": 12960,
+   "seconds": 3.1
+  },
+  "099-shimo": {
+   "bytes": 10656,
+   "seconds": 2.6
+  },
+  "100-kami": {
+   "bytes": 12816,
+   "seconds": 3.1
+  },
+  "100-shimo": {
+   "bytes": 11520,
+   "seconds": 2.8
+  }
+ },
+ "made": "2026-10-10"
+}

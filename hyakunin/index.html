@@ -76,14 +76,16 @@
 
       <p class="start-row"><button type="button" class="btn btn-big" id="start">読み上げスタート</button></p>
       <p id="voice-line" class="small voice-line" aria-live="polite"></p>
+      <p class="small">読み上げは現代の読みです（「てふ」は「ちょう」、「は」は「わ」と読みます）。</p>
 
       <details class="card opt" id="more-box">
         <summary>くわしい設定: <span class="opt-state" id="more-state"></span></summary>
         <label class="weak-row"><input type="checkbox" id="opt-joka"> 最初に序歌（難波津に）を読む</label>
         <label class="weak-row"><input type="checkbox" id="opt-twice"> 下の句を2回読む（ちらし取り）</label>
         <label class="weak-row"><input type="checkbox" id="opt-hide"> 読んでいる歌を画面に出さない（読み手も遊ぶとき）</label>
+        <div class="opt-row"><span class="opt-label">声の種類</span><div class="seg" id="opt-voicekind"></div></div>
         <div class="opt-row">
-          <label class="opt-label" for="opt-voice">声</label>
+          <label class="opt-label" for="opt-voice">端末の声</label>
           <select id="opt-voice" class="voice-select"></select>
         </div>
         <div class="opt-row">

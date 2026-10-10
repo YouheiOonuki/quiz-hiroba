@@ -30,6 +30,8 @@
       twice: s.twice !== false,
       hide: s.hide === true,
       voice: typeof s.voice === 'string' ? s.voice.slice(0, 200) : '',
+      // 声の種類: AI の声（ビルド時に作った録音 hyakunin/audio/。K140）か、この端末の声（Web Speech API）。既定は AI の声
+      ai: s.ai !== false,
       rate: rate >= 0.5 && rate <= 1.2 ? rate : 0.85,
     };
   }
@@ -65,6 +67,8 @@
     return jaVoices.filter(function (v) { return v.localService !== false; })[0] || jaVoices[0] || null;
   }
   function hasVoice() { return !!(synth && typeof window.SpeechSynthesisUtterance === 'function' && jaVoices.length); }
+  /** 読める声があるか（AI の声は録音を読むので、端末に日本語の声が無くても読める） */
+  function canSpeak() { return settings.ai || hasVoice(); }
   function renderVoices() {
     var sel = $('opt-voice');
     sel.textContent = '';
@@ -75,21 +79,40 @@
     });
     var cur = currentVoice();
     if (cur) sel.value = cur.voiceURI;
-    sel.disabled = !jaVoices.length;
-    $('test-voice').disabled = !jaVoices.length;
-    $('voice-line').textContent = hasVoice()
+    sel.disabled = !jaVoices.length || settings.ai;
+    $('test-voice').disabled = !canSpeak();
+    $('voice-line').textContent = settings.ai
+      ? '声: AI の声（録音。くわしい設定で端末の声に変えられます）'
+      : hasVoice()
       ? '声: ' + cur.name + '（くわしい設定で変えられます）'
       : 'この端末（ブラウザ）には日本語の声が見つかりません。歌を画面に大きく出すので、読み手が声に出して読み、「次の札へ」で進めてください。';
-    $('voice-line').classList.toggle('warn', !hasVoice());
+    $('voice-line').classList.toggle('warn', !canSpeak());
     renderMoreState();
   }
 
   var speakTimer = null;
-  /** 1 句を読む。読み終わったら done()。声が無いときは読まずにすぐ done（呼ぶ側で扱う） */
-  function speak(text, done) {
+  var audio = null; // AI の声の再生中の Audio（押したときに読み、読み終わったら捨てる。ページの最初の読み込みには入らない）
+  /** 録音の名前: 000 が序歌、001〜100 が歌。kami・shimo */
+  function audioKey(n, part) { return ('00' + n).slice(-3) + '-' + part; }
+  /** 1 句を読む。読み終わったら done()。key があり AI の声なら録音を、それ以外は端末の声で。録音が読めなければ端末の声に（それも無ければ次へ） */
+  function speak(text, done, key) {
     clearTimeout(speakTimer);
     var finished = false;
-    function end() { if (finished) return; finished = true; clearTimeout(speakTimer); done(); }
+    function end() { if (finished) return; finished = true; clearTimeout(speakTimer); if (audio) { audio.onended = audio.onerror = null; audio = null; } done(); }
+    if (settings.ai && key) {
+      audio = new Audio('audio/' + key + '.mp3');
+      audio.preservesPitch = true;
+      audio.playbackRate = Math.max(0.5, Math.min(1.2, settings.rate / 0.85)); // 速さのつまみ 0.85 を録音のふつうの速さに
+      audio.onended = end;
+      audio.onerror = function () { audio = null; if (hasVoice()) speakDevice(text, end); else end(); };
+      audio.play().catch(function () { if (audio) audio.onerror(); });
+      speakTimer = setTimeout(end, Y.estimateSeconds(text, settings.rate) * 2000 + 5000);
+      return;
+    }
+    speakDevice(text, end);
+  }
+  function speakDevice(text, end) {
+    if (!hasVoice()) { end(); return; }
     var u = new window.SpeechSynthesisUtterance(Y.speechText(text));
     var v = currentVoice();
     if (v) u.voice = v;
@@ -99,10 +122,12 @@
     u.onerror = end;
     synth.speak(u);
     // onend が来ない端末（途中で止まる・画面が消えた）のための見張り: 目安の 2 倍＋3 秒で次へ
+    clearTimeout(speakTimer);
     speakTimer = setTimeout(end, Y.estimateSeconds(text, settings.rate) * 2000 + 3000);
   }
   function hush() {
     clearTimeout(speakTimer);
+    if (audio) { audio.onended = audio.onerror = null; try { audio.pause(); } catch (e) { /* 止められなくても続ける */ } audio = null; }
     if (synth) { try { synth.cancel(); } catch (e) { /* 止められなくても続ける */ } }
   }
 
@@ -141,10 +166,13 @@
     var parts = [settings.joka ? '序歌あり' : '序歌なし'];
     if (settings.style === 'chirashi') parts.push(settings.twice ? '下の句2回' : '下の句1回');
     if (settings.hide) parts.push('歌をかくす');
+    parts.push(settings.ai ? 'AI の声' : '端末の声');
     parts.push('速さ ' + settings.rate.toFixed(2));
     $('more-state').textContent = parts.join('・');
   }
   function renderMenu() {
+    radioGroup($('opt-voicekind'), 'voicekind', [{ v: 'ai', label: 'AI の声（録音）' }, { v: 'device', label: 'この端末の声' }], settings.ai ? 'ai' : 'device',
+      function (v) { settings.ai = v === 'ai'; changed(); renderVoices(); });
     radioGroup($('opt-order'), 'order', [{ v: 'random', label: 'ランダム' }, { v: 'number', label: '番号順（1〜100）' }], settings.order,
       function (v) { settings.order = v; changed(); });
     radioGroup($('opt-gap'), 'gap', GAPS.map(function (g) { return { v: g, label: g ? g + '秒' : 'タップで次へ' }; }), settings.gap,
@@ -172,9 +200,9 @@
   $('opt-rate').addEventListener('input', function (e) { settings.rate = Number(e.target.value); $('rate-val').textContent = settings.rate.toFixed(2); renderMoreState(); });
   $('opt-rate').addEventListener('change', function () { persist(); });
   $('test-voice').addEventListener('click', function () {
-    if (!hasVoice()) return;
+    if (!canSpeak()) return;
     hush();
-    speak(BY_N[1].kamiYomi, function () {});
+    speak(BY_N[1].kamiYomi, function () {}, audioKey(1, 'kami'));
   });
 
   // --- 読み上げ ---
@@ -186,7 +214,7 @@
 
   function begin(order, opt, pos) {
     hush();
-    play = { order: order, opt: opt, steps: Y.buildSteps(order, opt), pos: pos || 0, phase: 'speaking', textOnly: !hasVoice() };
+    play = { order: order, opt: opt, steps: Y.buildSteps(order, opt), pos: pos || 0, phase: 'speaking', textOnly: !canSpeak() };
     resume = { order: order, opt: opt, pos: play.pos, at: new Date().toISOString().slice(0, 16) };
     persist();
     show('scr-play');
@@ -224,7 +252,7 @@
     resume.pos = play.pos; persist();
     render();
     var p = st.card < 0 ? H.JOKA : BY_N[st.n];
-    speak(st.part === 'kami' ? p.kamiYomi : p.shimoYomi, afterSpeak);
+    speak(st.part === 'kami' ? p.kamiYomi : p.shimoYomi, afterSpeak, audioKey(st.card < 0 ? 0 : st.n, st.part));
   }
 
   function afterSpeak() {
