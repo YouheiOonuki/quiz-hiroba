@@ -5,13 +5,14 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { pathToFileURL } = require('node:url');
 const Ooh = require('../ooh.js');
 const genso = require('../topics/genso.js');
 const shuto = require('../topics/shuto.js');
 
 const root = path.join(__dirname, '..');
 const read = (rel) => fs.readFileSync(path.join(root, rel), 'utf8');
-const load = () => import(path.join(root, 'tools', 'build-data.mjs'));
+const load = () => import(pathToFileURL(path.join(root, 'tools', 'build-data.mjs')).href);
 
 test('data/genso.json・data/shuto.json が元のデータから書き出した結果と同じ（node tools/build-data.mjs）', async () => {
   const B = await load();
