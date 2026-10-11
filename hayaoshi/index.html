@@ -50,10 +50,29 @@
   <header class="app-header">
     <p class="crumb"><a href="../">クイズ広場</a></p>
     <h1>早押しボタン</h1>
-    <p class="subtitle">1台のスマホを2〜4人で。最初に押した人だけが光ります。</p>
   </header>
 
   <main class="app-main" id="app">
+
+    <!-- 早押し（開いたときは準備の上に、「全画面でスタート」で全画面） -->
+    <section id="scr-play" class="screen play-full" hidden aria-label="早押しボタン">
+      <div id="zones" class="zones"></div>
+      <div class="host" id="host">
+        <div class="host-q" id="host-q" aria-live="polite"></div>
+        <div class="host-btns">
+          <button type="button" class="hbtn hbtn-ok" id="h-ok" disabled>○ 正解</button>
+          <button type="button" class="hbtn hbtn-ng" id="h-ng" disabled>× 不正解</button>
+          <button type="button" class="hbtn" id="h-next">つぎの問題</button>
+          <button type="button" class="hbtn" id="h-drum">ドラムロール</button>
+          <button type="button" class="hbtn hbtn-sub" id="h-more" aria-expanded="false">…</button>
+        </div>
+        <div class="host-more" id="host-more" hidden>
+          <button type="button" class="hbtn hbtn-sub" id="h-undo">1つもどす</button>
+          <button type="button" class="hbtn hbtn-sub" id="h-release">受付をもどす</button>
+          <button type="button" class="hbtn hbtn-sub" id="h-end">終わる（順位）</button>
+        </div>
+      </div>
+    </section>
 
     <!-- 準備 -->
     <section id="scr-menu" class="screen" aria-labelledby="h-menu">
@@ -67,17 +86,17 @@
         </div>
       </div>
 
-      <fieldset class="card req menu">
-        <legend>準備</legend>
+      <p class="start-row"><button type="button" class="btn btn-big" id="start">全画面でスタート</button></p>
+
+      <details class="card opt" id="setup-box">
+        <summary>準備: <span class="opt-state" id="setup-state"></span></summary>
         <div class="opt-row"><span class="opt-label">人数</span><div class="seg" id="opt-n"></div></div>
         <div class="opt-row">
           <label class="opt-label" for="opt-topic">問題</label>
           <select id="opt-topic" class="voice-select"></select>
         </div>
         <label class="weak-row"><input type="checkbox" id="opt-sound"> 効果音を鳴らす（押した音・正解・不正解・ドラムロール）</label>
-      </fieldset>
-
-      <p class="start-row"><button type="button" class="btn btn-big" id="start">スタート（ボタンを出す）</button></p>
+      </details>
 
       <details class="card opt" id="names-box">
         <summary>名前とお手つき: <span class="opt-state" id="names-state"></span></summary>
@@ -104,25 +123,6 @@
       <p class="small"><a href="./guide.html">使い方・判定の決まり・よくある質問</a></p>
     </section>
 
-    <!-- 早押し（全画面） -->
-    <section id="scr-play" class="screen play-full" hidden aria-label="早押しボタン">
-      <div id="zones" class="zones"></div>
-      <div class="host" id="host">
-        <div class="host-q" id="host-q" aria-live="polite"></div>
-        <div class="host-btns">
-          <button type="button" class="hbtn hbtn-ok" id="h-ok" disabled>○ 正解</button>
-          <button type="button" class="hbtn hbtn-ng" id="h-ng" disabled>× 不正解</button>
-          <button type="button" class="hbtn" id="h-next">つぎの問題</button>
-          <button type="button" class="hbtn" id="h-drum">ドラムロール</button>
-          <button type="button" class="hbtn hbtn-sub" id="h-more" aria-expanded="false">…</button>
-        </div>
-        <div class="host-more" id="host-more" hidden>
-          <button type="button" class="hbtn hbtn-sub" id="h-undo">1つもどす</button>
-          <button type="button" class="hbtn hbtn-sub" id="h-release">受付をもどす</button>
-          <button type="button" class="hbtn hbtn-sub" id="h-end">終わる（順位）</button>
-        </div>
-      </div>
-    </section>
 
     <!-- 順位 -->
     <section id="scr-result" class="screen" hidden aria-labelledby="r-title">

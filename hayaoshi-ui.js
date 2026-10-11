@@ -20,8 +20,11 @@
 
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  // id が 'home' のときは、早押しの画面（全画面にしない）と準備を並べて出す
   function show(id) {
-    ['scr-menu', 'scr-play', 'scr-result', 'scr-reader'].forEach(function (s) { $(s).hidden = s !== id; });
+    var home = id === 'home';
+    ['scr-menu', 'scr-play', 'scr-result', 'scr-reader'].forEach(function (s) { $(s).hidden = !(s === id || (home && (s === 'scr-menu' || s === 'scr-play'))); });
+    $('scr-play').classList.toggle('inline', home);
     document.body.classList.toggle('playing-full', id === 'scr-play');
     document.body.classList.toggle('print-reader', id === 'scr-reader');
     window.scrollTo(0, 0);
@@ -172,13 +175,18 @@
       row.appendChild(lab); row.appendChild(inp); names.appendChild(row);
     }
     $('names-state').textContent = settings.names.slice(0, settings.n).join('・') + (settings.penalty ? '／お手つき −1点' : '');
+    var topic = TOPICS[settings.topic];
+    $('setup-state').textContent = settings.n + '人・' + (topic ? topic.page.h1 : '問題は読み上げ役') + (settings.sound ? '・効果音あり' : '');
     $('open-reader').disabled = !settings.topic;
     var played = game.scores.some(function (v) { return v !== 0; }) || game.q > 1;
     $('resume-box').hidden = !played;
     if (played) $('resume-text').textContent = game.scores.map(function (v, p) { return settings.names[p] + ' ' + v + '点'; }).join('・') + '・' + game.q + '問目';
+    // 準備の上のボタン（人数・名前・問題を変えたら作り直す）
+    if (!document.body.classList.contains('playing-full')) { buildZones(); renderPlay(); renderDrum(); }
   }
+  function goHome() { Snd.drumStop(false); keepAwake(false); renderMenu(); show('home'); }
   $('opt-topic').addEventListener('change', function (e) { settings.topic = e.target.value; seed = Calc.newSeed(); game = H.newGame(settings.n, settings.penalty, game.scores); game.q = 1; save(); renderMenu(); });
-  $('opt-sound').addEventListener('change', function (e) { settings.sound = e.target.checked; save(); });
+  $('opt-sound').addEventListener('change', function (e) { settings.sound = e.target.checked; save(); renderMenu(); });
   $('opt-penalty').addEventListener('change', function (e) { settings.penalty = e.target.checked ? 1 : 0; game.penalty = settings.penalty; save(); renderMenu(); });
   $('resume').addEventListener('click', startPlay);
   $('resume-drop').addEventListener('click', function () { game = H.resetScores(game); seed = Calc.newSeed(); save(); renderMenu(); });
@@ -191,7 +199,9 @@
     var box = $('zones');
     box.textContent = '';
     box.className = 'zones';
-    $('scr-play').className = 'screen play-full n' + game.n;
+    var sp = $('scr-play');
+    sp.classList.remove('n2', 'n3', 'n4');
+    sp.classList.add('n' + game.n);
     zones = [];
     for (var p = 0; p < game.n; p++) {
       var z = el('button', 'zone z' + p);
@@ -213,6 +223,8 @@
       zones.push(z);
     }
   }
+  // 全画面にせず押したとき: 音はボタンを押した操作の中で準備する（iPhone は pointerdown では音を出せないことがある）
+  $('zones').addEventListener('click', function () { Snd.ensure(); });
   function onPress(p) {
     var r = H.press(game, p);
     if (!r.accepted) return;
@@ -298,6 +310,7 @@
   // キーボード（PC）: 早押しと読み上げ役の操作
   document.addEventListener('keydown', function (e) {
     if ($('scr-play').hidden || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;   // 準備の名前を打っている間は押したことにしない
     var p = H.keyToPlayer(e.key, game.n, e.repeat);
     if (p >= 0) { e.preventDefault(); onPress(p); return; }
     if (e.repeat) return;
@@ -321,7 +334,7 @@
   }
   $('r-back').addEventListener('click', startPlay);
   $('r-reset').addEventListener('click', function () { game = H.resetScores(game); seed = Calc.newSeed(); save(); startPlay(); });
-  $('r-menu').addEventListener('click', function () { renderMenu(); show('scr-menu'); });
+  $('r-menu').addEventListener('click', goHome);
 
   // --- 読み上げ役の画面（問題と答えの一覧。ボタンの画面と同じ順番） ---
   $('open-reader').addEventListener('click', function () {
@@ -341,11 +354,11 @@
     });
     show('scr-reader');
   });
-  $('reader-back').addEventListener('click', function () { renderMenu(); show('scr-menu'); });
+  $('reader-back').addEventListener('click', goHome);
   $('reader-print').addEventListener('click', function () { window.print(); });
 
+  show('home');
   renderMenu();
-  show('scr-menu');
   document.documentElement.classList.remove('js-loading');
 
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
