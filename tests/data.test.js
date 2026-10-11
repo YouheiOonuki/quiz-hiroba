@@ -74,8 +74,7 @@ test('年号: 語呂合わせを載せていない（「語呂」「覚え方」
 test('題材: どの題材も必要な部品を持つ', () => {
   for (const t of [genso, nengo, kimariji, shuto, require('../topics/showa.js')]) {
     for (const k of ['id', 'page', 'order', 'label', 'items', 'kinds', 'filters', 'columns', 'explain', 'link', 'sourceKey', 'unit']) assert.ok(t[k] != null, t.id + ' の ' + k);
-    for (const k of ['title', 'h1', 'lead', 'description', 'hub', 'icon', 'order']) assert.ok(t.page[k] != null, t.id + ' の page.' + k);
-    assert.ok(t.page.lead.length <= 40, t.id + ' の冒頭は 40 字まで（WRITING 1 章）');
+    for (const k of ['title', 'h1', 'description', 'hub', 'icon', 'order']) assert.ok(t.page[k] != null, t.id + ' の page.' + k);
     assert.ok(CONSTANTS[t.sourceKey], t.id + ' の出典');
     assert.equal(new Set(t.items.map((it) => it.id)).size, t.items.length, t.id + ' の id が重ならない');
     for (const f of t.filters) assert.ok(f.options.some((o) => o.v === f.def), t.id + ' の ' + f.key + ' の既定');

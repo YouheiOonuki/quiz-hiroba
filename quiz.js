@@ -37,8 +37,12 @@
     if (text != null) e.textContent = text;
     return e;
   }
+  // 出題中は出し方（scr-menu）も問題の下に出す。折りたたみは出題に入るときに閉じ（出題中に出し方を変えて出し直すときは開いたまま）、メニューだけのときは開く
   function show(id) {
-    ['scr-menu', 'scr-play', 'scr-result', 'scr-list', 'scr-print'].forEach(function (s) { $(s).hidden = s !== id; });
+    var wasPlaying = !$('scr-play').hidden;
+    ['scr-menu', 'scr-play', 'scr-result', 'scr-list', 'scr-print'].forEach(function (s) { $(s).hidden = !(s === id || (id === 'scr-play' && s === 'scr-menu')); });
+    if (id === 'scr-menu') $('opt-box').open = true;
+    else if (!(id === 'scr-play' && wasPlaying)) $('opt-box').open = false;
     document.body.classList.toggle('print-mode', id === 'scr-print');
     document.body.classList.toggle('playing', id === 'scr-play');
     window.scrollTo(0, 0);
@@ -104,7 +108,15 @@
     if (challenge) { challenge = null; history.replaceState(null, '', location.pathname); }
     saveSettings();
     renderMenu();
+    // 1 問目に答える前なら、変えた出し方ですぐ出し直す
+    if (round && !round.fromChallenge && round.i === 0 && !round.answered && !$('scr-play').hidden) restart();
   }
+  function restart() {
+    var o = currentOpt();
+    o.seed = Calc.newSeed();
+    start(o, false);
+  }
+  $('restart').addEventListener('click', restart);
 
   function renderMenu() {
     var kind = Calc.kindOf(TOPIC, settings.kind);
@@ -140,6 +152,8 @@
     // 自己ベスト（同じ条件どうし）
     var key = Calc.bestKey(TOPIC, currentOpt());
     var best = records[TOPIC.id] && records[TOPIC.id].best[key];
+    // 折りたたみの見出し: 「すべて」の絞り込みは省く（昭和クイズが「すべて・すべて・10問」にならないように）
+    $('opt-state').textContent = describe(currentOpt()).split('・').filter(function (x) { return x !== 'すべて'; }).join('・') + (settings.weak && weak.length ? '・にがて' : '');
     $('best-line').textContent = best ? 'この条件の自己ベスト: ' + best.n + '問中 ' + best.c + '問（' + Calc.formatMs(best.ms) + '）' : '';
 
     // 共有されたちょうせん
@@ -194,18 +208,19 @@
   // --- 出題 ---
   var round = null;   // { opt, qs, i, score, miss: [], t0, answered, fromChallenge }
 
-  function start(opt, fromChallenge) {
+  // auto: 開いたときの 1 問目。入力欄にフォーカスしない（スマホのキーボードを勝手に出さない）。時間は最初に触ったときから測る
+  function start(opt, fromChallenge, auto) {
     var qs = Calc.makeRound(TOPIC, opt);
-    if (!qs.length) return;
-    round = { opt: opt, qs: qs, i: 0, score: 0, miss: [], t0: Date.now(), fromChallenge: !!fromChallenge };
+    if (!qs.length) return false;
+    round = { opt: opt, qs: qs, i: 0, score: 0, streak: 0, miss: [], t0: auto ? null : Date.now(), fromChallenge: !!fromChallenge, auto: !!auto };
     show('scr-play');
     ask();
+    return true;
   }
-  $('start').addEventListener('click', function () {
-    var o = currentOpt();
-    o.seed = Calc.newSeed();
-    start(o, false);
-  });
+  function touched() { if (round && round.t0 == null) round.t0 = Date.now(); }
+  document.addEventListener('pointerdown', touched, true);
+  document.addEventListener('keydown', touched, true);
+  $('start').addEventListener('click', restart);
   $('challenge-start').addEventListener('click', function () {
     var o = Object.assign({}, challenge, { only: [] });
     start(o, true);
@@ -240,7 +255,7 @@
       $('answer-hint').textContent = kind.inputHint || '';
       $('answer-btn').disabled = false;
       $('skip-btn').disabled = false;
-      inp.focus();
+      if (!(round.auto && round.i === 0)) inp.focus();
     } else {
       q.choices.forEach(function (c, i) {
         var b;
@@ -294,8 +309,9 @@
     var kind = Calc.kindOf(TOPIC, round.opt.kind);
     records = Calc.recordAnswer(records, TOPIC.id, it.id, ok);
     saveRecords();
-    if (ok) round.score += 1; else round.miss.push({ id: it.id, given: given });
+    if (ok) { round.score += 1; round.streak += 1; } else { round.streak = 0; round.miss.push({ id: it.id, given: given }); }
     $('score').textContent = '正解 ' + round.score;
+    celebrate(ok, btn);
     document.querySelectorAll('#choices .choice').forEach(function (b) {
       b.disabled = true;
       var c = b.getAttribute('data-choice');
@@ -308,7 +324,7 @@
       $('answer-btn').disabled = true;
       $('skip-btn').disabled = true;
     }
-    $('fb-title').textContent = ok ? '○ 正解' : '× 答えは ' + kind.answer(it);
+    $('fb-title').textContent = ok ? (round.streak >= 3 ? '○ 正解！ ' + round.streak + '問れんぞく' : '○ 正解') : '× 答えは ' + kind.answer(it);
     $('fb-title').className = 'fb-title ' + (ok ? 'ok' : 'ng');
     $('fb-near').hidden = near !== 'case';
     $('fb-body').textContent = TOPIC.explain(it);
@@ -321,6 +337,39 @@
     $('feedback').hidden = false;
     if (modeOf(round.opt) === 'typing') $('answer').focus();   // スマホのキーボードを閉じない。Enter でつぎへ
     else $('next').focus();
+  }
+
+  // 正解・不正解の演出（SCREEN 1.4 の 3）: 正解は押した札が弾んで丸が散る、不正解は札が揺れる。点数も弾む。
+  // 動きを減らす設定では何もしない（色と ○× は CSS のまま出る）
+  var CALM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function replay(node, cls) {
+    if (!node) return;
+    node.classList.remove(cls);
+    void node.offsetWidth;   // 同じクラスを付け直してアニメーションをもう一度
+    node.classList.add(cls);
+  }
+  function celebrate(ok, btn) {
+    if (CALM) return;
+    var target = btn || $('type-form');
+    replay(target, ok ? 'fx-ok' : 'fx-ng');
+    if (ok) replay($('score'), 'fx-bump');
+    if (!ok) return;
+    var r = target.getBoundingClientRect();
+    var burst = el('span', 'burst');
+    burst.setAttribute('aria-hidden', 'true');
+    burst.style.left = (r.left + r.width / 2) + 'px';
+    burst.style.top = (r.top + r.height / 2) + 'px';
+    var n = round.streak >= 3 ? 18 : 10;
+    for (var i = 0; i < n; i++) {
+      var a = (i / n) * Math.PI * 2, d = 50 + Math.random() * (round.streak >= 3 ? 70 : 40);
+      var dot = el('i');
+      dot.style.setProperty('--dx', Math.round(Math.cos(a) * d) + 'px');
+      dot.style.setProperty('--dy', Math.round(Math.sin(a) * d) + 'px');
+      dot.style.animationDelay = Math.round(Math.random() * 60) + 'ms';
+      burst.appendChild(dot);
+    }
+    document.body.appendChild(burst);
+    setTimeout(function () { burst.remove(); }, 900);
   }
 
   // 話のきっかけ（昭和クイズ。回想法カードと同じ問いかけ）を答えの説明の下に出す
@@ -366,7 +415,7 @@
   }
 
   function finish() {
-    var n = round.qs.length, s = round.score, ms = Date.now() - round.t0;
+    var n = round.qs.length, s = round.score, ms = Date.now() - (round.t0 || Date.now());
     round.ms = ms;
     $('r-score').textContent = n + '問中 ' + s + '問 正解';
     $('r-time').textContent = 'かかった時間 ' + Calc.formatMs(ms);
@@ -604,7 +653,8 @@
     settings = normalizeSettings(Object.assign({}, challenge, { weak: false }));
   }
   renderMenu();
-  show('scr-menu');
+  // 共有リンクで来たときは「同じ問題でちょうせん」を見せる。ふつうは開いたらすぐ 1 問目（SCREEN 1.4 の 1）
+  if (challenge || !start(Object.assign(currentOpt(), { seed: Calc.newSeed() }), false, true)) show('scr-menu');
   document.documentElement.classList.remove('js-loading');
 
   // PWA: オフラインでも遊べるように（登録は ../sw.js。scope はツールの直下。README「ツールを追加するとき」13）

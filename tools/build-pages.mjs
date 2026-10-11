@@ -74,7 +74,6 @@ export function build() {
       .replaceAll('{{TITLE}}', esc(t.page.title))
       .replaceAll('{{DESC}}', esc(t.page.description))
       .replaceAll('{{H1}}', esc(t.page.h1))
-      .replaceAll('{{LEAD}}', esc(t.page.lead))
       .replaceAll('{{NOTE}}', esc(t.page.note || ''))
       .replaceAll('{{ABOUT}}', t.page.about ? `<p class="topic-about">${esc(t.page.about)}</p>
       ` : '')

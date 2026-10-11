@@ -65,7 +65,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 
 ## 題材を足す
 
-1. `topics/<題材>.js` を書く（3 択にするなら `choices: 3`、選択肢を同じ組からだけ出すなら向きに `group`、高齢者向けは `page.big`・`page.noAds`・`page.guide`・`page.cards`。見本は `topics/showa.js`。`topics/genso.js` が見本。別のデータファイルを使うときは `page.deps` に並べる。例: `topics/kimariji.js` の `hyakunin-data.js`）。持つもの: `id`・`page`（title・h1・lead 40 字まで・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
+1. `topics/<題材>.js` を書く（3 択にするなら `choices: 3`、選択肢を同じ組からだけ出すなら向きに `group`、高齢者向けは `page.big`・`page.noAds`・`page.guide`・`page.cards`。見本は `topics/showa.js`。`topics/genso.js` が見本。別のデータファイルを使うときは `page.deps` に並べる。例: `topics/kimariji.js` の `hyakunin-data.js`）。持つもの: `id`・`page`（title・h1・description・hub・icon・order・note）・`items`（`id` が重ならない）・`kinds`（prompt・answer・accept・choice。入力で答えられない向きは `typing: false`、年のように数字で答えるなら `numeric: true`、大小を区別するなら `caseSensitive: true`）・`filters`・`columns`・`order`・`label`・`explain`・`link`・`unit`・`sourceKey`
 2. `constants.js` に出典（source・url・checked）を足す
 3. `node tools/build-pages.mjs` を実行する（`<題材>/index.html`、入口の一覧、`print/` の一覧、`sitemap.xml`、`sw.js` の最初に取っておくファイルを作り直す）。`tests/data.test.js` がずれを見張る
 4. `tests/data.test.js` にデータの確かめ（件数・重なり・見本の値）を足す。`node --test tests/*.test.js`
