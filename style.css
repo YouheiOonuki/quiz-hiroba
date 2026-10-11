@@ -567,3 +567,6 @@ kbd { font-family: inherit; border: 1px solid var(--border); border-bottom-width
 .mn-date { font-weight: 700; text-align: center; font-size: 0.95rem; }
 .mn-topic { margin: 0.2rem 0 0; color: var(--muted); }
 .mn-stats { margin: 0.8rem 0 0; text-align: center; }
+
+/* そのページだけの説明（yorozu-plans QUEUE Q-017） */
+.topic-about { font-size: 0.92rem; line-height: 1.75; margin: 0.8rem 0 0.4rem; }

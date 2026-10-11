@@ -76,6 +76,8 @@ export function build() {
       .replaceAll('{{H1}}', esc(t.page.h1))
       .replaceAll('{{LEAD}}', esc(t.page.lead))
       .replaceAll('{{NOTE}}', esc(t.page.note || ''))
+      .replaceAll('{{ABOUT}}', t.page.about ? `<p class="topic-about">${esc(t.page.about)}</p>
+      ` : '')
       .replaceAll('{{ADNOTE}}', t.page.noAds
         ? '<!-- Google AdSense: 高齢者向けのページなので広告なし。meta（サイト所有確認）だけ。使い方（' + t.page.guide + '）も同じ（yorozu-plans D118） -->'
         : '<!-- Google AdSense: 遊ぶ画面なので meta（サイト所有確認）だけ。広告は使い方ページ（guide.html）に出す（todofuken-quiz の D18 と同じ。企画書 27 の D122） -->')
