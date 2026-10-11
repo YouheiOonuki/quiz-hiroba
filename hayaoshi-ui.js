@@ -141,7 +141,7 @@
       navigator.wakeLock.request('screen').then(function (w) { wake = w; w.addEventListener('release', function () { wake = null; }); }).catch(function () {});
     } else if (!on && wake) { wake.release().catch(function () {}); wake = null; }
   }
-  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && !$('scr-play').hidden) keepAwake(true); });
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && document.body.classList.contains('playing-full')) keepAwake(true); });
 
   // --- 準備の画面 ---
   function radio(box, name, options, value, onChange) {
@@ -311,11 +311,13 @@
   document.addEventListener('keydown', function (e) {
     if ($('scr-play').hidden || e.ctrlKey || e.metaKey || e.altKey) return;
     if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;   // 準備の名前を打っている間は押したことにしない
+    // 全画面にしていないとき、準備・リンク・折りたたみにフォーカスがあれば、そのキーはそちらのもの（Enter でリンクや summary を開けるように）
+    if (!document.body.classList.contains('playing-full') && e.target !== document.body && !e.target.closest('#scr-play')) return;
     var p = H.keyToPlayer(e.key, game.n, e.repeat);
     if (p >= 0) { e.preventDefault(); onPress(p); return; }
     if (e.repeat) return;
     var k = e.key.toLowerCase();
-    if (k === 'enter') { e.preventDefault(); judge(true); }
+    if (k === 'enter') { if (game.phase === 'locked') { e.preventDefault(); judge(true); } }
     else if (k === 'x') judge(false);
     else if (k === 'n') nextQ();
     else if (k === 'd') $('h-drum').click();
