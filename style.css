@@ -570,3 +570,26 @@ kbd { font-family: inherit; border: 1px solid var(--border); border-bottom-width
 
 /* そのページだけの説明（yorozu-plans QUEUE Q-017） */
 .topic-about { font-size: 0.92rem; line-height: 1.75; margin: 0.8rem 0 0.4rem; }
+
+/* 段 2（yorozu-plans ROADMAP 7.60・D332）: 開いたらすぐ 1 問目、出し方は問題の下の折りたたみ */
+#opt-box fieldset.menu { border: 0; padding: 0; margin: 0; min-width: 0; }
+.restart-row { text-align: center; margin: 0.8rem 0 0; }
+body:not(.playing) .restart-row { display: none; }
+body.playing .start-row { display: none; }
+body.playing #scr-menu { margin-top: 1.2rem; }
+
+/* 正解・不正解の演出（SCREEN 1.4 の 3）。動きを減らす設定では quiz.js が付けない */
+@keyframes qh-pop { 0% { transform: scale(1); } 35% { transform: scale(1.07); } 100% { transform: scale(1); } }
+@keyframes qh-shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+@keyframes qh-bump { 0% { transform: scale(1); } 40% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@keyframes qh-stamp { 0% { transform: scale(1.8); opacity: 0; } 60% { transform: scale(0.95); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes qh-burst { 0% { transform: translate(0, 0) scale(1); opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)) scale(0.2); opacity: 0; } }
+.fx-ok { animation: qh-pop 0.35s ease-out; }
+.fx-ng { animation: qh-shake 0.4s ease-in-out; }
+.score.fx-bump { display: inline-block; animation: qh-bump 0.35s ease-out; }
+.fb-title.ok, .fb-title.ng { display: inline-block; transform-origin: left center; animation: qh-stamp 0.3s ease-out; }
+.burst { position: fixed; width: 0; height: 0; pointer-events: none; z-index: 50; }
+.burst i { position: absolute; left: -6px; top: -6px; width: 12px; height: 12px; border: 3px solid #2e7d32; border-radius: 50%; animation: qh-burst 0.7s cubic-bezier(.2,.7,.3,1) forwards; }
+.burst i:nth-child(3n) { border-color: var(--accent); }
+.burst i:nth-child(3n+1) { border-color: #e0a800; }
+@media (prefers-reduced-motion: reduce) { .fx-ok, .fx-ng, .score.fx-bump, .fb-title.ok, .fb-title.ng, .burst i { animation: none; } }

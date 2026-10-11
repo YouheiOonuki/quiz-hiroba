@@ -40,60 +40,12 @@
 
   <header class="app-header">
     <p class="crumb"><a href="../">クイズ広場</a></p>
-    <h1>{{H1}}</h1>
-    <p class="subtitle">{{LEAD}}</p>{{NOADS}}
+    <h1>{{H1}}</h1>{{NOADS}}
   </header>
 
   <main class="app-main quiz" id="app">
 
-    <!-- メニュー -->
-    <section id="scr-menu" class="screen" aria-labelledby="h-menu">
-      <h2 id="h-menu" class="visually-hidden">出し方をえらぶ</h2>
-
-      <div id="challenge" class="card challenge" hidden>
-        <p><strong>ちょうせんが届きました</strong></p>
-        <p id="challenge-text" class="small"></p>
-        <div id="challenge-card"></div>
-        <p><button type="button" class="btn btn-big" id="challenge-start">同じ問題でちょうせん</button></p>
-      </div>
-
-      <fieldset class="card req menu">
-        <legend>出し方</legend>
-        <div class="opt-row"><span class="opt-label">答え方</span><div class="seg" id="opt-mode"></div></div>
-        <p class="small" id="mode-note" hidden>この向きは4択だけです。</p>
-        <div class="opt-row"><span class="opt-label">向き</span><div class="seg" id="opt-kind"></div></div>
-        <div id="opt-filters"></div>
-        <div class="opt-row"><span class="opt-label">問題数</span><div class="seg" id="opt-count"></div></div>
-        <label class="weak-row"><input type="checkbox" id="opt-weak"> にがてだけ出す<span id="weak-count"></span></label>
-      </fieldset>
-
-      <p class="start-row"><button type="button" class="btn btn-big" id="start">スタート</button></p>
-      <p id="best-line" class="small best-line" aria-live="polite"></p>
-      <div class="btn-row sub-row">
-        <button type="button" class="btn btn-sub" id="open-list">一覧で覚える</button>
-        <button type="button" class="btn btn-sub" id="open-print">問題と答えを印刷</button>
-      </div>
-
-      <details class="card opt" id="rec-box">
-        <summary>記録: <span class="opt-state" id="rec-state"></span></summary>
-        <p class="small">にがて（最後にまちがえた問題。正解すると外れる）</p>
-        <ul id="weak-list" class="weak-list"></ul>
-        <p id="weak-empty" class="small">まだありません。</p>
-        <p class="small">記録はこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_records</code>）にだけ保存され、外部には送信されません。書き出し・読み込みは<a href="../#file-box">クイズ広場のトップ</a>から。</p>
-        <div class="btn-row"><button type="button" class="btn btn-sub" id="rec-reset">この題材の記録を消す</button> <button type="button" class="btn btn-sub" data-reset-storage="quiz-hiroba_records quiz-hiroba_settings" data-reset-confirm="クイズ広場のすべての題材の記録（にがて・自己ベスト）と出し方の設定を、この端末から消して初期状態に戻します。消した内容は元に戻せません。よろしいですか？">保存した内容をすべて消す（初期状態に戻す）</button></div>
-      </details>
-
-      <details class="card opt" id="src-box">
-        <summary>出典と確認日</summary>
-        <p class="small" id="src-text"></p>
-        <ul class="small src-links" id="src-links"></ul>
-        <p class="small">{{NOTE}}</p>
-      </details>
-
-      {{ABOUT}}<p class="small"><a href="{{GUIDE}}">{{GUIDETEXT}}</a></p>{{RELATED}}
-    </section>
-
-    <!-- 出題 -->
+    <!-- 出題（開いたらすぐ 1 問目。SCREEN 1.4 の 1） -->
     <section id="scr-play" class="screen" hidden aria-labelledby="question">
       <div class="play-bar">
         <span id="progress" class="progress"></span>
@@ -124,6 +76,57 @@
         <p id="fb-link" class="small" hidden><a id="fb-link-a" href="#" target="_blank" rel="noopener"></a></p>
         <button type="button" class="btn btn-big" id="next">つぎへ</button>
       </div>
+    </section>
+
+    <!-- 出し方（出題中は問題の下に折りたたみで出る） -->
+    <section id="scr-menu" class="screen" aria-labelledby="h-menu">
+      <h2 id="h-menu" class="visually-hidden">出し方をえらぶ</h2>
+
+      <div id="challenge" class="card challenge" hidden>
+        <p><strong>ちょうせんが届きました</strong></p>
+        <p id="challenge-text" class="small"></p>
+        <div id="challenge-card"></div>
+        <p><button type="button" class="btn btn-big" id="challenge-start">同じ問題でちょうせん</button></p>
+      </div>
+
+      <details class="card opt" id="opt-box">
+        <summary>出し方: <span class="opt-state" id="opt-state"></span></summary>
+        <fieldset class="req menu">
+          <legend class="visually-hidden">出し方</legend>
+          <div class="opt-row"><span class="opt-label">答え方</span><div class="seg" id="opt-mode"></div></div>
+          <p class="small" id="mode-note" hidden>この向きは4択だけです。</p>
+          <div class="opt-row"><span class="opt-label">向き</span><div class="seg" id="opt-kind"></div></div>
+          <div id="opt-filters"></div>
+          <div class="opt-row"><span class="opt-label">問題数</span><div class="seg" id="opt-count"></div></div>
+          <label class="weak-row"><input type="checkbox" id="opt-weak"> にがてだけ出す<span id="weak-count"></span></label>
+        </fieldset>
+        <p class="restart-row"><button type="button" class="btn" id="restart">この出し方でやり直す</button></p>
+      </details>
+
+      <p class="start-row"><button type="button" class="btn btn-big" id="start">スタート</button></p>
+      <p id="best-line" class="small best-line" aria-live="polite"></p>
+      <div class="btn-row sub-row">
+        <button type="button" class="btn btn-sub" id="open-list">一覧で覚える</button>
+        <button type="button" class="btn btn-sub" id="open-print">問題と答えを印刷</button>
+      </div>
+
+      <details class="card opt" id="rec-box">
+        <summary>記録: <span class="opt-state" id="rec-state"></span></summary>
+        <p class="small">にがて（最後にまちがえた問題。正解すると外れる）</p>
+        <ul id="weak-list" class="weak-list"></ul>
+        <p id="weak-empty" class="small">まだありません。</p>
+        <p class="small">記録はこの端末のブラウザ（localStorage、キー <code>quiz-hiroba_records</code>）にだけ保存され、外部には送信されません。書き出し・読み込みは<a href="../#file-box">クイズ広場のトップ</a>から。</p>
+        <div class="btn-row"><button type="button" class="btn btn-sub" id="rec-reset">この題材の記録を消す</button> <button type="button" class="btn btn-sub" data-reset-storage="quiz-hiroba_records quiz-hiroba_settings" data-reset-confirm="クイズ広場のすべての題材の記録（にがて・自己ベスト）と出し方の設定を、この端末から消して初期状態に戻します。消した内容は元に戻せません。よろしいですか？">保存した内容をすべて消す（初期状態に戻す）</button></div>
+      </details>
+
+      <details class="card opt" id="src-box">
+        <summary>出典と確認日</summary>
+        <p class="small" id="src-text"></p>
+        <ul class="small src-links" id="src-links"></ul>
+        <p class="small">{{NOTE}}</p>
+      </details>
+
+      {{ABOUT}}<p class="small"><a href="{{GUIDE}}">{{GUIDETEXT}}</a></p>{{RELATED}}
     </section>
 
     <!-- 結果 -->
