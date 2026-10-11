@@ -32,7 +32,7 @@
       voice: typeof s.voice === 'string' ? s.voice.slice(0, 200) : '',
       // 声の種類: AI の声（ビルド時に作った録音 hyakunin/audio/。K140）か、この端末の声（Web Speech API）。既定は AI の声
       ai: s.ai !== false,
-      rate: rate >= 0.5 && rate <= 1.2 ? rate : 0.85,
+      rate: rate >= 0.5 && rate <= 1.2 ? rate : 0.75,   // 初期値は録音のふつう（0.85）より少しゆっくり（オーナーの耳 2026-10-11）
     };
   }
   var stored = load();

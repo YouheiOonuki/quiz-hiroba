@@ -59,9 +59,9 @@ export function toMp3(pcm) {
   return Buffer.concat(out);
 }
 
-/** かなの文（いくつかに分けた列）→ mp3。文と文の間に 0.3 秒の無音 */
-export async function speakMp3(parts) {
-  const gap = new Int16Array(4800);
+/** かなの文（いくつかに分けた列）→ mp3。文と文の間に gapSeconds 秒の無音（既定 0.3） */
+export async function speakMp3(parts, gapSeconds = 0.3) {
+  const gap = new Int16Array(Math.round(16000 * gapSeconds));
   const pcm = [];
   for (const [i, p] of parts.entries()) {
     const r = await runAI('@cf/myshell-ai/melotts', { prompt: p, lang: 'jp' });
