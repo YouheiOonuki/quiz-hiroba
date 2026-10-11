@@ -471,6 +471,9 @@ body.playing-full { overflow: hidden; overscroll-behavior: none; }
   -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
 }
 .play-full .zones { display: contents; }
+/* 開いたとき: 全画面にせず、準備の上に置く（SCREEN 1.4 の 1。押せばそのまま遊べる） */
+.play-full.inline { position: relative; inset: auto; z-index: auto; height: min(78vh, 40rem); padding: 0; margin-bottom: 1rem; }
+.play-full.inline .zone-inner::before { width: min(30vw, 14vh, 120px); }   /* 全画面より低いので丸を小さく（枠からはみ出さないように） */
 .play-full.n2 { grid-template-areas: "z0 z0" "host host" "z1 z1"; }
 .play-full.n3 { grid-template-areas: "z0 z0" "host host" "z1 z2"; }
 .play-full.n4 { grid-template-areas: "z0 z1" "host host" "z2 z3"; }
