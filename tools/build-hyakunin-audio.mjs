@@ -7,6 +7,7 @@ import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { speakMp3, pool } from './tts-mp3.mjs';
 
+const KU_GAP = 0.4; // 句の間の無音（秒）。0.5 は「気持ち長い」（オーナーの耳 2026-10-11）。ページの初期の速さ 0.75 では約 0.45 秒に伸びる
 const H = createRequire(import.meta.url)('../hyakunin-data.js');
 const dir = new URL('../hyakunin/audio/', import.meta.url);
 mkdirSync(dir, { recursive: true });
@@ -18,7 +19,8 @@ const jobs = poems.flatMap((p) => ['kami', 'shimo'].map((part) => ({ key: String
 const idxFile = new URL('index.json', dir);
 const index = existsSync(idxFile) ? JSON.parse(readFileSync(idxFile, 'utf8')) : { model: '@cf/myshell-ai/melotts', format: 'mp3 32kbps 16kHz mono', source: 'hyakunin-data.js の kamiYomi・shimoYomi', files: {} };
 await pool(jobs, 4, async (j) => {
-  const { mp3, seconds } = await speakMp3([j.text]);
+  // 句ごとに読ませて、句の間に KU_GAP 秒の間（5・7・5 と 7・7 の区切り。オーナーの耳 2026-10-11: 区切りが無いのはどうか）
+  const { mp3, seconds } = await speakMp3(j.text.split(/\s+/), KU_GAP);
   writeFileSync(new URL(j.key + '.mp3', dir), mp3);
   index.files[j.key] = { bytes: mp3.length, seconds: Math.round(seconds * 10) / 10 };
   process.stdout.write('.');
