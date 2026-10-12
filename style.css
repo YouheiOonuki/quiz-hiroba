@@ -484,6 +484,8 @@ body.playing-full { overflow: hidden; overscroll-behavior: none; }
   background: color-mix(in srgb, var(--c) 14%, var(--bg)); color: var(--text); font: inherit;
   touch-action: none; -webkit-tap-highlight-color: transparent; transition: opacity 0.1s, background 0.1s;
 }
+/* 全画面でない画面ではゾーンの上でも縦にスクロールできる。指を流したら押したことにしない（hayaoshi-ui.js の SWIPE_PX） */
+body:not(.playing-full) .zone { touch-action: pan-y; }
 .zone.z1 { --c: #1f5fbf; } .zone.z2 { --c: #2e7d32; } .zone.z3 { --c: #b86e00; }
 .zone-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem; height: 100%; pointer-events: none; }
 .zone-inner::before {

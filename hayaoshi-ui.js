@@ -11,6 +11,7 @@
 
   // --- 保存（README「ツールを追加するとき」12。キーは quiz-hiroba_ で始める） ---
   var KEY = 'quiz-hiroba_hayaoshi';
+  var SWIPE_PX = 10;   // 全画面でない画面で、指がこれより動いたらスクロールとみなして押したことにしない
   function load() { try { var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
   function save() {
     try {
@@ -213,8 +214,24 @@
       inner.appendChild(el('span', 'zone-state', ''));
       z.appendChild(inner);
       (function (p) {
-        // 押し始め（pointerdown）だけを見る。指ごとに別のイベントが来るので、複数の指で同時に押しても 1 人ずつ判定できる
-        z.addEventListener('pointerdown', function (e) { e.preventDefault(); onPress(p); }, { passive: false });
+        // 全画面: 押し始め（pointerdown）だけを見る。指ごとに別のイベントが来るので、複数の指で同時に押しても 1 人ずつ判定できる
+        // 全画面にしていない画面（ページをスクロールできる）で指のとき: 指を流してスクロールしたら押したことにしない
+        // （10 px を超えて動いた・ブラウザがスクロールに切り替えた pointercancel）。指を離したときに押したことにする（yorozu-plans 7.21 2026-10-12）
+        var pending = {};
+        z.addEventListener('pointerdown', function (e) {
+          if (e.pointerType === 'touch' && !document.body.classList.contains('playing-full')) { pending[e.pointerId] = { x: e.clientX, y: e.clientY }; return; }
+          e.preventDefault(); onPress(p);
+        }, { passive: false });
+        z.addEventListener('pointermove', function (e) {
+          var s = pending[e.pointerId];
+          if (s && Math.hypot(e.clientX - s.x, e.clientY - s.y) > SWIPE_PX) delete pending[e.pointerId];
+        });
+        z.addEventListener('pointercancel', function (e) { delete pending[e.pointerId]; });
+        z.addEventListener('pointerup', function (e) {
+          if (!pending[e.pointerId]) return;
+          delete pending[e.pointerId];
+          Snd.ensure(); onPress(p);
+        });
         // キーボード・スクリーンリーダーでのボタン操作（pointerdown が無いとき）
         z.addEventListener('click', function (e) { if (e.detail === 0) onPress(p); });
       })(p);
