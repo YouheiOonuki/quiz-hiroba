@@ -598,3 +598,35 @@ body.playing #scr-menu { margin-top: 1.2rem; }
 .burst i:nth-child(3n) { border-color: var(--accent); }
 .burst i:nth-child(3n+1) { border-color: #e0a800; }
 @media (prefers-reduced-motion: reduce) { .fx-ok, .fx-ng, .score.fx-bump, .fb-title.ok, .fb-title.ng, .burst i { animation: none; } }
+
+/* 百人一首 読み上げ（yorozu-plans ROADMAP 7.60 段 2 の 5）: 畳の上の札。歌は縦書きで、上の句と下の句が 1 列ずつ */
+.tatami {
+  --tatami-a: #c9cf8f; --tatami-b: #bcc37f; --tatami-edge: #3e5a3a;
+  background:
+    repeating-linear-gradient(90deg, var(--tatami-a) 0 2px, var(--tatami-b) 2px 4px);
+  border: 6px solid var(--tatami-edge); border-radius: 10px; padding: 1.1rem 0.8rem; margin-bottom: 0.8rem;
+}
+@media (prefers-color-scheme: dark) { .tatami { --tatami-a: #4a4f2c; --tatami-b: #41462a; --tatami-edge: #1f2e1d; } }
+.fuda {
+  writing-mode: vertical-rl; white-space: pre; margin: 0 auto; background: #f8f2e2; color: #2b2118;
+  border: 2px solid #8b5a2b; border-radius: 6px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; letter-spacing: 0.08em;
+}
+.fuda-hero { padding: 0.6rem 0.5rem; font-size: 0.9rem; line-height: 1.9; width: fit-content; }
+.fuda-stage { padding: 0.8rem; }
+.fuda-stage .start-row { margin: 0.6rem 0 0; }
+.voice-line { margin-top: 0.2rem; }
+.yomi-stage { padding: 0.8rem 0.6rem; }
+.yomi-stage .yomi-label { color: #2b3a24; font-weight: 600; }
+@media (prefers-color-scheme: dark) { .yomi-stage .yomi-label { color: #e4e8c8; } }
+/* 札の中は横に並べ、上の句を右・下の句を左に（各句は縦書きの 1 列） */
+.yomi-fuda { writing-mode: horizontal-tb; display: flex; flex-direction: row-reverse; justify-content: center; align-items: flex-start; gap: 0.7rem; width: fit-content; padding: 1rem 0.8rem; }
+.yomi-fuda .yomi-kami, .yomi-fuda .yomi-shimo { writing-mode: vertical-rl; white-space: nowrap; }
+.yomi-fuda .yomi-kami, .yomi-fuda .yomi-shimo { font-size: 1.3rem; line-height: 1.5; margin: 0; }
+.yomi-fuda .yomi-kami.now, .yomi-fuda .yomi-shimo.now { color: #8b1a1a; }
+.yomi-stage .yomi-kana { color: #2b3a24; }
+@media (prefers-color-scheme: dark) { .yomi-stage .yomi-kana { color: #e4e8c8; } }
+@keyframes fuda-deal { 0% { transform: translateY(-1.2rem) rotate(-4deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
+.yomi-fuda.deal { animation: fuda-deal 0.35s ease-out; }
+@media (prefers-reduced-motion: reduce) { .yomi-fuda.deal { animation: none; } }
+@media (min-width: 600px) { .yomi-fuda .yomi-kami, .yomi-fuda .yomi-shimo { font-size: 1.7rem; } }

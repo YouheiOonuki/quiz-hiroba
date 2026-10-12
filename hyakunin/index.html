@@ -50,7 +50,6 @@
   <header class="app-header">
     <p class="crumb"><a href="../">クイズ広場</a></p>
     <h1>百人一首 読み上げ</h1>
-    <p class="subtitle">100首を端末の声で。ランダムか番号順、間隔も選べます。</p>
   </header>
 
   <main class="app-main" id="app">
@@ -67,16 +66,22 @@
         </div>
       </div>
 
-      <fieldset class="card req menu">
-        <legend>読み方</legend>
-        <div class="opt-row"><span class="opt-label">順番</span><div class="seg" id="opt-order"></div></div>
-        <div class="opt-row"><span class="opt-label">間隔（次の札まで）</span><div class="seg" id="opt-gap"></div></div>
-        <div class="opt-row"><span class="opt-label">読み方</span><div class="seg" id="opt-style"></div></div>
-      </fieldset>
+      <!-- 1 画面目は畳の上の札とスタート（SCREEN 1.4 の 1。読み方の設定は下の折りたたみ） -->
+      <div class="tatami fuda-stage">
+        <p class="fuda fuda-hero" id="fuda-hero" aria-hidden="true"></p>
+        <p class="start-row"><button type="button" class="btn btn-big" id="start">読み上げスタート</button></p>
+      </div>
+      <p class="small voice-line"><span id="voice-line" aria-live="polite"></span>　読み上げは現代の読みです（「てふ」は「ちょう」、「は」は「わ」と読みます）。</p>
 
-      <p class="start-row"><button type="button" class="btn btn-big" id="start">読み上げスタート</button></p>
-      <p id="voice-line" class="small voice-line" aria-live="polite"></p>
-      <p class="small">読み上げは現代の読みです（「てふ」は「ちょう」、「は」は「わ」と読みます）。</p>
+      <details class="card opt" id="how-box">
+        <summary>読み方: <span class="opt-state" id="how-state"></span></summary>
+        <fieldset class="req menu">
+          <legend class="visually-hidden">読み方</legend>
+          <div class="opt-row"><span class="opt-label">順番</span><div class="seg" id="opt-order"></div></div>
+          <div class="opt-row"><span class="opt-label">間隔（次の札まで）</span><div class="seg" id="opt-gap"></div></div>
+          <div class="opt-row"><span class="opt-label">読み方</span><div class="seg" id="opt-style"></div></div>
+        </fieldset>
+      </details>
 
       <details class="card opt" id="more-box">
         <summary>くわしい設定: <span class="opt-state" id="more-state"></span></summary>
@@ -114,14 +119,18 @@
         <button type="button" class="btn-ghost" id="quit">やめる</button>
       </div>
 
-      <div id="yomi-card" class="card yomi-card" aria-live="polite">
-        <p id="yomi-label" class="yomi-label"></p>
-        <div id="yomi-body">
-          <p class="yomi-kami" id="yomi-kami"></p>
-          <p class="yomi-shimo" id="yomi-shimo"></p>
-          <p class="yomi-kana small" id="yomi-kana"></p>
+      <div class="tatami yomi-stage">
+        <div id="yomi-card" class="yomi-card" aria-live="polite">
+          <p id="yomi-label" class="yomi-label"></p>
+          <div id="yomi-body">
+            <div class="fuda yomi-fuda">
+              <p class="yomi-kami" id="yomi-kami"></p>
+              <p class="yomi-shimo" id="yomi-shimo"></p>
+            </div>
+            <p class="yomi-kana small" id="yomi-kana"></p>
+          </div>
+          <p id="yomi-hidden" class="yomi-hidden" hidden>（歌はかくしています）</p>
         </div>
-        <p id="yomi-hidden" class="yomi-hidden" hidden>（歌はかくしています）</p>
       </div>
 
       <p id="yomi-status" class="yomi-status" aria-live="polite"></p>
