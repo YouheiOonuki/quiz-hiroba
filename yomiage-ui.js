@@ -82,9 +82,9 @@
     sel.disabled = !jaVoices.length || settings.ai;
     $('test-voice').disabled = !canSpeak();
     $('voice-line').textContent = settings.ai
-      ? '声: AI の声（録音。くわしい設定で端末の声に変えられます）'
+      ? '声: AI の声（録音）'
       : hasVoice()
-      ? '声: ' + cur.name + '（くわしい設定で変えられます）'
+      ? '声: ' + cur.name
       : 'この端末（ブラウザ）には日本語の声が見つかりません。歌を画面に大きく出すので、読み手が声に出して読み、「次の札へ」で進めてください。';
     $('voice-line').classList.toggle('warn', !canSpeak());
     renderMoreState();
@@ -186,6 +186,8 @@
     $('opt-rate').value = String(settings.rate);
     $('rate-val').textContent = settings.rate.toFixed(2);
     renderMoreState();
+    // 折りたたみの見出しに今の読み方（段 2 の 5、7.60）
+    $('how-state').textContent = [settings.order === 'random' ? 'ランダム' : '番号順', settings.gap ? settings.gap + '秒' : 'タップで次へ', settings.style === 'kyogi' ? '競技かるた式' : 'ちらし取り'].join('・');
     $('resume-box').hidden = !resume;
     if (resume) {
       var steps = Y.buildSteps(resume.order, resume.opt || settings);
@@ -350,6 +352,12 @@
     var hidden = settings.hide && st.card >= 0 && !play.textOnly;
     $('yomi-body').hidden = hidden;
     $('yomi-hidden').hidden = !hidden;
+    // 新しい札が出たら、札を畳に置く動き（読み上げの主役化。SCREEN 1.4 の 3。動きを減らす設定では CSS で止める）
+    if (play.shown !== st.card) {
+      play.shown = st.card;
+      var f = document.querySelector('.yomi-fuda');
+      f.classList.remove('deal'); void f.offsetWidth; f.classList.add('deal');
+    }
     $('yomi-kami').textContent = p.kami;
     $('yomi-shimo').textContent = p.shimo;
     // 声が無いときは、読み手のために読み方（声に出す音）を出す。競技かるた式で上の句を読んでいる間は下の句を出さない
@@ -409,6 +417,11 @@
     });
   }
 
+  // 1 画面目の札（飾り。開くたびに 1 首。読み上げとは関係しない）
+  // 長い句（17 字以上、7 首）を除く: スマホでスタートが 1 画面目の上半分（0.5 画面）に収まるように
+  var heroes = H.poems.filter(function (p) { return Math.max(p.kami.length, p.shimo.length) <= 16; });
+  var hero = heroes[Math.floor(Math.random() * heroes.length)];
+  $('fuda-hero').textContent = hero.kami + '\n' + hero.shimo;
   renderMenu();
   loadVoices();
   if (synth && typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', loadVoices);
