@@ -12,5 +12,8 @@
   "icons": [
     { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
     { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "毎日 1 問", "short_name": "毎日 1 問", "description": "今日の 1 問と続けた日数", "url": "./mainichi/", "icons": [{ "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }] }
   ]
 }
