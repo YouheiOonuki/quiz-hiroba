@@ -100,3 +100,13 @@ test('ページの決まり: 答える画面は広告の script なし・消す�
   // 子どもが使う画面に外部リンクを置かない（REVIEW C7 R7）: 答える画面の静的な HTML に http の a が無い
   assert.ok(!/<a [^>]*href="https?:/.test(html));
 });
+
+// K178: ホーム画面に置いたクイズ広場の長押しから「毎日 1 問」へ（manifest の shortcuts。yorozu-plans ROADMAP 7.70）
+test('manifest の shortcuts に毎日 1 問があり、その URL のページがある', () => {
+  const m = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'manifest.webmanifest'), 'utf8'));
+  const s = (m.shortcuts || []).find((x) => x.url === './mainichi/');
+  assert.ok(s, 'shortcuts に ./mainichi/ が無い');
+  assert.equal(s.name, '毎日 1 問');
+  assert.ok(fs.existsSync(path.join(__dirname, '..', 'mainichi', 'index.html')));
+  for (const i of s.icons) assert.ok(fs.existsSync(path.join(__dirname, '..', i.src)), i.src);
+});
