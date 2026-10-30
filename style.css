@@ -609,5 +609,7 @@ body.playing #scr-menu { margin-top: 1.2rem; }
 
 /* 共通の皮のページ（index・guide）の読み物の値（K192 段 3 の 3）。本文の行は 1 行 40 字まで（max-width: 40em）。1 行に 1 つのリンク（案内のカード・小さな案内の行・脚）は押せる高さを 44px に。文中のリンクは対象外（WCAG 2.5.8）で、p・li 全体に当てると文が途中で折れる */
 :where(html:not([data-skin="base"])) :where(.content :where(p, li, dt, dd), .app-header > p) { max-width: 40em; }
+/* 皮のページの本文は 16px（v1 の 0.9rem を上書き。SCREEN 2 章の読み物、7.141 D(2) の測り直し） */
+:where(html:not([data-skin="base"])) .content p, :where(html:not([data-skin="base"])) .content li { font-size: var(--fs-m); }
 :where(html:not([data-skin="base"])) .app-header > p { margin-inline: auto; }
 :where(html:not([data-skin="base"])) :where(p.card, p.small, .footer-nav li) > a:only-child { display: inline-flex; align-items: center; min-height: var(--tap); }
