@@ -56,10 +56,11 @@
     $('question').textContent = q.prompt;
     var box = $('choices');
     box.innerHTML = '';
-    q.choices.forEach(function (c) {
+    q.choices.forEach(function (c, i) {
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'choice';
+      if (i === 0) b.setAttribute('data-primary', '');   // 開いた瞬間から問題が出ている遊びは最初の選択肢が主なボタン（D427）
       b.textContent = c;
       b.addEventListener('click', function () { answer(c); });
       box.appendChild(b);
