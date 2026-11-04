@@ -44,13 +44,6 @@ export function loadTopics() {
     .sort((a, b) => (a.page.order - b.page.order) || a.id.localeCompare(b.id));
 }
 
-function lastmod() {
-  // sitemap の日付は、いまの sitemap.xml の値を引き継ぐ（--check で日付だけが違って失敗しないように）
-  const s = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
-  const m = /<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/.exec(s);
-  return m ? m[1] : new Date().toISOString().slice(0, 10);
-}
-
 export function build() {
   const topics = loadTopics();
   const out = {};
@@ -109,10 +102,9 @@ export function build() {
   landing = landing.replace(/(<!-- TOPICS-BEGIN -->\n)[\s\S]*?(\s*<!-- TOPICS-END -->)/, `$1    <ul class="topics">\n${lcards}\n    </ul>$2`);
   out['print/index.html'] = landing;
 
-  const lm = lastmod();
   const urls = [['', '1.0'], ...topics.flatMap((t) => [[t.id + '/', '0.9'], ...(t.page.guide ? [[t.page.guide, '0.6']] : [])]), ...EXTRA_PAGES.flatMap((x) => [[x.path, '0.9'], ...x.files.filter((f) => f.endsWith('.html')).map((f) => [f, '0.6'])]), ['guide.html', '0.6']];
   out['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map(([u, p]) => `  <url>\n    <loc>${BASE}${u}</loc>\n    <lastmod>${lm}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p}</priority>\n  </url>\n`).join('') +
+    urls.map(([u, p]) => `  <url>\n    <loc>${BASE}${u}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>${p}</priority>\n  </url>\n`).join('') +
     '</urlset>\n';
 
   let sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
