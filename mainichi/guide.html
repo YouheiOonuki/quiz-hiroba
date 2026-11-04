@@ -19,6 +19,32 @@
   <!-- Google AdSense: サイト所有確認の meta だけ。AdSense 審査が通るまで本文の薄いページは広告 script を外す（2026-10-04）。通ったら本文を足してから戻す -->
   <meta name="google-adsense-account" content="ca-pub-5375267956079717">
 
+  <!-- よくある質問（下の「よくある質問」と内容をそろえる） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "毎日 1 問のクイズは何時に変わりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "日本時間の 0 時に変わります。端末の時計で日付を決めています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "問題の出典は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "各題材のページと同じです（元素は IUPAC と日本化学会、首都は外務省、年号はコトバンク、百人一首は全日本かるた協会とウィキソース）。くわしくはクイズ広場の使い方に。"
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/quiz-hiroba/manifest.webmanifest">
   <link rel="stylesheet" href="../style.css">
