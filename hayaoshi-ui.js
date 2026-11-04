@@ -207,7 +207,6 @@
     for (var p = 0; p < game.n; p++) {
       var z = el('button', 'zone z' + p);
       z.type = 'button';
-      z.setAttribute('aria-label', settings.names[p] + 'のボタン');
       var inner = el('span', 'zone-inner');
       inner.appendChild(el('span', 'zone-name', settings.names[p]));
       inner.appendChild(el('span', 'zone-score', ''));
