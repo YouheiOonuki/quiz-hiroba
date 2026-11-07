@@ -26,6 +26,8 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 - 保存: `quiz-hiroba_yomiage`（設定と読みかけの続き）。記録のバックアップ（D31）の対象外（設定と続きだけで、消えても困らないため）
 - 広告なし（AdSense の meta だけ）。広告は `hyakunin/guide.html` だけ（D122 と同じ）
 
+百人一首の AI の声の mp3（`hyakunin/audio/` の 202 個と `index.json`）は、Workers AI の `@cf/myshell-ai/melotts` で 2026-10 に作った。melotts は 2026-11-20 に Cloudflare が止めるので、作る道具（`tools/build-hyakunin-audio.mjs`・`tools/tts-mp3.mjs`）は消した（git 履歴にある）。mp3 はリポジトリにあり、ページはそのまま読む。作り直すには別の TTS が要る。
+
 ## 早押しボタン（`/quiz-hiroba/hayaoshi/`。手で書いたページ）
 
 - 判定と得点は `hayaoshi.js`（純粋関数、`tests/hayaoshi.test.js`）: 受付中に最初に押した 1 人だけ受け付けてロック、正解 +1、不正解はお手つき（その問題では押せない。-1 点は設定）、1 つもどす、受付をもどす
