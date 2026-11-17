@@ -234,6 +234,25 @@
     return topic.items.filter(function (it) { return items[it.id] && items[it.id].last === 0; }).map(function (it) { return it.id; });
   }
 
+  /**
+   * 入口の「答えた問題の升目」（Q-382）。題材のデータの順に、問題 1 つが 1 升
+   * 'ok' 直近が正解・'ng' 直近がまちがい・'none' まだ出ていない。題材のデータに無い id は数えない
+   * 記録が 1 つも無い題材・知らない題材は []（升目を出さない）
+   */
+  function masu(records, topic) {
+    if (!topic || !Array.isArray(topic.items)) return [];
+    var r = records && records[topic.id];
+    var items = (r && r.items && typeof r.items === 'object') ? r.items : {};
+    var any = false;
+    var out = topic.items.map(function (it) {
+      var x = Object.prototype.hasOwnProperty.call(items, it.id) ? items[it.id] : null;
+      if (!x || typeof x !== 'object') return 'none';
+      any = true;
+      return x.last === 1 ? 'ok' : 'ng';
+    });
+    return any ? out : [];
+  }
+
   /** ファイルや保存から読んだ記録を今の形にそろえる（知っている題材と問題だけ、0 以上の整数だけ残す） */
   function normalizeRecords(data, topics) {
     var out = {};
@@ -367,7 +386,7 @@
     rng: rng, shuffle: shuffle, newSeed: newSeed,
     toHira: toHira, normalizeText: normalizeText, normalizeYear: normalizeYear, checkTyped: checkTyped,
     normalizeFilters: normalizeFilters, pool: pool, kindOf: kindOf, choiceCount: choiceCount, choiceStyle: choiceStyle, makeChoices: makeChoices, makeRound: makeRound, itemById: itemById,
-    bestKey: bestKey, recordAnswer: recordAnswer, recordBest: recordBest, weakIds: weakIds, normalizeRecords: normalizeRecords,
+    bestKey: bestKey, recordAnswer: recordAnswer, recordBest: recordBest, weakIds: weakIds, masu: masu, normalizeRecords: normalizeRecords,
     toShareHash: toShareHash, fromShareHash: fromShareHash, challengeToLink: challengeToLink, formatMs: formatMs,
     backupFileName: backupFileName, buildBackup: buildBackup, parseBackup: parseBackup,
   };

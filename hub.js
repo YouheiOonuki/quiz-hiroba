@@ -28,6 +28,31 @@
       var weak = t ? Calc.weakIds(records, t).length : 0;
       var done = r ? Object.keys(r.items).length : 0;
       e.textContent = done ? '答えた ' + done + t.unit + ' ／ にがて ' + weak : '';
+      renderMasu(e, t ? Calc.masu(records, t) : []);
+    });
+  }
+
+  // 題材の行の下に、答えた問題の升目（● 直近が正解・○ 直近がまちがい・空 まだ出ていない。Q-382）
+  // 押せない絵。読み上げは題材の名前と、上の「答えた … ／ にがて …」の字だけ
+  function renderMasu(rec, cells) {
+    var li = rec.closest('li');
+    if (!li) return;
+    var box = li.querySelector('.topic-masu');
+    if (!cells.length) { if (box) box.remove(); return; }
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'topic-masu';
+      box.setAttribute('role', 'img');
+      li.appendChild(box);
+    }
+    var name = li.querySelector('.topic-name');
+    box.setAttribute('aria-label', (name ? name.textContent + ' ' : '') + rec.textContent);
+    box.style.setProperty('--cols', String(Math.ceil(cells.length / 5)));
+    box.innerHTML = '';
+    cells.forEach(function (s) {
+      var c = document.createElement('span');
+      c.className = 'masu ' + s;
+      box.appendChild(c);
     });
   }
 

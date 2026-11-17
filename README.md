@@ -49,7 +49,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 - 向き（題材ごと）・範囲や時代の絞り込み・問題数（10・20・すべて）・「にがてだけ出す」
 - 入力の答え合わせの決まり（`calc.js` の `checkTyped`。使い方ページにも同じ文）: 全角半角・空白・カタカナとひらがなの違いは無視／漢字は登録した表記とよみだけ／元素記号は大文字小文字を区別（大小だけ違えば「おしい」で不正解）／年は数字だけ
 - 一覧で覚える（欄をかくして「？」で見る）、問題と答えの 2 枚を印刷（選択肢つきも可。A4、クレジットは `print/` へ）
-- 記録: 問題ごとの正解・不正解と「最後にまちがえたもの＝にがて」、条件ごとの自己ベスト（正解数、同じなら時間）。キー `quiz-hiroba_records`・`quiz-hiroba_settings`。書き出し・読み込みは入口のページ
+- 記録: 問題ごとの正解・不正解と「最後にまちがえたもの＝にがて」、条件ごとの自己ベスト（正解数、同じなら時間）。キー `quiz-hiroba_records`・`quiz-hiroba_settings`。書き出し・読み込みは入口のページ。入口では記録のある題材の下に、答えた問題の升目（題材のデータの順に 1 問 1 升・5 行。● 直近が正解・○ 直近がまちがい・空 まだ出ていない。`calc.js` の `masu`）
 - 共有リンク `#s=`（base64url の JSON: 題材・向き・答え方・絞り込み・問題数・種・送った人の正解数）。同じ問題・同じ選択肢の並びになる。受け取った側の設定は上書きしない
 - 広告: 入口・題材のページは AdSense の meta だけ（遊ぶ画面。todofuken-quiz と同じ）、使い方ページ（`guide.html`）だけ広告あり（企画書 27 の D122）
 - オフライン対応（`sw.js`、キャッシュ名 `quiz-hiroba-v7`）
@@ -94,7 +94,7 @@ yorozu-craft のツールの1つです（共通ルールは [youheioonuki.github
 
 | ファイル | 役割 |
 |---------|------|
-| `index.html` / `hub.js` | 入口（題材の一覧・記録の数・記録の書き出しと読み込み） |
+| `index.html` / `hub.js` | 入口（題材の一覧・記録の数・答えた問題の升目・記録の書き出しと読み込み） |
 | `genso/`・`nengo/`・`kimariji/`・`shuto/`・`kokki/`・`showa/` の `index.html` | 題材のページ（`tools/build-pages.mjs` が作る。直接直さない） |
 | `hyakunin/index.html` / `yomiage.js` / `yomiage-ui.js` / `hyakunin/guide.html` | 百人一首 読み上げ（手で書いたページ。`tools/build-pages.mjs` の `EXTRA_PAGES` で入口・sitemap・sw.js に入る） |
 | `mainichi/index.html` / `mainichi/mainichi.js` / `mainichi-calc.js` / `mainichi/guide.html` | 毎日 1 問（手で書いたページ。`EXTRA_PAGES` で入口・sitemap・sw.js に入る） |
