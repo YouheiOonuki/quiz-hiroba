@@ -134,6 +134,43 @@ test('記録: 正解・不正解を数え、最後にまちがえたものが「
   assert.deepEqual(C.weakIds(r, genso), ['1']);
 });
 
+// --- 入口の升目（Q-382） ---
+test('升目: 記録なしの題材・知らない題材は空（升目を出さない）', () => {
+  assert.deepEqual(C.masu({}, genso), []);
+  assert.deepEqual(C.masu(null, genso), []);
+  assert.deepEqual(C.masu({ genso: { items: {}, best: {} } }, genso), []);
+  assert.deepEqual(C.masu({ nengo: { items: { 57: { ok: 1, ng: 0, last: 1 } } } }, genso), []);
+  assert.deepEqual(C.masu({ genso: { items: { 1: { ok: 1, ng: 0, last: 1 } } } }, undefined), []);
+  assert.deepEqual(C.masu({ genso: { items: { 1: { ok: 1, ng: 0, last: 1 } } } }, { id: 'genso' }), []);
+});
+
+test('升目: 題材のデータの順に 1 問 1 升。全部正解なら全部 ok', () => {
+  const items = {};
+  genso.items.forEach((it) => { items[it.id] = { ok: 1, ng: 0, last: 1 }; });
+  const m = C.masu({ genso: { items, best: {} } }, genso);
+  assert.equal(m.length, genso.items.length);
+  assert.ok(m.every((s) => s === 'ok'));
+});
+
+test('升目: 直近まちがいは ng、まだ出ていない問題は none、並びはデータの順', () => {
+  let r = {};
+  r = C.recordAnswer(r, 'nengo', String(nengo.items[2].id), true);
+  r = C.recordAnswer(r, 'nengo', String(nengo.items[0].id), true);
+  r = C.recordAnswer(r, 'nengo', String(nengo.items[0].id), false);
+  const m = C.masu(r, nengo);
+  assert.equal(m.length, nengo.items.length);
+  assert.deepEqual(m.slice(0, 4), ['ng', 'none', 'ok', 'none']);
+  assert.equal(m.filter((s) => s === 'ng').length, C.weakIds(r, nengo).length);
+});
+
+test('升目: 題材のデータに無い問題の id は捨てる（それだけなら升目を出さない）', () => {
+  assert.deepEqual(C.masu({ genso: { items: { 999: { ok: 1, ng: 0, last: 1 }, x: { ok: 0, ng: 1, last: 0 } } } }, genso), []);
+  const m = C.masu({ genso: { items: { 999: { ok: 1, ng: 0, last: 1 }, 1: { ok: 0, ng: 1, last: 0 } } } }, genso);
+  assert.equal(m.length, genso.items.length);
+  assert.equal(m[0], 'ng');
+  assert.equal(m.filter((s) => s !== 'none').length, 1);
+});
+
 test('記録: 自己ベストは正解数、同じなら時間で比べる', () => {
   const key = C.bestKey(genso, { kind: 'sym', mode: 'choice', filters: { range: '20' }, count: 10 });
   assert.equal(key, 'sym|choice|range=20|10');

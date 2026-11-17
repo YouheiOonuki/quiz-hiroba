@@ -283,6 +283,12 @@ details > summary:focus-visible { outline: 2px solid var(--accent); outline-offs
 .topic-desc { font-size: 0.86rem; color: var(--muted); }
 .topic-rec { font-size: 0.8rem; color: var(--muted); }
 .topic-rec:empty { display: none; }
+/* 答えた問題の升目（題材のデータの順に 1 問 1 升、5 行に収める。● 直近が正解・○ 直近がまちがい・空 まだ出ていない。Q-382） */
+.topic-masu { display: grid; grid-template-columns: repeat(var(--cols, 40), minmax(0, 10px)); gap: 1px; padding: 0 1.1rem 1rem; }
+.masu { aspect-ratio: 1; border-radius: 50%; }
+.masu.ok { background: var(--text); }
+.masu.ng { border: 1.5px solid var(--text); }
+.masu.none { border-radius: 2px; background: var(--border); }
 
 /* メニュー */
 .opt-row { margin-bottom: 0.7rem; }
