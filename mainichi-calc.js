@@ -101,7 +101,25 @@
     return { streak: streak, answered: days.length, correct: ok };
   }
 
-  var api = { PLAN: PLAN, FIRST_DAY: FIRST_DAY, ymd: ymd, parseYmd: parseYmd, todayJst: todayJst, dayNumber: dayNumber, addDays: addDays, orderOf: orderOf, questionFor: questionFor, normalizeLog: normalizeLog, record: record, stats: stats };
+  /**
+   * 直近 28 日の升目（7 列 × 4 行。左上が 27 日前、右下がきょう）
+   * @returns {Array<{date, m, d, state: 'ok'|'ng'|'none', today: boolean, label}>} 古い日から 28 個
+   */
+  var GRID_DAYS = 28;
+  var STATE_LABEL = { ok: '正解', ng: '不正解', none: '答えていない' };
+  function grid(log, today) {
+    var l = normalizeLog(log);
+    var out = [];
+    for (var i = GRID_DAYS - 1; i >= 0; i--) {
+      var d = addDays(today, -i);
+      var r = l.days[ymd(d)];
+      var state = r ? (r.ok ? 'ok' : 'ng') : 'none';
+      out.push({ date: ymd(d), m: d.m, d: d.d, state: state, today: i === 0, label: d.m + ' 月 ' + d.d + ' 日 ' + STATE_LABEL[state] });
+    }
+    return out;
+  }
+
+  var api = { PLAN: PLAN, FIRST_DAY: FIRST_DAY, ymd: ymd, parseYmd: parseYmd, todayJst: todayJst, dayNumber: dayNumber, addDays: addDays, orderOf: orderOf, questionFor: questionFor, normalizeLog: normalizeLog, record: record, stats: stats, GRID_DAYS: GRID_DAYS, grid: grid };
   if (isNode) module.exports = api;
   else root.Mainichi = api;
 })(this);

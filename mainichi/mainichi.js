@@ -115,6 +115,23 @@
     if (s.answered) parts.push('これまで ' + s.answered + ' 日・正解 ' + s.correct);
     if (M.ymd(view) !== M.ymd(today)) parts.push('前の日の問題は記録に入りません');
     $('mn-stats').textContent = parts.join('・');
+    renderGrid(!!t);
+  }
+
+  // きょう答えた後だけ、直近 28 日の升目（● 正解・○ 不正解・空 答えていない。きょうは枠が太い）
+  function renderGrid(show) {
+    var box = $('mn-grid');
+    box.hidden = !show;
+    box.innerHTML = '';
+    if (!show) return;
+    M.grid(log, today).forEach(function (c) {
+      var s = document.createElement('span');
+      s.className = 'mn-cell ' + c.state + (c.today ? ' today' : '');
+      s.setAttribute('role', 'img');
+      s.setAttribute('aria-label', c.label);
+      s.textContent = c.state === 'ok' ? '●' : c.state === 'ng' ? '○' : '';
+      box.appendChild(s);
+    });
   }
 
   function go(d) {
