@@ -110,3 +110,56 @@ test('manifest の shortcuts に毎日 1 問があり、その URL のページ�
   assert.ok(fs.existsSync(path.join(__dirname, '..', 'mainichi', 'index.html')));
   for (const i of s.icons) assert.ok(fs.existsSync(path.join(__dirname, '..', i.src)), i.src);
 });
+
+// Q-311: 答えた後の画面の、直近 28 日の升目（7 列 × 4 行。右下がきょう）
+test('升目: 記録 0 日・きょうがまだ → 28 升とも空、右下がきょう', () => {
+  const g = M.grid(null, D('2026-11-17'));
+  assert.equal(g.length, 28);
+  assert.equal(M.GRID_DAYS, 28);
+  assert.ok(g.every((c) => c.state === 'none'));
+  assert.deepEqual(g.map((c) => c.today), Array.from({ length: 28 }, (_, i) => i === 27));
+  assert.equal(g[27].date, '2026-11-17');
+  assert.equal(g[0].date, '2026-10-21');
+  assert.equal(g[27].label, '11 月 17 日 答えていない');
+});
+
+test('升目: 記録 1 日（きょう正解）・外れた日・答えていない日', () => {
+  let log = M.record(null, '2026-11-17', true, 'a');
+  assert.deepEqual(M.grid(log, D('2026-11-17')).filter((c) => c.state !== 'none').map((c) => [c.date, c.state]), [['2026-11-17', 'ok']]);
+  log = M.record(log, '2026-11-15', false, 'b');
+  const g = M.grid(log, D('2026-11-17'));
+  assert.equal(g[25].state, 'ng');
+  assert.equal(g[25].label, '11 月 15 日 不正解');
+  assert.equal(g[26].state, 'none');
+  assert.equal(g[27].label, '11 月 17 日 正解');
+});
+
+test('升目: 28 日ぜんぶ答えた・29 日前は入らない・月をまたぐ', () => {
+  const days = {};
+  for (let i = 0; i < 29; i++) days[M.ymd(M.addDays(D('2026-11-03'), -i))] = { ok: i % 2 ? 0 : 1, pick: '' };
+  const g = M.grid({ days }, D('2026-11-03'));
+  assert.equal(g.filter((c) => c.state !== 'none').length, 28);
+  assert.equal(g[0].date, '2026-10-07');
+  assert.deepEqual(g.slice(24).map((c) => c.label), ['10 月 31 日 不正解', '11 月 1 日 正解', '11 月 2 日 不正解', '11 月 3 日 正解']);
+  // 年をまたぐ
+  const y = M.grid(M.record(null, '2026-12-31', true, ''), D('2027-01-02'));
+  assert.equal(y[25].label, '12 月 31 日 正解');
+  assert.equal(y[27].date, '2027-01-02');
+});
+
+test('升目: 記録 400 日でも直近 28 日だけ。きょうがまだならきょうの升は空', () => {
+  const days = {};
+  for (let i = 1; i <= 400; i++) days[M.ymd(M.addDays(D('2026-11-17'), -i))] = { ok: 1, pick: '' };
+  const g = M.grid({ days }, D('2026-11-17'));
+  assert.equal(g.length, 28);
+  assert.equal(g.filter((c) => c.state === 'ok').length, 27);
+  assert.equal(g[27].state, 'none');
+  assert.equal(g[27].today, true);
+});
+
+test('升目は画面に字を足さない: ● ○ 空 だけで、aria-label を 1 升ずつ持つ', () => {
+  const js = fs.readFileSync(path.join(__dirname, '..', 'mainichi', 'mainichi.js'), 'utf8');
+  assert.match(js, /setAttribute\('aria-label', c\.label\)/);
+  assert.match(js, /c\.state === 'ok' \? '●' : c\.state === 'ng' \? '○' : ''/);
+  assert.match(fs.readFileSync(path.join(__dirname, '..', 'mainichi', 'index.html'), 'utf8'), /<div id="mn-grid" class="mn-grid" hidden><\/div>/);
+});
