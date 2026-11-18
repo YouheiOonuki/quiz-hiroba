@@ -55,6 +55,8 @@ test('結果カードの部品: 外向きの要求なし・演出は 1 つで re
   assert.doesNotMatch(s, /\bfetch\(|XMLHttpRequest|sendBeacon|<script|\.src\s*=/);
   assert.equal((s.match(/@keyframes/g) || []).length, 1);
   assert.match(s, /@media \(prefers-reduced-motion:reduce\)\{\.share-card\{animation:none\}\}/);
+  // URL の欄は高さ 44px 以上・下のボタンとの間 8px（Q-435。写しの側で上書きしない）
+  assert.match(s, /\.sc-url\{[^}]*min-height:44px;margin:\.5em 0 8px;/);
   assert.equal(ShareCard.fmtWhen(AT, 'Asia/Tokyo'), '2026年10月2日 21:04');
   assert.match(read('quiz.js'), /https:\/\/yorozu-craft\.com\/quiz-hiroba\/' \+ TOPIC\.id \+ '\/s\/'/);
 });
