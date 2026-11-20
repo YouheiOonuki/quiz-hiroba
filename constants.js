@@ -100,7 +100,7 @@
       checked: '2026-09-25',   // この日に 118 元素の出典の段落を読み、年が出典の本文にあることを機械でも確かめた（ooh-genso.js の先頭）
     },
     ooh_shuto: {
-      value: '世界の首都の「おお」の一言（名前の由来・創設・そばの川や海・昔の公式名）',
+      value: '世界の首都の「おお」の一言（名前の由来・創設・そばの川・湖・海・昔の公式名）',
       label: '「おお」の一言（世界の首都）',
       source: 'Wikidata（CC0 1.0）の首都の項目（P138・P571・P206・P1448）。写しは data/wikidata-shuto.json',
       url: 'https://www.wikidata.org/',
