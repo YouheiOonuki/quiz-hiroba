@@ -105,3 +105,11 @@ test('設定の正規化: 人数は 2〜4、名前は空なら既定、12 字ま
   assert.equal(H.normalizeSettings(null).n, 2);
   assert.equal(H.newGame(3, 0, ['x', 2]).scores.join(','), '0,2,0');
 });
+
+test('暗い設定の節に、点の字を席の色から白へ寄せる規則がある（Q-725・D582）', () => {
+  const css = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'style.css'), 'utf8');
+  const dark = [...css.matchAll(/@media \(prefers-color-scheme: dark\) \{([^{}]*\{[^{}]*\})+\s*\}/g)].map((m) => m[0]).join('\n');
+  assert.match(dark, /\.zone-score\s*\{[^}]*color:\s*color-mix\(in srgb, var\(--c\) \d+%, #fff\)/);
+  // 勝った席の白は、暗い側の規則より強い選び方で残す
+  assert.match(css, /\.zone\.win \.zone-score\s*\{\s*color:\s*#fff;/);
+});

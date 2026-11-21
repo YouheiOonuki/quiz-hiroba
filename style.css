@@ -478,6 +478,8 @@ body:not(.playing-full) .zone { touch-action: pan-y; }
 .zone:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .zone.win { background: var(--c); color: #fff; animation: zone-pop 0.5s ease-out; }
 .zone.win .zone-score { color: #fff; }
+/* 暗い設定では席の色の点が地に沈むので、白へ寄せる（4 色とも、ふだんの地と正解の席の地で 4.5 以上。Q-725・D582）。勝った席の白は上の規則が勝つ */
+@media (prefers-color-scheme: dark) { .zone-score { color: color-mix(in srgb, var(--c) 60%, #fff); } }
 .zone.win .zone-inner::before { background: #fff; box-shadow: 0 0 0 8px color-mix(in srgb, #fff 45%, transparent); }
 .zone.right { background: color-mix(in srgb, var(--c) 35%, var(--bg)); }
 .zone.locked { opacity: 0.35; }
