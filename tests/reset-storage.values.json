@@ -1,0 +1,49 @@
+{
+  "src": "reset-storage.js",
+  "prefixes": [
+    "quiz-hiroba_"
+  ],
+  "legacy": [],
+  "pagePrefixes": {
+    "index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ],
+    "hyakunin/index.html": [
+      "quiz-hiroba_yomiage"
+    ],
+    "hayaoshi/index.html": [
+      "quiz-hiroba_hayaoshi"
+    ],
+    "mainichi/index.html": [
+      "quiz-hiroba_mainichi"
+    ],
+    "genso/index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ],
+    "kimariji/index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ],
+    "kokki/index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ],
+    "nengo/index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ],
+    "showa/index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ],
+    "shuto/index.html": [
+      "quiz-hiroba_records",
+      "quiz-hiroba_settings"
+    ]
+  },
+  "pageLegacy": {},
+  "inline": [],
+  "skipDirs": []
+}
