@@ -113,3 +113,26 @@ test('暗い設定の節に、点の字を席の色から白へ寄せる規則�
   // 勝った席の白は、暗い側の規則より強い選び方で残す
   assert.match(css, /\.zone\.win \.zone-score\s*\{\s*color:\s*#fff;/);
 });
+
+test('明るい設定の橙の点の字は、地との比 3 以上の濃さで、枠の色とは別に持つ（Q-756・D599）', () => {
+  const css = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'style.css'), 'utf8');
+  const hex = (s) => [1, 3, 5].map((i) => parseInt(s.slice(i, i + 2), 16));
+  const lum = (c) => { const [r, g, b] = c.map((v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+  const mix = (c, pct, bg) => c.map((v, i) => v * pct + bg[i] * (1 - pct));
+  const m = css.match(/\.zone\.z3 \{ --c: (#[0-9a-f]{6}); --c-text: (#[0-9a-f]{6}); \}/);
+  assert.ok(m, '.zone.z3 に --c と --c-text がある');
+  assert.equal(m[1], '#b86e00');   // 枠と地の色は変えない
+  const bg = hex(css.match(/:where\(:root\[data-skin="base"\]\) \{[^}]*--bg: (#[0-9a-f]{6})/)[1]);
+  const text = hex(m[2]), c = hex(m[1]);
+  assert.ok(ratio(text, mix(c, 0.14, bg)) >= 3);   // ふだんの席の地
+  assert.ok(ratio(text, mix(c, 0.35, bg)) >= 3);   // 正解の席の地
+  assert.match(css, /\.zone-score \{[^}]*color: var\(--c-text, var\(--c\)\);/);
+});
+
+test('ほかの人が押した後の席は、薄くするだけでなく aria-disabled を付ける（Q-756・D599）', () => {
+  const ui = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'hayaoshi-ui.js'), 'utf8');
+  assert.match(ui, /if \(locked\) z\.setAttribute\('aria-disabled', 'true'\); else z\.removeAttribute\('aria-disabled'\);/);
+  const css = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'style.css'), 'utf8');
+  assert.match(css, /\.zone\.locked \{ opacity: 0\.35; \}/);
+});
