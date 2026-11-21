@@ -309,10 +309,13 @@ details > summary:focus-visible { outline: 2px solid var(--accent); outline-offs
 .btn-big { font-size: 1.1rem; padding: 0.75rem 2.2rem; min-height: 48px; }
 .btn-sub { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
 .btn:disabled { opacity: 0.5; cursor: default; }
-.btn-ghost { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); padding: 0.3rem 0.8rem; min-height: 40px; font-size: 0.88rem; cursor: pointer; }
+.btn-ghost { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); padding: 0.3rem 0.8rem; min-height: 44px; font-size: 0.88rem; cursor: pointer; }
 .challenge { border-color: var(--accent); }
 .weak-list { columns: 2; font-size: 0.85rem; padding-left: 1.2rem; margin: 0.3rem 0; }
 .src-links { padding-left: 1.2rem; word-break: break-all; }
+.src-links > li + li { margin-top: 8px; }
+.src-links > li > a, #scr-menu > p.small > a:only-child { display: inline-flex; align-items: center; min-height: 44px; }
+#scr-menu > p.small:has(> a:only-child) { margin-top: 8px; }
 
 /* 出題 */
 .play-bar { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 0.92rem; color: var(--muted); }
@@ -488,7 +491,7 @@ body:not(.playing-full) .zone { touch-action: pan-y; }
 .hq-choices { font-size: 0.9rem; }
 .hq-answer { font: inherit; font-size: 0.85rem; margin: 0.2rem 0; padding: 0.2rem 0.6rem; min-height: 36px; border: 1px dashed var(--accent); border-radius: 6px; background: var(--accent-soft); color: var(--accent); cursor: pointer; }
 .hq-answer:disabled { color: var(--text); cursor: default; }
-.host-btns, .host-more { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.3rem; }
+.host-btns, .host-more { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.3rem; }
 .hbtn { flex: 1 1 auto; min-height: 44px; min-width: 44px; padding: 0.3rem 0.6rem; font: inherit; font-weight: 700; font-size: 0.92rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--card); cursor: pointer; }
 .hbtn:disabled { opacity: 0.4; cursor: default; }
 .hbtn-ok { background: #2e7d32; border-color: #2e7d32; color: #fff; }
@@ -544,7 +547,6 @@ kbd { font-family: inherit; border: 1px solid var(--border); border-bottom-width
 
 /* 毎日 1 問（mainichi/。K37） */
 .mn-nav { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; margin-bottom: 0.4rem; }
-.mn-nav .btn-ghost { min-height: 44px; }
 .mn-nav .btn-ghost:disabled { opacity: 0.4; cursor: default; }
 .mn-date { font-weight: 700; text-align: center; font-size: 0.95rem; }
 .mn-topic { margin: 0.2rem 0 0; color: var(--muted); }
