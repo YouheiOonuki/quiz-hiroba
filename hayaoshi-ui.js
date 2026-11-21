@@ -271,7 +271,10 @@
       var z = zones[p];
       var win = game.winner === p, out = game.out.indexOf(p) >= 0;
       var doneWin = game.right === p;
-      z.className = 'zone z' + p + (win ? ' win' : '') + (out ? ' out' : '') + (game.phase === 'locked' && !win ? ' locked' : '') + (doneWin ? ' right' : '');
+      var locked = game.phase === 'locked' && !win;
+      z.className = 'zone z' + p + (win ? ' win' : '') + (out ? ' out' : '') + (locked ? ' locked' : '') + (doneWin ? ' right' : '');
+      // ほかの人が押した後の席は薄くして押せないことを見せる（D599）。読み上げにも「使用不可」と伝える。disabled にしないのはフォーカスを外さないため
+      if (locked) z.setAttribute('aria-disabled', 'true'); else z.removeAttribute('aria-disabled');
       z.querySelector('.zone-score').textContent = game.scores[p] + '点';
       z.querySelector('.zone-state').textContent = win ? 'はやい！' : doneWin ? '○ 正解' : out ? 'お手つき' : '';
     }
