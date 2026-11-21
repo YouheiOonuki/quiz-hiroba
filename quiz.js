@@ -198,7 +198,7 @@
     $('weak-empty').hidden = weak.length > 0;
   }
   $('rec-reset').addEventListener('click', function () {
-    if (!window.confirm('この題材の記録（にがて・自己ベスト）をすべて消しますか？')) return;
+    if (!window.confirm('この題材の記録（にがて・自己ベスト）をすべて消しますか？ 元に戻せません。')) return;
     records = {};
     records[TOPIC.id] = { items: {}, best: {} };
     saveRecords();
