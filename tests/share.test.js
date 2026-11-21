@@ -30,6 +30,20 @@ test('ちょうせんのリンク: 日時（UNIX 秒）が入り、読むと同�
   assert.deepEqual(Object.keys(json).sort(), ['d', 'f', 'k', 'm', 'n', 'p', 's', 't']);
 });
 
+test('ちょうせんのリンクに入る欄と、使い方の「共有リンク」の文の列が同じ（Q-750、D595）', () => {
+  // 欄 → 使い方の語。日時（d）は受け取った側の結果カードに出す（quiz.js の challenge.at）ので、リンクに残して字に書く
+  const WORD = { t: '題材', k: '出し方', m: '出し方', f: '出し方', n: '出し方', s: '問題の番号', p: '送った人の正解数', d: '結果の日時' };
+  const t = TOPICS.find((x) => x.id === 'genso');
+  const opt = { kind: t.kinds[0].key, mode: 'choice', filters: {}, count: 10, seed: 1234 };
+  const keys = Object.keys(JSON.parse(Buffer.from(Calc.challengeToLink(t, opt, 8, AT).slice(3), 'base64url').toString()));
+  keys.forEach((k) => assert.ok(WORD[k], '使い方の語の無い欄: ' + k));
+  const fromLink = [...new Set(keys.map((k) => WORD[k]))].sort();
+  const m = /「同じ問題でちょうせん」のリンクには、(.+?)だけが入ります/.exec(read('guide.html'));
+  assert.ok(m, 'guide.html の共有リンクの文');
+  assert.deepEqual(m[1].split('・').sort(), fromLink);
+  assert.match(read('quiz.js'), /when: challenge\.at == null \? NaN : challenge\.at/);
+});
+
 test('着地ページと OG 画像: 題材ごとに 1 つ（12 以内）、1200×630、noindex・広告スクリプトなし・すぐ題材の画面へ', () => {
   assert.ok(TOPICS.length <= 12);
   for (const t of TOPICS) {
