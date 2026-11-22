@@ -72,7 +72,7 @@ export function buildShuto(generated = today()) {
     };
   });
   const data = {
-    ...head('世界の首都の「おお」の一言（名前の由来・創設の年・そばの水域・昔の公式名）', 'shuto.json', 'shuto/'),
+    ...head('世界の首都のまめちしき（名前の由来・創設の年・そばの水域・昔の公式名）', 'shuto.json', 'shuto/'),
     generated_from: 'data/wikidata-shuto.json（Wikidata の写し）→ ooh-shuto.js（tools/build-ooh-shuto.mjs）→ ooh.js の文の規則を tools/build-data.mjs で書き出し',
     checked: SHUTO.retrieved,
     checked_detail: { wikidata_retrieved: SHUTO.retrieved, country_and_capital_names: C.shuto.checked },
