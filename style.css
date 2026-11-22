@@ -351,7 +351,7 @@ details > summary:focus-visible { outline: 2px solid var(--accent); outline-offs
 .fb-title.ng { color: #b3261e; }
 @media (prefers-color-scheme: dark) { .fb-title.ok { color: #8fd694; } .fb-title.ng { color: #f2a19a; } }
 .fb-near { font-weight: 600; }
-.fb-body { margin: 0.3rem 0 0.8rem; }
+.fb-body { margin: 0.3rem 0 0.8rem; white-space: pre-line; }   /* 元素の分類の 1 行は改行で分ける（Q-1073） */
 .feedback .btn-big { width: 100%; }
 
 /* 結果 */
@@ -440,6 +440,7 @@ body.big .small { font-size: 0.92rem; }
 .qc-back { flex: 1 1 45%; transform: rotate(180deg); font-size: 0.8rem; line-height: 1.45; display: flex; flex-direction: column; justify-content: flex-end; }
 .qc-a { font-weight: 700; font-size: 0.95rem; }
 .qc-ex, .qc-talk { color: #333; }
+.qc-ex { white-space: pre-line; }
 @media print {
   body.print-mode .cards-sheet { padding: 0; }
 }

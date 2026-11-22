@@ -99,6 +99,17 @@
       ],
       checked: '2026-09-25',   // この日に 118 元素の出典の段落を読み、年が出典の本文にあることを機械でも確かめた（ooh-genso.js の先頭）
     },
+    genso_class: {
+      value: '118 元素の分類（金属・非金属・半金属となかまの名前）と、性質が見込みの元素',
+      label: '元素の分類',
+      source: 'PubChem（米国国立医学図書館）の周期表の GroupBlock と StandardState',
+      url: 'https://pubchem.ncbi.nlm.nih.gov/periodic-table/',
+      urls: [
+        'https://pubchem.ncbi.nlm.nih.gov/periodic-table/',
+        'https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON',
+      ],
+      checked: '2026-11-22',   // この日に JSON を 1 回読み、118 行の GroupBlock と StandardState を ooh-genso.js の GROUP_BLOCK・EXPECTED に写した（事実だけ。文は写さない。状態の欄と同じ読み）
+    },
     ooh_shuto: {
       value: '世界の首都のまめちしき（名前の由来・創設・そばの川・湖・海・昔の公式名）',
       label: 'まめちしき（世界の首都）',

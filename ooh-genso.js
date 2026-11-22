@@ -152,9 +152,16 @@
   // PubChem の周期表（StandardState）で Gas・Liquid の元素
   var GAS = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86];
   var LIQUID = [35, 80];
+  // 分類（答えの説明の 1 行と一覧の「分類」の列。topics/genso.js が使う。まめちしきには入れない。yorozu-plans Q-1073・D841）
+  // PubChem の周期表の JSON（https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON）の GroupBlock を、原子番号の順に 1 字ずつ（読んだ日は constants.js の genso_class）。
+  //   n Nonmetal・g Noble gas・h Halogen・a Alkali metal・e Alkaline earth metal・t Transition metal・p Post-transition metal・m Metalloid・l Lanthanide・c Actinide
+  var GROUP_BLOCK = 'ngaemnnnhgaepmnnhg' + 'aettttttttttpmmnhg' + 'aettttttttttppmmhg' + 'aelllllllllllllllt' + 'ttttttttpppmhgaecc' +
+    'cccccccccccccttttt' + 'ttttpppphg';
+  // 同じ JSON の StandardState が「Expected to be a …」（見込み）の元素。出どころが性質を言い切っていないので、分類と状態を出さない
+  var EXPECTED = [110, 111, 112, 113, 114, 115, 116, 117, 118];
 
   var CHECKED = '2026-09-25';   // 上の出典を原文で 1 件ずつ読んだ日（data/genso.json の checked）
-  var data = { topic: 'genso', checked: CHECKED, rows: ROWS, named2016: NAMED_2016, gas: GAS, liquid: LIQUID };
+  var data = { topic: 'genso', checked: CHECKED, rows: ROWS, named2016: NAMED_2016, gas: GAS, liquid: LIQUID, groupBlock: GROUP_BLOCK, expected: EXPECTED };
   if (typeof module !== 'undefined' && module.exports) module.exports = data;
   else { root.OohData = root.OohData || {}; root.OohData.genso = data; }
 })(this);
