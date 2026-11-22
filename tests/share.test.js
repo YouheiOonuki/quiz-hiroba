@@ -55,6 +55,8 @@ test('着地ページと OG 画像: 題材ごとに 1 つ（12 以内）、1200�
     assert.ok(s.includes(`<meta property="og:image" content="https://yorozu-craft.com/quiz-hiroba/${t.id}/s/og.png">`));
     assert.ok(s.includes('<script>location.replace("../" + location.hash);</script>'));
     assert.doesNotMatch(s, /adsbygoogle|pagead2|github\.com|x\.com|note\.com/);
+    // 生成物の印は 2 行目（yorozu-plans D670・D706。build-share.mjs が出す）
+    assert.equal(s.split('\n')[1], '<!-- 生成物。正本は quiz-hiroba の tools/build-share.mjs（node tools/build-share.mjs で作る。ここは手で直さない） -->', t.id);
     assert.equal((s.match(/beacon\.min\.js/g) || []).length, 1);
     assert.ok(!read('sitemap.xml').includes(`${t.id}/s/`), 'sitemap に載せない');
     const page = read(t.id + '/index.html');
