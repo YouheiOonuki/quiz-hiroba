@@ -134,6 +134,20 @@
   });
   function names(it) { return it.yomi ? [it.ja, it.yomi] : [it.ja]; }
 
+  // 分類の 1 行（答えの説明と一覧の「分類」の列。yorozu-plans Q-1073・D841）。データは ooh-genso.js（PubChem の GroupBlock・StandardState）。
+  // 読み込んでいないページ（早押し）では空
+  var OOH = (typeof module !== 'undefined' && module.exports) ? require('../ooh-genso.js') : (root.OohData && root.OohData.genso);
+  var BLOCK = { n: '非金属', g: '貴ガス', h: 'ハロゲン', a: 'アルカリ金属', e: 'アルカリ土類金属', t: '遷移金属', p: 'そのほかの金属', m: '半金属', l: 'ランタノイド', c: 'アクチノイド' };
+  function kindOfBlock(c) { return c === 'n' || c === 'g' || c === 'h' ? '非金属' : c === 'm' ? '半金属' : '金属'; }
+  /** 「金属（遷移金属）・固体」の形。大きな分け方となかまの名前が同じ（非金属・半金属）ときは 1 つだけ。見込みの元素は「くわしい性質はわかっていない」 */
+  function classLine(it) {
+    if (!OOH || !OOH.groupBlock) return '';
+    if (OOH.expected.indexOf(it.n) >= 0) return 'くわしい性質はわかっていない';
+    var c = OOH.groupBlock.charAt(it.n - 1), big = kindOfBlock(c), name = BLOCK[c];
+    var state = OOH.gas.indexOf(it.n) >= 0 ? '気体' : OOH.liquid.indexOf(it.n) >= 0 ? '液体' : '固体';
+    return (name === big ? big : big + '（' + name + '）') + '・' + state;
+  }
+
   var topic = {
     id: 'genso',
     // ページ（tools/build-pages.mjs が genso/index.html を作る）
@@ -193,8 +207,13 @@
       { label: '記号', get: function (it) { return it.sym; }, hide: true },
       { label: '名前', get: function (it) { return it.ja + (it.yomi ? '（' + it.yomi + '）' : ''); }, hide: true },
       { label: '英語名', get: function (it) { return it.en; } },
+      { label: '分類', get: classLine },
     ],
-    explain: function (it) { return '原子番号 ' + it.n + '　' + it.sym + '　' + it.ja + (it.yomi ? '（' + it.yomi + '）' : '') + '　英語名 ' + it.en; },
+    explain: function (it) {
+      var c = classLine(it);
+      return '原子番号 ' + it.n + '　' + it.sym + '　' + it.ja + (it.yomi ? '（' + it.yomi + '）' : '') + '　英語名 ' + it.en + (c ? '\n' + c : '');
+    },
+    classLine: classLine,
     link: function () { return null; },
     sourceKey: 'genso',
   };

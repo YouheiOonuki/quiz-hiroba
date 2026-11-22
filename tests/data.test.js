@@ -235,3 +235,36 @@ test('百人一首 読み上げの使い方: 介護向けの入口に載せる�
     assert.ok(!/adsbygoogle\.js/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')), f);
   }
 });
+
+// 元素の分類（yorozu-plans Q-1073・D841）: PubChem の GroupBlock を ooh-genso.js に写したもの
+test('元素の分類: 118 行すべてに値、なかまの名前は 10 のどれか', () => {
+  const NAMES = ['非金属', '貴ガス', 'ハロゲン', 'アルカリ金属', 'アルカリ土類金属', '遷移金属', 'そのほかの金属', '半金属', 'ランタノイド', 'アクチノイド'];
+  const O = require('../ooh-genso.js');
+  assert.equal(O.groupBlock.length, 118);
+  for (const it of genso.items) {
+    const line = genso.classLine(it);
+    if (O.expected.includes(it.n)) { assert.equal(line, 'くわしい性質はわかっていない', it.sym); continue; }
+    const m = line.match(/^(金属|非金属|半金属)(?:（(.+)）)?・(気体|液体|固体)$/);
+    assert.ok(m, it.sym + ' ' + line);
+    assert.ok(NAMES.includes(m[2] || m[1]), it.sym + ' ' + line);
+  }
+});
+
+test('元素の分類: 族 18 は貴ガス、族 17 はハロゲン、族 1（水素を除く）はアルカリ金属', () => {
+  const Ooh = require('../ooh.js');
+  const O = require('../ooh-genso.js');
+  for (const it of genso.items) {
+    const g = Ooh.group(it.n), c = O.groupBlock[it.n - 1];
+    if (g === 18) assert.equal(c, 'g', it.sym);
+    if (g === 17) assert.equal(c, 'h', it.sym);
+    if (g === 1 && it.n !== 1) assert.equal(c, 'a', it.sym);
+  }
+});
+
+test('元素の分類: 答えの説明の 2 行目と一覧の「分類」の列', () => {
+  const fe = genso.items[25];
+  assert.equal(genso.explain(fe).split('\n')[1], '金属（遷移金属）・固体');
+  assert.equal(genso.classLine(genso.items[1]), '非金属（貴ガス）・気体');
+  assert.equal(genso.classLine(genso.items[79]), '金属（遷移金属）・液体');
+  assert.equal(genso.columns.find((c) => c.label === '分類').get(fe), '金属（遷移金属）・固体');
+});
