@@ -50,7 +50,7 @@ export function buildGenso(generated = today()) {
   }));
   const factUrls = items.flatMap(it => it.facts.map(f => f.source.url));
   const data = {
-    ...head('元素の「おお」の一言（118 元素の名前の由来・発見・周期表の位置）', 'genso.json', 'genso/'),
+    ...head('元素のまめちしき（118 元素の名前の由来・発見・周期表の位置）', 'genso.json', 'genso/'),
     generated_from: 'ooh-genso.js（事実と出典）・ooh.js（文にする規則）・topics/genso.js（記号と名前）を tools/build-data.mjs で書き出し',
     checked: [GENSO.checked, C.genso.checked].sort().at(-1),
     generated,
