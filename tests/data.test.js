@@ -268,3 +268,24 @@ test('元素の分類: 答えの説明の 2 行目と一覧の「分類」の列
   assert.equal(genso.classLine(genso.items[79]), '金属（遷移金属）・液体');
   assert.equal(genso.columns.find((c) => c.label === '分類').get(fe), '金属（遷移金属）・固体');
 });
+
+// 答えのあとの小さい周期表（yorozu-plans Q-1074・D842）
+test('小さい周期表: 118 のマスの場所が重ならず、18 列 × 7 行と 9・10 行目に収まる', () => {
+  const t = genso.miniTable(genso.items[0]);
+  assert.equal(t.cells.length, 118);
+  assert.equal(new Set(t.cells.map((c) => c.row + ',' + c.col)).size, 118);
+  for (const c of t.cells) {
+    assert.ok(c.col >= 1 && c.col <= 18, JSON.stringify(c));
+    assert.ok((c.row >= 1 && c.row <= 7) || c.row === 9 || c.row === 10, JSON.stringify(c));
+    assert.ok(['metal', 'nonmetal', 'metalloid', ''].includes(c.k), JSON.stringify(c));
+  }
+});
+
+test('小さい周期表: 今の元素のマスは 1 つだけ。読み上げは「周期表の 〇 周期 〇 族」', () => {
+  for (const it of genso.items) assert.equal(genso.miniTable(it).cells.filter((c) => c.now).length, 1, it.sym);
+  const fe = genso.miniTable(genso.items[25]);
+  assert.deepEqual(fe.cells.find((c) => c.now), { row: 4, col: 8, k: 'metal', now: true });
+  assert.equal(fe.label, '周期表の 4 周期 8 族');
+  assert.equal(genso.miniTable(genso.items[56]).label, '周期表の 6 周期 ランタノイド');
+  for (const t of [nengo, kimariji, shuto]) assert.equal(t.miniTable, undefined, t.id);
+});
