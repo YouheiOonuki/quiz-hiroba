@@ -289,3 +289,15 @@ test('小さい周期表: 今の元素のマスは 1 つだけ。読み上げは
   assert.equal(genso.miniTable(genso.items[56]).label, '周期表の 6 周期 ランタノイド');
   for (const t of [nengo, kimariji, shuto]) assert.equal(t.miniTable, undefined, t.id);
 });
+
+// 型 A（yorozu-plans D885・Q-1101）: 百人一首の使い方の最初の段落は「読み上げ方」に答える文。道具へのリンクはその後ろ。description は 70〜120 字
+test('百人一首の使い方: 最初の段落は答えの文、リンクはその後ろ、description は 70〜120 字', () => {
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'hyakunin', 'guide.html'), 'utf8');
+  const main = html.slice(html.indexOf('<main'));
+  const first = main.match(/<p[^>]*>([\s\S]*?)<\/p>/)[1];
+  assert.ok(first.includes('「読み上げスタート」を押すと') && !first.includes('<a '), first);
+  assert.ok(main.indexOf(first) < main.indexOf('▶ 百人一首 読み上げへ'));
+  const desc = html.match(/<meta name="description" content="([^"]+)">/)[1];
+  assert.ok(desc.length >= 70 && desc.length <= 120, String(desc.length));
+  assert.strictEqual(html.match(/<meta property="og:description" content="([^"]+)">/)[1], desc);
+});
