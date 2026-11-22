@@ -141,6 +141,13 @@
         choice: function (it) { return it.country; },
         // 選択肢は国名ではなく旗の絵を出す（国名は答えたあとに出す）
         choiceImg: function (country) { var it = BY_COUNTRY[country]; return it ? flagUrl(it) : ''; },
+        // 答えたあとに旗の下へ出す字。mark は 'ok'（正解の旗）・'ng'（選んだ誤答）・それ以外（選んでいない誤答）
+        // 国名の全角の括弧とその中（正式な名前）は、旗の下の字では落とす（英国（…）→ 英国。D861）
+        cap: function (country, mark) {
+          country = String(country).replace(/（[^）]*）/g, '');
+          if (mark === 'ok') return '○ ' + country + 'の旗';
+          return (mark === 'ng' ? '× ' : '') + 'これは' + country + 'の旗';
+        },
       },
     ],
     filters: [
