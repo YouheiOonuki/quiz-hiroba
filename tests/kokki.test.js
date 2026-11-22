@@ -120,3 +120,10 @@ test('国旗のページ: AdSense は meta だけ。首都クイズのデータ�
   assert.equal((hub.match(/topics\/shuto\.js/g) || []).length, 1);
   assert.ok(hub.indexOf('topics/shuto.js') < hub.indexOf('topics/kokki.js'));
 });
+
+test('国 → 旗: 答えたあとの旗の下の字（正解・選んだ誤答・選んでいない誤答）', () => {
+  const cap = Calc.kindOf(kokki, 'pick').cap;
+  assert.equal(cap('チャド共和国', 'ok'), '○ チャド共和国の旗');
+  assert.equal(cap('ルーマニア', 'ng'), '× これはルーマニアの旗');
+  assert.equal(cap('アンドラ公国', ''), 'これはアンドラ公国の旗');
+});

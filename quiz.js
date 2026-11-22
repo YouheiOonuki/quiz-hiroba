@@ -315,9 +315,10 @@
     document.querySelectorAll('#choices .choice').forEach(function (b) {
       b.disabled = true;
       var c = b.getAttribute('data-choice');
-      if (c === kind.choice(it)) b.classList.add('ok');
-      else if (b === btn) b.classList.add('ng');
-      if (kind.choiceImg) { b.appendChild(el('span', 'cap', c)); b.removeAttribute('aria-label'); }
+      var mark = c === kind.choice(it) ? 'ok' : (b === btn ? 'ng' : '');
+      if (mark) b.classList.add(mark);
+      // 旗の下の字: 題材が字を組む関数（kind.cap）を持てばそれを使う。無ければ国名だけ（○× は CSS）
+      if (kind.choiceImg) { b.appendChild(kind.cap ? el('span', 'cap own', kind.cap(c, mark)) : el('span', 'cap', c)); b.removeAttribute('aria-label'); }
     });
     if (modeOf(round.opt) === 'typing') {
       $('answer').readOnly = true;
