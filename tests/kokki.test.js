@@ -127,3 +127,14 @@ test('国 → 旗: 答えたあとの旗の下の字（正解・選んだ誤答�
   assert.equal(cap('ルーマニア', 'ng'), '× これはルーマニアの旗');
   assert.equal(cap('アンドラ公国', ''), 'これはアンドラ公国の旗');
 });
+
+test('国 → 旗: 旗の下の字は国名の全角の括弧とその中を落とす（括弧の無い国名はそのまま。D861）', () => {
+  const cap = Calc.kindOf(kokki, 'pick').cap;
+  const uk = '英国（グレートブリテン及び北アイルランド連合王国）';
+  assert.equal(cap(uk, 'ok'), '○ 英国の旗');
+  assert.equal(cap(uk, 'ng'), '× これは英国の旗');
+  assert.equal(cap(uk, ''), 'これは英国の旗');
+  assert.equal(cap('チャド共和国', ''), 'これはチャド共和国の旗');
+  // 国名そのもの（問いの文・一覧・印刷・選択肢の値）は括弧つきのまま
+  assert.equal(Calc.kindOf(kokki, 'pick').choice({ country: uk }), uk);
+});
