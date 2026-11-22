@@ -134,6 +134,41 @@
   });
   function names(it) { return it.yomi ? [it.ja, it.yomi] : [it.ja]; }
 
+  // 分類の 1 行（答えの説明と一覧の「分類」の列。yorozu-plans Q-1073・D841）。データは ooh-genso.js（PubChem の GroupBlock・StandardState）。
+  // 読み込んでいないページ（早押し）では空
+  var OOH = (typeof module !== 'undefined' && module.exports) ? require('../ooh-genso.js') : (root.OohData && root.OohData.genso);
+  var BLOCK = { n: '非金属', g: '貴ガス', h: 'ハロゲン', a: 'アルカリ金属', e: 'アルカリ土類金属', t: '遷移金属', p: 'そのほかの金属', m: '半金属', l: 'ランタノイド', c: 'アクチノイド' };
+  function kindOfBlock(c) { return c === 'n' || c === 'g' || c === 'h' ? '非金属' : c === 'm' ? '半金属' : '金属'; }
+  /** 「金属（遷移金属）・固体」の形。大きな分け方となかまの名前が同じ（非金属・半金属）ときは 1 つだけ。見込みの元素は「くわしい性質はわかっていない」 */
+  function classLine(it) {
+    if (!OOH || !OOH.groupBlock) return '';
+    if (OOH.expected.indexOf(it.n) >= 0) return 'くわしい性質はわかっていない';
+    var c = OOH.groupBlock.charAt(it.n - 1), big = kindOfBlock(c), name = BLOCK[c];
+    var state = OOH.gas.indexOf(it.n) >= 0 ? '気体' : OOH.liquid.indexOf(it.n) >= 0 ? '液体' : '固体';
+    return (name === big ? big : big + '（' + name + '）') + '・' + state;
+  }
+
+  // 答えのあとの小さい周期表（yorozu-plans Q-1074・D842）。マスの場所は ooh.js の周期と族から出す（表を手で持たない）。
+  // ランタノイド（57〜71）・アクチノイド（89〜103）は 7 行の下の 2 行（9・10 行目。8 行目は空き）の 3〜17 列。
+  // 色は分類の大きな分け方（金属・非金属・半金属）。見込みの元素は色を付けない。ooh.js を読み込んでいないページでは null
+  var LIB = (typeof module !== 'undefined' && module.exports) ? require('../ooh.js') : root.Ooh;
+  var KIND_KEY = { '金属': 'metal', '非金属': 'nonmetal', '半金属': 'metalloid' };
+  function cellOf(n) {
+    var g = LIB.group(n);
+    if (g) return { row: LIB.period(n), col: g };
+    return n < 89 ? { row: 9, col: 3 + n - 57 } : { row: 10, col: 3 + n - 89 };
+  }
+  function miniTable(it) {
+    if (!LIB || !OOH || !OOH.groupBlock) return null;
+    var cells = items.map(function (x) {
+      var c = cellOf(x.n);
+      var k = OOH.expected.indexOf(x.n) >= 0 ? '' : KIND_KEY[kindOfBlock(OOH.groupBlock.charAt(x.n - 1))];
+      return { row: c.row, col: c.col, k: k, now: x.n === it.n };
+    });
+    var g = LIB.group(it.n);
+    return { cells: cells, label: '周期表の ' + LIB.period(it.n) + ' 周期 ' + (g ? g + ' 族' : (it.n < 89 ? 'ランタノイド' : 'アクチノイド')) };
+  }
+
   var topic = {
     id: 'genso',
     // ページ（tools/build-pages.mjs が genso/index.html を作る）
@@ -193,8 +228,14 @@
       { label: '記号', get: function (it) { return it.sym; }, hide: true },
       { label: '名前', get: function (it) { return it.ja + (it.yomi ? '（' + it.yomi + '）' : ''); }, hide: true },
       { label: '英語名', get: function (it) { return it.en; } },
+      { label: '分類', get: classLine },
     ],
-    explain: function (it) { return '原子番号 ' + it.n + '　' + it.sym + '　' + it.ja + (it.yomi ? '（' + it.yomi + '）' : '') + '　英語名 ' + it.en; },
+    explain: function (it) {
+      var c = classLine(it);
+      return '原子番号 ' + it.n + '　' + it.sym + '　' + it.ja + (it.yomi ? '（' + it.yomi + '）' : '') + '　英語名 ' + it.en + (c ? '\n' + c : '');
+    },
+    classLine: classLine,
+    miniTable: miniTable,
     link: function () { return null; },
     sourceKey: 'genso',
   };

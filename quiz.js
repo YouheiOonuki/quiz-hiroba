@@ -329,6 +329,7 @@
     $('fb-title').className = 'fb-title ' + (ok ? 'ok' : 'ng');
     $('fb-near').hidden = near !== 'case';
     $('fb-body').textContent = TOPIC.explain(it);
+    miniTable(it);
     if (TOPIC.talk) talkLine().textContent = '話のきっかけ: ' + TOPIC.talk(it);
     showOoh(it);
     var link = TOPIC.link(it);
@@ -371,6 +372,25 @@
     }
     document.body.appendChild(burst);
     setTimeout(function () { burst.remove(); }, 900);
+  }
+
+  // 答えの説明の下の小さい周期表（元素だけ。題材が miniTable を持つときだけ出す。Q-1074）。マスに字は入れず、読み上げには 1 つの名前だけ
+  function miniTable(it) {
+    var old = $('fb-pt');
+    if (old) old.remove();
+    var t = TOPIC.miniTable ? TOPIC.miniTable(it) : null;
+    if (!t) return;
+    var box = el('div', 'pt');
+    box.id = 'fb-pt';
+    box.setAttribute('role', 'img');
+    box.setAttribute('aria-label', t.label);
+    t.cells.forEach(function (c) {
+      var s = el('span', 'pt-cell' + (c.k ? ' pt-' + c.k : '') + (c.now ? ' now' : ''));
+      s.style.gridRow = String(c.row);
+      s.style.gridColumn = String(c.col);
+      box.appendChild(s);
+    });
+    $('fb-body').insertAdjacentElement('afterend', box);
   }
 
   // 話のきっかけ（昭和クイズ。回想法カードと同じ問いかけ）を答えの説明の下に出す

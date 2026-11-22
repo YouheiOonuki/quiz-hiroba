@@ -235,3 +235,57 @@ test('百人一首 読み上げの使い方: 介護向けの入口に載せる�
     assert.ok(!/adsbygoogle\.js/.test(fs.readFileSync(path.join(ROOT, f), 'utf8')), f);
   }
 });
+
+// 元素の分類（yorozu-plans Q-1073・D841）: PubChem の GroupBlock を ooh-genso.js に写したもの
+test('元素の分類: 118 行すべてに値、なかまの名前は 10 のどれか', () => {
+  const NAMES = ['非金属', '貴ガス', 'ハロゲン', 'アルカリ金属', 'アルカリ土類金属', '遷移金属', 'そのほかの金属', '半金属', 'ランタノイド', 'アクチノイド'];
+  const O = require('../ooh-genso.js');
+  assert.equal(O.groupBlock.length, 118);
+  for (const it of genso.items) {
+    const line = genso.classLine(it);
+    if (O.expected.includes(it.n)) { assert.equal(line, 'くわしい性質はわかっていない', it.sym); continue; }
+    const m = line.match(/^(金属|非金属|半金属)(?:（(.+)）)?・(気体|液体|固体)$/);
+    assert.ok(m, it.sym + ' ' + line);
+    assert.ok(NAMES.includes(m[2] || m[1]), it.sym + ' ' + line);
+  }
+});
+
+test('元素の分類: 族 18 は貴ガス、族 17 はハロゲン、族 1（水素を除く）はアルカリ金属', () => {
+  const Ooh = require('../ooh.js');
+  const O = require('../ooh-genso.js');
+  for (const it of genso.items) {
+    const g = Ooh.group(it.n), c = O.groupBlock[it.n - 1];
+    if (g === 18) assert.equal(c, 'g', it.sym);
+    if (g === 17) assert.equal(c, 'h', it.sym);
+    if (g === 1 && it.n !== 1) assert.equal(c, 'a', it.sym);
+  }
+});
+
+test('元素の分類: 答えの説明の 2 行目と一覧の「分類」の列', () => {
+  const fe = genso.items[25];
+  assert.equal(genso.explain(fe).split('\n')[1], '金属（遷移金属）・固体');
+  assert.equal(genso.classLine(genso.items[1]), '非金属（貴ガス）・気体');
+  assert.equal(genso.classLine(genso.items[79]), '金属（遷移金属）・液体');
+  assert.equal(genso.columns.find((c) => c.label === '分類').get(fe), '金属（遷移金属）・固体');
+});
+
+// 答えのあとの小さい周期表（yorozu-plans Q-1074・D842）
+test('小さい周期表: 118 のマスの場所が重ならず、18 列 × 7 行と 9・10 行目に収まる', () => {
+  const t = genso.miniTable(genso.items[0]);
+  assert.equal(t.cells.length, 118);
+  assert.equal(new Set(t.cells.map((c) => c.row + ',' + c.col)).size, 118);
+  for (const c of t.cells) {
+    assert.ok(c.col >= 1 && c.col <= 18, JSON.stringify(c));
+    assert.ok((c.row >= 1 && c.row <= 7) || c.row === 9 || c.row === 10, JSON.stringify(c));
+    assert.ok(['metal', 'nonmetal', 'metalloid', ''].includes(c.k), JSON.stringify(c));
+  }
+});
+
+test('小さい周期表: 今の元素のマスは 1 つだけ。読み上げは「周期表の 〇 周期 〇 族」', () => {
+  for (const it of genso.items) assert.equal(genso.miniTable(it).cells.filter((c) => c.now).length, 1, it.sym);
+  const fe = genso.miniTable(genso.items[25]);
+  assert.deepEqual(fe.cells.find((c) => c.now), { row: 4, col: 8, k: 'metal', now: true });
+  assert.equal(fe.label, '周期表の 4 周期 8 族');
+  assert.equal(genso.miniTable(genso.items[56]).label, '周期表の 6 周期 ランタノイド');
+  for (const t of [nengo, kimariji, shuto]) assert.equal(t.miniTable, undefined, t.id);
+});

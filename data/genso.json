@@ -1,5 +1,5 @@
 {
-  "title": "元素の「おお」の一言（118 元素の名前の由来・発見・周期表の位置）",
+  "title": "元素のまめちしき（118 元素の名前の由来・発見・周期表の位置）",
   "license": "CC0-1.0",
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
   "publisher": "yorozu-craft（Youhei Oonuki）",
@@ -7,8 +7,8 @@
   "data_url": "https://yorozu-craft.com/quiz-hiroba/data/genso.json",
   "repository": "https://github.com/YouheiOonuki/quiz-hiroba",
   "generated_from": "ooh-genso.js（事実と出典）・ooh.js（文にする規則）・topics/genso.js（記号と名前）を tools/build-data.mjs で書き出し",
-  "checked": "2026-09-25",
-  "generated": "2026-10-03",
+  "checked": "2026-11-22",
+  "generated": "2026-11-22",
   "source": [
     "https://iupac.org/what-we-do/periodic-table-of-elements/",
     "https://iupac.org/wp-content/uploads/2022/05/IUPAC_Periodic_Table-04May22.pdf",
@@ -19,7 +19,7 @@
     "https://periodic.lanl.gov/",
     "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
   ],
-  "note": "名前・記号は IUPAC の周期表と日本化学会「原子量表（2026）」。一言は各行の source の原文に書いてあることだけを短い日本語にしたもの（1 文 40 字以内、人口・順位など変わるものは書かない）。group はランタノイド・アクチノイドで null。",
+  "note": "名前・記号は IUPAC の周期表と日本化学会「原子量表（2026）」。一言は各行の source の原文に書いてあることだけを短い日本語にしたもの（1 文 40 字以内、人口・順位など変わるものは書かない）。group はランタノイド・アクチノイドで null。class は画面の分類の 1 行（PubChem の周期表の GroupBlock と StandardState から。StandardState が見込みの元素は「くわしい性質はわかっていない」）。",
   "items": [
     {
       "n": 1,
@@ -29,6 +29,7 @@
       "en": "hydrogen",
       "period": 1,
       "group": 1,
+      "class": "非金属・気体",
       "facts": [
         {
           "kind": "name",
@@ -71,6 +72,7 @@
       "en": "helium",
       "period": 1,
       "group": 18,
+      "class": "非金属（貴ガス）・気体",
       "facts": [
         {
           "kind": "name",
@@ -121,6 +123,7 @@
       "en": "lithium",
       "period": 2,
       "group": 1,
+      "class": "金属（アルカリ金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -155,6 +158,7 @@
       "en": "beryllium",
       "period": 2,
       "group": 2,
+      "class": "金属（アルカリ土類金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -198,6 +202,7 @@
       "en": "boron",
       "period": 2,
       "group": 13,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -233,6 +238,7 @@
       "en": "carbon",
       "period": 2,
       "group": 14,
+      "class": "非金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -276,6 +282,7 @@
       "en": "nitrogen",
       "period": 2,
       "group": 15,
+      "class": "非金属・気体",
       "facts": [
         {
           "kind": "name",
@@ -319,6 +326,7 @@
       "en": "oxygen",
       "period": 2,
       "group": 16,
+      "class": "非金属・気体",
       "facts": [
         {
           "kind": "name",
@@ -370,6 +378,7 @@
       "en": "fluorine",
       "period": 2,
       "group": 17,
+      "class": "非金属（ハロゲン）・気体",
       "facts": [
         {
           "kind": "name",
@@ -412,6 +421,7 @@
       "en": "neon",
       "period": 2,
       "group": 18,
+      "class": "非金属（貴ガス）・気体",
       "facts": [
         {
           "kind": "name",
@@ -462,6 +472,7 @@
       "en": "sodium",
       "period": 3,
       "group": 1,
+      "class": "金属（アルカリ金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -504,6 +515,7 @@
       "en": "magnesium",
       "period": 3,
       "group": 2,
+      "class": "金属（アルカリ土類金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -538,6 +550,7 @@
       "en": "aluminium",
       "period": 3,
       "group": 13,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -573,6 +586,7 @@
       "en": "silicon",
       "period": 3,
       "group": 14,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -607,6 +621,7 @@
       "en": "phosphorus",
       "period": 3,
       "group": 15,
+      "class": "非金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -650,6 +665,7 @@
       "en": "sulfur",
       "period": 3,
       "group": 16,
+      "class": "非金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -693,6 +709,7 @@
       "en": "chlorine",
       "period": 3,
       "group": 17,
+      "class": "非金属（ハロゲン）・気体",
       "facts": [
         {
           "kind": "name",
@@ -743,6 +760,7 @@
       "en": "argon",
       "period": 3,
       "group": 18,
+      "class": "非金属（貴ガス）・気体",
       "facts": [
         {
           "kind": "name",
@@ -793,6 +811,7 @@
       "en": "potassium",
       "period": 4,
       "group": 1,
+      "class": "金属（アルカリ金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -835,6 +854,7 @@
       "en": "calcium",
       "period": 4,
       "group": 2,
+      "class": "金属（アルカリ土類金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -869,6 +889,7 @@
       "en": "scandium",
       "period": 4,
       "group": 3,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -911,6 +932,7 @@
       "en": "titanium",
       "period": 4,
       "group": 4,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -945,6 +967,7 @@
       "en": "vanadium",
       "period": 4,
       "group": 5,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -987,6 +1010,7 @@
       "en": "chromium",
       "period": 4,
       "group": 6,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1021,6 +1045,7 @@
       "en": "manganese",
       "period": 4,
       "group": 7,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1056,6 +1081,7 @@
       "en": "iron",
       "period": 4,
       "group": 8,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1098,6 +1124,7 @@
       "en": "cobalt",
       "period": 4,
       "group": 9,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1140,6 +1167,7 @@
       "en": "nickel",
       "period": 4,
       "group": 10,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1183,6 +1211,7 @@
       "en": "copper",
       "period": 4,
       "group": 11,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1234,6 +1263,7 @@
       "en": "zinc",
       "period": 4,
       "group": 12,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1276,6 +1306,7 @@
       "en": "gallium",
       "period": 4,
       "group": 13,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1310,6 +1341,7 @@
       "en": "germanium",
       "period": 4,
       "group": 14,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -1345,6 +1377,7 @@
       "en": "arsenic",
       "period": 4,
       "group": 15,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -1387,6 +1420,7 @@
       "en": "selenium",
       "period": 4,
       "group": 16,
+      "class": "非金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -1430,6 +1464,7 @@
       "en": "bromine",
       "period": 4,
       "group": 17,
+      "class": "非金属（ハロゲン）・液体",
       "facts": [
         {
           "kind": "name",
@@ -1480,6 +1515,7 @@
       "en": "krypton",
       "period": 4,
       "group": 18,
+      "class": "非金属（貴ガス）・気体",
       "facts": [
         {
           "kind": "name",
@@ -1522,6 +1558,7 @@
       "en": "rubidium",
       "period": 5,
       "group": 1,
+      "class": "金属（アルカリ金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1556,6 +1593,7 @@
       "en": "strontium",
       "period": 5,
       "group": 2,
+      "class": "金属（アルカリ土類金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1598,6 +1636,7 @@
       "en": "yttrium",
       "period": 5,
       "group": 3,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1632,6 +1671,7 @@
       "en": "zirconium",
       "period": 5,
       "group": 4,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1666,6 +1706,7 @@
       "en": "niobium",
       "period": 5,
       "group": 5,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1708,6 +1749,7 @@
       "en": "molybdenum",
       "period": 5,
       "group": 6,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1742,6 +1784,7 @@
       "en": "technetium",
       "period": 5,
       "group": 7,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1784,6 +1827,7 @@
       "en": "ruthenium",
       "period": 5,
       "group": 8,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1818,6 +1862,7 @@
       "en": "rhodium",
       "period": 5,
       "group": 9,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1852,6 +1897,7 @@
       "en": "palladium",
       "period": 5,
       "group": 10,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1895,6 +1941,7 @@
       "en": "silver",
       "period": 5,
       "group": 11,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1937,6 +1984,7 @@
       "en": "cadmium",
       "period": 5,
       "group": 12,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -1971,6 +2019,7 @@
       "en": "indium",
       "period": 5,
       "group": 13,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2005,6 +2054,7 @@
       "en": "tin",
       "period": 5,
       "group": 14,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2047,6 +2097,7 @@
       "en": "antimony",
       "period": 5,
       "group": 15,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -2081,6 +2132,7 @@
       "en": "tellurium",
       "period": 5,
       "group": 16,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -2116,6 +2168,7 @@
       "en": "iodine",
       "period": 5,
       "group": 17,
+      "class": "非金属（ハロゲン）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2158,6 +2211,7 @@
       "en": "xenon",
       "period": 5,
       "group": 18,
+      "class": "非金属（貴ガス）・気体",
       "facts": [
         {
           "kind": "name",
@@ -2200,6 +2254,7 @@
       "en": "caesium",
       "period": 6,
       "group": 1,
+      "class": "金属（アルカリ金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2234,6 +2289,7 @@
       "en": "barium",
       "period": 6,
       "group": 2,
+      "class": "金属（アルカリ土類金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2268,6 +2324,7 @@
       "en": "lanthanum",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2302,6 +2359,7 @@
       "en": "cerium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2336,6 +2394,7 @@
       "en": "praseodymium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2370,6 +2429,7 @@
       "en": "neodymium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2404,6 +2464,7 @@
       "en": "promethium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2430,6 +2491,7 @@
       "en": "samarium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2464,6 +2526,7 @@
       "en": "europium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2498,6 +2561,7 @@
       "en": "gadolinium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2524,6 +2588,7 @@
       "en": "terbium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2558,6 +2623,7 @@
       "en": "dysprosium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2592,6 +2658,7 @@
       "en": "holmium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2618,6 +2685,7 @@
       "en": "erbium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2652,6 +2720,7 @@
       "en": "thulium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2686,6 +2755,7 @@
       "en": "ytterbium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2720,6 +2790,7 @@
       "en": "lutetium",
       "period": 6,
       "group": null,
+      "class": "金属（ランタノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2762,6 +2833,7 @@
       "en": "hafnium",
       "period": 6,
       "group": 4,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2804,6 +2876,7 @@
       "en": "tantalum",
       "period": 6,
       "group": 5,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2838,6 +2911,7 @@
       "en": "tungsten",
       "period": 6,
       "group": 6,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2888,6 +2962,7 @@
       "en": "rhenium",
       "period": 6,
       "group": 7,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2930,6 +3005,7 @@
       "en": "osmium",
       "period": 6,
       "group": 8,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2964,6 +3040,7 @@
       "en": "iridium",
       "period": 6,
       "group": 9,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -2999,6 +3076,7 @@
       "en": "platinum",
       "period": 6,
       "group": 10,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3034,6 +3112,7 @@
       "en": "gold",
       "period": 6,
       "group": 11,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3077,6 +3156,7 @@
       "en": "mercury",
       "period": 6,
       "group": 12,
+      "class": "金属（遷移金属）・液体",
       "facts": [
         {
           "kind": "name",
@@ -3127,6 +3207,7 @@
       "en": "thallium",
       "period": 6,
       "group": 13,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3162,6 +3243,7 @@
       "en": "lead",
       "period": 6,
       "group": 14,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3204,6 +3286,7 @@
       "en": "bismuth",
       "period": 6,
       "group": 15,
+      "class": "金属（そのほかの金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3238,6 +3321,7 @@
       "en": "polonium",
       "period": 6,
       "group": 16,
+      "class": "半金属・固体",
       "facts": [
         {
           "kind": "name",
@@ -3272,6 +3356,7 @@
       "en": "astatine",
       "period": 6,
       "group": 17,
+      "class": "非金属（ハロゲン）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3306,6 +3391,7 @@
       "en": "radon",
       "period": 6,
       "group": 18,
+      "class": "非金属（貴ガス）・気体",
       "facts": [
         {
           "kind": "name",
@@ -3356,6 +3442,7 @@
       "en": "francium",
       "period": 7,
       "group": 1,
+      "class": "金属（アルカリ金属）・固体",
       "facts": [
         {
           "kind": "found",
@@ -3382,6 +3469,7 @@
       "en": "radium",
       "period": 7,
       "group": 2,
+      "class": "金属（アルカリ土類金属）・固体",
       "facts": [
         {
           "kind": "found",
@@ -3408,6 +3496,7 @@
       "en": "actinium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3442,6 +3531,7 @@
       "en": "thorium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3476,6 +3566,7 @@
       "en": "protactinium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3502,6 +3593,7 @@
       "en": "uranium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3544,6 +3636,7 @@
       "en": "neptunium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3578,6 +3671,7 @@
       "en": "plutonium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3612,6 +3706,7 @@
       "en": "americium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3654,6 +3749,7 @@
       "en": "curium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3688,6 +3784,7 @@
       "en": "berkelium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3722,6 +3819,7 @@
       "en": "californium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3756,6 +3854,7 @@
       "en": "einsteinium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3798,6 +3897,7 @@
       "en": "fermium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3832,6 +3932,7 @@
       "en": "mendelevium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3874,6 +3975,7 @@
       "en": "nobelium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3908,6 +4010,7 @@
       "en": "lawrencium",
       "period": 7,
       "group": null,
+      "class": "金属（アクチノイド）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3942,6 +4045,7 @@
       "en": "rutherfordium",
       "period": 7,
       "group": 4,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3968,6 +4072,7 @@
       "en": "dubnium",
       "period": 7,
       "group": 5,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -3994,6 +4099,7 @@
       "en": "seaborgium",
       "period": 7,
       "group": 6,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -4020,6 +4126,7 @@
       "en": "bohrium",
       "period": 7,
       "group": 7,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -4046,6 +4153,7 @@
       "en": "hassium",
       "period": 7,
       "group": 8,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -4080,6 +4188,7 @@
       "en": "meitnerium",
       "period": 7,
       "group": 9,
+      "class": "金属（遷移金属）・固体",
       "facts": [
         {
           "kind": "name",
@@ -4114,6 +4223,7 @@
       "en": "darmstadtium",
       "period": 7,
       "group": 10,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4148,6 +4258,7 @@
       "en": "roentgenium",
       "period": 7,
       "group": 11,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4182,6 +4293,7 @@
       "en": "copernicium",
       "period": 7,
       "group": 12,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4216,6 +4328,7 @@
       "en": "nihonium",
       "period": 7,
       "group": 13,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4258,6 +4371,7 @@
       "en": "flerovium",
       "period": 7,
       "group": 14,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4284,6 +4398,7 @@
       "en": "moscovium",
       "period": 7,
       "group": 15,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4318,6 +4433,7 @@
       "en": "livermorium",
       "period": 7,
       "group": 16,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "found",
@@ -4352,6 +4468,7 @@
       "en": "tennessine",
       "period": 7,
       "group": 17,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
@@ -4386,6 +4503,7 @@
       "en": "oganesson",
       "period": 7,
       "group": 18,
+      "class": "くわしい性質はわかっていない",
       "facts": [
         {
           "kind": "name",
