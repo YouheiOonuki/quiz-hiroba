@@ -182,11 +182,12 @@ a { color: var(--accent); }
 .app-footer {
   text-align: center;
   padding: 1rem;
-  font-size: 0.78rem;
   color: var(--muted);
   border-top: 1px solid var(--border);
   margin-top: 0.5rem;
 }
+/* 脚の字: 皮のページは皮の 14px（D713）。土台のページだけ小さく */
+:where(html[data-skin="base"]) .app-footer { font-size: 0.78rem; }
 .footer-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: var(--sp-2) 1.1rem; margin-bottom: 0.6rem; }
 .footer-nav a { color: var(--muted); text-decoration: none; }
 .footer-nav a:hover, .footer-nav a[aria-current="page"] { color: var(--accent); }
