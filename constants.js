@@ -86,8 +86,8 @@
       checked: '2026-09-25',   // この日に flag-icons 7.5.0 を取得し、196 か国の ISO の 2 文字を country.json の英語名と 1 つずつ突き合わせた
     },
     ooh_genso: {
-      value: '元素 118 の「おお」の一言（名前の由来・記号の由来・発見・周期と族・気体と液体）',
-      label: '「おお」の一言（元素）',
+      value: '元素 118 のまめちしき（名前の由来・記号の由来・発見・周期と族・気体と液体）',
+      label: 'まめちしき（元素）',
       source: 'IUPAC 原子量および同位体存在度委員会（CIAAW）の元素のページ、ロスアラモス国立研究所（米国エネルギー省）の周期表、IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」、IUPAC 周期表、PubChem の周期表',
       url: 'https://www.ciaaw.org/',
       urls: [
@@ -100,8 +100,8 @@
       checked: '2026-09-25',   // この日に 118 元素の出典の段落を読み、年が出典の本文にあることを機械でも確かめた（ooh-genso.js の先頭）
     },
     ooh_shuto: {
-      value: '世界の首都の「おお」の一言（名前の由来・創設・そばの川・湖・海・昔の公式名）',
-      label: '「おお」の一言（世界の首都）',
+      value: '世界の首都のまめちしき（名前の由来・創設・そばの川・湖・海・昔の公式名）',
+      label: 'まめちしき（世界の首都）',
       source: 'Wikidata（CC0 1.0）の首都の項目（P138・P571・P206・P1448）。写しは data/wikidata-shuto.json',
       url: 'https://www.wikidata.org/',
       urls: [
