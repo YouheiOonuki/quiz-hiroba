@@ -8,15 +8,18 @@ import { stubHtml, ogHtml, writeAll } from './share-stub.mjs';
 import { loadTopics } from './build-pages.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+/** 着地ページの 2 行目（doctype の次）に生成物の印（yorozu-plans D670・D706。hoshizora-sanpo の tools/build-share.mjs と同じ形）。stubHtml は共有の写しなので、ここで足す */
+const MARK = '<!-- 生成物。正本は quiz-hiroba の tools/build-share.mjs（node tools/build-share.mjs で作る。ここは手で直さない） -->\n';
+const marked = (html) => html.replace(/^<!DOCTYPE html>\n/, (m) => m + MARK);
 const SITE = 'https://yorozu-craft.com/quiz-hiroba/';
 
 export function pages() {
   return loadTopics().map((t) => ({
     file: `${t.id}/s/index.html`, image: `${t.id}/s/og.png`,
-    stub: stubHtml({
+    stub: marked(stubHtml({
       title: `${t.page.h1}に挑戦｜クイズ広場`, desc: `${t.page.h1}の同じ問題でちょうせん。送った人の正解数と比べられます。`,
       url: `${SITE}${t.id}/s/`, image: `${SITE}${t.id}/s/og.png`, back: '../', canonical: `${SITE}${t.id}/`, open: `${t.page.h1}を開く`,
-    }),
+    })),
     og: ogHtml({ kicker: 'クイズ広場', big: t.page.h1, small: '同じ問題でちょうせん', url: `yorozu-craft.com/quiz-hiroba/${t.id}/`,
       bg: '#fff8e7', fg: '#3b2f1e', accent: '#b5491f', bigSize: 80 }),
   }));
