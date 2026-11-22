@@ -352,6 +352,15 @@ details > summary:focus-visible { outline: 2px solid var(--accent); outline-offs
 @media (prefers-color-scheme: dark) { .fb-title.ok { color: #8fd694; } .fb-title.ng { color: #f2a19a; } }
 .fb-near { font-weight: 600; }
 .fb-body { margin: 0.3rem 0 0.8rem; white-space: pre-line; }   /* 元素の分類の 1 行は改行で分ける（Q-1073） */
+/* 答えのあとの小さい周期表（元素。Q-1074）: 18 列 × 7 行と、1 行あけてランタノイド・アクチノイドの 2 行。色は金属・非金属・半金属、今の元素は太い枠 */
+.pt { --pt-metal: #5b8fc7; --pt-nonmetal: #d99a1e; --pt-metalloid: #4f9e62;
+  display: grid; grid-template-columns: repeat(18, minmax(0, 1fr)); grid-template-rows: repeat(7, auto) 4px repeat(2, auto);
+  gap: 1px; max-width: 360px; margin: -0.4rem 0 0.8rem; }
+.pt-cell { aspect-ratio: 1; border: 1px solid var(--border); border-radius: 2px; }
+.pt-metal { background: var(--pt-metal); border-color: var(--pt-metal); }
+.pt-nonmetal { background: var(--pt-nonmetal); border-color: var(--pt-nonmetal); }
+.pt-metalloid { background: var(--pt-metalloid); border-color: var(--pt-metalloid); }
+.pt-cell.now { border: 3px solid var(--text); border-radius: 3px; position: relative; z-index: 1; transform: scale(1.35); }
 .feedback .btn-big { width: 100%; }
 
 /* 結果 */
