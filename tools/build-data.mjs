@@ -54,7 +54,7 @@ export function buildGenso(generated = today()) {
     generated_from: 'ooh-genso.js（事実と出典）・ooh.js（文にする規則）・topics/genso.js（記号と名前）を tools/build-data.mjs で書き出し',
     checked: [GENSO.checked, C.genso.checked, C.genso_class.checked].sort().at(-1),
     generated,
-    source: uniq([...C.genso.urls, ...factUrls.map(u => u.replace(/^(https:\/\/[^/]+\/).*$/, (m, h) => (/ciaaw|lanl/.test(h) ? h : m)))]),
+    source: uniq([...C.genso.urls, ...factUrls.map(u => u.replace(/^(https:\/\/[^/]+\/).*$/, (m, h) => (/ciaaw/.test(h) ? h : /lanl\.gov/.test(h) ? 'https://www.lanl.gov/science-engineering/periodic-table' : m)))]),
     note: '名前・記号は IUPAC の周期表と日本化学会「原子量表（2026）」。一言は各行の source の原文に書いてあることだけを短い日本語にしたもの（1 文 40 字以内、人口・順位など変わるものは書かない）。group はランタノイド・アクチノイドで null。class は画面の分類の 1 行（PubChem の周期表の GroupBlock と StandardState から。StandardState が見込みの元素は「くわしい性質はわかっていない」）。',
     items,
   };

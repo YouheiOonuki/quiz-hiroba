@@ -8,7 +8,7 @@
   "repository": "https://github.com/YouheiOonuki/quiz-hiroba",
   "generated_from": "ooh-genso.js（事実と出典）・ooh.js（文にする規則）・topics/genso.js（記号と名前）を tools/build-data.mjs で書き出し",
   "checked": "2026-11-22",
-  "generated": "2026-11-22",
+  "generated": "2026-11-26",
   "source": [
     "https://iupac.org/what-we-do/periodic-table-of-elements/",
     "https://iupac.org/wp-content/uploads/2022/05/IUPAC_Periodic_Table-04May22.pdf",
@@ -16,7 +16,7 @@
     "https://www.chemistry.or.jp/news/113nh.html",
     "https://www.ciaaw.org/",
     "https://pubchem.ncbi.nlm.nih.gov/periodic-table/",
-    "https://periodic.lanl.gov/",
+    "https://www.lanl.gov/science-engineering/periodic-table",
     "https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/"
   ],
   "note": "名前・記号は IUPAC の周期表と日本化学会「原子量表（2026）」。一言は各行の source の原文に書いてあることだけを短い日本語にしたもの（1 文 40 字以内、人口・順位など変わるものは書かない）。group はランタノイド・アクチノイドで null。class は画面の分類の 1 行（PubChem の周期表の GroupBlock と StandardState から。StandardState が見込みの元素は「くわしい性質はわかっていない」）。",
@@ -1791,7 +1791,7 @@
           "text": "名前はギリシャ語の technetos（人工の）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「technetium」",
-            "url": "https://periodic.lanl.gov/43.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/technetium"
           }
         },
         {
@@ -1799,7 +1799,7 @@
           "text": "1937年、イタリアでペリエとセグレが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「technetium」",
-            "url": "https://periodic.lanl.gov/43.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/technetium"
           }
         },
         {
@@ -1815,7 +1815,7 @@
           "text": "人工的に作られた初めての元素。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「technetium」",
-            "url": "https://periodic.lanl.gov/43.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/technetium"
           }
         }
       ]
@@ -2296,7 +2296,7 @@
           "text": "名前はギリシャ語の barys（重い）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「barium」",
-            "url": "https://periodic.lanl.gov/56.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/barium"
           }
         },
         {
@@ -2304,7 +2304,7 @@
           "text": "1808年、デービーが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「barium」",
-            "url": "https://periodic.lanl.gov/56.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/barium"
           }
         },
         {
@@ -2471,7 +2471,7 @@
           "text": "名前は天から火を盗んだ神話のプロメテウスから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「promethium」",
-            "url": "https://periodic.lanl.gov/61.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/promethium"
           }
         },
         {
@@ -3328,7 +3328,7 @@
           "text": "名前はポーランドから。キュリー夫人の生まれた国。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「polonium」",
-            "url": "https://periodic.lanl.gov/84.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/polonium"
           }
         },
         {
@@ -3336,7 +3336,7 @@
           "text": "1898年、キュリーが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「polonium」",
-            "url": "https://periodic.lanl.gov/84.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/polonium"
           }
         },
         {
@@ -3363,7 +3363,7 @@
           "text": "名前はギリシャ語の astatos（不安定な）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「astatine」",
-            "url": "https://periodic.lanl.gov/85.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/astatine"
           }
         },
         {
@@ -3371,7 +3371,7 @@
           "text": "1940年、コーソンたちが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「astatine」",
-            "url": "https://periodic.lanl.gov/85.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/astatine"
           }
         },
         {
@@ -3398,7 +3398,7 @@
           "text": "名前はラジウムから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radon」",
-            "url": "https://periodic.lanl.gov/86.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/radon"
           }
         },
         {
@@ -3406,7 +3406,7 @@
           "text": "1900年、ドルンが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radon」",
-            "url": "https://periodic.lanl.gov/86.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/radon"
           }
         },
         {
@@ -3430,7 +3430,7 @@
           "text": "はじめは「ラジウムのエマネーション」と呼ばれた。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radon」",
-            "url": "https://periodic.lanl.gov/86.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/radon"
           }
         }
       ]
@@ -3449,7 +3449,7 @@
           "text": "1939年、パリのキュリー研究所のペレーが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「francium」",
-            "url": "https://periodic.lanl.gov/87.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/francium"
           }
         },
         {
@@ -3476,7 +3476,7 @@
           "text": "1898年、キュリー夫人が発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「radium」",
-            "url": "https://periodic.lanl.gov/88.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/radium"
           }
         },
         {
@@ -3503,7 +3503,7 @@
           "text": "名前はギリシャ語の aktis（光線）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「actinium」",
-            "url": "https://periodic.lanl.gov/89.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/actinium"
           }
         },
         {
@@ -3511,7 +3511,7 @@
           "text": "1899年、ドビエルヌが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「actinium」",
-            "url": "https://periodic.lanl.gov/89.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/actinium"
           }
         },
         {
@@ -3643,7 +3643,7 @@
           "text": "名前は海王星（ネプチューン）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「neptunium」",
-            "url": "https://periodic.lanl.gov/93.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/neptunium"
           }
         },
         {
@@ -3651,7 +3651,7 @@
           "text": "1940年、マクミランとアベルソンが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「neptunium」",
-            "url": "https://periodic.lanl.gov/93.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/neptunium"
           }
         },
         {
@@ -3678,7 +3678,7 @@
           "text": "名前は冥王星（プルート）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「plutonium」",
-            "url": "https://periodic.lanl.gov/94.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/plutonium"
           }
         },
         {
@@ -3694,7 +3694,7 @@
           "text": "天王星・海王星に続いて、冥王星の名前をつけた。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「plutonium」",
-            "url": "https://periodic.lanl.gov/94.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/plutonium"
           }
         }
       ]
@@ -3713,7 +3713,7 @@
           "text": "名前は北アメリカ大陸から。ユウロピウムにならった。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「americium」",
-            "url": "https://periodic.lanl.gov/95.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/americium"
           }
         },
         {
@@ -3721,7 +3721,7 @@
           "text": "1944年、シーボーグたちが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「americium」",
-            "url": "https://periodic.lanl.gov/95.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/americium"
           }
         },
         {
@@ -3737,7 +3737,7 @@
           "text": "発見は、子ども向けラジオのクイズ番組で発表された。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「americium」",
-            "url": "https://periodic.lanl.gov/95.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/americium"
           }
         }
       ]
@@ -3756,7 +3756,7 @@
           "text": "名前はキュリー夫妻から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「curium」",
-            "url": "https://periodic.lanl.gov/96.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/curium"
           }
         },
         {
@@ -3764,7 +3764,7 @@
           "text": "1944年、シーボーグたちが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「curium」",
-            "url": "https://periodic.lanl.gov/96.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/curium"
           }
         },
         {
@@ -3791,7 +3791,7 @@
           "text": "名前は発見した町、カリフォルニア州バークレーから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「berkelium」",
-            "url": "https://periodic.lanl.gov/97.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/berkelium"
           }
         },
         {
@@ -3799,7 +3799,7 @@
           "text": "1949年、トンプソンたちが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「berkelium」",
-            "url": "https://periodic.lanl.gov/97.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/berkelium"
           }
         },
         {
@@ -3826,7 +3826,7 @@
           "text": "名前はカリフォルニア州とカリフォルニア大学から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「californium」",
-            "url": "https://periodic.lanl.gov/98.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/californium"
           }
         },
         {
@@ -3834,7 +3834,7 @@
           "text": "1950年、トンプソンたちが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「californium」",
-            "url": "https://periodic.lanl.gov/98.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/californium"
           }
         },
         {
@@ -3861,7 +3861,7 @@
           "text": "名前はアインシュタインから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「einsteinium」",
-            "url": "https://periodic.lanl.gov/99.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/einsteinium"
           }
         },
         {
@@ -3869,7 +3869,7 @@
           "text": "1952年、ギオルソたちが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「einsteinium」",
-            "url": "https://periodic.lanl.gov/99.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/einsteinium"
           }
         },
         {
@@ -3885,7 +3885,7 @@
           "text": "1952年の熱核爆発の実験のちりの中から見つかった。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「einsteinium」",
-            "url": "https://periodic.lanl.gov/99.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/einsteinium"
           }
         }
       ]
@@ -3904,7 +3904,7 @@
           "text": "名前は物理学者フェルミから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「fermium」",
-            "url": "https://periodic.lanl.gov/100.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/fermium"
           }
         },
         {
@@ -3912,7 +3912,7 @@
           "text": "1952年に発見された。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「fermium」",
-            "url": "https://periodic.lanl.gov/100.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/fermium"
           }
         },
         {
@@ -3939,7 +3939,7 @@
           "text": "名前はメンデレーエフから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「mendelevium」",
-            "url": "https://periodic.lanl.gov/101.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/mendelevium"
           }
         },
         {
@@ -3947,7 +3947,7 @@
           "text": "1955年、ギオルソたちが人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「mendelevium」",
-            "url": "https://periodic.lanl.gov/101.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/mendelevium"
           }
         },
         {
@@ -3963,7 +3963,7 @@
           "text": "原子を1つずつ作って確かめられた。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「mendelevium」",
-            "url": "https://periodic.lanl.gov/101.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/mendelevium"
           }
         }
       ]
@@ -3982,7 +3982,7 @@
           "text": "名前はダイナマイトを発明したノーベルから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「nobelium」",
-            "url": "https://periodic.lanl.gov/102.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/nobelium"
           }
         },
         {
@@ -3990,7 +3990,7 @@
           "text": "1958年、ギオルソたちが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「nobelium」",
-            "url": "https://periodic.lanl.gov/102.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/nobelium"
           }
         },
         {
@@ -4017,7 +4017,7 @@
           "text": "名前はサイクロトロンを発明したローレンスから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「lawrencium」",
-            "url": "https://periodic.lanl.gov/103.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/lawrencium"
           }
         },
         {
@@ -4025,7 +4025,7 @@
           "text": "1961年、ギオルソたちが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「lawrencium」",
-            "url": "https://periodic.lanl.gov/103.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/lawrencium"
           }
         },
         {
@@ -4052,7 +4052,7 @@
           "text": "名前は物理学者ラザフォードから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「rutherfordium」",
-            "url": "https://periodic.lanl.gov/104.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/rutherfordium"
           }
         },
         {
@@ -4079,7 +4079,7 @@
           "text": "名前はロシアの研究所があるドブナから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「dubnium」",
-            "url": "https://periodic.lanl.gov/105.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/dubnium"
           }
         },
         {
@@ -4106,7 +4106,7 @@
           "text": "名前はシーボーグから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「seaborgium」",
-            "url": "https://periodic.lanl.gov/106.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/seaborgium"
           }
         },
         {
@@ -4133,7 +4133,7 @@
           "text": "名前は物理学者ニールス・ボーアから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「bohrium」",
-            "url": "https://periodic.lanl.gov/107.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/bohrium"
           }
         },
         {
@@ -4160,7 +4160,7 @@
           "text": "名前はドイツの州ヘッセン（ラテン語で Hassias）から。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「hassium」",
-            "url": "https://periodic.lanl.gov/108.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/hassium"
           }
         },
         {
@@ -4168,7 +4168,7 @@
           "text": "1984年、ドイツの研究所のアルムブルスターたちが発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「hassium」",
-            "url": "https://periodic.lanl.gov/108.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/hassium"
           }
         },
         {
@@ -4195,7 +4195,7 @@
           "text": "名前は物理学者リーゼ・マイトナーから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「meitnerium」",
-            "url": "https://periodic.lanl.gov/109.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/meitnerium"
           }
         },
         {
@@ -4203,7 +4203,7 @@
           "text": "1982年、西ドイツの研究所が人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「meitnerium」",
-            "url": "https://periodic.lanl.gov/109.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/meitnerium"
           }
         },
         {
@@ -4230,7 +4230,7 @@
           "text": "名前はドイツの町ダルムシュタットから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「darmstadtium」",
-            "url": "https://periodic.lanl.gov/110.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/darmstadtium"
           }
         },
         {
@@ -4246,7 +4246,7 @@
           "text": "1994年11月9日、最初の1個の原子が見つかった。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「darmstadtium」",
-            "url": "https://periodic.lanl.gov/110.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/darmstadtium"
           }
         }
       ]
@@ -4265,7 +4265,7 @@
           "text": "名前は物理学者レントゲンから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「roentgenium」",
-            "url": "https://periodic.lanl.gov/111.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/roentgenium"
           }
         },
         {
@@ -4273,7 +4273,7 @@
           "text": "1994年、ドイツの研究所が発見した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「roentgenium」",
-            "url": "https://periodic.lanl.gov/111.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/roentgenium"
           }
         },
         {
@@ -4300,7 +4300,7 @@
           "text": "名前は天文学者コペルニクスから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「copernicium」",
-            "url": "https://periodic.lanl.gov/112.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/copernicium"
           }
         },
         {
@@ -4308,7 +4308,7 @@
           "text": "1996年、ドイツの研究所が人工的に作った。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「copernicium」",
-            "url": "https://periodic.lanl.gov/112.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/copernicium"
           }
         },
         {
@@ -4378,7 +4378,7 @@
           "text": "名前はロシアの物理学者フリョロフから。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「flerovium」",
-            "url": "https://periodic.lanl.gov/114.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/flerovium"
           }
         },
         {
@@ -4440,7 +4440,7 @@
           "text": "2000年、ロシアのドブナの研究者が最初に報告した。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「livermorium」",
-            "url": "https://periodic.lanl.gov/116.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/livermorium"
           }
         },
         {
@@ -4456,7 +4456,7 @@
           "text": "2012年5月31日、IUPAC がこの名前に決めた。",
           "source": {
             "label": "ロスアラモス国立研究所（米国エネルギー省）周期表「livermorium」",
-            "url": "https://periodic.lanl.gov/116.shtml"
+            "url": "https://www.lanl.gov/science-engineering/periodic-table/element/livermorium"
           }
         }
       ]

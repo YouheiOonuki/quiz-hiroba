@@ -10,7 +10,7 @@
 //
 // 出典（2026-09-25 に原文を開いて 1 件ずつ読んだ）:
 //   c   IUPAC 原子量および同位体存在度委員会（CIAAW）の元素のページ https://www.ciaaw.org/<英語名>.htm の、名前の由来と発見の段落（83 元素）
-//   l   ロスアラモス国立研究所（米国エネルギー省）の周期表 https://periodic.lanl.gov/<原子番号>.shtml の History と写真の説明文（CIAAW に段落が無い元素）
+//   l   ロスアラモス国立研究所（米国エネルギー省）の周期表 https://www.lanl.gov/science-engineering/periodic-table/element/<英語名> の History（2026-09 に periodic.lanl.gov/<原子番号>.shtml から移った） と写真の説明文（CIAAW に段落が無い元素）
 //   i16 IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016-11-30）
 // 書き方の決まり:
 //   - 出典が書いていることだけを、短い日本語にした（意味は変えない。出典が「とされる」なら「とされる」）

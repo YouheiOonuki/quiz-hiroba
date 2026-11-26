@@ -20,7 +20,7 @@
   // --- 元素 ---
   var GENSO_SRC = {
     c: function (it) { return { label: 'IUPAC 原子量および同位体存在度委員会（CIAAW）「' + it.en + '」', url: 'https://www.ciaaw.org/' + it.en + '.htm' }; },
-    l: function (it) { return { label: 'ロスアラモス国立研究所（米国エネルギー省）周期表「' + it.en + '」', url: 'https://periodic.lanl.gov/' + it.n + '.shtml' }; },
+    l: function (it) { return { label: 'ロスアラモス国立研究所（米国エネルギー省）周期表「' + it.en + '」', url: 'https://www.lanl.gov/science-engineering/periodic-table/element/' + it.en }; },
     i16: function () { return { label: 'IUPAC「IUPAC Announces the Names of the Elements 113, 115, 117, and 118」（2016年）', url: 'https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/' }; },
     pt: function () { return { label: 'IUPAC 周期表（Periodic Table of the Elements）', url: 'https://iupac.org/what-we-do/periodic-table-of-elements/' }; },
     pc: function () { return { label: 'PubChem（米国国立医学図書館）の周期表', url: 'https://pubchem.ncbi.nlm.nih.gov/periodic-table/' }; },

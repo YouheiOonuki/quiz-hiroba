@@ -21,7 +21,7 @@ test('元素: 118 件すべてに事実があり、どの事実にも出典（�
     assert.ok(facts.length >= 2, it.n + ' は 2 つ以上');
     for (const f of facts) {
       assert.ok(f.src && f.src.label, it.n + ' の出典の名前');
-      assert.match(f.src.url, /^https:\/\/(www\.ciaaw\.org|periodic\.lanl\.gov|iupac\.org|pubchem\.ncbi\.nlm\.nih\.gov)\//, it.n + ' の出典の URL');
+      assert.match(f.src.url, /^https:\/\/(www\.ciaaw\.org|www\.lanl\.gov\/science-engineering\/periodic-table|iupac\.org|pubchem\.ncbi\.nlm\.nih\.gov)\//, it.n + ' の出典の URL');
     }
     n += facts.length;
   }
@@ -137,7 +137,7 @@ test('元素のページは ooh.js と ooh-genso.js を題材より先に読む�
 
 test('使い方ページにまめちしきの出典の一覧がある', () => {
   const g = fs.readFileSync(path.join(ROOT, 'guide.html'), 'utf8');
-  for (const u of ['https://www.ciaaw.org/', 'https://periodic.lanl.gov/', 'https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/', 'https://pubchem.ncbi.nlm.nih.gov/periodic-table/']) {
+  for (const u of ['https://www.ciaaw.org/', 'https://www.lanl.gov/science-engineering/periodic-table', 'https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/', 'https://pubchem.ncbi.nlm.nih.gov/periodic-table/']) {
     assert.ok(g.includes(u), u);
   }
 });

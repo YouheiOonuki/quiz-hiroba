@@ -92,7 +92,7 @@
       url: 'https://www.ciaaw.org/',
       urls: [
         'https://www.ciaaw.org/',
-        'https://periodic.lanl.gov/',
+        'https://www.lanl.gov/science-engineering/periodic-table',
         'https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/',
         'https://iupac.org/what-we-do/periodic-table-of-elements/',
         'https://pubchem.ncbi.nlm.nih.gov/periodic-table/',
