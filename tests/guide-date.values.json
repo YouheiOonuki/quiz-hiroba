@@ -1,0 +1,7 @@
+{
+  "html": {
+    "guide.html": "constants.js#oldest:checked",
+    "hyakunin/guide.html": "constants.js#hyakunin.checked",
+    "showa/guide.html": "constants.js#showa.checked"
+  }
+}
